@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+  <!--   <PreferenceCategory
+        android:key="@string/pref_cat_location"
+        android:title="@string/pref_cat_location_title" >
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_my_location"
+            android:summary="@string/pref_my_location_sum"
+            android:title="@string/pref_my_location_title" />
+
+        <Preference
+            android:dependency="@string/pref_my_location"
+            android:key="@string/pref_setlocation"
+            android:summary="@string/pref_setlocation_sum"
+            android:title="@string/pref_setlocation_title" />
+    </PreferenceCategory> -->
+
+    <PreferenceCategory
+        android:key="@string/pref_cat_ntf"
+        android:title="@string/pref_cat_ntf_title" >
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_ntf_enabled"
+            android:summary="@string/pref_ntf_enabled_sum"
+            android:title="@string/pref_ntf_enabled_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Map options -->
+    <string name="map_options_overlays">Overlays</string>
+    <string name="map_options_point_data">Point Data</string>
+    <string name="map_options_googleoptions">MAP TYPE</string>
+    <string name="map_options_opacity">Opacity</string>
+    <string name="map_options_animation">Animation</string>
+    <string name="map_options_standard">Standard</string>
+    <string name="map_options_satellite">Satellite</string>
+    <string name="map_options_hybrid">Hybrid</string>
+    <string name="overlay_settings">Overlay Settings</string>
+
+</resources>
