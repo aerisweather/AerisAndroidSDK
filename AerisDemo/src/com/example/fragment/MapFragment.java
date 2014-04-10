@@ -76,7 +76,6 @@ public class MapFragment extends MapViewFragment implements OnClickListener {
 	@Override
 	public void onResume() {
 		super.onResume();
-
 		controller.updateOptions(options);
 
 	}
