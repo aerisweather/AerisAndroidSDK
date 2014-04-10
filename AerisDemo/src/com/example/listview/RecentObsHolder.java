@@ -6,9 +6,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
-import com.example.util.FormatUtil;
 import com.hamweather.aeris.model.ObservationPeriod;
 import com.hamweather.aeris.util.FileUtil;
+import com.hamweather.aeris.util.WeatherUtil;
 
 public class RecentObsHolder implements AdapterHolder<ObservationPeriod> {
 
@@ -34,10 +34,9 @@ public class RecentObsHolder implements AdapterHolder<ObservationPeriod> {
 	public void populateView(ObservationPeriod t, int position) {
 		weatherIcon.setImageResource(FileUtil.getDrawableByName(t.ob.icon,
 				day.getContext()));
-		day.setText(FormatUtil.getTimehhmmFromISO(t.ob.dateTimeISO));
-		date.setText(FormatUtil.getDayFromISO(t.ob.dateTimeISO, true));
+		day.setText(WeatherUtil.getFormatFromISO(t.ob.dateTimeISO, "h:mm aa"));
+		date.setText(WeatherUtil.getDayFromISO(t.ob.dateTimeISO));
 		weatherDesc.setText(t.ob.weather);
 		temp.setText(t.ob.tempF.toString());
 	}
-
 }

@@ -6,6 +6,7 @@ import android.app.Application;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.SystemClock;
 
 import com.example.preference.PrefManager;
 import com.example.service.NotificationService;
@@ -35,7 +36,9 @@ public class BaseApplication extends Application {
 		AlarmManager am = (AlarmManager) activity
 				.getSystemService(Activity.ALARM_SERVICE);
 		if (enable) {
-			am.setRepeating(AlarmManager.RTC, 0l, 900000L, sender); //
+			am.setRepeating(AlarmManager.ELAPSED_REALTIME,
+					SystemClock.elapsedRealtime(),
+					AlarmManager.INTERVAL_FIFTEEN_MINUTES, sender); //
 			activity.startService(intent);
 		} else {
 			// stop service

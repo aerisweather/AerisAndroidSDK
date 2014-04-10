@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
-import com.example.util.FormatUtil;
 import com.hamweather.aeris.response.ObservationResponse;
 import com.hamweather.aeris.util.FileUtil;
+import com.hamweather.aeris.util.WeatherUtil;
 
 public class ObservationItemHolder implements
 		AdapterHolder<ObservationResponse> {
@@ -37,7 +37,8 @@ public class ObservationItemHolder implements
 		weatherIcon.setImageResource(FileUtil.getDrawableByName(
 				t.getObservation().icon, weatherIcon.getContext()));
 		place.setText(WordUtils.capitalize(t.getPlace().name));
-		time.setText(FormatUtil.getTimehhmmFromISO(t.getObservation().dateTimeISO));
+		time.setText(WeatherUtil.getFormatFromISO(
+				t.getObservation().dateTimeISO, "h:mm aa"));
 		weatherDesc.setText(t.getObservation().weatherShort);
 		temp.setText(t.getObservation().tempF.toString());
 	}
