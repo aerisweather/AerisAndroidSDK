@@ -8,25 +8,21 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import com.example.demoaerisproject.R;
 import com.hamweather.aeris.location.LocationHelper;
 import com.hamweather.aeris.maps.AerisMapOptions;
 import com.hamweather.aeris.maps.AerisMapView;
 import com.hamweather.aeris.maps.AerisMapView.AerisMapType;
-import com.hamweather.aeris.maps.AnimationController;
 import com.hamweather.aeris.maps.MapOptionsActivity;
 import com.hamweather.aeris.maps.MapViewFragment;
 
-public class MapFragment extends MapViewFragment implements OnClickListener {
+public class MapFragment extends MapViewFragment {
 	public static final int OPTIONS_ACTIVITY = 1025;
 	private LocationHelper locHelper;
 	private AerisMapOptions options;
-	private ProgressBar bar;
-	private AnimationController controller;
+
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,10 +32,7 @@ public class MapFragment extends MapViewFragment implements OnClickListener {
 		mapView = (AerisMapView) view.findViewById(R.id.aerisfragment_map);
 		mapView.init(savedInstanceState, AerisMapType.GOOGLE);
 		initMap();
-		view.findViewById(R.id.ibPlay).setOnClickListener(this);
-		bar = (ProgressBar) view.findViewById(R.id.progressBar);
 		setHasOptionsMenu(true);
-		controller = AnimationController.getInstance(mapView, bar, null);
 		return view;
 	}
 
@@ -76,7 +69,6 @@ public class MapFragment extends MapViewFragment implements OnClickListener {
 	@Override
 	public void onResume() {
 		super.onResume();
-		controller.updateOptions(options);
 
 	}
 
@@ -92,11 +84,6 @@ public class MapFragment extends MapViewFragment implements OnClickListener {
 		super.onCreateOptionsMenu(menu, inflater);
 	}
 
-	@Override
-	public void onClick(View v) {
-		if (v.getId() == R.id.ibPlay) {
-			controller.loadAnimations();
-		}
-	}
+
 
 }
