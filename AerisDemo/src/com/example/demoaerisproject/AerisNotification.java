@@ -44,6 +44,7 @@ public class AerisNotification {
 					// Set Ticker Message
 					.setSmallIcon(R.drawable.ic_stat_action_about)
 					.setContentIntent(pIntent).setOngoing(true)
+					.setPriority(NotificationCompat.PRIORITY_HIGH)
 					.setAutoCancel(false);
 
 		}

@@ -23,7 +23,6 @@ public class MapFragment extends MapViewFragment {
 	private LocationHelper locHelper;
 	private AerisMapOptions options;
 
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -47,6 +46,7 @@ public class MapFragment extends MapViewFragment {
 		options.setPreference(getActivity());
 		mapView.displayMapWithOptions(options);
 		mapView.loadPointData(options.getPointData());
+
 	}
 
 	/*
@@ -83,7 +83,5 @@ public class MapFragment extends MapViewFragment {
 		inflater.inflate(R.menu.menu_maps_fragment, menu);
 		super.onCreateOptionsMenu(menu, inflater);
 	}
-
-
 
 }
