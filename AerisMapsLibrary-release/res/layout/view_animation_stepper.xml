@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/ivAnimPrev"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:padding="5dp"
+        android:src="@drawable/btn_step_back" />
+
+    <SeekBar
+        android:id="@+id/sbAnimStepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/ivAnimNext"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:padding="5dp"
+        android:src="@drawable/btn_step_next" />
+
+</LinearLayout>

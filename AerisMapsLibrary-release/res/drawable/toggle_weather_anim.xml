@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true"
+         android:state_enabled="false"
+    	android:drawable="@drawable/btn_pause_disabled" />
+    <item android:state_checked="true"
+    	android:drawable="@drawable/btn_pause" />
+    <item android:state_checked="false"
+        android:state_enabled="false"
+		android:drawable="@drawable/btn_play_disabled"/>
+    <item android:state_checked="false"
+		android:drawable="@drawable/btn_play"/>
+    
+</selector>
