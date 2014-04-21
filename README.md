@@ -1,4 +1,4 @@
-AerisAndroidDemo
+AerisAndroidLibrary
 ================
 
-Aeris Android SDK Demo App
+Aeris Android SDK and Demo App
