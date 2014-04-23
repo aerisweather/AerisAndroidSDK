@@ -43,9 +43,9 @@ public class DayNightView extends RelativeLayout {
 		tempTextView.setText(String.valueOf(period.avgTempF.intValue()));
 		iconImageView.setImageResource(FileUtil.getDrawableByName(period.icon,
 				getContext()));
-		if (period.snowIN == null) {
+		if (period.snowIN == null || period.snowIN.doubleValue() == 0) {
 			precipLabel.setText("Precip");
-			if (period.precipIN == null) {
+			if (period.precipIN != null) {
 				precipTextView.setText(period.precipIN + " IN");
 			} else {
 				precipTextView.setText("0.00 IN");
