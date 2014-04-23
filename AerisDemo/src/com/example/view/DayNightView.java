@@ -40,7 +40,16 @@ public class DayNightView extends RelativeLayout {
 
 	public void setPeriod(ForecastPeriod period, String intervalName) {
 		intervalTextView.setText(intervalName);
-		tempTextView.setText(String.valueOf(period.avgTempF.intValue()));
+		
+		int temp;
+		if (period.isDay == true) {
+			temp = period.maxTempF.intValue();
+		}
+		else {
+			temp = period.minTempF.intValue();
+		}
+		
+		tempTextView.setText(String.valueOf(temp));
 		iconImageView.setImageResource(FileUtil.getDrawableByName(period.icon,
 				getContext()));
 		if (period.snowIN == null || period.snowIN.doubleValue() == 0) {
@@ -56,18 +65,21 @@ public class DayNightView extends RelativeLayout {
 		}
 
 		if (period.windDir != null) {
-			String temp = "";
+			String tWind = "";
+			if (period.windSpeedMaxMPH.intValue() < 5) {
+				tWind = "Calm";
+			}
 			if (period.windSpeedMinMPH.intValue() == period.windSpeedMaxMPH
 					.intValue()) {
-				temp = String.format(Locale.ENGLISH, "%s %d mph",
+				tWind = String.format(Locale.ENGLISH, "%s %d mph",
 						period.windDir, period.windSpeedMaxMPH.intValue());
 			} else {
-				temp = String.format(Locale.ENGLISH, "%s %d-%d mph",
+				tWind = String.format(Locale.ENGLISH, "%s %d-%d mph",
 						period.windDir, period.windSpeedMinMPH.intValue(),
 						period.windSpeedMaxMPH.intValue());
 			}
 
-			windsTextView.setText(temp);
+			windsTextView.setText(tWind);
 		} else {
 			windsTextView.setText("N/A");
 		}

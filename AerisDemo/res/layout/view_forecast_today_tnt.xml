@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/ivForeWeatherIcon"
         android:layout_alignRight="@+id/tvForeTemperature"
-        android:text="Partly Cloudy"
+        android:text="--"
         android:textColor="#ffffff" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/tvForeWeatherShort"
         android:layout_toLeftOf="@+id/ivForeWeatherIcon"
-        android:text="23"
+        android:text="--"
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -60,7 +60,7 @@
         android:layout_alignBaseline="@+id/tvForeWinds"
         android:layout_alignBottom="@+id/tvForeWinds"
         android:layout_alignRight="@+id/viewSpacer"
-        android:text="NNW 0-5 mph"
+        android:text="--"
         android:textColor="#ffffff"
         android:textStyle="bold" />
 

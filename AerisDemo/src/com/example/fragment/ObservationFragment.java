@@ -152,8 +152,15 @@ public class ObservationFragment extends AerisFragment {
 
 			ForecastsResponse fResponse = new ForecastsResponse(
 					response.responses.get(2).getFirstResponse());
-			todayView.setPeriod(fResponse.getPeriod(0), "Today");
-			nightView.setPeriod(fResponse.getPeriod(1), "Night");
+			
+			String dayTitle1 = "Today";
+			String dayTitle2 = "Tonight";
+			if (fResponse.getPeriod(0).isDay == false) {
+				dayTitle1 = "Tonight";
+				dayTitle2 = "Tomorrow";
+			}
+			todayView.setPeriod(fResponse.getPeriod(0), dayTitle1);
+			nightView.setPeriod(fResponse.getPeriod(1), dayTitle2);
 
 			ForecastsResponse hoursResponse = new ForecastsResponse(
 					response.responses.get(3).getFirstResponse());
