@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.example.demoaerisproject.R;
 import com.hamweather.aeris.location.LocationHelper;
-import com.hamweather.aeris.maps.AerisMapOptions;
 import com.hamweather.aeris.maps.AerisMapView;
 import com.hamweather.aeris.maps.AerisMapView.AerisMapType;
 import com.hamweather.aeris.maps.MapOptionsActivity;
@@ -21,7 +20,6 @@ import com.hamweather.aeris.maps.MapViewFragment;
 public class MapFragment extends MapViewFragment {
 	public static final int OPTIONS_ACTIVITY = 1025;
 	private LocationHelper locHelper;
-	private AerisMapOptions options;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,10 +40,6 @@ public class MapFragment extends MapViewFragment {
 		locHelper = new LocationHelper(getActivity());
 		Location myLocation = locHelper.getCurrentLocation();
 		mapView.moveToLocation(myLocation, 7);
-		options = AerisMapOptions.getPreference(getActivity());
-		options.setPreference(getActivity());
-		mapView.displayMapWithOptions(options);
-		mapView.loadPointData(options.getPointData());
 
 	}
 
