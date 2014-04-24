@@ -2,3 +2,6 @@
 /AerisMapsLibrary-release/bin
 /AerisMapsLibrary/bin
 /AerisDemo/gen
+/AerisMapsLibrary-release/gen
+/AerisMapsLibrary-release/project.properties
+/AerisDemo/project.properties

@@ -23,7 +23,7 @@
         android:layout_alignBottom="@+id/tvCurrently"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp"
-        android:text="Minneapolis, MN, US"
+        android:text="--"
         android:textColor="#ffffff"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:layout_alignRight="@+id/tvPlace"
         android:layout_below="@+id/tvPlace"
         android:layout_marginTop="11dp"
-        android:text="270"
+        android:text="--"
         android:textColor="#ffffff"
         android:textSize="50sp"
         android:textStyle="bold" />
@@ -66,7 +66,7 @@
         android:layout_alignRight="@+id/tvWeatherShort"
         android:layout_below="@+id/tvWeatherShort"
         android:layout_marginTop="5dp"
-        android:text="Feels like 240"
+        android:text="--"
         android:textColor="#ffffff" />
 
     <TextView
@@ -76,7 +76,7 @@
         android:layout_alignRight="@+id/viewSpacer"
         android:layout_below="@+id/viewSpacer"
         android:layout_marginTop="5dp"
-        android:text="Mostly Cloudy"
+        android:text="--"
         android:textColor="#ffffff" />
 
     
