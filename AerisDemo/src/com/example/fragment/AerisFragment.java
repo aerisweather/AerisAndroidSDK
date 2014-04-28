@@ -9,7 +9,6 @@ import com.hamweather.aeris.communication.AerisCallback;
 import com.hamweather.aeris.communication.AerisProgressListener;
 import com.hamweather.aeris.communication.BatchCallback;
 import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.AerisBatchResponse;
 import com.hamweather.aeris.model.AerisError;
 import com.hamweather.aeris.model.AerisResponse;
@@ -85,7 +84,6 @@ public abstract class AerisFragment extends Fragment implements
 			}
 		} else {
 			if (headlessFragment.getResponse(getKey()) != null) {
-				Logger.i("TEST", "loading data into observation...");
 				AerisBatchResponse response = (AerisBatchResponse) headlessFragment
 						.getResponse(getKey());
 				onBatchResponse(response);

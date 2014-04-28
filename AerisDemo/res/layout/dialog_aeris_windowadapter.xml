@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/window_temperature"
+    android:background="@color/transparent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:drawableLeft="@drawable/sunny"
+    android:gravity="center"
+    android:text="68"
+    android:drawablePadding="10dp"
+    android:textColor="#ffffff"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" />

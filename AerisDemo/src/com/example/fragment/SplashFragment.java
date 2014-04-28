@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import com.example.demoaerisproject.DrawerActivity;
 import com.example.demoaerisproject.R;
 import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.logging.Logger;
 
 public class SplashFragment extends AerisFragment {
 
@@ -59,7 +58,6 @@ public class SplashFragment extends AerisFragment {
 	@Override
 	public void notifyDataChanged() {
 		if (headlessFragment.getResponse(HeadlessFragment.DETAILED_OBSERVATION) != null) {
-			Logger.i("TEST", "Got Detailed Observation");
 			splashThread.interrupt();
 		}
 	}

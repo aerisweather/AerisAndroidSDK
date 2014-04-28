@@ -21,7 +21,6 @@ import com.hamweather.aeris.communication.EndpointType;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.communication.parameter.RadiusParameter;
 import com.hamweather.aeris.communication.parameter.RadiusUnit;
-import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.AerisBatchResponse;
 import com.hamweather.aeris.model.AerisError;
 import com.hamweather.aeris.model.AerisResponse;
@@ -69,7 +68,6 @@ public class MainActivity extends Activity implements AerisProgressListener,
 	@Override
 	public void onResult(EndpointType endpoint, AerisResponse response) {
 		if (endpoint == EndpointType.OBSERVATIONS) {
-			Logger.v("TEST", "Callback --->");
 			if (response.isSuccessful() && response.getError() == null) {
 				ObservationResponse obResponse = new ObservationResponse(
 						response.getFirstResponse());

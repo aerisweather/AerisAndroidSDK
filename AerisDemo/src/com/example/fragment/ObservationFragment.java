@@ -15,7 +15,6 @@ import com.example.view.DayNightView;
 import com.example.view.SmallForecastView;
 import com.example.view.TwoPartView;
 import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.AerisBatchResponse;
 import com.hamweather.aeris.model.Observation;
 import com.hamweather.aeris.model.Place;
@@ -78,7 +77,6 @@ public class ObservationFragment extends AerisFragment {
 				.findViewById(R.id.viewInterval3);
 		intervalView4 = (SmallForecastView) rootView
 				.findViewById(R.id.viewInterval4);
-		Logger.i("TEST", "ObservationFragment loaded...");
 		return rootView;
 	}
 
@@ -152,7 +150,7 @@ public class ObservationFragment extends AerisFragment {
 
 			ForecastsResponse fResponse = new ForecastsResponse(
 					response.responses.get(2).getFirstResponse());
-			
+
 			String dayTitle1 = "Today";
 			String dayTitle2 = "Tonight";
 			if (fResponse.getPeriod(0).isDay == false) {
