@@ -2,5 +2,5 @@
 <resources>
        <integer name="min_click_height">40</integer>
        
-       <integer name="animation_tiles_to_load">8</integer>
+       
 </resources>
