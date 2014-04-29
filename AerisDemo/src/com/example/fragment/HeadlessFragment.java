@@ -47,7 +47,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	protected static final String RECENT_OBS = "recent_observations";
 	protected static final String OVERVIEW = "weather_overview";
 
-	private int currentFragment = 0; 
+	private int currentFragment = 0;
 	private static final long TEN_MINUTES = 1000 * 60 * 10;
 	private Map<String, Object> map = new HashMap<String, Object>();
 	private Map<String, Long> timeMap = new HashMap<String, Long>();
@@ -244,18 +244,20 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 
 	@Override
 	public void onResult(EndpointType endpoint, AerisResponse response) {
-		if (endpoint == EndpointType.FORECASTS) {
-			if ("daynight".equals(response.getFirstResponse().interval)) {
-				storeResponse(WEEKEND, response);
-			} else if ("day".equals(response.getFirstResponse().interval)) {
-				storeResponse(EXT_FORECAST, response);
+		if (response.isSuccessfulWithResponses()) {
+			if (endpoint == EndpointType.FORECASTS) {
+				if ("daynight".equals(response.getFirstResponse().interval)) {
+					storeResponse(WEEKEND, response);
+				} else if ("day".equals(response.getFirstResponse().interval)) {
+					storeResponse(EXT_FORECAST, response);
+				}
+			} else if (endpoint == EndpointType.OBSERVATIONS_RECENT) {
+				storeResponse(RECENT_OBS, response);
+			} else if (endpoint == EndpointType.OBSERVATIONS) {
+				storeResponse(NEARBY_OBS, response);
 			}
-		} else if (endpoint == EndpointType.OBSERVATIONS_RECENT) {
-			storeResponse(RECENT_OBS, response);
-		} else if (endpoint == EndpointType.OBSERVATIONS) {
-			storeResponse(NEARBY_OBS, response);
+			notifyObservers();
 		}
-		notifyObservers();
 	}
 
 	public int getCurrentFragment() {
