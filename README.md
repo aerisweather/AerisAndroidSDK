@@ -10,14 +10,24 @@ The Maps Library utilizes the Aeris Core Android library as well. This jar can b
 
 ## Getting Started 
 
+### Congiruing the Demo App 
+1. The Aeris Maps Library project currently supports Google maps, but google maps must be configured for your work spaces SHA1 key. To do this you must setup Google Maps in the Google Maps API Console. You must configure this SHA1 [here](https://code.google.com/apis/console/?noredirect) in the console. Other instructions for configuring the Google Play Services [here](https://developers.google.com/maps/documentation/android/start#install_and_configure_the_google_play_services_sdk). 
+2. Google Play Service must be imported into the project workspace and added as a library to the AerisMapsLibrary-release project under properties -> Android -> Add.
+3. Add the newly obtained API key from the google console to the Demo App's Manifest. 
+``` xml
+<meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="your_api_key" />
+```
+
 ### Manifest Permissions Required 
 These permissions are required in order to use the Aeris Android Framework in the application. Please add these to your AndroidManifest.xml
 
 ``` xml
 <manifest>
   <!-- Internet is required to make calls to the Aeris API -->
-	<uses-permission android:name="android.permission.INTERNET" />
-	 <!-- Aeris Library uses the network state to determine if network is availabe to make calls  -->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <!-- Aeris Library uses the network state to determine if network is availabe to make calls  -->
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <!-- Google maps requries this now with tiles -->
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
