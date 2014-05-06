@@ -11,11 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.demoaerisproject.R;
+import com.example.view.TemperatureInfoData;
 import com.example.view.TemperatureWindowAdapter;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.hamweather.aeris.communication.Action;
 import com.hamweather.aeris.communication.AerisCallback;
 import com.hamweather.aeris.communication.AerisCommunicationTask;
@@ -42,6 +41,7 @@ public class MapFragment extends MapViewFragment implements
 	public static final int OPTIONS_ACTIVITY = 1025;
 	private LocationHelper locHelper;
 	private Marker marker;
+	private TemperatureWindowAdapter infoAdapter;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,8 +63,8 @@ public class MapFragment extends MapViewFragment implements
 		Location myLocation = locHelper.getCurrentLocation();
 		mapView.moveToLocation(myLocation, 7);
 		mapView.setOnAerisMapLongClickListener(this);
-		mapView.getMap().setInfoWindowAdapter(
-				new TemperatureWindowAdapter(getActivity()));
+		infoAdapter = new TemperatureWindowAdapter(getActivity());
+		mapView.addWindowInfoAdapter(infoAdapter);
 
 	}
 
@@ -138,19 +138,17 @@ public class MapFragment extends MapViewFragment implements
 						response.getFirstResponse());
 				Observation ob = obResponse.getObservation();
 				RelativeTo relativeTo = obResponse.getRelativeTo();
-				MarkerOptions options = new MarkerOptions()
-						.position(new LatLng(relativeTo.lat, relativeTo.lon))
-						.icon(BitmapDescriptorFactory
-								.fromResource(R.drawable.map_indicator_blank))
-						.title(ob.icon).snippet(String.valueOf(ob.tempF))
-						.anchor(.5f, .5f);
 				if (marker != null) {
 					marker.remove();
 				}
-				marker = mapView.getMap().addMarker(options);
+				TemperatureInfoData data = new TemperatureInfoData(ob.icon,
+						String.valueOf(ob.tempF));
+				marker = infoAdapter.addGoogleMarker(mapView.getMap(),
+						relativeTo.lat, relativeTo.lon, BitmapDescriptorFactory
+								.fromResource(R.drawable.map_indicator_blank),
+						data);
 				marker.showInfoWindow();
 			}
 		}
 	}
-
 }
