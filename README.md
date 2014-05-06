@@ -5,7 +5,7 @@ The Aeris Maps Android Library is a development toolkit for quickly integrating 
 
 This repository contains the release verion of the library (which contains its source code in the libs folder similar to Google Play Services), and a Demo project that shows different parts of the library and API that can be leveraged by this library project. 
 
-The Maps Library utilizes the Aeris Core Android library as well. This jar can be used stand alone from the maps library, so if your project does not require maps, please use it instead. This can be found [here](http://www.hamweather.com/support/documentation/mobile/android/). 
+The Maps Library utilizes the Aeris Core Android library as well. This jar can be used stand alone from the maps library, so if your project does not require maps, please use it instead. This can be found [here](http://www.hamweather.com/products/aeris-mobile/pricing/). 
 
 
 ## Getting Started 
@@ -40,7 +40,7 @@ In order to use the Aeris Maps Library project in your own application these per
 
 ## Documentation 
 
-*Documentation for the Aeris Core Library is [here](http://www.hamweather.com/docs/android/Aeris/).<br/>
-*Documentation for the Aeris Maps SDK Library is [here](http://www.hamweather.com/docs/android/AerisMap/).
+Documentation for the Aeris Core Library is [here](http://www.hamweather.com/docs/android/Aeris/).<br/>
+Documentation for the Aeris Maps SDK Library is [here](http://www.hamweather.com/docs/android/AerisMap/).
 
 
