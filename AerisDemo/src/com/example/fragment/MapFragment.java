@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.demoaerisproject.R;
 import com.example.view.TemperatureInfoData;
@@ -28,16 +29,23 @@ import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.location.LocationHelper;
 import com.hamweather.aeris.maps.AerisMapView;
 import com.hamweather.aeris.maps.AerisMapView.AerisMapType;
-import com.hamweather.aeris.maps.AerisMapView.OnAerisMapLongClickListener;
 import com.hamweather.aeris.maps.MapOptionsActivity;
 import com.hamweather.aeris.maps.MapViewFragment;
+import com.hamweather.aeris.maps.interfaces.OnAerisMapLongClickListener;
+import com.hamweather.aeris.maps.interfaces.OnAerisMarkerInfoWindowClickListener;
+import com.hamweather.aeris.maps.markers.AerisMarker;
 import com.hamweather.aeris.model.AerisResponse;
 import com.hamweather.aeris.model.Observation;
 import com.hamweather.aeris.model.RelativeTo;
+import com.hamweather.aeris.response.EarthquakesResponse;
+import com.hamweather.aeris.response.FiresResponse;
 import com.hamweather.aeris.response.ObservationResponse;
+import com.hamweather.aeris.response.StormCellResponse;
+import com.hamweather.aeris.response.StormReportsResponse;
 
 public class MapFragment extends MapViewFragment implements
-		OnAerisMapLongClickListener, AerisCallback {
+		OnAerisMapLongClickListener, AerisCallback,
+		OnAerisMarkerInfoWindowClickListener {
 	public static final int OPTIONS_ACTIVITY = 1025;
 	private LocationHelper locHelper;
 	private Marker marker;
@@ -63,8 +71,14 @@ public class MapFragment extends MapViewFragment implements
 		Location myLocation = locHelper.getCurrentLocation();
 		mapView.moveToLocation(myLocation, 7);
 		mapView.setOnAerisMapLongClickListener(this);
+
+		// setup the custom info window adapter to use
 		infoAdapter = new TemperatureWindowAdapter(getActivity());
 		mapView.addWindowInfoAdapter(infoAdapter);
+
+		// setup doing something when a user presses an info window
+		// from the Aeris Point Data.
+		mapView.setOnAerisWindowClickListener(this);
 
 	}
 
@@ -150,5 +164,37 @@ public class MapFragment extends MapViewFragment implements
 				marker.showInfoWindow();
 			}
 		}
+	}
+
+	@Override
+	public void earthquakeWindowPressed(EarthquakesResponse response,
+			AerisMarker marker) {
+		// do something with the response data.
+		Toast.makeText(getActivity(), "Earthquake pressed!", Toast.LENGTH_SHORT)
+				.show();
+	}
+
+	@Override
+	public void stormReportsWindowPressed(StormReportsResponse response,
+			AerisMarker marker) {
+		// do something with the response data.
+		Toast.makeText(getActivity(), "Storm Report pressed!",
+				Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void stormCellsWindowPressed(StormCellResponse response,
+			AerisMarker marker) {
+		// do something with the response data.
+		Toast.makeText(getActivity(), "Storm Cell pressed!", Toast.LENGTH_SHORT)
+				.show();
+	}
+
+	@Override
+	public void wildfireWindowPressed(FiresResponse response, AerisMarker marker) {
+		// do something with the response data.
+		Toast.makeText(getActivity(), "Wildfire pressed!", Toast.LENGTH_SHORT)
+				.show();
+
 	}
 }
