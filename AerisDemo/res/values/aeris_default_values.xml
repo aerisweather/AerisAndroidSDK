@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <item name="animation_min_speed" format="float" type="dimen">100</item>
-    <item name="animation_max_speed" format="float" type="dimen">1000</item>
-    <item name="animation_default_speed" format="float" type="dimen">100</item>
- 	<item name="tile_default_opacity" format="float" type="dimen">.5</item>
+    <item name="aerismaps_animation_min_speed" format="float" type="dimen">100</item>
+    <item name="aerismaps_animation_max_speed" format="float" type="dimen">1000</item>
+    <item name="aerismaps_animation_default_speed" format="float" type="dimen">100</item>
+ 	<item name="aerismaps_tile_default_opacity" format="float" type="dimen">.5</item>
     
-    <integer name="animation_end_frame_additional_time">1000</integer>
-    <integer name="camera_change_millis">1500</integer>
-    <integer name="animation_tiles_to_load">10</integer>
+    <integer name="aerismaps_animation_end_frame_additional_time">1000</integer>
+    <integer name="aerismaps_camera_change_millis">1500</integer>
+    <integer name="aerismaps_animation_tiles_to_load">10</integer>
 
 </resources>
