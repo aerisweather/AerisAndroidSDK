@@ -1,6 +1,5 @@
 package com.example.fragment;
 
-import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -29,7 +28,6 @@ import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.location.LocationHelper;
 import com.hamweather.aeris.maps.AerisMapView;
 import com.hamweather.aeris.maps.AerisMapView.AerisMapType;
-import com.hamweather.aeris.maps.MapOptionsActivity;
 import com.hamweather.aeris.maps.MapViewFragment;
 import com.hamweather.aeris.maps.interfaces.OnAerisMapLongClickListener;
 import com.hamweather.aeris.maps.interfaces.OnAerisMarkerInfoWindowClickListener;
@@ -46,7 +44,6 @@ import com.hamweather.aeris.response.StormReportsResponse;
 public class MapFragment extends MapViewFragment implements
 		OnAerisMapLongClickListener, AerisCallback,
 		OnAerisMarkerInfoWindowClickListener {
-	public static final int OPTIONS_ACTIVITY = 1025;
 	private LocationHelper locHelper;
 	private Marker marker;
 	private TemperatureWindowAdapter infoAdapter;
@@ -91,8 +88,7 @@ public class MapFragment extends MapViewFragment implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		if (itemId == R.id.menu_weather_layers) {
-			this.startActivityForResult(new Intent(getActivity(),
-					MapOptionsActivity.class), OPTIONS_ACTIVITY);
+			mapView.startAerisMapOptionsActivity(getActivity());
 			return false;
 		} else {
 			return super.onOptionsItemSelected(item);
