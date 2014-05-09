@@ -21,8 +21,8 @@ import com.hamweather.aeris.communication.AerisCallback;
 import com.hamweather.aeris.communication.EndpointType;
 import com.hamweather.aeris.communication.fields.Fields;
 import com.hamweather.aeris.communication.fields.ObservationFields;
-import com.hamweather.aeris.communication.loaders.ObservationTask;
-import com.hamweather.aeris.communication.loaders.ObservationTaskCallback;
+import com.hamweather.aeris.communication.loaders.ObservationsTask;
+import com.hamweather.aeris.communication.loaders.ObservationsTaskCallback;
 import com.hamweather.aeris.communication.parameter.ParameterBuilder;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.location.LocationHelper;
@@ -43,7 +43,7 @@ import com.hamweather.aeris.response.StormCellResponse;
 import com.hamweather.aeris.response.StormReportsResponse;
 
 public class MapFragment extends MapViewFragment implements
-		OnAerisMapLongClickListener, AerisCallback, ObservationTaskCallback,
+		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
 		OnAerisMarkerInfoWindowClickListener {
 	private LocationHelper locHelper;
 	private Marker marker;
@@ -137,7 +137,7 @@ public class MapFragment extends MapViewFragment implements
 		ParameterBuilder builder = new ParameterBuilder().withFields(
 				ObservationFields.ICON, ObservationFields.TEMP_C,
 				ObservationFields.TEMP_F, Fields.RELATIVE_TO);
-		ObservationTask task = new ObservationTask(getActivity(), this);
+		ObservationsTask task = new ObservationsTask(getActivity(), this);
 		task.requestClosest(new PlaceParameter(lat, longitude), builder.build());
 	}
 
