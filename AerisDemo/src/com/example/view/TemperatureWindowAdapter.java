@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
-import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.model.Marker;
+import com.hamweather.aeris.maps.AerisMarkerWindow;
 import com.hamweather.aeris.util.FileUtil;
 import com.hamweather.aeris.util.WeatherUtil;
 
@@ -17,7 +17,7 @@ import com.hamweather.aeris.util.WeatherUtil;
  * @author Ben Collins
  * 
  */
-public class TemperatureWindowAdapter implements InfoWindowAdapter {
+public class TemperatureWindowAdapter extends AerisMarkerWindow {
 	/**
 	 * Used to inflate the view.
 	 */
@@ -38,33 +38,26 @@ public class TemperatureWindowAdapter implements InfoWindowAdapter {
 		this.context = context;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.google.android.gms.maps.GoogleMap.InfoWindowAdapter#getInfoContents
-	 * (com.google.android.gms.maps.model.Marker)
-	 */
 	@Override
-	public View getInfoContents(Marker marker) {
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.google.android.gms.maps.GoogleMap.InfoWindowAdapter#getInfoWindow
-	 * (com.google.android.gms.maps.model.Marker)
-	 */
-	@Override
-	public View getInfoWindow(Marker arg0) {
+	public View getView() {
 		TextView view = (TextView) inflater.inflate(
 				R.layout.dialog_aeris_windowadapter, null);
-		view.setText(WeatherUtil.appendDegree(arg0.getSnippet()));
-		int drawable = FileUtil.getDrawableByName(arg0.getTitle(), context);
-		view.setCompoundDrawablesWithIntrinsicBounds(drawable, 0, 0, 0);
 		return view;
+	}
+
+	@Override
+	public void fillView(View view, Marker marker) {
+		TextView textView = (TextView) view;
+		TemperatureInfoData data = (TemperatureInfoData) getData(marker);
+		textView.setText(WeatherUtil.appendDegree(data.temperature));
+		textView.setCompoundDrawablesWithIntrinsicBounds(
+				FileUtil.getDrawableByName(data.icon, context), 0, 0, 0);
+
+	}
+
+	@Override
+	public void onInfoWindowPressed(Marker marker) {
+
 	}
 
 }

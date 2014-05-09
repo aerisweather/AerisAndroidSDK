@@ -1,6 +1,7 @@
 package com.example.fragment;
 
-import android.content.Intent;
+import java.util.List;
+
 import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,39 +10,44 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.demoaerisproject.R;
+import com.example.view.TemperatureInfoData;
 import com.example.view.TemperatureWindowAdapter;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.hamweather.aeris.communication.Action;
 import com.hamweather.aeris.communication.AerisCallback;
-import com.hamweather.aeris.communication.AerisCommunicationTask;
-import com.hamweather.aeris.communication.AerisRequest;
-import com.hamweather.aeris.communication.Endpoint;
 import com.hamweather.aeris.communication.EndpointType;
 import com.hamweather.aeris.communication.fields.Fields;
 import com.hamweather.aeris.communication.fields.ObservationFields;
-import com.hamweather.aeris.communication.parameter.FieldsParameter;
+import com.hamweather.aeris.communication.loaders.ObservationsTask;
+import com.hamweather.aeris.communication.loaders.ObservationsTaskCallback;
+import com.hamweather.aeris.communication.parameter.ParameterBuilder;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.location.LocationHelper;
 import com.hamweather.aeris.maps.AerisMapView;
 import com.hamweather.aeris.maps.AerisMapView.AerisMapType;
-import com.hamweather.aeris.maps.AerisMapView.OnAerisMapLongClickListener;
-import com.hamweather.aeris.maps.MapOptionsActivity;
 import com.hamweather.aeris.maps.MapViewFragment;
+import com.hamweather.aeris.maps.interfaces.OnAerisMapLongClickListener;
+import com.hamweather.aeris.maps.interfaces.OnAerisMarkerInfoWindowClickListener;
+import com.hamweather.aeris.maps.markers.AerisMarker;
+import com.hamweather.aeris.model.AerisError;
 import com.hamweather.aeris.model.AerisResponse;
 import com.hamweather.aeris.model.Observation;
 import com.hamweather.aeris.model.RelativeTo;
+import com.hamweather.aeris.response.EarthquakesResponse;
+import com.hamweather.aeris.response.FiresResponse;
 import com.hamweather.aeris.response.ObservationResponse;
+import com.hamweather.aeris.response.StormCellResponse;
+import com.hamweather.aeris.response.StormReportsResponse;
 
 public class MapFragment extends MapViewFragment implements
-		OnAerisMapLongClickListener, AerisCallback {
-	public static final int OPTIONS_ACTIVITY = 1025;
+		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
+		OnAerisMarkerInfoWindowClickListener {
 	private LocationHelper locHelper;
 	private Marker marker;
+	private TemperatureWindowAdapter infoAdapter;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,8 +69,14 @@ public class MapFragment extends MapViewFragment implements
 		Location myLocation = locHelper.getCurrentLocation();
 		mapView.moveToLocation(myLocation, 7);
 		mapView.setOnAerisMapLongClickListener(this);
-		mapView.getMap().setInfoWindowAdapter(
-				new TemperatureWindowAdapter(getActivity()));
+
+		// setup the custom info window adapter to use
+		infoAdapter = new TemperatureWindowAdapter(getActivity());
+		mapView.addWindowInfoAdapter(infoAdapter);
+
+		// setup doing something when a user presses an info window
+		// from the Aeris Point Data.
+		mapView.setOnAerisWindowClickListener(this);
 
 	}
 
@@ -77,8 +89,7 @@ public class MapFragment extends MapViewFragment implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		if (itemId == R.id.menu_weather_layers) {
-			this.startActivityForResult(new Intent(getActivity(),
-					MapOptionsActivity.class), OPTIONS_ACTIVITY);
+			mapView.startAerisMapOptionsActivity(getActivity());
 			return false;
 		} else {
 			return super.onOptionsItemSelected(item);
@@ -111,15 +122,23 @@ public class MapFragment extends MapViewFragment implements
 	 */
 	@Override
 	public void onMapLongClick(double lat, double longitude) {
-		AerisRequest request = new AerisRequest(new Endpoint(
-				EndpointType.OBSERVATIONS), Action.CLOSEST, new PlaceParameter(
-				lat, longitude), FieldsParameter.initWith(
-				ObservationFields.ICON, ObservationFields.TEMP_C,
-				ObservationFields.TEMP_F, Fields.RELATIVE_TO));
-		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
-				this, request);
+		// AerisRequest request = new AerisRequest(new Endpoint(
+		// EndpointType.OBSERVATIONS), Action.CLOSEST, new PlaceParameter(
+		// lat, longitude), FieldsParameter.initWith(
+		// ObservationFields.ICON, ObservationFields.TEMP_C,
+		// ObservationFields.TEMP_F, Fields.RELATIVE_TO));
+		// AerisCommunicationTask task = new
+		// AerisCommunicationTask(getActivity(),
+		// this, request);
+		//
+		// task.execute();
 
-		task.execute();
+		// the above using a specific object loader
+		ParameterBuilder builder = new ParameterBuilder().withFields(
+				ObservationFields.ICON, ObservationFields.TEMP_C,
+				ObservationFields.TEMP_F, Fields.RELATIVE_TO);
+		ObservationsTask task = new ObservationsTask(getActivity(), this);
+		task.requestClosest(new PlaceParameter(lat, longitude), builder.build());
 	}
 
 	/*
@@ -138,19 +157,73 @@ public class MapFragment extends MapViewFragment implements
 						response.getFirstResponse());
 				Observation ob = obResponse.getObservation();
 				RelativeTo relativeTo = obResponse.getRelativeTo();
-				MarkerOptions options = new MarkerOptions()
-						.position(new LatLng(relativeTo.lat, relativeTo.lon))
-						.icon(BitmapDescriptorFactory
-								.fromResource(R.drawable.map_indicator_blank))
-						.title(ob.icon).snippet(String.valueOf(ob.tempF))
-						.anchor(.5f, .5f);
 				if (marker != null) {
 					marker.remove();
 				}
-				marker = mapView.getMap().addMarker(options);
+				TemperatureInfoData data = new TemperatureInfoData(ob.icon,
+						String.valueOf(ob.tempF));
+				marker = infoAdapter.addGoogleMarker(mapView.getMap(),
+						relativeTo.lat, relativeTo.lon, BitmapDescriptorFactory
+								.fromResource(R.drawable.map_indicator_blank),
+						data);
 				marker.showInfoWindow();
 			}
 		}
 	}
 
+	@Override
+	public void earthquakeWindowPressed(EarthquakesResponse response,
+			AerisMarker marker) {
+		// do something with the response data.
+		Toast.makeText(getActivity(), "Earthquake pressed!", Toast.LENGTH_SHORT)
+				.show();
+	}
+
+	@Override
+	public void stormReportsWindowPressed(StormReportsResponse response,
+			AerisMarker marker) {
+		// do something with the response data.
+		Toast.makeText(getActivity(), "Storm Report pressed!",
+				Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void stormCellsWindowPressed(StormCellResponse response,
+			AerisMarker marker) {
+		// do something with the response data.
+		Toast.makeText(getActivity(), "Storm Cell pressed!", Toast.LENGTH_SHORT)
+				.show();
+	}
+
+	@Override
+	public void wildfireWindowPressed(FiresResponse response, AerisMarker marker) {
+		// do something with the response data.
+		Toast.makeText(getActivity(), "Wildfire pressed!", Toast.LENGTH_SHORT)
+				.show();
+
+	}
+
+	@Override
+	public void onObservationsFailed(AerisError arg0) {
+		Toast.makeText(getActivity(),
+				"Failed to load observation at that point", Toast.LENGTH_SHORT)
+				.show();
+
+	}
+
+	@Override
+	public void onObservationsLoaded(List<ObservationResponse> responses) {
+		ObservationResponse obResponse = responses.get(0);
+		Observation ob = obResponse.getObservation();
+		RelativeTo relativeTo = obResponse.getRelativeTo();
+		if (marker != null) {
+			marker.remove();
+		}
+		TemperatureInfoData data = new TemperatureInfoData(ob.icon,
+				String.valueOf(ob.tempF));
+		marker = infoAdapter.addGoogleMarker(mapView.getMap(), relativeTo.lat,
+				relativeTo.lon, BitmapDescriptorFactory
+						.fromResource(R.drawable.map_indicator_blank), data);
+		marker.showInfoWindow();
+	}
 }

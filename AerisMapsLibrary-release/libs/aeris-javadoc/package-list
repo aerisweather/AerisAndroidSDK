@@ -2,6 +2,7 @@ com.android.weather
 com.example.android
 com.hamweather.aeris.communication
 com.hamweather.aeris.communication.fields
+com.hamweather.aeris.communication.loaders
 com.hamweather.aeris.communication.parameter
 com.hamweather.aeris.location
 com.hamweather.aeris.logging

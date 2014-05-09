@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <item name="animation_min_speed" format="float" type="dimen">100</item>
-    <item name="animation_max_speed" format="float" type="dimen">1000</item>
-    <!--  This default speed should be imbetween the max and the min speed -->
-    <item name="animation_default_speed" format="float" type="dimen">500</item>
- 	<item name="tile_default_opacity" format="float" type="dimen">.8</item>
-    
-    <integer name="animation_end_frame_additional_time">500</integer>
-    <integer name="camera_change_millis">1500</integer>
-    <integer name="animation_tiles_to_load">10</integer>
+    <!--  Animation min speed to use in the Map options selector seekbar  -->
+    <item name="aerismaps_animation_min_speed" format="float" type="dimen">100</item>
+    <!--  Animation min speed to use in the Map options selector seekbar  -->
+    <item name="aerismaps_animation_max_speed" format="float" type="dimen">1000</item>
+    <!--  This default speed should be imbetween the max and the min speed. Animation time to wait between frames.  -->
+    <item name="aerismaps_animation_default_speed" format="float" type="dimen">500</item>
+    <!--  The default tile opacity. This Number Should be a float between 0-1 With 0 being invisible and 1 completely visible.   -->
+ 	<item name="aerismaps_tile_default_opacity" format="float" type="dimen">.8</item>
+    <!-- Time to wait between the end frame of the animation before starting the animiaton over. This is added to normal frame time per animation.  -->
+    <integer name="aerismaps_animation_end_frame_additional_time">500</integer>
+    <!--  Time to wait for camera to settle before performing new point data queries automitically by aeris.  -->
+    <integer name="aerismaps_camera_change_millis">1500</integer>
+    <!--  Total number of animation tiles to load  -->
+    <integer name="aerismaps_animation_tiles_to_load">10</integer>
 
 </resources>

@@ -15,7 +15,7 @@ import com.hamweather.aeris.communication.fields.ForecastsFields;
 import com.hamweather.aeris.communication.fields.ObservationFields;
 import com.hamweather.aeris.communication.parameter.FieldsParameter;
 import com.hamweather.aeris.communication.parameter.FilterParameter;
-import com.hamweather.aeris.communication.parameter.PLimitParamter;
+import com.hamweather.aeris.communication.parameter.PLimitParameter;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.model.AerisBatchResponse;
 import com.hamweather.aeris.response.ForecastsResponse;
@@ -43,7 +43,7 @@ public class NotificationService extends IntentService {
 						ForecastsFields.IS_DAY, ForecastsFields.MAX_TEMP_F,
 						ForecastsFields.MIN_TEMP_F, ForecastsFields.MIN_TEMP_C,
 						ForecastsFields.MAX_TEMP_C), new FilterParameter(
-						"daynight"), new PLimitParamter(2)));
+						"daynight"), new PLimitParameter(2)));
 		AerisRequest request = builder.build();
 		BatchCommunicationTask task = new BatchCommunicationTask(this, request);
 		AerisBatchResponse retval = task.executeSyncTask();
