@@ -1,5 +1,7 @@
 package com.example.fragment;
 
+import java.util.List;
+
 import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,15 +17,13 @@ import com.example.view.TemperatureInfoData;
 import com.example.view.TemperatureWindowAdapter;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Marker;
-import com.hamweather.aeris.communication.Action;
 import com.hamweather.aeris.communication.AerisCallback;
-import com.hamweather.aeris.communication.AerisCommunicationTask;
-import com.hamweather.aeris.communication.AerisRequest;
-import com.hamweather.aeris.communication.Endpoint;
 import com.hamweather.aeris.communication.EndpointType;
 import com.hamweather.aeris.communication.fields.Fields;
 import com.hamweather.aeris.communication.fields.ObservationFields;
-import com.hamweather.aeris.communication.parameter.FieldsParameter;
+import com.hamweather.aeris.communication.loaders.ObservationTask;
+import com.hamweather.aeris.communication.loaders.ObservationTaskCallback;
+import com.hamweather.aeris.communication.parameter.ParameterBuilder;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.location.LocationHelper;
 import com.hamweather.aeris.maps.AerisMapView;
@@ -32,6 +32,7 @@ import com.hamweather.aeris.maps.MapViewFragment;
 import com.hamweather.aeris.maps.interfaces.OnAerisMapLongClickListener;
 import com.hamweather.aeris.maps.interfaces.OnAerisMarkerInfoWindowClickListener;
 import com.hamweather.aeris.maps.markers.AerisMarker;
+import com.hamweather.aeris.model.AerisError;
 import com.hamweather.aeris.model.AerisResponse;
 import com.hamweather.aeris.model.Observation;
 import com.hamweather.aeris.model.RelativeTo;
@@ -42,7 +43,7 @@ import com.hamweather.aeris.response.StormCellResponse;
 import com.hamweather.aeris.response.StormReportsResponse;
 
 public class MapFragment extends MapViewFragment implements
-		OnAerisMapLongClickListener, AerisCallback,
+		OnAerisMapLongClickListener, AerisCallback, ObservationTaskCallback,
 		OnAerisMarkerInfoWindowClickListener {
 	private LocationHelper locHelper;
 	private Marker marker;
@@ -121,15 +122,23 @@ public class MapFragment extends MapViewFragment implements
 	 */
 	@Override
 	public void onMapLongClick(double lat, double longitude) {
-		AerisRequest request = new AerisRequest(new Endpoint(
-				EndpointType.OBSERVATIONS), Action.CLOSEST, new PlaceParameter(
-				lat, longitude), FieldsParameter.initWith(
-				ObservationFields.ICON, ObservationFields.TEMP_C,
-				ObservationFields.TEMP_F, Fields.RELATIVE_TO));
-		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
-				this, request);
+		// AerisRequest request = new AerisRequest(new Endpoint(
+		// EndpointType.OBSERVATIONS), Action.CLOSEST, new PlaceParameter(
+		// lat, longitude), FieldsParameter.initWith(
+		// ObservationFields.ICON, ObservationFields.TEMP_C,
+		// ObservationFields.TEMP_F, Fields.RELATIVE_TO));
+		// AerisCommunicationTask task = new
+		// AerisCommunicationTask(getActivity(),
+		// this, request);
+		//
+		// task.execute();
 
-		task.execute();
+		// the above using a specific object loader
+		ParameterBuilder builder = new ParameterBuilder().withFields(
+				ObservationFields.ICON, ObservationFields.TEMP_C,
+				ObservationFields.TEMP_F, Fields.RELATIVE_TO);
+		ObservationTask task = new ObservationTask(getActivity(), this);
+		task.requestClosest(new PlaceParameter(lat, longitude), builder.build());
 	}
 
 	/*
@@ -192,5 +201,29 @@ public class MapFragment extends MapViewFragment implements
 		Toast.makeText(getActivity(), "Wildfire pressed!", Toast.LENGTH_SHORT)
 				.show();
 
+	}
+
+	@Override
+	public void onObservationsFailed(AerisError arg0) {
+		Toast.makeText(getActivity(),
+				"Failed to load observation at that point", Toast.LENGTH_SHORT)
+				.show();
+
+	}
+
+	@Override
+	public void onObservationsLoaded(List<ObservationResponse> responses) {
+		ObservationResponse obResponse = responses.get(0);
+		Observation ob = obResponse.getObservation();
+		RelativeTo relativeTo = obResponse.getRelativeTo();
+		if (marker != null) {
+			marker.remove();
+		}
+		TemperatureInfoData data = new TemperatureInfoData(ob.icon,
+				String.valueOf(ob.tempF));
+		marker = infoAdapter.addGoogleMarker(mapView.getMap(), relativeTo.lat,
+				relativeTo.lon, BitmapDescriptorFactory
+						.fromResource(R.drawable.map_indicator_blank), data);
+		marker.showInfoWindow();
 	}
 }

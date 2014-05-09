@@ -27,7 +27,7 @@ import com.hamweather.aeris.communication.parameter.FieldsParameter;
 import com.hamweather.aeris.communication.parameter.FilterParameter;
 import com.hamweather.aeris.communication.parameter.FromParameter;
 import com.hamweather.aeris.communication.parameter.LimitParameter;
-import com.hamweather.aeris.communication.parameter.PLimitParamter;
+import com.hamweather.aeris.communication.parameter.PLimitParameter;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.communication.parameter.ToParameter;
 import com.hamweather.aeris.model.AerisBatchResponse;
@@ -47,7 +47,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	protected static final String RECENT_OBS = "recent_observations";
 	protected static final String OVERVIEW = "weather_overview";
 
-	private int currentFragment = 0; 
+	private int currentFragment = 0;
 	private static final long TEN_MINUTES = 1000 * 60 * 10;
 	private Map<String, Object> map = new HashMap<String, Object>();
 	private Map<String, Long> timeMap = new HashMap<String, Long>();
@@ -141,7 +141,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	public void performRecentsObs(AerisProgressListener listener) {
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.OBSERVATIONS_RECENT), Action.CLOSEST,
-				new PlaceParameter(getActivity()), new PLimitParamter(10));
+				new PlaceParameter(getActivity()), new PLimitParameter(10));
 		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
 				this, request);
 		if (listener != null) {
@@ -186,13 +186,12 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 				.addParameters(FieldsParameter.initWith("place")));
 		builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
 				.addParameters(new FilterParameter("daynight"),
-						new PLimitParamter(2)));
+						new PLimitParameter(2)));
 		builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
-				.addParameters(new FilterParameter("3hr"),
-						new PLimitParamter(4), FieldsParameter.initWith(
-								ForecastsFields.TEMP_F, ForecastsFields.TEMP_C,
-								ForecastsFields.ICON,
-								ForecastsFields.DATETIME_ISO, Fields.INTERVAL)));
+				.addParameters(new FilterParameter("3hr"), new PLimitParameter(
+						4), FieldsParameter.initWith(ForecastsFields.TEMP_F,
+						ForecastsFields.TEMP_C, ForecastsFields.ICON,
+						ForecastsFields.DATETIME_ISO, Fields.INTERVAL)));
 		AerisRequest request = builder.build();
 		BatchCommunicationTask task = new BatchCommunicationTask(getActivity(),
 				this, request);
