@@ -8,6 +8,7 @@ import com.example.demoaerisproject.R;
 
 public class PrefManager {
 
+	public static final String NTF_TIMESTAMP_KEY = "ntf_timestamp_key";
 	private static final String PREFERENCES = "aeris_preferences";
 	private static final String TIMESTAMP = "_timestamp";
 	private static final long TEN_MINUTES = 1000 * 60 * 10;
@@ -43,6 +44,20 @@ public class PrefManager {
 				Context.MODE_PRIVATE);
 		return prefs.getLong(key + TIMESTAMP, 0);
 
+	}
+
+	public static long getLongPreference(Context context, String key) {
+		SharedPreferences prefs = context.getSharedPreferences(PREFERENCES,
+				Context.MODE_PRIVATE);
+		return prefs.getLong(key, 0);
+	}
+
+	public static void setLongPreference(Context context, String key, long value) {
+		SharedPreferences prefs = context.getSharedPreferences(PREFERENCES,
+				Context.MODE_PRIVATE);
+		Editor editor = prefs.edit();
+		editor.putLong(key, value);
+		editor.commit();
 	}
 
 	public static boolean setPreference(Context context, String key,

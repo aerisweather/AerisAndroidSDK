@@ -2,8 +2,10 @@ package com.example.service;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.os.SystemClock;
 
 import com.example.demoaerisproject.AerisNotification;
+import com.example.preference.PrefManager;
 import com.hamweather.aeris.communication.Action;
 import com.hamweather.aeris.communication.AerisRequest;
 import com.hamweather.aeris.communication.BatchBuilder;
@@ -47,13 +49,15 @@ public class NotificationService extends IntentService {
 		AerisRequest request = builder.build();
 		BatchCommunicationTask task = new BatchCommunicationTask(this, request);
 		AerisBatchResponse retval = task.executeSyncTask();
-		if (retval.responses.size() == 2) {
+		if (retval.responses != null && retval.responses.size() == 2) {
 			ObservationResponse obResponse = new ObservationResponse(
 					retval.responses.get(0).getFirstResponse());
 			ForecastsResponse fResponse = new ForecastsResponse(
 					retval.responses.get(1).getFirstResponse());
 			AerisNotification
 					.setCustomNotification(this, obResponse, fResponse);
+			PrefManager.setLongPreference(this, PrefManager.NTF_TIMESTAMP_KEY,
+					SystemClock.elapsedRealtime());
 		}
 
 	}

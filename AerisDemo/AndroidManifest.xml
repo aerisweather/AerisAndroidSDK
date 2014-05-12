@@ -39,8 +39,13 @@
         <service
             android:name="com.example.service.NotificationService"
             android:enabled="true"
-            android:process=":aeris" />
+          />
 
+         <service
+            android:name="com.example.service.ScreenOnService"
+            android:enabled="true"
+            android:process=":aeris" />
+        
         <activity
             android:name="com.example.demoaerisproject.MainActivity"
             android:label="@string/app_name" >

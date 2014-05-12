@@ -1,20 +1,15 @@
 package com.example.demoaerisproject;
 
-import android.app.Activity;
-import android.app.AlarmManager;
 import android.app.Application;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.SystemClock;
 
 import com.example.preference.PrefManager;
 import com.example.service.NotificationService;
+import com.example.service.ScreenOnService;
 import com.hamweather.aeris.communication.AerisEngine;
 
 public class BaseApplication extends Application {
-
-	private static final int REQUEST_WEATHER_NTF = 10;
 
 	@Override
 	public void onCreate() {
@@ -28,25 +23,17 @@ public class BaseApplication extends Application {
 
 	}
 
-	public static void enableNotificationService(Context activity,
-			boolean enable) {
-		Intent intent = new Intent(activity.getApplicationContext(),
-				NotificationService.class);
-		PendingIntent sender = PendingIntent.getBroadcast(
-				activity.getApplicationContext(), REQUEST_WEATHER_NTF, intent,
-				0);
-		AlarmManager am = (AlarmManager) activity
-				.getSystemService(Activity.ALARM_SERVICE);
+	public static void enableNotificationService(Context context, boolean enable) {
+		Intent intent = new Intent(context.getApplicationContext(),
+				ScreenOnService.class);
+
 		if (enable) {
-			am.setRepeating(AlarmManager.ELAPSED_REALTIME,
-					SystemClock.elapsedRealtime(),
-					AlarmManager.INTERVAL_FIFTEEN_MINUTES, sender); //
-			activity.startService(intent);
+			context.startService(intent);
+			context.startService(new Intent(context.getApplicationContext(),
+					NotificationService.class));
 		} else {
-			// stop service
-			activity.stopService(intent);
-			am.cancel(sender);
-			AerisNotification.cancelNotification(activity);
+			AerisNotification.cancelNotification(context);
+			context.stopService(intent);
 		}
 	}
 
