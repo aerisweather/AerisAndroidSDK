@@ -14,7 +14,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 Sources of Intellectual Property Included in the Aeris iOS Weather Framework
 ============================================================================
 
-The Aeris Android Demo Application is issued by HAMweather under the BSD license above. Below is a list of certain publicly available software that is the source of intellectual property in the Aeris Android SDK, along with the licensing terms that pertain to those sources of IP. This list is for informational purposes only and is not intended to represent an exhaustive list of third party contributions to the Aeris Android SDK.
+The Aeris Android SDK is issued by HAMweather under the BSD license above. Below is a list of certain publicly available software that is the source of intellectual property in the Aeris Android SDK, along with the licensing terms that pertain to those sources of IP. This list is for informational purposes only and is not intended to represent an exhaustive list of third party contributions to the Aeris Android SDK.
 
 1.	**Google Gson:** https://code.google.com/p/google-gson/source/browse/trunk/gson/LICENSE
 
