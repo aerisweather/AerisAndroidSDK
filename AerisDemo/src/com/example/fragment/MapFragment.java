@@ -67,7 +67,7 @@ public class MapFragment extends MapViewFragment implements
 	private void initMap() {
 		locHelper = new LocationHelper(getActivity());
 		Location myLocation = locHelper.getCurrentLocation();
-		mapView.moveToLocation(myLocation, 7);
+		mapView.moveToLocation(myLocation, 9);
 		mapView.setOnAerisMapLongClickListener(this);
 
 		// setup the custom info window adapter to use

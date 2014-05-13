@@ -16,11 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.AbsListView.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -32,7 +30,6 @@ import com.example.fragment.ObservationFragment;
 import com.example.fragment.OverviewFragment;
 import com.example.fragment.RecentObsFragment;
 import com.example.fragment.RefreshInterface;
-import com.example.fragment.SplashFragment;
 import com.example.fragment.WeekendFragment;
 import com.example.menudrawer.NavDrawerItem;
 import com.example.menudrawer.NavDrawerListAdapter;
@@ -43,6 +40,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
 	private Fragment currentFragment;
+	private LinearLayout mDrawer;
 
 	// nav drawer title
 	private CharSequence mDrawerTitle;
@@ -72,15 +70,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
-		// ImageView Setup
-		ImageView imageView = new ImageView(this);
-		// setting image resource
-		imageView.setImageResource(R.drawable.home_feature_aerisapi);
-		// setting image position
-		imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.WRAP_CONTENT));
-		imageView.setScaleType(ScaleType.CENTER_INSIDE);
-		mDrawerList.addHeaderView(imageView, null, false);
+		mDrawer = (LinearLayout) findViewById(R.id.llDrawer);
 		navDrawerItems = new ArrayList<NavDrawerItem>();
 
 		for (int i = 0; i < navMenuTitles.length; i++) {
@@ -161,7 +151,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// if nav drawer is opened, hide the action items
-		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawer);
 		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
 		return super.onPrepareOptionsMenu(menu);
 	}
@@ -198,28 +188,26 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 		// update the main content by replacing fragments
 		Fragment fragment = null;
 		switch (position) {
-		case 0: // picture
-			fragment = new SplashFragment();
-			break;
-		case 1:
+
+		case 0:
 			fragment = new ObservationFragment();
 			break;
-		case 2:
+		case 1:
 			fragment = new ExtForecastFragment();
 			break;
-		case 3:
+		case 2:
 			fragment = new RecentObsFragment();
 			break;
-		case 4:
+		case 3:
 			fragment = new NearbyObsFragment();
 			break;
-		case 5:
+		case 4:
 			fragment = new OverviewFragment();
 			break;
-		case 6:
+		case 5:
 			fragment = new WeekendFragment();
 			break;
-		case 7:
+		case 6:
 			fragment = new MapFragment();
 			break;
 		default:
@@ -235,12 +223,9 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 			mDrawerList.setItemChecked(position, true);
 			mDrawerList.setSelection(position);
 			HeadlessFragment.getFragment(this).setCurrentFragment(position);
-			if (position > 0) {
-				setTitle(navMenuTitles[position - 1]);
-			} else {
-				setTitle(navMenuTitles[position]);
-			}
-			mDrawerLayout.closeDrawer(mDrawerList);
+			mDrawerLayout.closeDrawer(mDrawer);
+			setTitle(navMenuTitles[position]);
+
 		} else {
 			Toast.makeText(this, "This feature has not been implented yet.",
 					Toast.LENGTH_SHORT).show();
