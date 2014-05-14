@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.customendpoint.CustomSunmoonFragment;
 import com.example.fragment.ExtForecastFragment;
 import com.example.fragment.HeadlessFragment;
 import com.example.fragment.MapFragment;
@@ -209,6 +210,9 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 			break;
 		case 6:
 			fragment = new MapFragment();
+			break;
+		case 7:
+			fragment = new CustomSunmoonFragment();
 			break;
 		default:
 			break;
