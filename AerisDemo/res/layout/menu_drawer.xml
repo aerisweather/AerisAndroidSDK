@@ -9,24 +9,41 @@
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+    </FrameLayout>
 
     <!-- Listview to display slider menu -->
 
-<LinearLayout
-    android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/llDrawer"
-          android:layout_gravity="left"
-           android:background="@color/dark_blue"
-    >
+	<LinearLayout
+	    android:layout_width="280dp"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:id="@+id/llDrawer"
+	    android:layout_gravity="left"
+	    android:background="@color/dark_blue">
     
     <ImageView 
+        android:id="@+id/ibSearch"
          android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:src="@drawable/home_feature_aerisapi"
+        android:scaleType="fitXY"
         />
+  
+        
+	    <TextView 
+	        android:id="@+id/tvDrawerLocation"
+	        android:paddingLeft="5dp"
+	        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+       		android:textColor="@color/list_item_title"
+	        android:layout_width="match_parent"
+	        android:drawablePadding="5dp"
+	        android:layout_height="48dp"
+	        android:background="@drawable/list_selector"
+	        android:drawableLeft="@android:drawable/ic_menu_mylocation"
+	        android:text="My Location"
+	        android:gravity="left|center"
+	        />
     <ListView
         android:id="@+id/list_slidermenu"
         android:layout_width="280dp"

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -36,7 +37,8 @@ import com.example.menudrawer.NavDrawerItem;
 import com.example.menudrawer.NavDrawerListAdapter;
 import com.hamweather.aeris.logging.Logger;
 
-public class DrawerActivity extends Activity implements OnItemClickListener {
+public class DrawerActivity extends Activity implements OnItemClickListener,
+		OnClickListener {
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -72,6 +74,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
 		mDrawer = (LinearLayout) findViewById(R.id.llDrawer);
+		findViewById(R.id.tvDrawerLocation).setOnClickListener(this);
 		navDrawerItems = new ArrayList<NavDrawerItem>();
 
 		for (int i = 0; i < navMenuTitles.length; i++) {
@@ -241,5 +244,10 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		displayView(arg2);
+	}
+
+	@Override
+	public void onClick(View v) {
+		startActivity(new Intent(this, LocationSearchActivity.class));
 	}
 }

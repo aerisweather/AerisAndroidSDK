@@ -37,6 +37,11 @@ public class ScreenOnService extends Service {
 		return null;
 	}
 
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		return Service.START_STICKY;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 

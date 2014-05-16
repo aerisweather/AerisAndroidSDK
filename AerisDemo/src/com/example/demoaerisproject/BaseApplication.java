@@ -1,15 +1,18 @@
 package com.example.demoaerisproject;
 
+import android.app.AlarmManager;
 import android.app.Application;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
 import com.example.preference.PrefManager;
-import com.example.service.NotificationService;
 import com.example.service.ScreenOnService;
 import com.hamweather.aeris.communication.AerisEngine;
 
 public class BaseApplication extends Application {
+
+	private static final int REQUEST_NTF_SERVICE = 10;
 
 	@Override
 	public void onCreate() {
@@ -26,15 +29,30 @@ public class BaseApplication extends Application {
 	public static void enableNotificationService(Context context, boolean enable) {
 		Intent intent = new Intent(context.getApplicationContext(),
 				ScreenOnService.class);
-
+		// if (Build.VERSION.SDK_INT > 18) {
+		AlarmManager manager = (AlarmManager) context
+				.getSystemService(Context.ALARM_SERVICE);
+		PendingIntent pendingIntent = PendingIntent.getService(context,
+				REQUEST_NTF_SERVICE, intent, 0);
 		if (enable) {
-			context.startService(intent);
-			context.startService(new Intent(context.getApplicationContext(),
-					NotificationService.class));
+			manager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME, 0,
+					AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
 		} else {
 			AerisNotification.cancelNotification(context);
-			context.stopService(intent);
+			manager.cancel(pendingIntent);
 		}
+		// } else {
+		// if (enable) {
+		// context.startService(intent);
+		// context.startService(new Intent(
+		// context.getApplicationContext(),
+		// NotificationService.class));
+		// } else {
+		// AerisNotification.cancelNotification(context);
+		// context.stopService(intent);
+		// }
+		// }
+
 	}
 
 }
