@@ -15,24 +15,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.db.MyPlacesDb;
+import com.example.demoaerisproject.AerisDialog.AerisDialogOKListener;
 import com.example.listview.PlacesAdapter;
 import com.hamweather.aeris.communication.AerisProgressListener;
 import com.hamweather.aeris.communication.loaders.PlacesTask;
 import com.hamweather.aeris.communication.loaders.PlacesTaskCallback;
 import com.hamweather.aeris.communication.parameter.ParameterBuilder;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
+import com.hamweather.aeris.communication.parameter.QueryParameter;
 import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.AerisError;
 import com.hamweather.aeris.response.PlacesResponse;
 import com.hamweather.aeris.util.ValidationUtil;
 
 public class LocationSearchActivity extends Activity implements
-		OnClickListener, TextWatcher, PlacesTaskCallback, AerisProgressListener {
+		OnClickListener, TextWatcher, PlacesTaskCallback,
+		AerisProgressListener, OnItemClickListener, AerisDialogOKListener {
 
 	private static final int TEXT_CHANGED_MSG = 1;
 	private EditText searchEditText;
@@ -53,6 +59,7 @@ public class LocationSearchActivity extends Activity implements
 		searchButton.setOnClickListener(this);
 		searchListView = (ListView) this.findViewById(R.id.lvSearch);
 		searchEditText.addTextChangedListener(this);
+		searchListView.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -78,7 +85,6 @@ public class LocationSearchActivity extends Activity implements
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		// TODO time lapse before making task call.
 		typeHandler.removeMessages(TEXT_CHANGED_MSG);
 		if (s.length() > 2) {
 			typeHandler
@@ -105,9 +111,7 @@ public class LocationSearchActivity extends Activity implements
 		task.withDebug(true);
 		task.withProgress(this);
 		text = text.trim();
-		Logger.i("TEST", "performPlaceSearch() --> " + text);
 		ParameterBuilder builder = new ParameterBuilder();
-
 		if (ValidationUtil.isValidCoordinate(text)) {
 			String[] temp = text.split(",");
 			try {
@@ -123,11 +127,11 @@ public class LocationSearchActivity extends Activity implements
 			}
 
 		} else if (ValidationUtil.isValidZipcode(text)) {
-			task.requestClosest(new PlaceParameter(text));
+			task.requestSearch(new QueryParameter("zipcode:" + text));
 		} else if (!ValidationUtil.isNumber(text)
 				&& ValidationUtil.isValidPlaceString(text)) {
 			String temp[] = text.split(",");
-			builder.withLimit(50).withFilter("poi").withSort("pop:1");
+			builder.withLimit(50).withFilter("cities").withSort("pop:-1");
 			if (temp.length == 1) {
 				builder.withQuery("name:^" + text.toLowerCase());
 				task.requestSearch(builder.build());
@@ -212,4 +216,30 @@ public class LocationSearchActivity extends Activity implements
 		if (this != null)
 			setProgressBarIndeterminateVisibility(true);
 	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		PlacesResponse place = searchAdapter.getItem(position);
+		AerisDialog dialog = new AerisDialog();
+		dialog.withListener(this)
+				.withMessage("Would you like to add this as your locations?")
+				.withObject(place).withType(1);
+		dialog.show(getFragmentManager(), "myloc");
+
+	}
+
+	@Override
+	public void onOKPressed(int type, Object object) {
+		if (type == 1) {
+			PlacesResponse response = (PlacesResponse) object;
+			MyPlacesDb db = new MyPlacesDb(this);
+			long id = db.insertPlaces(response, true);
+			Toast.makeText(this, "Inserted row= " + id, Toast.LENGTH_LONG)
+					.show();
+			db.close();
+
+		}
+	}
+
 }
