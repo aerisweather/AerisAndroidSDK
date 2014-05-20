@@ -47,7 +47,7 @@
              />
         
         <activity
-            android:name="com.example.demoaerisproject.MainActivity"
+            android:name="com.example.demoaerisproject.MyLocsActivity"
             android:label="@string/app_name" />
         <activity
             android:name="com.example.demoaerisproject.LocationSearchActivity"

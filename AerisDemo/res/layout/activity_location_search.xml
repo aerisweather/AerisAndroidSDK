@@ -24,9 +24,9 @@
 
     <ImageButton
         android:id="@+id/ibSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/list_selector"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@null"
         android:padding="5dp"
         android:src="@android:drawable/ic_menu_search" />
 

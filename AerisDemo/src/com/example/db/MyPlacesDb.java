@@ -10,9 +10,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
-import com.hamweather.aeris.model.Place;
-import com.hamweather.aeris.response.PlacesResponse;
-
 public class MyPlacesDb extends SQLiteOpenHelper {
 
 	public static final String DATABASE_NAME = "AerisPlaces.db";
@@ -31,7 +28,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL(MyPlace.CREATE_TABLE_STMT);
+		db.execSQL(MyPlaceTable.CREATE_TABLE_STMT);
 	}
 
 	@Override
@@ -39,13 +36,14 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 
 	}
 
-	public static final class MyPlace implements android.provider.BaseColumns {
+	public static final class MyPlaceTable implements
+			android.provider.BaseColumns {
 		/** The name of this table */
 		public static final String TABLE = "aeris_places";
 
-		static final String CREATE_TABLE_STMT = "CREATE TABLE " + MyPlace.TABLE
-				+ "(" + " " + BaseColumns._ID + " " + PlacesColumns._ID_TYPE
-				+ "," + " " + PlacesColumns.NAME + " "
+		static final String CREATE_TABLE_STMT = "CREATE TABLE "
+				+ MyPlaceTable.TABLE + "(" + " " + BaseColumns._ID + " "
+				+ PlacesColumns._ID_TYPE + "," + " " + PlacesColumns.NAME + " "
 				+ PlacesColumns.NAME_TYPE + ", " + PlacesColumns.STATE + " "
 				+ PlacesColumns.STATE_TYPE + ", " + PlacesColumns.COUNTRY + " "
 				+ PlacesColumns.COUNTRY_TYPE + ", " + PlacesColumns.MY_CITY
@@ -65,45 +63,45 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 
 	}
 
-	public long insertPlaces(PlacesResponse response, boolean myPlace) {
+	public long insertPlaces(String name, String state, String country,
+			boolean myPlace) {
 		SQLiteDatabase sqldb = getWritableDatabase();
 		ContentValues args = new ContentValues();
-		Place place = response.getPlace();
-		args.put(PlacesColumns.NAME, place.name);
-		if (place.state != null)
-			args.put(PlacesColumns.STATE, place.state);
-		if (place.country != null)
-			args.put(PlacesColumns.COUNTRY, place.country);
+		args.put(PlacesColumns.NAME, name);
+		if (state != null)
+			args.put(PlacesColumns.STATE, state);
+		if (country != null)
+			args.put(PlacesColumns.COUNTRY, country);
 
 		args.put(PlacesColumns.MY_CITY, myPlace);
-		Cursor cursor = sqldb.query(MyPlace.TABLE,
+		Cursor cursor = sqldb.query(MyPlaceTable.TABLE,
 				new String[] { PlacesColumns.NAME }, PlacesColumns.NAME
 						+ "=? AND " + PlacesColumns.COUNTRY + "=?",
-				new String[] { place.name, place.country }, null, null, null);
+				new String[] { name, country }, null, null, null);
 		long id = -1;
 		if (cursor != null && cursor.moveToFirst()) {
-			id = sqldb.update(MyPlace.TABLE, args, PlacesColumns.NAME
+			id = sqldb.update(MyPlaceTable.TABLE, args, PlacesColumns.NAME
 					+ "=? AND " + PlacesColumns.COUNTRY + "=?", new String[] {
-					place.name, place.country });
+					name, country });
 		} else {
-			id = sqldb.insert(MyPlace.TABLE, null, args);
+			id = sqldb.insert(MyPlaceTable.TABLE, null, args);
 		}
 		if (myPlace) {
 			ContentValues changeArgs = new ContentValues();
 			changeArgs.put(PlacesColumns.MY_CITY, false);
 			// get all rows, update them to false minus the correct one.
-			sqldb.update(MyPlace.TABLE, args, PlacesColumns.NAME + "!=? OR "
-					+ PlacesColumns.COUNTRY + "!=?", new String[] { place.name,
-					place.country });
+			sqldb.update(MyPlaceTable.TABLE, changeArgs, PlacesColumns.NAME
+					+ "!=? OR " + PlacesColumns.COUNTRY + "!=?", new String[] {
+					name, country });
 		}
 		return id;
 	}
 
-	public boolean deletePlace(PlacesResponse data) {
-		Place place = data.getPlace();
+	public boolean deletePlace(MyPlace place) {
+
 		if (place != null && place.name != null && place.country != null) {
 			SQLiteDatabase sqldb = getWritableDatabase();
-			int affected = sqldb.delete(MyPlace.TABLE, PlacesColumns.NAME
+			int affected = sqldb.delete(MyPlaceTable.TABLE, PlacesColumns.NAME
 					+ "=? AND " + PlacesColumns.COUNTRY + "=?", new String[] {
 					place.name, place.country });
 			return affected > 0;
@@ -113,15 +111,15 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 
 	public Cursor getMyPlaceCursor() {
 		SQLiteDatabase sqldb = getWritableDatabase();
-		Cursor cursor = sqldb.query(MyPlace.TABLE, null, PlacesColumns.MY_CITY
-				+ "=1", null, null, null, null);
+		Cursor cursor = sqldb.query(MyPlaceTable.TABLE, null,
+				PlacesColumns.MY_CITY + "=1", null, null, null, null);
 		return cursor;
 	}
 
-	public Place getMyPlace() {
+	public MyPlace getMyPlace() {
 		Cursor cursor = getMyPlaceCursor();
 		if (cursor != null && cursor.moveToFirst()) {
-			Place place = new Place();
+			MyPlace place = new MyPlace();
 			place.name = cursor.getString(cursor
 					.getColumnIndex(PlacesColumns.NAME));
 			place.state = cursor.getString(cursor
@@ -133,20 +131,24 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 		return null;
 	}
 
-	public List<Place> getPlaces() {
+	public List<MyPlace> getPlaces() {
 		SQLiteDatabase sqldb = getWritableDatabase();
-		Cursor cursor = sqldb.query(MyPlace.TABLE, null, null, null, null,
+		Cursor cursor = sqldb.query(MyPlaceTable.TABLE, null, null, null, null,
 				null, null);
-		List<Place> retval = new ArrayList<Place>();
-		if (cursor != null && cursor.moveToFirst()) {
-			Place place = new Place();
-			place.name = cursor.getString(cursor
-					.getColumnIndex(PlacesColumns.NAME));
-			place.state = cursor.getString(cursor
-					.getColumnIndex(PlacesColumns.STATE));
-			place.country = cursor.getString(cursor
-					.getColumnIndex(PlacesColumns.COUNTRY));
-			retval.add(place);
+		List<MyPlace> retval = new ArrayList<MyPlace>();
+		if (cursor != null) {
+			while (cursor.moveToNext()) {
+				MyPlace place = new MyPlace();
+				place.name = cursor.getString(cursor
+						.getColumnIndex(PlacesColumns.NAME));
+				place.state = cursor.getString(cursor
+						.getColumnIndex(PlacesColumns.STATE));
+				place.country = cursor.getString(cursor
+						.getColumnIndex(PlacesColumns.COUNTRY));
+				place.myLoc = cursor.getInt(cursor
+						.getColumnIndex(PlacesColumns.MY_CITY)) == 1;
+				retval.add(place);
+			}
 		}
 		return retval;
 	}

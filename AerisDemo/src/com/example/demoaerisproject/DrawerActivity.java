@@ -271,6 +271,8 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 	public void onClick(View v) {
 		if (v.getId() == R.id.tvDrawerSearch) {
 			startActivity(new Intent(this, LocationSearchActivity.class));
+		} else if (v.getId() == R.id.tvDrawerMyLocs) {
+			startActivity(new Intent(this, MyLocsActivity.class));
 		}
 	}
 

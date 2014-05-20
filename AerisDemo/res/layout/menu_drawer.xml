@@ -29,13 +29,8 @@
         android:src="@drawable/home_feature_aerisapi"
         android:scaleType="fitXY"
         />
-  
-        
-	   
-	    
 
 	 <LinearLayout
-	     
 	     android:layout_width="match_parent"
 	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"

@@ -5,16 +5,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
@@ -24,6 +29,8 @@ import android.widget.Toast;
 
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.AerisDialog.AerisDialogOKListener;
+import com.example.edithelp.EditTextEnterListener;
+import com.example.edithelp.EnterPressedDelegate;
 import com.example.listview.PlacesAdapter;
 import com.hamweather.aeris.communication.AerisProgressListener;
 import com.hamweather.aeris.communication.loaders.PlacesTask;
@@ -33,13 +40,16 @@ import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.communication.parameter.QueryParameter;
 import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.AerisError;
+import com.hamweather.aeris.model.Place;
 import com.hamweather.aeris.response.PlacesResponse;
 import com.hamweather.aeris.util.ValidationUtil;
 
 public class LocationSearchActivity extends Activity implements
 		OnClickListener, TextWatcher, PlacesTaskCallback,
-		AerisProgressListener, OnItemClickListener, AerisDialogOKListener {
+		AerisProgressListener, OnItemClickListener, AerisDialogOKListener,
+		EnterPressedDelegate {
 
+	private static final int PLACE_DIALOG = 1;
 	private static final int TEXT_CHANGED_MSG = 1;
 	private EditText searchEditText;
 	private ImageButton searchButton;
@@ -60,12 +70,36 @@ public class LocationSearchActivity extends Activity implements
 		searchListView = (ListView) this.findViewById(R.id.lvSearch);
 		searchEditText.addTextChangedListener(this);
 		searchListView.setOnItemClickListener(this);
+		searchEditText.setOnKeyListener(new EditTextEnterListener(this));
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu_search, menu);
+		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		// Respond to the action bar's Up/Home button
+		case R.id.menuLocateMe:
+			if (task != null) {
+				task.cancel(true);
+			}
+			task = new PlacesTask(this, this);
+			task.withDebug(true);
+			task.withProgress(this);
+			ParameterBuilder builder = new ParameterBuilder().withLimit(25)
+					.withRadius("50mi");
+			task.requestClosest(new PlaceParameter(this), builder.build());
+			InputMethodManager imm = (InputMethodManager) this
+					.getSystemService(Context.INPUT_METHOD_SERVICE);
+			imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
+			return true;
+		case R.id.menuMyLocs:
+			startActivity(new Intent(this, MyLocsActivity.class));
+			return true;
 		case android.R.id.home:
 			super.onBackPressed();
 			return true;
@@ -224,22 +258,32 @@ public class LocationSearchActivity extends Activity implements
 		AerisDialog dialog = new AerisDialog();
 		dialog.withListener(this)
 				.withMessage("Would you like to add this as your locations?")
-				.withObject(place).withType(1);
+				.withObject(place).withType(PLACE_DIALOG);
 		dialog.show(getFragmentManager(), "myloc");
 
 	}
 
 	@Override
 	public void onOKPressed(int type, Object object) {
-		if (type == 1) {
+		if (type == PLACE_DIALOG) {
 			PlacesResponse response = (PlacesResponse) object;
-			MyPlacesDb db = new MyPlacesDb(this);
-			long id = db.insertPlaces(response, true);
-			Toast.makeText(this, "Inserted row= " + id, Toast.LENGTH_LONG)
-					.show();
-			db.close();
+			Place place = response.getPlace();
+			if (place != null) {
+				MyPlacesDb db = new MyPlacesDb(this);
+				long id = db.insertPlaces(place.name, place.state,
+						place.country, true);
+				Toast.makeText(this, "Inserted row= " + id, Toast.LENGTH_LONG)
+						.show();
+				db.close();
+			}
 
 		}
+	}
+
+	@Override
+	public void onEnterPressed(int viewId, EditText edit) {
+		typeHandler.removeMessages(TEXT_CHANGED_MSG);
+		performPlaceSearch(edit.getEditableText().toString());
 	}
 
 }

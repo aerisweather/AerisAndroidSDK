@@ -1,9 +1,5 @@
 package com.example.demoaerisproject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -62,12 +58,7 @@ public class AerisNotification {
 		remoteViews.setImageViewResource(R.id.ivNtfIcon,
 				FileUtil.getDrawableByName(ob.icon, context));
 
-		// remoteViews.setTextViewText(R.id.tvNtfDesc, ob.weather);
-		Date date = new Date();
-		SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm aa",
-				Locale.getDefault());
-		remoteViews.setTextViewText(R.id.tvNtfDesc, timeFormat.format(date));
-
+		remoteViews.setTextViewText(R.id.tvNtfDesc, ob.weather);
 		remoteViews.setTextViewText(R.id.tvNtfTemp,
 				WeatherUtil.appendDegree(ob.tempF));
 
