@@ -7,8 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.example.preference.PrefManager;
-import com.example.service.ScreenOnService;
+import com.example.service.NotificationService;
 import com.hamweather.aeris.communication.AerisEngine;
+import com.hamweather.aeris.logging.Logger;
 
 public class BaseApplication extends Application {
 
@@ -28,16 +29,20 @@ public class BaseApplication extends Application {
 
 	public static void enableNotificationService(Context context, boolean enable) {
 		Intent intent = new Intent(context.getApplicationContext(),
-				ScreenOnService.class);
+				NotificationService.class);
 		// if (Build.VERSION.SDK_INT > 18) {
 		AlarmManager manager = (AlarmManager) context
 				.getSystemService(Context.ALARM_SERVICE);
 		PendingIntent pendingIntent = PendingIntent.getService(context,
 				REQUEST_NTF_SERVICE, intent, 0);
 		if (enable) {
+			Logger.d("TEST", "NTF started -->");
+
 			manager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME, 0,
 					AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
 		} else {
+			Logger.d("TEST", "NTF canceled -->");
+
 			AerisNotification.cancelNotification(context);
 			manager.cancel(pendingIntent);
 		}

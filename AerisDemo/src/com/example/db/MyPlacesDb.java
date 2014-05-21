@@ -10,6 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
+import com.example.demoaerisproject.BaseApplication;
+import com.example.demoaerisproject.R;
+import com.example.preference.PrefManager;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
 
 public class MyPlacesDb extends SQLiteOpenHelper {
@@ -17,8 +20,11 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 	public static final String DATABASE_NAME = "AerisPlaces.db";
 	public static final int DB_VERSION = 1;
 
+	private Context context;
+
 	public MyPlacesDb(Context context) {
 		super(context, DATABASE_NAME, null, DB_VERSION);
+		this.context = context;
 	}
 
 	/*
@@ -97,6 +103,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 		} else {
 			id = sqldb.insert(MyPlaceTable.TABLE, null, args);
 		}
+		cursor.close();
 		if (myPlace) {
 			ContentValues changeArgs = new ContentValues();
 			changeArgs.put(PlacesColumns.MY_CITY, false);
@@ -104,6 +111,9 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 			sqldb.update(MyPlaceTable.TABLE, changeArgs, PlacesColumns.NAME
 					+ "!=? OR " + PlacesColumns.COUNTRY + "!=?", new String[] {
 					name, country });
+			BaseApplication.enableNotificationService(context, PrefManager
+.getBoolPreference(context,
+							context.getString(R.string.pref_ntf_enabled)));
 			MyPlacesSubject.getInstance().notifyObservers(null);
 		}
 		return id;
@@ -138,6 +148,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 					.getColumnIndex(PlacesColumns.STATE));
 			place.country = cursor.getString(cursor
 					.getColumnIndex(PlacesColumns.COUNTRY));
+			cursor.close();
 			if (place.state != null) {
 				return new PlaceParameter(String.format("%s,%s,%s", place.name,
 						place.state, place.country));
@@ -164,6 +175,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 					.getColumnIndex(PlacesColumns.LATITUDE));
 			place.longitude = cursor.getDouble(cursor
 					.getColumnIndex(PlacesColumns.LONGITUDE));
+			cursor.close();
 			return place;
 		}
 		return null;
@@ -191,6 +203,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 						.getColumnIndex(PlacesColumns.LONGITUDE));
 				retval.add(place);
 			}
+			cursor.close();
 		}
 		return retval;
 	}

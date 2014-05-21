@@ -48,10 +48,10 @@
         
         <activity
             android:name="com.example.demoaerisproject.MyLocsActivity"
-            android:label="@string/app_name" />
+            android:label="@string/activity_my_locs" />
         <activity
             android:name="com.example.demoaerisproject.LocationSearchActivity"
-            android:label="@string/app_name" />
+            android:label="@string/activity_search" />
         
         <activity
             android:name="com.example.demoaerisproject.SettingsActivity"

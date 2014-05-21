@@ -20,6 +20,7 @@ import com.hamweather.aeris.communication.parameter.FieldsParameter;
 import com.hamweather.aeris.communication.parameter.FilterParameter;
 import com.hamweather.aeris.communication.parameter.PLimitParameter;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
+import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.AerisBatchResponse;
 import com.hamweather.aeris.response.ForecastsResponse;
 import com.hamweather.aeris.response.ObservationResponse;
@@ -32,6 +33,8 @@ public class NotificationService extends IntentService {
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
+		Logger.d("TEST", "NTF launched -->");
+
 		BatchBuilder builder = new BatchBuilder();
 		MyPlacesDb db = new MyPlacesDb(this);
 		PlaceParameter place = db.getMyPlaceParameter();
@@ -39,6 +42,7 @@ public class NotificationService extends IntentService {
 		if (place == null) {
 			place = new PlaceParameter(this);
 		}
+		Logger.d("TEST", "Grabbed from the db -->");
 		builder.addGlobalParameter(place);
 		builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
 				Action.CLOSEST).addParameters(FieldsParameter.initWith(
@@ -53,6 +57,7 @@ public class NotificationService extends IntentService {
 						ForecastsFields.MAX_TEMP_C), new FilterParameter(
 						"daynight"), new PLimitParameter(2)));
 		AerisRequest request = builder.build();
+		request.withDebugOutput(true);
 		BatchCommunicationTask task = new BatchCommunicationTask(this, request);
 		AerisBatchResponse retval = task.executeSyncTask();
 		if (retval.responses != null && retval.responses.size() == 2) {

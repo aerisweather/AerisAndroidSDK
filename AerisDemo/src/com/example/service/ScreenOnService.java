@@ -20,7 +20,6 @@ public class ScreenOnService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		Logger.d(TAG, "Screen On Service started...");
 		receiver = new ScreenOnReceiver();
 		IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
 		filter.setPriority(999);
