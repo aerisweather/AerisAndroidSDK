@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.example.db.MyPlace;
+import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.R;
 import com.example.fragment.RefreshInterface;
 import com.hamweather.aeris.communication.AerisCustomCommunicationTask;
@@ -43,11 +45,14 @@ public class CustomSunmoonFragment extends Fragment implements
 
 	private void performRequest() {
 		if (task == null) {
+			MyPlacesDb db = new MyPlacesDb(getActivity());
+			MyPlace place = db.getMyPlace();
+			String id = place.getTextDisplay(":auto");
 			ParameterBuilder builder = new ParameterBuilder()
 					.withLimit(NUMBER_OF_DAYS).withFrom("now")
 					.withTo("+" + NUMBER_OF_DAYS + "days");
 			AerisRequest request = new AerisRequest(new Endpoint("sunmoon"),
-					":auto", builder.build());
+					id, builder.build());
 			request.withDebugOutput(true);
 			task = new AerisCustomCommunicationTask(getActivity(), this,
 					request);

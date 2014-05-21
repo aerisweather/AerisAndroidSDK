@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
+import com.hamweather.aeris.communication.parameter.PlaceParameter;
+
 public class MyPlacesDb extends SQLiteOpenHelper {
 
 	public static final String DATABASE_NAME = "AerisPlaces.db";
@@ -46,7 +48,10 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 				+ PlacesColumns._ID_TYPE + "," + " " + PlacesColumns.NAME + " "
 				+ PlacesColumns.NAME_TYPE + ", " + PlacesColumns.STATE + " "
 				+ PlacesColumns.STATE_TYPE + ", " + PlacesColumns.COUNTRY + " "
-				+ PlacesColumns.COUNTRY_TYPE + ", " + PlacesColumns.MY_CITY
+				+ PlacesColumns.COUNTRY_TYPE + ", " + PlacesColumns.LATITUDE
+				+ " " + PlacesColumns.LATITUDE_TYPE + ", "
+				+ PlacesColumns.LONGITUDE + " " + PlacesColumns.LONGITUDE_TYPE
+				+ ", " + PlacesColumns.MY_CITY
 				+ " " + PlacesColumns.MY_CITY_TYPE + ");";
 	}
 
@@ -60,10 +65,15 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 		static final String COUNTRY_TYPE = "TEXT";
 		public static final String MY_CITY = "mycity";
 		static final String MY_CITY_TYPE = "BOOLEAN";
+		public static final String LATITUDE = "latitude";
+		static final String LATITUDE_TYPE = "REAL";
+		public static final String LONGITUDE = "longitude";
+		static final String LONGITUDE_TYPE = "REAL";
 
 	}
 
 	public long insertPlaces(String name, String state, String country,
+			double lat, double lon,
 			boolean myPlace) {
 		SQLiteDatabase sqldb = getWritableDatabase();
 		ContentValues args = new ContentValues();
@@ -72,7 +82,8 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 			args.put(PlacesColumns.STATE, state);
 		if (country != null)
 			args.put(PlacesColumns.COUNTRY, country);
-
+		args.put(PlacesColumns.LATITUDE, lat);
+		args.put(PlacesColumns.LONGITUDE, lon);
 		args.put(PlacesColumns.MY_CITY, myPlace);
 		Cursor cursor = sqldb.query(MyPlaceTable.TABLE,
 				new String[] { PlacesColumns.NAME }, PlacesColumns.NAME
@@ -93,6 +104,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 			sqldb.update(MyPlaceTable.TABLE, changeArgs, PlacesColumns.NAME
 					+ "!=? OR " + PlacesColumns.COUNTRY + "!=?", new String[] {
 					name, country });
+			MyPlacesSubject.getInstance().notifyObservers(null);
 		}
 		return id;
 	}
@@ -116,6 +128,28 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 		return cursor;
 	}
 
+	public PlaceParameter getMyPlaceParameter() {
+		Cursor cursor = getMyPlaceCursor();
+		if (cursor != null && cursor.moveToFirst()) {
+			MyPlace place = new MyPlace();
+			place.name = cursor.getString(cursor
+					.getColumnIndex(PlacesColumns.NAME));
+			place.state = cursor.getString(cursor
+					.getColumnIndex(PlacesColumns.STATE));
+			place.country = cursor.getString(cursor
+					.getColumnIndex(PlacesColumns.COUNTRY));
+			if (place.state != null) {
+				return new PlaceParameter(String.format("%s,%s,%s", place.name,
+						place.state, place.country));
+			} else {
+				return new PlaceParameter(String.format("%s,%s", place.name,
+						place.country));
+			}
+
+		}
+		return null;
+	}
+
 	public MyPlace getMyPlace() {
 		Cursor cursor = getMyPlaceCursor();
 		if (cursor != null && cursor.moveToFirst()) {
@@ -126,6 +160,10 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 					.getColumnIndex(PlacesColumns.STATE));
 			place.country = cursor.getString(cursor
 					.getColumnIndex(PlacesColumns.COUNTRY));
+			place.latitude = cursor.getDouble(cursor
+					.getColumnIndex(PlacesColumns.LATITUDE));
+			place.longitude = cursor.getDouble(cursor
+					.getColumnIndex(PlacesColumns.LONGITUDE));
 			return place;
 		}
 		return null;
@@ -147,6 +185,10 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 						.getColumnIndex(PlacesColumns.COUNTRY));
 				place.myLoc = cursor.getInt(cursor
 						.getColumnIndex(PlacesColumns.MY_CITY)) == 1;
+				place.latitude = cursor.getDouble(cursor
+						.getColumnIndex(PlacesColumns.LATITUDE));
+				place.longitude = cursor.getDouble(cursor
+						.getColumnIndex(PlacesColumns.LONGITUDE));
 				retval.add(place);
 			}
 		}

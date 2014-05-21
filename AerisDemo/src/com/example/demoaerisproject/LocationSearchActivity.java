@@ -40,6 +40,7 @@ import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.communication.parameter.QueryParameter;
 import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.AerisError;
+import com.hamweather.aeris.model.AerisLocation;
 import com.hamweather.aeris.model.Place;
 import com.hamweather.aeris.response.PlacesResponse;
 import com.hamweather.aeris.util.ValidationUtil;
@@ -268,12 +269,11 @@ public class LocationSearchActivity extends Activity implements
 		if (type == PLACE_DIALOG) {
 			PlacesResponse response = (PlacesResponse) object;
 			Place place = response.getPlace();
+			AerisLocation loc = response.getLocation();
 			if (place != null) {
 				MyPlacesDb db = new MyPlacesDb(this);
-				long id = db.insertPlaces(place.name, place.state,
-						place.country, true);
-				Toast.makeText(this, "Inserted row= " + id, Toast.LENGTH_LONG)
-						.show();
+				db.insertPlaces(place.name, place.state,
+						place.country, loc.lat, loc.lon, true);
 				db.close();
 			}
 

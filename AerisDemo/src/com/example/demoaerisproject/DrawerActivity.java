@@ -31,7 +31,10 @@ import android.widget.Toast;
 
 import com.example.customendpoint.CustomSunmoonFragment;
 import com.example.db.MyLocLoader;
+import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb.PlacesColumns;
+import com.example.db.MyPlacesSubject;
+import com.example.db.MyPlacesSubject.MyPlacesObserver;
 import com.example.fragment.ExtForecastFragment;
 import com.example.fragment.HeadlessFragment;
 import com.example.fragment.MapFragment;
@@ -47,7 +50,7 @@ import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.Place;
 
 public class DrawerActivity extends Activity implements OnItemClickListener,
-		OnClickListener, LoaderCallbacks<Cursor> {
+		OnClickListener, LoaderCallbacks<Cursor>, MyPlacesObserver {
 	private static final int MY_LOC_LOADER = 0;
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -75,7 +78,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.menu_drawer);
 		HeadlessFragment.getFragment(this);
-
+		MyPlacesSubject.getInstance().registerObserver(this);
 		this.setProgressBarIndeterminateVisibility(false);
 		mTitle = mDrawerTitle = getTitle();
 
@@ -132,8 +135,13 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 	}
 
 	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		MyPlacesSubject.getInstance().unregisterObserver(this);
+	}
+
+	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
 		getLoaderManager().initLoader(MY_LOC_LOADER, null, this);
 	}
@@ -316,5 +324,18 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 	@Override
 	public void onLoaderReset(Loader<Cursor> loader) {
 
+	}
+
+	@Override
+	public void notifyMyPlaceChanged(MyPlace place) {
+		HeadlessFragment.getFragment(this).clearStored();
+		if (currentFragment != null) {
+			try {
+				RefreshInterface refresh = (RefreshInterface) currentFragment;
+				refresh.refreshPressed();
+			} catch (ClassCastException ex) {
+				Logger.e("Refresh", ex.getMessage(), ex);
+			}
+		}
 	}
 }

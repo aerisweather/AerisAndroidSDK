@@ -87,7 +87,8 @@ public class MyLocsActivity extends Activity implements OnLongClickListener,
 		int index = group.indexOfChild(radioButton);
 		MyPlacesDb db = new MyPlacesDb(this);
 		MyPlace place = places.get(index);
-		db.insertPlaces(place.name, place.state, place.country, true);
+		db.insertPlaces(place.name, place.state, place.country, place.latitude,
+				place.longitude, true);
 		db.close();
 	}
 

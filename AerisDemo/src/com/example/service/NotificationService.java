@@ -4,6 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.os.SystemClock;
 
+import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.AerisNotification;
 import com.example.preference.PrefManager;
 import com.hamweather.aeris.communication.Action;
@@ -32,7 +33,13 @@ public class NotificationService extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent intent) {
 		BatchBuilder builder = new BatchBuilder();
-		builder.addGlobalParameter(new PlaceParameter(this));
+		MyPlacesDb db = new MyPlacesDb(this);
+		PlaceParameter place = db.getMyPlaceParameter();
+		db.close();
+		if (place == null) {
+			place = new PlaceParameter(this);
+		}
+		builder.addGlobalParameter(place);
 		builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
 				Action.CLOSEST).addParameters(FieldsParameter.initWith(
 				ObservationFields.ICON, ObservationFields.TEMP_F,
@@ -40,7 +47,6 @@ public class NotificationService extends IntentService {
 				ObservationFields.WEATHER_SHORT)));
 		builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
 				.addParameters(
-
 				FieldsParameter.initWith(Fields.INTERVAL,
 						ForecastsFields.IS_DAY, ForecastsFields.MAX_TEMP_F,
 						ForecastsFields.MIN_TEMP_F, ForecastsFields.MIN_TEMP_C,

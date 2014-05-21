@@ -12,10 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.db.MyPlace;
+import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.R;
 import com.example.view.TemperatureInfoData;
 import com.example.view.TemperatureWindowAdapter;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.hamweather.aeris.communication.AerisCallback;
 import com.hamweather.aeris.communication.EndpointType;
@@ -44,7 +47,7 @@ import com.hamweather.aeris.response.StormReportsResponse;
 
 public class MapFragment extends MapViewFragment implements
 		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
-		OnAerisMarkerInfoWindowClickListener {
+		OnAerisMarkerInfoWindowClickListener, RefreshInterface {
 	private LocationHelper locHelper;
 	private Marker marker;
 	private TemperatureWindowAdapter infoAdapter;
@@ -61,13 +64,22 @@ public class MapFragment extends MapViewFragment implements
 		return view;
 	}
 
+
 	/**
 	 * Inits the map with specific setting
 	 */
 	private void initMap() {
-		locHelper = new LocationHelper(getActivity());
-		Location myLocation = locHelper.getCurrentLocation();
-		mapView.moveToLocation(myLocation, 9);
+		MyPlacesDb db = new MyPlacesDb(getActivity());
+		MyPlace place = db.getMyPlace();
+		if (place == null) {
+			locHelper = new LocationHelper(getActivity());
+			Location myLocation = locHelper.getCurrentLocation();
+			mapView.moveToLocation(myLocation, 9);
+		} else {
+			mapView.moveToLocation(new LatLng(place.latitude, place.longitude),
+					9);
+		}
+
 		mapView.setOnAerisMapLongClickListener(this);
 
 		// setup the custom info window adapter to use
@@ -225,5 +237,19 @@ public class MapFragment extends MapViewFragment implements
 				relativeTo.lon, BitmapDescriptorFactory
 						.fromResource(R.drawable.map_indicator_blank), data);
 		marker.showInfoWindow();
+	}
+
+	@Override
+	public void refreshPressed() {
+		MyPlacesDb db = new MyPlacesDb(getActivity());
+		MyPlace place = db.getMyPlace();
+		if (place != null) {
+			mapView.moveToLocation(new LatLng(place.latitude, place.longitude),
+					9);
+		} else {
+			locHelper = new LocationHelper(getActivity());
+			Location myLocation = locHelper.getCurrentLocation();
+			mapView.moveToLocation(myLocation, 9);
+		}
 	}
 }
