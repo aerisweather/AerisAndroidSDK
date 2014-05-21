@@ -9,7 +9,6 @@ import android.content.Intent;
 import com.example.preference.PrefManager;
 import com.example.service.NotificationService;
 import com.hamweather.aeris.communication.AerisEngine;
-import com.hamweather.aeris.logging.Logger;
 
 public class BaseApplication extends Application {
 
@@ -36,13 +35,9 @@ public class BaseApplication extends Application {
 		PendingIntent pendingIntent = PendingIntent.getService(context,
 				REQUEST_NTF_SERVICE, intent, 0);
 		if (enable) {
-			Logger.d("TEST", "NTF started -->");
-
 			manager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME, 0,
 					AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
 		} else {
-			Logger.d("TEST", "NTF canceled -->");
-
 			AerisNotification.cancelNotification(context);
 			manager.cancel(pendingIntent);
 		}
