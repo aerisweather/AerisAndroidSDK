@@ -39,6 +39,7 @@
             style="@style/AerisImageViewLegend"
             android:contentDescription="@string/iv_legends" />
 
+        
         <ImageView
             android:id="@+id/ivPolyLegend"
             style="@style/AerisImageViewLegend"

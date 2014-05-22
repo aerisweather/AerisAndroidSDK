@@ -48,6 +48,23 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginBottom="10dp"
+	        android:text="@string/map_options_polygon_data"
+	        android:textAppearance="?android:attr/textAppearanceLarge"
+	        android:textColor="#FFF"
+	        android:textStyle="bold"
+	        android:textSize="18sp" />
+
+	    <RadioGroup
+	        android:id="@+id/mapoptions_rg_polygon_data"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="10dp" >
+	    </RadioGroup>
+	    
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="10dp"
 	        android:layout_marginTop="10dp"
 	        android:text="@string/map_options_googleoptions"
 	        android:textAppearance="?android:attr/textAppearanceLarge"

@@ -8,8 +8,10 @@
     <string name="iv_animation">Maps Animation</string>
 	<string name="rb_test_text">Test</string>
     <!-- Map options -->
+    <string name="map_options_activity_name">Map Options</string>
     <string name="map_options_overlays">Overlays</string>
     <string name="map_options_point_data">Point Data</string>
+    <string name="map_options_polygon_data">Polygon Data</string>
     <string name="map_options_googleoptions">MAP TYPE</string>
     <string name="map_options_opacity">Opacity</string>
     <string name="map_options_animation">Animation</string>
