@@ -81,7 +81,9 @@ public class MapFragment extends MapViewFragment implements
 		}
 
 		mapView.setOnAerisMapLongClickListener(this);
-
+		mapView.hidePointLayer();
+		mapView.hidePolygonLayer();
+		// mapView.hideAnimationButton();
 		// setup the custom info window adapter to use
 		infoAdapter = new TemperatureWindowAdapter(getActivity());
 		mapView.addWindowInfoAdapter(infoAdapter);

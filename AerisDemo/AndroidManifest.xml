@@ -57,8 +57,12 @@
             android:name="com.example.demoaerisproject.SettingsActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity android:name="com.hamweather.aeris.maps.MapOptionsActivity" >
-        </activity>
+        
+        
+        <activity android:name="com.hamweather.aeris.maps.MapOptionsActivity" 
+            android:label="@string/map_options_activity_name"/>
+        
+        
         <activity
             android:name="com.example.demoaerisproject.DrawerActivity"
             android:label="@string/app_name"
