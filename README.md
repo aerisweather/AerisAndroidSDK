@@ -28,6 +28,13 @@ View the latest installation instructions via the [developers site](http://www.h
 ![Google Play](http://www.hamweather.com/images/docs/aeris-android/google_play.png)
 7. Finally, right click on your DemoAerisProject and add the AerisMapsSDK-release to it just as you added the google-play-services_lib to the AerisMapsSDK. This is also how you would add the Android Maps library to a project you wish to use it with.
 
+#### Aeris API Configuration for the AerisDemo App
+You will need to configure AerisDemo to use your unique credentials in order to access the Aeris API. This requires you to [register](http://www.hamweather.com/support/documentation/aeris/) yourself and your application with the Aeris API, which will provide you with a unique client ID (to identify you) and a secret key (to identify your application). If you have not yet registered your android application with Aeris, you will need to [register](http://www.hamweather.com/support/documentation/aeris/).
+
+1. [Sign up](http://www.hamweather.com/products/aeris-api/pricing/) for the Aeris API service. Developer accounts are Free.
+2. [Log in](http://www.hamweather.com/account/member) to your account to register your application for an API access key. Each application requires its own unique access key. Refer to this [knowledge base article](http://helpdesk.hamweather.com/entries/20793392-How-do-I-access-the-Aeris-API-now-that-I-ve-signed-up-for-an-account-) for further information.
+   * The DemoApp namespace/package name can be found around line 3 of the manifest.xml file and will look similiar too: **com.example.demoaerisproject**
+3. Add the client_id and the secret_key to the res/values/strings.xml of the Demo application. Specifically, the aeris_client_id and aeris_client_secret values.
 
 #### Google Maps Configuration for the AerisDemo App
 1. The Aeris Maps Library project currently supports Google maps, but google maps must be configured for your work spaces SHA1 key. To do this you must setup Google Maps in the Google Maps API Console. You must configure this SHA1 [here](https://code.google.com/apis/console/?noredirect) in the console. 
