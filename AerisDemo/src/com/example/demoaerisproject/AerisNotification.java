@@ -20,7 +20,7 @@ public class AerisNotification {
 	private static RemoteViews remoteViews;
 
 	/**
-	 * Sets the notification for the upload.
+	 * Sets the notification for the observation
 	 * 
 	 * @param working
 	 *            true if the progress should show, false otherwise

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+  <item android:id="@+id/menuLocateMe"
+      	android:title="Locate me"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        android:showAsAction="ifRoom"/>
+  
+  <item android:id="@+id/menuMyLocs"
+      	android:title="My Locations"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:showAsAction="ifRoom"
+        />
+</menu>

@@ -2,12 +2,17 @@ package com.example.demoaerisproject;
 
 import java.util.ArrayList;
 
+import org.apache.commons.lang3.text.WordUtils;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Intent;
+import android.content.Loader;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -15,15 +20,21 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.AbsListView.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.customendpoint.CustomSunmoonFragment;
+import com.example.db.MyLocLoader;
+import com.example.db.MyPlace;
+import com.example.db.MyPlacesDb.PlacesColumns;
+import com.example.db.MyPlacesSubject;
+import com.example.db.MyPlacesSubject.MyPlacesObserver;
 import com.example.fragment.ExtForecastFragment;
 import com.example.fragment.HeadlessFragment;
 import com.example.fragment.MapFragment;
@@ -32,17 +43,20 @@ import com.example.fragment.ObservationFragment;
 import com.example.fragment.OverviewFragment;
 import com.example.fragment.RecentObsFragment;
 import com.example.fragment.RefreshInterface;
-import com.example.fragment.SplashFragment;
 import com.example.fragment.WeekendFragment;
 import com.example.menudrawer.NavDrawerItem;
 import com.example.menudrawer.NavDrawerListAdapter;
 import com.hamweather.aeris.logging.Logger;
+import com.hamweather.aeris.model.Place;
 
-public class DrawerActivity extends Activity implements OnItemClickListener {
+public class DrawerActivity extends Activity implements OnItemClickListener,
+		OnClickListener, LoaderCallbacks<Cursor>, MyPlacesObserver {
+	private static final int MY_LOC_LOADER = 0;
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
 	private Fragment currentFragment;
+	private LinearLayout mDrawer;
 
 	// nav drawer title
 	private CharSequence mDrawerTitle;
@@ -52,6 +66,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 
 	// slide menu items
 	private String[] navMenuTitles;
+	private TextView myLocTextView;
 
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
@@ -63,7 +78,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.menu_drawer);
 		HeadlessFragment.getFragment(this);
-
+		MyPlacesSubject.getInstance().registerObserver(this);
 		this.setProgressBarIndeterminateVisibility(false);
 		mTitle = mDrawerTitle = getTitle();
 
@@ -72,15 +87,10 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
-		// ImageView Setup
-		ImageView imageView = new ImageView(this);
-		// setting image resource
-		imageView.setImageResource(R.drawable.home_feature_aerisapi);
-		// setting image position
-		imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.WRAP_CONTENT));
-		imageView.setScaleType(ScaleType.CENTER_INSIDE);
-		mDrawerList.addHeaderView(imageView, null, false);
+		mDrawer = (LinearLayout) findViewById(R.id.llDrawer);
+		myLocTextView = (TextView) findViewById(R.id.tvDrawerLocation);
+		findViewById(R.id.tvDrawerSearch).setOnClickListener(this);
+		findViewById(R.id.tvDrawerMyLocs).setOnClickListener(this);
 		navDrawerItems = new ArrayList<NavDrawerItem>();
 
 		for (int i = 0; i < navMenuTitles.length; i++) {
@@ -121,6 +131,19 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 			// on first time display view for first nav item
 			displayView(HeadlessFragment.getFragment(this).getCurrentFragment());
 		}
+
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		MyPlacesSubject.getInstance().unregisterObserver(this);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		getLoaderManager().initLoader(MY_LOC_LOADER, null, this);
 	}
 
 	@Override
@@ -161,7 +184,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// if nav drawer is opened, hide the action items
-		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawer);
 		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
 		return super.onPrepareOptionsMenu(menu);
 	}
@@ -198,29 +221,30 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 		// update the main content by replacing fragments
 		Fragment fragment = null;
 		switch (position) {
-		case 0: // picture
-			fragment = new SplashFragment();
-			break;
-		case 1:
+
+		case 0:
 			fragment = new ObservationFragment();
 			break;
-		case 2:
+		case 1:
 			fragment = new ExtForecastFragment();
 			break;
-		case 3:
+		case 2:
 			fragment = new RecentObsFragment();
 			break;
-		case 4:
+		case 3:
 			fragment = new NearbyObsFragment();
 			break;
-		case 5:
+		case 4:
 			fragment = new OverviewFragment();
 			break;
-		case 6:
+		case 5:
 			fragment = new WeekendFragment();
 			break;
-		case 7:
+		case 6:
 			fragment = new MapFragment();
+			break;
+		case 7:
+			fragment = new CustomSunmoonFragment();
 			break;
 		default:
 			break;
@@ -235,12 +259,9 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 			mDrawerList.setItemChecked(position, true);
 			mDrawerList.setSelection(position);
 			HeadlessFragment.getFragment(this).setCurrentFragment(position);
-			if (position > 0) {
-				setTitle(navMenuTitles[position - 1]);
-			} else {
-				setTitle(navMenuTitles[position]);
-			}
-			mDrawerLayout.closeDrawer(mDrawerList);
+			mDrawerLayout.closeDrawer(mDrawer);
+			setTitle(navMenuTitles[position]);
+
 		} else {
 			Toast.makeText(this, "This feature has not been implented yet.",
 					Toast.LENGTH_SHORT).show();
@@ -252,5 +273,69 @@ public class DrawerActivity extends Activity implements OnItemClickListener {
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		displayView(arg2);
+	}
+
+	@Override
+	public void onClick(View v) {
+		if (v.getId() == R.id.tvDrawerSearch) {
+			startActivity(new Intent(this, LocationSearchActivity.class));
+		} else if (v.getId() == R.id.tvDrawerMyLocs) {
+			startActivity(new Intent(this, MyLocsActivity.class));
+		}
+	}
+
+	@Override
+	public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+
+		switch (id) {
+		case MY_LOC_LOADER:
+			return new MyLocLoader(this);
+		default:
+
+			return null;
+		}
+	}
+
+	@Override
+	public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+		if (cursor != null && cursor.moveToFirst()) {
+			Place place = new Place();
+			place.name = cursor.getString(cursor
+					.getColumnIndex(PlacesColumns.NAME));
+			place.state = cursor.getString(cursor
+					.getColumnIndex(PlacesColumns.STATE));
+			place.country = cursor.getString(cursor
+					.getColumnIndex(PlacesColumns.COUNTRY));
+			String text = "My Location Not Set";
+			if (place.state != null && place.state.length() > 0) {
+				text = String.format("%s, %s, %s",
+						WordUtils.capitalize(place.name, ' '),
+						place.state.toUpperCase(), place.country.toUpperCase());
+			} else {
+				text = String.format("%s, %s",
+						WordUtils.capitalize(place.name, ' ', '-'),
+						place.country.toUpperCase());
+			}
+			myLocTextView.setText(text);
+		}
+		getLoaderManager().destroyLoader(loader.getId());
+	}
+
+	@Override
+	public void onLoaderReset(Loader<Cursor> loader) {
+
+	}
+
+	@Override
+	public void notifyMyPlaceChanged(MyPlace place) {
+		HeadlessFragment.getFragment(this).clearStored();
+		if (currentFragment != null) {
+			try {
+				RefreshInterface refresh = (RefreshInterface) currentFragment;
+				refresh.refreshPressed();
+			} catch (ClassCastException ex) {
+				Logger.e("Refresh", ex.getMessage(), ex);
+			}
+		}
 	}
 }

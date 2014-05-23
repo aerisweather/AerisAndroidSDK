@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.demoaerisproject"
-    android:versionCode="096"
-    android:versionName="0.9.6" >
+    android:versionCode="097"
+    android:versionName="0.9.7" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -39,18 +39,30 @@
         <service
             android:name="com.example.service.NotificationService"
             android:enabled="true"
-            android:process=":aeris" />
+          />
 
+         <service
+            android:name="com.example.service.ScreenOnService"
+            android:enabled="true"
+             />
+        
         <activity
-            android:name="com.example.demoaerisproject.MainActivity"
-            android:label="@string/app_name" >
-        </activity>
+            android:name="com.example.demoaerisproject.MyLocsActivity"
+            android:label="@string/activity_my_locs" />
+        <activity
+            android:name="com.example.demoaerisproject.LocationSearchActivity"
+            android:label="@string/activity_search" />
+        
         <activity
             android:name="com.example.demoaerisproject.SettingsActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity android:name="com.hamweather.aeris.maps.MapOptionsActivity" >
-        </activity>
+        
+        
+        <activity android:name="com.hamweather.aeris.maps.MapOptionsActivity" 
+            android:label="@string/map_options_activity_name"/>
+        
+        
         <activity
             android:name="com.example.demoaerisproject.DrawerActivity"
             android:label="@string/app_name"

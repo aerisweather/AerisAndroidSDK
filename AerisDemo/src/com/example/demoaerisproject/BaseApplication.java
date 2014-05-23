@@ -1,12 +1,10 @@
 package com.example.demoaerisproject;
 
-import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Application;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.SystemClock;
 
 import com.example.preference.PrefManager;
 import com.example.service.NotificationService;
@@ -14,7 +12,7 @@ import com.hamweather.aeris.communication.AerisEngine;
 
 public class BaseApplication extends Application {
 
-	private static final int REQUEST_WEATHER_NTF = 10;
+	private static final int REQUEST_NTF_SERVICE = 10;
 
 	@Override
 	public void onCreate() {
@@ -28,26 +26,33 @@ public class BaseApplication extends Application {
 
 	}
 
-	public static void enableNotificationService(Context activity,
-			boolean enable) {
-		Intent intent = new Intent(activity.getApplicationContext(),
+	public static void enableNotificationService(Context context, boolean enable) {
+		Intent intent = new Intent(context.getApplicationContext(),
 				NotificationService.class);
-		PendingIntent sender = PendingIntent.getBroadcast(
-				activity.getApplicationContext(), REQUEST_WEATHER_NTF, intent,
-				0);
-		AlarmManager am = (AlarmManager) activity
-				.getSystemService(Activity.ALARM_SERVICE);
+		// if (Build.VERSION.SDK_INT > 18) {
+		AlarmManager manager = (AlarmManager) context
+				.getSystemService(Context.ALARM_SERVICE);
+		PendingIntent pendingIntent = PendingIntent.getService(context,
+				REQUEST_NTF_SERVICE, intent, 0);
 		if (enable) {
-			am.setRepeating(AlarmManager.ELAPSED_REALTIME,
-					SystemClock.elapsedRealtime(),
-					AlarmManager.INTERVAL_FIFTEEN_MINUTES, sender); //
-			activity.startService(intent);
+			manager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME, 0,
+					AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
 		} else {
-			// stop service
-			activity.stopService(intent);
-			am.cancel(sender);
-			AerisNotification.cancelNotification(activity);
+			AerisNotification.cancelNotification(context);
+			manager.cancel(pendingIntent);
 		}
+		// } else {
+		// if (enable) {
+		// context.startService(intent);
+		// context.startService(new Intent(
+		// context.getApplicationContext(),
+		// NotificationService.class));
+		// } else {
+		// AerisNotification.cancelNotification(context);
+		// context.stopService(intent);
+		// }
+		// }
+
 	}
 
 }

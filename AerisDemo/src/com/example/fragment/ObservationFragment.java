@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
@@ -46,8 +45,6 @@ public class ObservationFragment extends AerisFragment {
 	private SmallForecastView intervalView3;
 	private SmallForecastView intervalView4;
 
-	private LinearLayout contentContainer;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -67,8 +64,7 @@ public class ObservationFragment extends AerisFragment {
 		pressureView = (TwoPartView) rootView.findViewById(R.id.viewPressure);
 		todayView = (DayNightView) rootView.findViewById(R.id.viewToday);
 		nightView = (DayNightView) rootView.findViewById(R.id.viewTonight);
-		this.contentContainer = (LinearLayout) rootView
-				.findViewById(R.id.llLoadedInfo);
+
 		intervalView1 = (SmallForecastView) rootView
 				.findViewById(R.id.viewInterval1);
 		intervalView2 = (SmallForecastView) rootView
@@ -83,13 +79,12 @@ public class ObservationFragment extends AerisFragment {
 	@Override
 	public void showProgress() {
 		super.showProgress();
-		contentContainer.setVisibility(View.INVISIBLE);
+		
 	}
 
 	@Override
 	public void hideProgress() {
 		super.hideProgress();
-		contentContainer.setVisibility(View.VISIBLE);
 
 	}
 

@@ -10,6 +10,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 
+import com.example.db.MyPlacesDb;
 import com.hamweather.aeris.communication.Action;
 import com.hamweather.aeris.communication.AerisCallback;
 import com.hamweather.aeris.communication.AerisCommunicationTask;
@@ -104,7 +105,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 
 	public void performWeatherOverview(AerisProgressListener listener) {
 		BatchBuilder builder = new BatchBuilder();
-		builder.addGlobalParameter(new PlaceParameter(getActivity()));
+		builder.addGlobalParameter(this.getPlaceParameter());
 		builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
 				Action.CLOSEST).addParameters(FieldsParameter.initWith("ob")));
 		builder.addEndpoint(new Endpoint(EndpointType.PLACES, Action.CLOSEST)
@@ -123,9 +124,11 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	}
 
 	public void performNearbyObs(AerisProgressListener listener) {
+
 		AerisRequest request = new AerisRequest(new Endpoint(
-				EndpointType.OBSERVATIONS), Action.CLOSEST, new PlaceParameter(
-				getActivity()), FieldsParameter.initWith(
+				EndpointType.OBSERVATIONS), Action.CLOSEST,
+				getPlaceParameter(),
+				FieldsParameter.initWith(
 				ObservationFields.TEMP_C, ObservationFields.TEMP_F,
 				ObservationFields.ICON, ObservationFields.WEATHER_SHORT,
 				Fields.PLACE, ObservationFields.DATETIME), new LimitParameter(
@@ -141,7 +144,8 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	public void performRecentsObs(AerisProgressListener listener) {
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.OBSERVATIONS_RECENT), Action.CLOSEST,
-				new PlaceParameter(getActivity()), new PLimitParameter(10));
+				getPlaceParameter(),
+				new PLimitParameter(10));
 		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
 				this, request);
 		if (listener != null) {
@@ -152,8 +156,8 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 
 	public void performExtForecast(AerisProgressListener listener) {
 		AerisRequest request = new AerisRequest(new Endpoint(
-				EndpointType.FORECASTS), Action.CLOSEST, new PlaceParameter(
-				getActivity()), FieldsParameter.initWith(Fields.INTERVAL,
+				EndpointType.FORECASTS), Action.CLOSEST, getPlaceParameter(),
+				FieldsParameter.initWith(Fields.INTERVAL,
 				ForecastsFields.WEATHER, ForecastsFields.MAX_TEMP_F,
 				ForecastsFields.ICON, ForecastsFields.DATETIME_ISO,
 				ForecastsFields.MIN_TEMP_F), new FilterParameter("7"),
@@ -168,8 +172,8 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 
 	public void performWeekendForecast(AerisProgressListener listener) {
 		AerisRequest request = new AerisRequest(new Endpoint(
-				EndpointType.FORECASTS), Action.CLOSEST, new PlaceParameter(
-				getActivity()), new FilterParameter("daynight"),
+				EndpointType.FORECASTS), Action.CLOSEST, getPlaceParameter(),
+				new FilterParameter("daynight"),
 				new FromParameter("friday"), new ToParameter("+3days"));
 		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
 				this, request);
@@ -179,7 +183,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 
 	public void performDetailedObservation(AerisProgressListener listener) {
 		BatchBuilder builder = new BatchBuilder();
-		builder.addGlobalParameter(new PlaceParameter(getActivity()));
+		builder.addGlobalParameter(getPlaceParameter());
 		builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
 				Action.CLOSEST).addParameters(FieldsParameter.initWith("ob")));
 		builder.addEndpoint(new Endpoint(EndpointType.PLACES, Action.CLOSEST)
@@ -265,6 +269,21 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 
 	public void setCurrentFragment(int currentFragment) {
 		this.currentFragment = currentFragment;
+	}
+
+	public void clearStored() {
+		map.clear();
+		timeMap.clear();
+	}
+
+	private PlaceParameter getPlaceParameter() {
+		MyPlacesDb db = new MyPlacesDb(getActivity());
+		PlaceParameter place = db.getMyPlaceParameter();
+		db.close();
+		if (place == null) {
+			place = new PlaceParameter(getActivity());
+		}
+		return place;
 	}
 
 }

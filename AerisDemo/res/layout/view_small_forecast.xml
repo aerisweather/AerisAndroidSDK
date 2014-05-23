@@ -11,7 +11,7 @@
         android:background="@color/lighter_gray"
         android:gravity="center"
         android:padding="5dp"
-        android:text="6pm"
+        android:text=""
         android:textColor="#ffffff"
         android:textSize="14sp" />
 
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/blizzard" />
+        android:src="@drawable/clear" />
 
     <TextView
         android:id="@+id/tvSmForeTemp"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="5dp"
-        android:text="27"
+        android:text=""
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="bold" />

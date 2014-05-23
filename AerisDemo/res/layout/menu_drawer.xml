@@ -9,18 +9,109 @@
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+    </FrameLayout>
 
     <!-- Listview to display slider menu -->
 
+	<LinearLayout
+	    android:layout_width="280dp"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:id="@+id/llDrawer"
+	    android:layout_gravity="left"
+	    android:background="@color/dark_blue">
+    
+    <ImageView 
+        android:id="@+id/ibSearch"
+         android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_feature_aerisapi"
+        android:scaleType="fitXY"
+        />
+
+	 <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:orientation="horizontal"
+	     >
+	     
+	     <TextView
+	         android:id="@+id/tvDrawerSearch"
+	         android:background="@drawable/list_selector"
+	         android:padding="5dp"
+	         android:paddingLeft="5dp"
+	         android:layout_width="0dp"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1"
+	         android:textColor="@color/list_item_title"
+	         android:gravity="center_vertical" 
+	         android:text="Search"
+	         android:drawablePadding="5dp"
+	         android:drawableLeft="@android:drawable/ic_menu_search"
+	         />
+	     
+	       <View 
+		     android:layout_width="1dp"
+		     android:layout_height="match_parent"
+		     android:background="#777"/>
+	       <TextView 
+	         android:id="@+id/tvDrawerMyLocs"
+             android:paddingLeft="5dp"
+             android:padding="5dp"
+	         android:layout_width="0dp"
+	         android:textColor="@color/list_item_title"
+	         android:background="@drawable/list_selector"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1"
+	         android:drawablePadding="5dp"
+	         android:gravity="center_vertical" 
+	         android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
+	         android:text="My Locs"  />
+	     
+	 </LinearLayout>
+	 
+	 <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="2dp"
+	     android:layout_marginBottom="10dp"
+	     android:background="#777"/>
+ 	  <TextView 
+	        android:id="@+id/tvDrawerLocation"
+	        android:paddingLeft="5dp"
+	        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+       		android:textColor="@color/list_item_title"
+	        android:layout_width="match_parent"
+	        android:drawablePadding="5dp"
+	        android:layout_height="48dp"
+	        android:background="@drawable/list_selector"
+	        android:drawableLeft="@android:drawable/ic_menu_mylocation"
+	        android:text="My Location"
+	        android:gravity="left|center"
+	        />
+	  <TextView 
+	        android:paddingLeft="5dp"
+	        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+       		android:textColor="@color/list_item_title"
+	        android:layout_width="match_parent"
+	        android:drawablePadding="5dp"
+	        android:layout_height="48dp"
+	        android:background="@drawable/list_selector"
+	        android:text="Catalog"
+	        android:gravity="left|center"
+	        />
+	  <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="2dp"
+	     android:background="#777"/>
     <ListView
         android:id="@+id/list_slidermenu"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:background="@color/dark_blue"
+        android:padding="5dp"
         android:choiceMode="singleChoice"
         android:divider="@color/light_gray"
         android:dividerHeight="1dp" />
-
+	</LinearLayout>
 </android.support.v4.widget.DrawerLayout>
