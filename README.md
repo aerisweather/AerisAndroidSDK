@@ -33,7 +33,7 @@ You will need to configure AerisDemo to use your unique credentials in order to 
 
 1. [Sign up](http://www.hamweather.com/products/aeris-api/pricing/) for the Aeris API service. Developer accounts are Free.
 2. [Log in](http://www.hamweather.com/account/member) to your account to register your application for an API access key. Each application requires its own unique access key. Refer to this [knowledge base article](http://helpdesk.hamweather.com/entries/20793392-How-do-I-access-the-Aeris-API-now-that-I-ve-signed-up-for-an-account-) for further information.
-   * The DemoApp namespace/package name can be found around line 3 of the manifest.xml file and will look similiar too: **com.example.demoaerisproject**
+   * The DemoApp namespace/package name can be found around line 3 of the manifest.xml file and will look similiar too: **com.example.demoaerisproject**<br/><br/>![Register App](http://www.hamweather.com/blog/wp-content/uploads/2014/05/API_KEYS1.png)<br/>
 3. Add the client_id and the secret_key to the res/values/strings.xml of the Demo application. Specifically, the aeris_client_id and aeris_client_secret values.
 
 #### Google Maps Configuration for the AerisDemo App
