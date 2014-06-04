@@ -15,7 +15,7 @@ import com.hamweather.aeris.model.AerisResponse;
 import com.hamweather.aeris.model.ForecastPeriod;
 import com.hamweather.aeris.response.ForecastsResponse;
 
-public class ExtForecastFragment extends AerisFragment{
+public class ExtForecastFragment extends AerisFragment {
 
 	ListView listView;
 	ForecastAdapter adapter;
@@ -36,7 +36,7 @@ public class ExtForecastFragment extends AerisFragment{
 			return;
 		}
 		if (endpoint == EndpointType.FORECASTS) {
-			if (response.success && response.getError() == null) {
+			if (response.isSuccessfulWithResponses()) {
 				ForecastsResponse fResponse = new ForecastsResponse(
 						response.getFirstResponse());
 				periods = fResponse.getPeriods();
@@ -52,12 +52,10 @@ public class ExtForecastFragment extends AerisFragment{
 		}
 	}
 
-
 	@Override
 	void performRequest() {
 		headlessFragment.performExtForecast(this);
 	}
-
 
 	@Override
 	EndpointType getEndpointType() {

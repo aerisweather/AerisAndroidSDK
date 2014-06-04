@@ -36,7 +36,7 @@ public class RecentObsFragment extends AerisFragment implements AerisCallback {
 			return;
 		}
 		if (endpoint == EndpointType.OBSERVATIONS_RECENT) {
-			if (response.success && response.getError() == null) {
+			if (response.isSuccessfulWithResponses()) {
 				ObRecentResponse fResponse = new ObRecentResponse(
 						response.getFirstResponse());
 				periods = fResponse.getPeriods();
