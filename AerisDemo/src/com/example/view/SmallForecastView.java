@@ -31,7 +31,12 @@ public class SmallForecastView extends LinearLayout {
 	public void setForecast(ForecastPeriod p) {
 		iconImageView.setImageResource(FileUtil.getDrawableByName(p.icon,
 				getContext()));
-		temperatureTextView.setText(p.tempF.toString());
+		if (p.tempF != null) {
+			temperatureTextView.setText("--");
+		} else {
+			temperatureTextView.setText(p.tempF.toString());
+		}
+
 		timeTextView.setText(WeatherUtil.getTimeFromISO(p.dateTimeISO, false));
 	}
 
