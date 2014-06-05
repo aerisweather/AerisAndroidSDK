@@ -41,17 +41,6 @@ public class BaseApplication extends Application {
 			AerisNotification.cancelNotification(context);
 			manager.cancel(pendingIntent);
 		}
-		// } else {
-		// if (enable) {
-		// context.startService(intent);
-		// context.startService(new Intent(
-		// context.getApplicationContext(),
-		// NotificationService.class));
-		// } else {
-		// AerisNotification.cancelNotification(context);
-		// context.stopService(intent);
-		// }
-		// }
 
 	}
 

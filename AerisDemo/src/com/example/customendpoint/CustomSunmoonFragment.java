@@ -47,7 +47,10 @@ public class CustomSunmoonFragment extends Fragment implements
 		if (task == null) {
 			MyPlacesDb db = new MyPlacesDb(getActivity());
 			MyPlace place = db.getMyPlace();
-			String id = place.getTextDisplay(":auto");
+			String id = ":auto";
+			if (place != null) {
+				id = place.getTextDisplay("");
+			}
 			ParameterBuilder builder = new ParameterBuilder()
 					.withLimit(NUMBER_OF_DAYS).withFrom("now")
 					.withTo("+" + NUMBER_OF_DAYS + "days");

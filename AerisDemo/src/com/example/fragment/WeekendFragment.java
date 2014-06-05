@@ -37,7 +37,7 @@ public class WeekendFragment extends AerisFragment implements AerisCallback {
 			return;
 		}
 		if (endpoint == EndpointType.FORECASTS) {
-			if (response.success && response.getError() == null) {
+			if (response.isSuccessfulWithResponses()) {
 				ForecastsResponse fResponse = new ForecastsResponse(
 						response.getFirstResponse());
 				periods = new ArrayList<DayNightPeriod>();

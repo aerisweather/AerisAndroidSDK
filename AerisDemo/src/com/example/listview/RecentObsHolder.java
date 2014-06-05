@@ -20,11 +20,11 @@ public class RecentObsHolder implements AdapterHolder<ObservationPeriod> {
 
 	@Override
 	public View inflateview(LayoutInflater mInflater) {
-		View v = mInflater.inflate(R.layout.listview_extended_forecast, null,
+		View v = mInflater.inflate(R.layout.listview_recent_observations, null,
 				false);
 		weatherIcon = (ImageView) v.findViewById(R.id.ivListIcon);
 		weatherDesc = (TextView) v.findViewById(R.id.tvListDesc);
-		temp = (TextView) v.findViewById(R.id.tvListHigh);
+		temp = (TextView) v.findViewById(R.id.tvListTemp);
 		date = (TextView) v.findViewById(R.id.tvListDate);
 		day = (TextView) v.findViewById(R.id.tvListDay);
 		return v;
@@ -37,6 +37,10 @@ public class RecentObsHolder implements AdapterHolder<ObservationPeriod> {
 		day.setText(WeatherUtil.getFormatFromISO(t.ob.dateTimeISO, "h:mm aa"));
 		date.setText(WeatherUtil.getDayFromISO(t.ob.dateTimeISO));
 		weatherDesc.setText(t.ob.weather);
-		temp.setText(t.ob.tempF.toString());
+		if (t.ob.tempF != null) {
+			temp.setText(t.ob.tempF.toString());
+		} else {
+			temp.setText("--");
+		}
 	}
 }

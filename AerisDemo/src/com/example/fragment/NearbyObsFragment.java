@@ -37,7 +37,7 @@ public class NearbyObsFragment extends AerisFragment {
 			return;
 		}
 		if (endpoint == EndpointType.OBSERVATIONS) {
-			if (response.success && response.getError() == null) {
+			if (response.isSuccessfulWithResponses()) {
 
 				periods = new ArrayList<ObservationResponse>();
 				for (AerisDataJSON data : response.getListOfResponse()) {

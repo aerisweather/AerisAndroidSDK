@@ -64,7 +64,6 @@ public class MapFragment extends MapViewFragment implements
 		return view;
 	}
 
-
 	/**
 	 * Inits the map with specific setting
 	 */
@@ -102,7 +101,20 @@ public class MapFragment extends MapViewFragment implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		if (itemId == R.id.menu_weather_layers) {
+			// call to launch using permissions obtained through API
+			// these permissions are obtained at start of AerisEngine
 			mapView.startAerisMapOptionsActivity(getActivity());
+
+			/*
+			 * Alternatively you could only show the map points options like
+			 * this using the MapOptionsActivityBuilder(). See the classes
+			 * javadoc for more detail and examples of it.
+			 */
+			// MapOptionsActivityBuilder builder = new
+			// MapOptionsActivityBuilder();
+			// builder.withAllPoints();
+			// mapView.startAerisMapOptionsActivity(getActivity(), builder);
+
 			return false;
 		} else {
 			return super.onOptionsItemSelected(item);

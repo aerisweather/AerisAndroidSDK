@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
@@ -15,6 +16,7 @@ import com.example.view.SmallForecastView;
 import com.example.view.TwoPartView;
 import com.hamweather.aeris.communication.EndpointType;
 import com.hamweather.aeris.model.AerisBatchResponse;
+import com.hamweather.aeris.model.ForecastPeriod;
 import com.hamweather.aeris.model.Observation;
 import com.hamweather.aeris.model.Place;
 import com.hamweather.aeris.response.ForecastsResponse;
@@ -40,10 +42,7 @@ public class ObservationFragment extends AerisFragment {
 	private DayNightView todayView;
 	private DayNightView nightView;
 
-	private SmallForecastView intervalView1;
-	private SmallForecastView intervalView2;
-	private SmallForecastView intervalView3;
-	private SmallForecastView intervalView4;
+	private LinearLayout forecastsLayout;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,22 +63,15 @@ public class ObservationFragment extends AerisFragment {
 		pressureView = (TwoPartView) rootView.findViewById(R.id.viewPressure);
 		todayView = (DayNightView) rootView.findViewById(R.id.viewToday);
 		nightView = (DayNightView) rootView.findViewById(R.id.viewTonight);
-
-		intervalView1 = (SmallForecastView) rootView
-				.findViewById(R.id.viewInterval1);
-		intervalView2 = (SmallForecastView) rootView
-				.findViewById(R.id.viewInterval2);
-		intervalView3 = (SmallForecastView) rootView
-				.findViewById(R.id.viewInterval3);
-		intervalView4 = (SmallForecastView) rootView
-				.findViewById(R.id.viewInterval4);
+		forecastsLayout = (LinearLayout) rootView
+				.findViewById(R.id.llObservationForecasts);
 		return rootView;
 	}
 
 	@Override
 	public void showProgress() {
 		super.showProgress();
-		
+
 	}
 
 	@Override
@@ -157,10 +149,13 @@ public class ObservationFragment extends AerisFragment {
 
 			ForecastsResponse hoursResponse = new ForecastsResponse(
 					response.responses.get(3).getFirstResponse());
-			intervalView1.setForecast(hoursResponse.getPeriod(0));
-			intervalView2.setForecast(hoursResponse.getPeriod(1));
-			intervalView3.setForecast(hoursResponse.getPeriod(2));
-			intervalView4.setForecast(hoursResponse.getPeriod(3));
+
+			forecastsLayout.removeAllViews();
+			for (ForecastPeriod p : hoursResponse.getPeriods()) {
+				SmallForecastView view = new SmallForecastView(getActivity());
+				view.setForecast(p);
+				forecastsLayout.addView(view);
+			}
 
 			HeadlessFragment headless = HeadlessFragment
 					.getFragment(getActivity());

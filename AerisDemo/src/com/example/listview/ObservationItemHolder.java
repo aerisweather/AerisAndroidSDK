@@ -40,7 +40,13 @@ public class ObservationItemHolder implements
 		time.setText(WeatherUtil.getFormatFromISO(
 				t.getObservation().dateTimeISO, "h:mm aa"));
 		weatherDesc.setText(t.getObservation().weatherShort);
-		temp.setText(t.getObservation().tempF.toString());
+		// tempF can be null with a successful response
+		if (t.getObservation().tempF == null) {
+			temp.setText("--");
+		} else {
+			temp.setText(t.getObservation().tempF.toString());
+		}
+
 	}
 
 }
