@@ -28,6 +28,16 @@ public class SmallForecastView extends LinearLayout {
 		iconImageView = (ImageView) this.findViewById(R.id.ivSmForeIcon);
 	}
 
+	public SmallForecastView(Context context) {
+		super(context);
+		LayoutInflater inflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		inflater.inflate(R.layout.view_small_forecast, this, true);
+		timeTextView = (TextView) this.findViewById(R.id.tvSmForeTime);
+		temperatureTextView = (TextView) this.findViewById(R.id.tvSmForeTemp);
+		iconImageView = (ImageView) this.findViewById(R.id.ivSmForeIcon);
+	}
+
 	public void setForecast(ForecastPeriod p) {
 		iconImageView.setImageResource(FileUtil.getDrawableByName(p.icon,
 				getContext()));

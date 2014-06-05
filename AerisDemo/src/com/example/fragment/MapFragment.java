@@ -64,7 +64,6 @@ public class MapFragment extends MapViewFragment implements
 		return view;
 	}
 
-
 	/**
 	 * Inits the map with specific setting
 	 */
@@ -102,7 +101,17 @@ public class MapFragment extends MapViewFragment implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		if (itemId == R.id.menu_weather_layers) {
+			// call to launch using permissions obtained through API
+			// these permissions are obtained at start of AerisEngine
 			mapView.startAerisMapOptionsActivity(getActivity());
+
+			// Alternatively you can set the permissions. Anything not set will
+			// be defaulted to false in the builder.
+			// AerisPermissionsBuilder builder = new AerisPermissionsBuilder()
+			// .withAdvisories().withEarthquakes()
+			// .withInteractive(true, true, true, false, false);
+			// mapView.startAerisMapOptionsActivity(getActivity(),
+			// builder.build());
 			return false;
 		} else {
 			return super.onOptionsItemSelected(item);

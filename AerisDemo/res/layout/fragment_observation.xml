@@ -41,35 +41,21 @@
                 android:layout_weight="1" />
         </LinearLayout>
 
-        <LinearLayout
-            style="@style/FrameStyle"
-            android:baselineAligned="false"
-            android:orientation="horizontal" >
-
-            <com.example.view.SmallForecastView
-                android:id="@+id/viewInterval1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <com.example.view.SmallForecastView
-                android:id="@+id/viewInterval2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <com.example.view.SmallForecastView
-                android:id="@+id/viewInterval3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <com.example.view.SmallForecastView
-                android:id="@+id/viewInterval4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+        <HorizontalScrollView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	>
+	        <LinearLayout
+	            android:id="@+id/llObservationForecasts"
+	            style="@style/FrameStyle"
+	            android:baselineAligned="false"
+	            android:orientation="horizontal" >
+	
+	            
+	
+	            
+	        </LinearLayout>
+        </HorizontalScrollView>
     </LinearLayout>
 
 </ScrollView>

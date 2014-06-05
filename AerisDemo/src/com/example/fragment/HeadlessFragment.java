@@ -112,8 +112,9 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 				.addParameters(FieldsParameter.initWith("place")));
 		builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
 				.addParameters(FieldsParameter.initWith(
-						ForecastsFields.WEATHER, ForecastsFields.MAX_TEMP_F,
-						ForecastsFields.ICON, ForecastsFields.DATETIME_ISO,
+						ForecastsFields.WEATHER_PRIMARY,
+						ForecastsFields.MAX_TEMP_F, ForecastsFields.ICON,
+						ForecastsFields.DATETIME_ISO,
 						ForecastsFields.MIN_TEMP_F)));
 		AerisRequest request = builder.build();
 		BatchCommunicationTask task = new BatchCommunicationTask(getActivity(),
@@ -192,7 +193,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 						new PLimitParameter(2)));
 		builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
 				.addParameters(new FilterParameter("3hr"), new PLimitParameter(
-						4), FieldsParameter.initWith(ForecastsFields.TEMP_F,
+						8), FieldsParameter.initWith(ForecastsFields.TEMP_F,
 						ForecastsFields.TEMP_C, ForecastsFields.ICON,
 						ForecastsFields.DATETIME_ISO, Fields.INTERVAL)));
 		AerisRequest request = builder.build();

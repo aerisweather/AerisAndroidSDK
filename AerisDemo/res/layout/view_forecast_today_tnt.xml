@@ -21,6 +21,8 @@
         android:layout_alignRight="@+id/tvForeTemperature"
         android:maxLines="1"
         android:text="--"
+        android:gravity="right"
+        android:textSize="12sp"
         android:textColor="#ffffff" />
 
     <TextView
