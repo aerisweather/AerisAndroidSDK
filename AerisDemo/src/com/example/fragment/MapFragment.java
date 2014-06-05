@@ -103,15 +103,18 @@ public class MapFragment extends MapViewFragment implements
 		if (itemId == R.id.menu_weather_layers) {
 			// call to launch using permissions obtained through API
 			// these permissions are obtained at start of AerisEngine
-			mapView.startAerisMapOptionsActivity(getActivity());
+			// mapView.startAerisMapOptionsActivity(getActivity());
 
-			// Alternatively you can set the permissions. Anything not set will
-			// be defaulted to false in the builder.
-			// AerisPermissionsBuilder builder = new AerisPermissionsBuilder()
-			// .withAdvisories().withEarthquakes()
-			// .withInteractive(true, true, true, false, false);
-			// mapView.startAerisMapOptionsActivity(getActivity(),
-			// builder.build());
+			/*
+			 * Alternatively you could only show the map points options like
+			 * this using the MapOptionsActivityBuilder(). See the classes
+			 * javadoc for more detail and examples of it.
+			 */
+			// MapOptionsActivityBuilder builder = new
+			// MapOptionsActivityBuilder();
+			// builder.withAllPoints();
+			// mapView.startAerisMapOptionsActivity(getActivity(), builder);
+
 			return false;
 		} else {
 			return super.onOptionsItemSelected(item);
