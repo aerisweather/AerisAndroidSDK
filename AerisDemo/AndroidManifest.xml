@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.demoaerisproject"
-    android:versionCode="097"
-    android:versionName="0.9.7" >
+    android:versionCode="098"
+    android:versionName="0.9.8" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

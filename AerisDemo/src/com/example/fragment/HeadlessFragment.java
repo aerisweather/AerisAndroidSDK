@@ -127,12 +127,11 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.OBSERVATIONS), Action.CLOSEST,
-				getPlaceParameter(),
-				FieldsParameter.initWith(
-				ObservationFields.TEMP_C, ObservationFields.TEMP_F,
-				ObservationFields.ICON, ObservationFields.WEATHER_SHORT,
-				Fields.PLACE, ObservationFields.DATETIME), new LimitParameter(
-				10));
+				getPlaceParameter(), FieldsParameter.initWith(
+						ObservationFields.TEMP_C, ObservationFields.TEMP_F,
+						ObservationFields.ICON,
+						ObservationFields.WEATHER_SHORT, Fields.PLACE,
+						ObservationFields.DATETIME), new LimitParameter(10));
 		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
 				this, request);
 		if (listener != null) {
@@ -144,8 +143,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	public void performRecentsObs(AerisProgressListener listener) {
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.OBSERVATIONS_RECENT), Action.CLOSEST,
-				getPlaceParameter(),
-				new PLimitParameter(10));
+				getPlaceParameter(), new PLimitParameter(10));
 		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
 				this, request);
 		if (listener != null) {
@@ -158,9 +156,10 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.FORECASTS), Action.CLOSEST, getPlaceParameter(),
 				FieldsParameter.initWith(Fields.INTERVAL,
-				ForecastsFields.WEATHER, ForecastsFields.MAX_TEMP_F,
-				ForecastsFields.ICON, ForecastsFields.DATETIME_ISO,
-				ForecastsFields.MIN_TEMP_F), new FilterParameter("7"),
+						ForecastsFields.WEATHER_PRIMARY,
+						ForecastsFields.MAX_TEMP_F, ForecastsFields.ICON,
+						ForecastsFields.DATETIME_ISO,
+						ForecastsFields.MIN_TEMP_F), new FilterParameter("7"),
 				new LimitParameter(10));
 		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
 				this, request);
@@ -173,8 +172,8 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	public void performWeekendForecast(AerisProgressListener listener) {
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.FORECASTS), Action.CLOSEST, getPlaceParameter(),
-				new FilterParameter("daynight"),
-				new FromParameter("friday"), new ToParameter("+3days"));
+				new FilterParameter("daynight"), new FromParameter("friday"),
+				new ToParameter("+3days"));
 		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
 				this, request);
 		task.withProgress(listener);

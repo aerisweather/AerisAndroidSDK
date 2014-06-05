@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/ivForeWeatherIcon"
         android:layout_alignRight="@+id/tvForeTemperature"
+        android:maxLines="1"
         android:text="--"
         android:textColor="#ffffff" />
 

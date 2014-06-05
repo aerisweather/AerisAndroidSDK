@@ -55,10 +55,17 @@ public class ForecastItemHolder implements AdapterHolder<ForecastPeriod> {
 
 		}
 
-		weatherDesc.setText(t.weather);
-		tempHigh.setText(t.maxTempF.toString());
-		tempLow.setText(t.minTempF.toString());
-
+		weatherDesc.setText(t.weatherPrimary);
+		if (t.maxTempF != null) {
+			tempHigh.setText(t.maxTempF.toString());
+		} else {
+			tempHigh.setText("--");
+		}
+		if (t.minTempF != null) {
+			tempLow.setText(t.minTempF.toString());
+		} else {
+			tempLow.setText("--");
+		}
 	}
 
 }
