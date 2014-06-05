@@ -103,7 +103,7 @@ public class MapFragment extends MapViewFragment implements
 		if (itemId == R.id.menu_weather_layers) {
 			// call to launch using permissions obtained through API
 			// these permissions are obtained at start of AerisEngine
-			// mapView.startAerisMapOptionsActivity(getActivity());
+			mapView.startAerisMapOptionsActivity(getActivity());
 
 			/*
 			 * Alternatively you could only show the map points options like
