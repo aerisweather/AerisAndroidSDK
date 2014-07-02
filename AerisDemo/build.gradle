@@ -46,7 +46,6 @@ repositories {
     mavenCentral()
 }
 dependencies {
-
     compile 'com.google.android.gms:play-services:4.4.52'
     compile 'com.hamweather:aeris-maps-library:0.9.9@aar'
 }

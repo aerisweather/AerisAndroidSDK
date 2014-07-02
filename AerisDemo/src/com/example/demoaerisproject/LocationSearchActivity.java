@@ -1,9 +1,5 @@
 package com.example.demoaerisproject;
 
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -44,6 +40,10 @@ import com.hamweather.aeris.model.AerisLocation;
 import com.hamweather.aeris.model.Place;
 import com.hamweather.aeris.response.PlacesResponse;
 import com.hamweather.aeris.util.ValidationUtil;
+
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LocationSearchActivity extends Activity implements
 		OnClickListener, TextWatcher, PlacesTaskCallback,
