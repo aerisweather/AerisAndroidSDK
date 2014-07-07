@@ -68,6 +68,19 @@ These permissions are required in order to use the Aeris Android SDK in the appl
 That’s it, the AerisDemo application should be ready to test! Review the [Getting Started](http://www.hamweather.com/support/documentation/mobile/android/starting/) section on the developers site.
 
 
+#### Gradle Configuration
+Importing Aeris Maps Library is available through maven central in gradle builds. These lines can be added to your build.gradle file. 
+``` groovy 
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'com.google.android.gms:play-services:4.4.52'
+    compile 'com.hamweather:aeris-maps-library:0.9.9@aar'
+}
+```
+
+
 ## Complete Documentation 
 
 Documentation for the Aeris Core Library is [here](http://www.hamweather.com/docs/android/Aeris/).<br/>
