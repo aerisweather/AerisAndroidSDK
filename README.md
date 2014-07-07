@@ -79,7 +79,12 @@ dependencies {
     compile 'com.hamweather:aeris-maps-library:0.9.9@aar'
 }
 ```
-
+It is also required under the android section of your build.gradle to include 
+``` groovy 
+dexOptions{
+    preDexLibraries = false
+}
+```
 
 ## Complete Documentation 
 
