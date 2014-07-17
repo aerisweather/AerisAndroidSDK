@@ -1,7 +1,5 @@
 package com.example.customendpoint;
 
-import org.apache.commons.lang3.text.WordUtils;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -56,8 +54,8 @@ public class CustomSunmoonHolder implements AdapterHolder<CustomSunmoonModel> {
 		totalDaylightTextView.setText(String.format("%d hours,%d minutes",
 				hours, minutes));
 		totalDaylightPBar.setProgress((int) seconds);
-		moonphaseTextView.setText(WordUtils.capitalize(model.moon.phase.name,
-				' '));
+		moonphaseTextView
+				.setText(WeatherUtil.capitalize(model.moon.phase.name));
 	}
 
 }

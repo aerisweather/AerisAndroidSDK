@@ -1,7 +1,5 @@
 package com.example.listview;
 
-import org.apache.commons.lang3.text.WordUtils;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,7 +34,7 @@ public class ObservationItemHolder implements
 	public void populateView(ObservationResponse t, int position) {
 		weatherIcon.setImageResource(FileUtil.getDrawableByName(
 				t.getObservation().icon, weatherIcon.getContext()));
-		place.setText(WordUtils.capitalize(t.getPlace().name));
+		place.setText(WeatherUtil.capitalize(t.getPlace().name));
 		time.setText(WeatherUtil.getFormatFromISO(
 				t.getObservation().dateTimeISO, "h:mm aa"));
 		weatherDesc.setText(t.getObservation().weatherShort);

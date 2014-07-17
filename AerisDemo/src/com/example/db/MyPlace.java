@@ -1,6 +1,6 @@
 package com.example.db;
 
-import org.apache.commons.lang3.text.WordUtils;
+import com.hamweather.aeris.util.WeatherUtil;
 
 public class MyPlace {
 
@@ -14,12 +14,11 @@ public class MyPlace {
 	public String getTextDisplay(String defaultText) {
 		String text = defaultText;
 		if (state != null && state.length() > 0) {
-			text = String.format("%s, %s, %s", WordUtils.capitalize(name, ' '),
+			text = String.format("%s, %s, %s", WeatherUtil.capitalize(name),
 					state.toUpperCase(), country.toUpperCase());
 		} else {
-			text = String
-					.format("%s, %s", WordUtils.capitalize(name, ' ', '-'),
-							country.toUpperCase());
+			text = String.format("%s, %s", WeatherUtil.capitalize(name),
+					country.toUpperCase());
 		}
 		return text;
 	}

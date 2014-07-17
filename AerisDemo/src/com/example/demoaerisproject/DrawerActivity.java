@@ -2,8 +2,6 @@ package com.example.demoaerisproject;
 
 import java.util.ArrayList;
 
-import org.apache.commons.lang3.text.WordUtils;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -48,6 +46,7 @@ import com.example.menudrawer.NavDrawerItem;
 import com.example.menudrawer.NavDrawerListAdapter;
 import com.hamweather.aeris.logging.Logger;
 import com.hamweather.aeris.model.Place;
+import com.hamweather.aeris.util.WeatherUtil;
 
 public class DrawerActivity extends Activity implements OnItemClickListener,
 		OnClickListener, LoaderCallbacks<Cursor>, MyPlacesObserver {
@@ -309,11 +308,11 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 			String text = "My Location Not Set";
 			if (place.state != null && place.state.length() > 0) {
 				text = String.format("%s, %s, %s",
-						WordUtils.capitalize(place.name, ' '),
+						WeatherUtil.capitalize(place.name),
 						place.state.toUpperCase(), place.country.toUpperCase());
 			} else {
 				text = String.format("%s, %s",
-						WordUtils.capitalize(place.name, ' ', '-'),
+						WeatherUtil.capitalize(place.name),
 						place.country.toUpperCase());
 			}
 			myLocTextView.setText(text);
