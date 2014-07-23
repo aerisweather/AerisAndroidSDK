@@ -9,6 +9,7 @@ import android.content.Intent;
 import com.example.preference.PrefManager;
 import com.example.service.NotificationService;
 import com.hamweather.aeris.communication.AerisEngine;
+import com.hamweather.aeris.maps.AerisMapsEngine;
 
 public class BaseApplication extends Application {
 
@@ -23,6 +24,15 @@ public class BaseApplication extends Application {
 		// Setting up default options from res values in maps sdk.
 		enableNotificationService(this, PrefManager.getBoolPreference(this,
 				getString(R.string.pref_ntf_enabled)));
+
+		/*
+		 * can override default point parameters programmatically used on the
+		 * map. dt:-1 -> sorts to closest time| -4hours -> 4 hours ago. Limit is
+		 * a required parameter.Can also be done through the xml values in the
+		 * aeris_default_values.xml
+		 */
+		AerisMapsEngine.getInstance(this).getDefaultPointParameters()
+				.setLightningParameters("dt:-1", 50, null, "-4hours");
 
 	}
 
