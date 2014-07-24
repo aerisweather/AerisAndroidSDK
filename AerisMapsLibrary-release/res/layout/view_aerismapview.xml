@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -16,18 +16,12 @@
         android:visibility="gone" />
 
     <LinearLayout
+        android:id="@+id/llLegendHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_alignParentTop="true"
         android:background="@color/transparent"
         android:orientation="vertical" >
-
-        <com.hamweather.aeris.maps.AnimationStepView
-            android:id="@+id/viewAnimationStepView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone" >
-        </com.hamweather.aeris.maps.AnimationStepView>
 
         <ImageView
             android:id="@+id/ivLegend"
@@ -39,18 +33,24 @@
             style="@style/AerisImageViewLegend"
             android:contentDescription="@string/iv_legends" />
 
-        
         <ImageView
             android:id="@+id/ivPolyLegend"
             style="@style/AerisImageViewLegend"
             android:contentDescription="@string/iv_legends" />
+
+        <com.hamweather.aeris.maps.AnimationStepView
+            android:id="@+id/viewAnimationStepView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+        </com.hamweather.aeris.maps.AnimationStepView>
     </LinearLayout>
 
     <com.hamweather.aeris.maps.AnimationControlView
         android:id="@+id/llMapAnimControl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|left"
+        android:layout_below="@id/llLegendHolder"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp" />
 
@@ -58,7 +58,7 @@
         android:id="@+id/pbMaps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_centerInParent="true"
         android:visibility="gone" />
 
-</FrameLayout>
+</RelativeLayout>
