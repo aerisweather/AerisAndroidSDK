@@ -1,7 +1,5 @@
 package com.example.listview;
 
-import org.apache.commons.lang3.text.WordUtils;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,6 +8,7 @@ import android.widget.TextView;
 import com.example.demoaerisproject.R;
 import com.hamweather.aeris.model.Place;
 import com.hamweather.aeris.response.PlacesResponse;
+import com.hamweather.aeris.util.WeatherUtil;
 
 public class PlacesItemHolder implements AdapterHolder<PlacesResponse> {
 
@@ -32,11 +31,10 @@ public class PlacesItemHolder implements AdapterHolder<PlacesResponse> {
 		String text = "";
 		if (place.state != null && place.state.length() > 0) {
 			text = String.format("%s, %s, %s",
-					WordUtils.capitalize(place.name, ' '),
+					WeatherUtil.capitalize(place.name),
 					place.state.toUpperCase(), place.country.toUpperCase());
 		} else {
-			text = String.format("%s, %s",
-					WordUtils.capitalize(place.name, ' ', '-'),
+			text = String.format("%s, %s", WeatherUtil.capitalize(place.name),
 					place.country.toUpperCase());
 		}
 		placeTextView.setText(text);

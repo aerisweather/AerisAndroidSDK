@@ -94,6 +94,6 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tvForeInterval"
         android:scaleType="fitXY"
-        android:src="@drawable/fair" />
+        />
 
 </RelativeLayout>

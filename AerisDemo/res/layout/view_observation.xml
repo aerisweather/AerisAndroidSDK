@@ -57,7 +57,7 @@
         android:layout_alignLeft="@+id/tvCurrently"
         android:layout_alignTop="@+id/tvTemperature"
         android:scaleType="fitXY"
-        android:src="@drawable/sunny" />
+         />
 
     <TextView
         android:id="@+id/tvFeelsLike"
