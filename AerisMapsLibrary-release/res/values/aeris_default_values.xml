@@ -21,12 +21,12 @@
 
     <!--
      True to display the forecast line for each storm cell on the map. If false, all forecast lines will not be shown
-     for all specific markers
+     for all specific markers
     -->
     <bool name="aerismaps_show_forecast_line">true</bool>
     <!--
      True to display the forecast wide cone for each storm cell on the map. If false, all forecast cones will not be shown
-     for all specific markers
+     for all specific markers
     -->
     <bool name="aerismaps_show_forecast_cone">true</bool>
     <!-- True to display the storm cell annotation on marker click -->
@@ -84,5 +84,39 @@
     <color name="aerismaps_warnings_flood_fill_color">#4600FF00</color>
 
     <item name="aerismaps_warnings_flood_line_width" format="float" type="dimen">10</item>
+
+    <!-- default map option values for retrieving point data -->
+    <bool name="aerismaps_point_options_logcat_enabled">true</bool>
+    <!-- Wildfire point data -->
+    <integer name="aerismaps_fire_limit_parameter">500</integer>
+
+    <string name="aerismaps_fire_sort_parameter">dt:-1</string>
+    <!-- stormreports point data -->
+    <integer name="aerismaps_stormreports_limit_parameter">500</integer>
+
+    <string name="aerismaps_stormreports_from_parameter">-24hours</string>
+    <string name="aerismaps_stormreports_sort_parameter">dt:-1</string>
+    <!-- earthquakes point data -->
+    <integer name="aerismaps_earthquakes_limit_parameter">500</integer>
+
+    <string name="aerismaps_earthquakes_sort_parameter">dt:-1</string>
+    <string name="aerismaps_earthquakes_from_parameter">-24hours</string>
+
+    <!-- lightning point data -->
+    <integer name="aerismaps_lightning_limit_parameter">500</integer>
+
+    <string name="aerismaps_lightning_from_parameter">-5hours</string>
+    <string name="aerismaps_lightning_sort_parameter">dt:-1</string>
+
+    <!-- stormcell point data -->
+    <integer name="aerismaps_stormcell_limit_parameter">500</integer>
+
+    <string name="aerismaps_stormcell_sort_parameter">tvs:-1,mda:-1,hail:-1,dt:-1</string>
+    <!-- default map option values for retrieving polygon data -->
+    <!-- warning polygon data -->
+    <integer name="aerismaps_warnings_limit_parameter">100</integer>
+
+    <string name="aerismaps_warnings_query_parameter">type:FF.W;type:TO.W;type:SV.W</string>
+    <string name="aerismaps_warnings_sort_parameter">dt:-1</string>
 
 </resources>
