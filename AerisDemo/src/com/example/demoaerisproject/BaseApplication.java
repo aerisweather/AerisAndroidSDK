@@ -32,7 +32,7 @@ public class BaseApplication extends Application {
 		 * aeris_default_values.xml
 		 */
 		AerisMapsEngine.getInstance(this).getDefaultPointParameters()
-				.setLightningParameters("dt:-1", 50, null, "-4hours");
+				.setLightningParameters("dt:-1", 500, null, "-4hours");
 
 	}
 
