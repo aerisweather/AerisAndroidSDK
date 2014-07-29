@@ -56,8 +56,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="aeris-maps-library-0.9.9" level="project" />
     <orderEntry type="library" exported="" name="play-services-4.4.52" level="project" />
+    <orderEntry type="library" exported="" name="aeris-maps-library-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.0.1" level="project" />
   </component>
 </module>
