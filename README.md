@@ -1,4 +1,4 @@
-AerisAndroidLibrary
+AerisAndroidSDK
 ================
 ![Aeris SDK](http://www.hamweather.com/blog/wp-content/uploads/2014/05/AerisAndroid-BlogEntryHeader.png)
 
