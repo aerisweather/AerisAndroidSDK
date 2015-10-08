@@ -20,7 +20,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="20" />
 
     <application
         android:name=".BaseApplication"
@@ -34,7 +34,7 @@
         </meta-data>
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyC82j5b1CSKg3sgoJjATVHY1uKxRaw17Gs" />
+            android:value="AIzaSyClMgcKCs0cy_WNQx421Lgrx4wsef-0d5M" />
 
         <service
             android:name="com.example.service.NotificationService"
