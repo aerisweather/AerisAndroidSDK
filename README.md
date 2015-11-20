@@ -68,7 +68,7 @@ dependencies {
 [Aeris API Signup](http://www.aerisweather.com/signup/).<br/>
 [Aeris Android Library Docs](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/).<br/>
 [Aeris Android Library Javadocs](http://www.aerisweather.com/docs/android/Aeris/index.html).<br/>
-[Aeris Maps SDK Library Docs](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/weather-maps/).
+[Aeris Maps SDK Library Docs](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/weather-maps/).<br/>
 [Aeris Maps SDK Library Javadocs](http://www.aerisweather.com/docs/android/AerisMap/index.html).<br/>
 
 
