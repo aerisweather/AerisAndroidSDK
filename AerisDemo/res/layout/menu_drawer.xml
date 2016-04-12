@@ -20,17 +20,9 @@
 	    android:orientation="vertical"
 	    android:id="@+id/llDrawer"
 	    android:layout_gravity="left"
-	    android:background="@color/dark_blue">
-    
-    <ImageView 
-        android:id="@+id/ibSearch"
-         android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/home_feature_aerisapi"
-        android:scaleType="fitXY"
-        />
+	    android:background="#151D2D">
 
-	 <LinearLayout
+        <LinearLayout
 	     android:layout_width="match_parent"
 	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"

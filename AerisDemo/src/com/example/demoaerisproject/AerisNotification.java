@@ -21,25 +21,15 @@ public class AerisNotification {
 
 	/**
 	 * Sets the notification for the observation
-	 * 
-	 * @param working
-	 *            true if the progress should show, false otherwise
-	 * @param title
-	 *            title to display on the notification
-	 * @param message
-	 *            message to display on the notification
-	 * @param ticker
-	 *            ticker message to display for the notification
 	 */
-	public static void setCustomNotification(Context context,
-			ObservationResponse obResponse, ForecastsResponse fResponse) {
-
+	public static void setCustomNotification(Context context, ObservationResponse obResponse, ForecastsResponse fResponse)
+    {
 		Intent intent = new Intent(context, DrawerActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-		PendingIntent pIntent = PendingIntent
-				.getActivity(context, 0, intent, 0);
+		PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
-		if (builder == null) {
+		if (builder == null)
+        {
 			builder = new NotificationCompat.Builder(context)
 					// Set Ticker Message
 					.setSmallIcon(R.drawable.ic_stat_action_about)
@@ -49,39 +39,39 @@ public class AerisNotification {
 
 		}
 
-		if (remoteViews == null) {
-			remoteViews = new RemoteViews(context.getPackageName(),
-					R.layout.ntf_observation);
+		if (remoteViews == null)
+        {
+			remoteViews = new RemoteViews(context.getPackageName(),	R.layout.ntf_observation);
 			builder.setContent(remoteViews);
 		}
-		Observation ob = obResponse.getObservation();
-		remoteViews.setImageViewResource(R.id.ivNtfIcon,
-				FileUtil.getDrawableByName(ob.icon, context));
 
+		Observation ob = obResponse.getObservation();
+		remoteViews.setImageViewResource(R.id.ivNtfIcon, FileUtil.getDrawableByName(ob.icon, context));
 		remoteViews.setTextViewText(R.id.tvNtfDesc, ob.weather);
-		remoteViews.setTextViewText(R.id.tvNtfTemp,
-				WeatherUtil.appendDegree(ob.tempF));
+		remoteViews.setTextViewText(R.id.tvNtfTemp,	WeatherUtil.appendDegree(ob.tempF));
 
 		ForecastPeriod period = fResponse.getPeriod(0);
-		// reverses orday if isday is not true.
-		if (period.isDay) {
-			remoteViews.setTextViewText(R.id.tvNtfHigh,
-					WeatherUtil.appendDegree(fResponse.getPeriod(0).maxTempF));
-			remoteViews.setTextViewText(R.id.tvNtfLow,
-					WeatherUtil.appendDegree(fResponse.getPeriod(1).minTempF));
 
-		} else {
-			remoteViews.setTextViewText(R.id.tvNtfHigh,
-					WeatherUtil.appendDegree(fResponse.getPeriod(1).maxTempF));
-			remoteViews.setTextViewText(R.id.tvNtfLow,
-					WeatherUtil.appendDegree(fResponse.getPeriod(2).minTempF));
+		// reverses orday if isday is not true.
+		if (period.isDay)
+        {
+			remoteViews.setTextViewText(R.id.tvNtfHigh,	WeatherUtil.appendDegree(fResponse.getPeriod(0).maxTempF));
+			remoteViews.setTextViewText(R.id.tvNtfLow, WeatherUtil.appendDegree(fResponse.getPeriod(1).minTempF));
+		}
+        else
+        {
+            try
+            {
+                remoteViews.setTextViewText(R.id.tvNtfHigh, WeatherUtil.appendDegree(fResponse.getPeriod(1).maxTempF));
+                remoteViews.setTextViewText(R.id.tvNtfLow, WeatherUtil.appendDegree(fResponse.getPeriod(2).minTempF));
+            }
+            catch (Exception e) { /* on with the show */ }
 		}
 
 		// Create Notification Manager
-		NotificationManager notificationmanager = (NotificationManager) context
-				.getSystemService(Context.NOTIFICATION_SERVICE);
-		// Build Notification with Notification Manager
+		NotificationManager notificationmanager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
+		// Build Notification with Notification Manager
 		notificationmanager.notify(WEATHER_NTF, builder.build());
 	}
 
