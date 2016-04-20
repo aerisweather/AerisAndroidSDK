@@ -1,7 +1,9 @@
 package com.example.demoaerisproject;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -249,10 +251,10 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 			break;
 		}
 
-		if (fragment != null) {
+		if (fragment != null)
+        {
 			FragmentManager fragmentManager = getFragmentManager();
-			fragmentManager.beginTransaction()
-					.replace(R.id.frame_container, fragment).commit();
+			fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
 			currentFragment = fragment;
 			// update selected item and title, then close the drawer
 			mDrawerList.setItemChecked(position, true);
@@ -261,11 +263,12 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 			mDrawerLayout.closeDrawer(mDrawer);
 			setTitle(navMenuTitles[position]);
 
-		} else {
-			Toast.makeText(this, "This feature has not been implented yet.",
-					Toast.LENGTH_SHORT).show();
+		}
+        else
+        {
+			Toast.makeText(this, "This feature has not been implented yet.", Toast.LENGTH_SHORT).show();
 			// error in creating fragment
-			Log.e("MainActivity", "Error in creating fragment");
+			Log.e("MainActivity", "Error creating fragment");
 		}
 	}
 
@@ -337,4 +340,14 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 			}
 		}
 	}
+
+    @Override
+    @TargetApi(23)
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        Fragment frag = getFragmentManager().findFragmentById(currentFragment.getId());
+        frag.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
 }

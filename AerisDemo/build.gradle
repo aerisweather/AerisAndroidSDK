@@ -43,9 +43,6 @@ android {
 repositories {
     mavenCentral()
     jcenter()
-    maven{
-        url 'https://oss.sonatype.org/content/repositories/comhamweather-1055'
-    }
 }
 dependencies {
     compile 'com.google.android.gms:play-services:8.4.0'

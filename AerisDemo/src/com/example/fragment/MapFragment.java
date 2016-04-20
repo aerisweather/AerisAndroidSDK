@@ -1,9 +1,17 @@
 package com.example.fragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.StringRes;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,9 +25,11 @@ import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.R;
 import com.example.view.TemperatureInfoData;
 import com.example.view.TemperatureWindowAdapter;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.hamweather.aeris.communication.AerisCallback;
 import com.hamweather.aeris.communication.EndpointType;
 import com.hamweather.aeris.communication.fields.Fields;
@@ -47,37 +57,128 @@ import com.hamweather.aeris.response.StormReportsResponse;
 
 public class MapFragment extends MapViewFragment implements
 		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
-		OnAerisMarkerInfoWindowClickListener, RefreshInterface {
+		OnAerisMarkerInfoWindowClickListener, RefreshInterface
+{
 	private LocationHelper locHelper;
 	private Marker marker;
 	private TemperatureWindowAdapter infoAdapter;
+    private static final int REQUEST_PERMISSIONS = 0;
+    LayoutInflater m_inflater;
+    ViewGroup m_container;
+    Bundle m_savedInstanceState;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_interactive_maps,
-				container, false);
-		mapView = (AerisMapView) view.findViewById(R.id.aerisfragment_map);
-		mapView.init(savedInstanceState, AerisMapType.GOOGLE);
-		initMap();
-		setHasOptionsMenu(true);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        m_inflater = inflater;
+        m_container = container;
+        m_savedInstanceState = savedInstanceState;
+
+        View view = inflater.inflate(R.layout.fragment_interactive_maps, container, false);
+
+        mapView = (AerisMapView) view.findViewById(R.id.aerisfragment_map);
+        mapView.init(savedInstanceState, AerisMapType.GOOGLE);
+
+        setHasOptionsMenu(true);
+
 		return view;
 	}
 
-	/**
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState)
+    {
+        super.onActivityCreated(savedInstanceState);
+
+        //check for permissions
+        if ((ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) ||
+                (ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED))
+        {
+            requestMultiplePermissions(m_inflater, m_container, savedInstanceState);
+        }
+        else
+        {
+            initMap();
+            refreshPressed();
+        }
+    }
+
+    private void requestMultiplePermissions(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        String locationPermission = Manifest.permission.ACCESS_FINE_LOCATION;
+        String readExternalPermission = Manifest.permission.READ_EXTERNAL_STORAGE;
+        int hasLocPermission = ContextCompat.checkSelfPermission(getActivity(), locationPermission);
+        int hasReadPermission = ContextCompat.checkSelfPermission(getActivity(), readExternalPermission);
+        List<String> permissions = new ArrayList<String>();
+
+        if (hasLocPermission != PackageManager.PERMISSION_GRANTED)
+        {
+            permissions.add(locationPermission);
+        }
+
+        if (hasReadPermission != PackageManager.PERMISSION_GRANTED)
+        {
+            permissions.add(readExternalPermission);
+        }
+
+        if (!permissions.isEmpty())
+        {
+            String[] params = permissions.toArray(new String[permissions.size()]);
+            ActivityCompat.requestPermissions(getActivity(), params, REQUEST_PERMISSIONS);
+        }
+        else
+        {
+            // We already have permission, so handle as normal
+            initMap();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode)
+        {
+            case REQUEST_PERMISSIONS:
+            {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
+                    initMap();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), R.string.permissions_verbiage, Toast.LENGTH_LONG).show();
+                }
+                return;
+            }
+        }
+    }
+
+    /**
 	 * Inits the map with specific setting
 	 */
-	private void initMap() {
+	private void initMap()
+    {
 		MyPlacesDb db = new MyPlacesDb(getActivity());
 		MyPlace place = db.getMyPlace();
-		if (place == null) {
+        GoogleMap map = mapView.getMap();
+        MarkerOptions options = new MarkerOptions();
+
+		if (place == null)
+        {
 			locHelper = new LocationHelper(getActivity());
 			Location myLocation = locHelper.getCurrentLocation();
 			mapView.moveToLocation(myLocation, 9);
-		} else {
-			mapView.moveToLocation(new LatLng(place.latitude, place.longitude),
-					9);
+            options.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
 		}
+        else
+        {
+			mapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
+            options.position(new LatLng(place.latitude, place.longitude));
+		}
+
+        map.addMarker(options);
 
 		mapView.setOnAerisMapLongClickListener(this);
 
@@ -89,7 +190,6 @@ public class MapFragment extends MapViewFragment implements
 		// setup doing something when a user presses an info window
 		// from the Aeris Point Data.
 		mapView.setOnAerisWindowClickListener(this);
-
 	}
 
 	/*
@@ -253,13 +353,17 @@ public class MapFragment extends MapViewFragment implements
 	}
 
 	@Override
-	public void refreshPressed() {
+	public void refreshPressed()
+    {
 		MyPlacesDb db = new MyPlacesDb(getActivity());
 		MyPlace place = db.getMyPlace();
-		if (place != null) {
-			mapView.moveToLocation(new LatLng(place.latitude, place.longitude),
-					9);
-		} else {
+
+        if (place != null)
+        {
+			mapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
+		}
+        else
+        {
 			locHelper = new LocationHelper(getActivity());
 			Location myLocation = locHelper.getCurrentLocation();
 			mapView.moveToLocation(myLocation, 9);

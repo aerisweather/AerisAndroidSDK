@@ -22,4 +22,5 @@
     <string name="pref_ntf_enabled">pref_ntf_enabled</string>
     <string name="pref_ntf_enabled_sum">Puts a persistent notification in the status bar so weather can always be seen.</string>
 	<string name="pref_ntf_enabled_title">Enabled Notification</string>
+    <string name="permissions_verbiage">The Location and External Storage permissions are required to get weather data and perform mapping functions. Please restart the app and allow these permissions.</string>
 </resources>
