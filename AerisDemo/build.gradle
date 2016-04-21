@@ -47,5 +47,4 @@ repositories {
 dependencies {
     compile 'com.google.android.gms:play-services:8.4.0'
     compile 'com.hamweather:aeris-maps-library:1.2@aar'
-    compile 'com.joshdholtz.sentry:sentry-android:1.2.1'
 }

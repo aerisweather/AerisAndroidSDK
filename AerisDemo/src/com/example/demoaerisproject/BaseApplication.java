@@ -13,7 +13,6 @@ import com.google.android.gms.analytics.Logger;
 import com.hamweather.aeris.communication.AerisEngine;
 import com.hamweather.aeris.logging.LogLevel;
 import com.hamweather.aeris.maps.AerisMapsEngine;
-import com.joshdholtz.sentry.Sentry;
 
 import org.json.JSONException;
 
@@ -39,38 +38,6 @@ public class BaseApplication extends Application {
 		 * aeris_default_values.xml
 		 */
 		AerisMapsEngine.getInstance(this).getDefaultPointParameters().setLightningParameters("dt:-1", 500, null, "-4hours");
-
-        //setup Sentry
-        if (!BuildConfig.DEBUG)
-        {
-            LogLevel.setLoggingLevel(LogLevel.VERBOSE);
-        }
-        else
-        {
-            LogLevel.setLoggingLevel(LogLevel.VERBOSE);
-            Sentry.setCaptureListener(new Sentry.SentryEventCaptureListener()
-            {
-                @Override
-                public Sentry.SentryEventBuilder beforeCapture(Sentry.SentryEventBuilder builder)
-                {
-                    try
-                    {
-                        builder.getTags().put("App Version", BuildConfig.VERSION_NAME);
-                        builder.getTags().put("OS", android.os.Build.VERSION.RELEASE);
-                        builder.getTags().put("Device", Build.MODEL);
-                    }
-                    catch (JSONException ex)
-                    {
-                        String s = ex.getMessage();
-                    }
-
-                    return builder;
-                }
-            });
-
-            //sentry init with Enterprise credentials
-            Sentry.init(this, "https://0922f70014494611b0c00596a3f2f47c:02a95f003aa44d4f8de11cdaa6548e25@app.getsentry.com/73851");
-        }
     }
 
 	public static void enableNotificationService(Context context, boolean enable) {
