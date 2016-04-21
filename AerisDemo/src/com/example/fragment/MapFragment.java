@@ -39,6 +39,7 @@ import com.hamweather.aeris.communication.loaders.ObservationsTaskCallback;
 import com.hamweather.aeris.communication.parameter.ParameterBuilder;
 import com.hamweather.aeris.communication.parameter.PlaceParameter;
 import com.hamweather.aeris.location.LocationHelper;
+import com.hamweather.aeris.maps.AerisMapOptions;
 import com.hamweather.aeris.maps.AerisMapView;
 import com.hamweather.aeris.maps.AerisMapView.AerisMapType;
 import com.hamweather.aeris.maps.MapViewFragment;
@@ -54,6 +55,7 @@ import com.hamweather.aeris.response.FiresResponse;
 import com.hamweather.aeris.response.ObservationResponse;
 import com.hamweather.aeris.response.StormCellResponse;
 import com.hamweather.aeris.response.StormReportsResponse;
+import com.hamweather.aeris.tiles.AerisTile;
 
 public class MapFragment extends MapViewFragment implements
 		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
@@ -160,6 +162,15 @@ public class MapFragment extends MapViewFragment implements
 	 */
 	private void initMap()
     {
+        AerisMapOptions mapOptions = AerisMapOptions.getPreference(this.mapView.getContext());
+        if ((mapOptions.getTile() == null) || mapOptions.getTile() == AerisTile.NONE)
+        {
+            mapView.addLayer(AerisTile.RADAR);
+            mapOptions.withTile(AerisTile.RADAR);
+            mapOptions.setPreference(this.mapView.getContext());
+
+        }
+
 		MyPlacesDb db = new MyPlacesDb(getActivity());
 		MyPlace place = db.getMyPlace();
         GoogleMap map = mapView.getMap();
