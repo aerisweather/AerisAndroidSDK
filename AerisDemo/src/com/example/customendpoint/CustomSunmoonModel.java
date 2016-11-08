@@ -1,6 +1,6 @@
 package com.example.customendpoint;
 
-import com.hamweather.aeris.model.AerisLocation;
+import com.aerisweather.aeris.model.AerisLocation;
 
 public class CustomSunmoonModel {
 

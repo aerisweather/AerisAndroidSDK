@@ -7,22 +7,22 @@ import android.os.SystemClock;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.AerisNotification;
 import com.example.preference.PrefManager;
-import com.hamweather.aeris.communication.Action;
-import com.hamweather.aeris.communication.AerisRequest;
-import com.hamweather.aeris.communication.BatchBuilder;
-import com.hamweather.aeris.communication.BatchCommunicationTask;
-import com.hamweather.aeris.communication.Endpoint;
-import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.communication.fields.Fields;
-import com.hamweather.aeris.communication.fields.ForecastsFields;
-import com.hamweather.aeris.communication.fields.ObservationFields;
-import com.hamweather.aeris.communication.parameter.FieldsParameter;
-import com.hamweather.aeris.communication.parameter.FilterParameter;
-import com.hamweather.aeris.communication.parameter.PLimitParameter;
-import com.hamweather.aeris.communication.parameter.PlaceParameter;
-import com.hamweather.aeris.model.AerisBatchResponse;
-import com.hamweather.aeris.response.ForecastsResponse;
-import com.hamweather.aeris.response.ObservationResponse;
+import com.aerisweather.aeris.communication.Action;
+import com.aerisweather.aeris.communication.AerisRequest;
+import com.aerisweather.aeris.communication.BatchBuilder;
+import com.aerisweather.aeris.communication.BatchCommunicationTask;
+import com.aerisweather.aeris.communication.Endpoint;
+import com.aerisweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.communication.fields.Fields;
+import com.aerisweather.aeris.communication.fields.ForecastsFields;
+import com.aerisweather.aeris.communication.fields.ObservationFields;
+import com.aerisweather.aeris.communication.parameter.FieldsParameter;
+import com.aerisweather.aeris.communication.parameter.FilterParameter;
+import com.aerisweather.aeris.communication.parameter.PLimitParameter;
+import com.aerisweather.aeris.communication.parameter.PlaceParameter;
+import com.aerisweather.aeris.model.AerisBatchResponse;
+import com.aerisweather.aeris.response.ForecastsResponse;
+import com.aerisweather.aeris.response.ObservationResponse;
 
 public class NotificationService extends IntentService {
 

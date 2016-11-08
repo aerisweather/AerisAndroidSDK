@@ -12,16 +12,16 @@ import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
 import com.example.listview.ForecastAdapter;
-import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.model.AerisBatchResponse;
-import com.hamweather.aeris.model.ForecastPeriod;
-import com.hamweather.aeris.model.Observation;
-import com.hamweather.aeris.model.Place;
-import com.hamweather.aeris.response.ForecastsResponse;
-import com.hamweather.aeris.response.ObservationResponse;
-import com.hamweather.aeris.response.PlacesResponse;
-import com.hamweather.aeris.util.FileUtil;
-import com.hamweather.aeris.util.WeatherUtil;
+import com.aerisweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.model.AerisBatchResponse;
+import com.aerisweather.aeris.model.ForecastPeriod;
+import com.aerisweather.aeris.model.Observation;
+import com.aerisweather.aeris.model.Place;
+import com.aerisweather.aeris.response.ForecastsResponse;
+import com.aerisweather.aeris.response.ObservationResponse;
+import com.aerisweather.aeris.response.PlacesResponse;
+import com.aerisweather.aeris.util.FileUtil;
+import com.aerisweather.aeris.util.WeatherUtil;
 
 public class OverviewFragment extends AerisFragment {
 

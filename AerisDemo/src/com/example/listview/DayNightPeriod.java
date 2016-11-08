@@ -1,6 +1,6 @@
 package com.example.listview;
 
-import com.hamweather.aeris.model.ForecastPeriod;
+import com.aerisweather.aeris.model.ForecastPeriod;
 
 public class DayNightPeriod {
 	public ForecastPeriod day;

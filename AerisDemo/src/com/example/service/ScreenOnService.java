@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 
-import com.hamweather.aeris.logging.Logger;
+import com.aerisweather.aeris.logging.Logger;
 
 public class ScreenOnService extends Service {
 

@@ -1,6 +1,6 @@
 package com.example.customendpoint;
 
-import com.hamweather.aeris.communication.AerisCustomResponse;
+import com.aerisweather.aeris.communication.AerisCustomResponse;
 
 public class CustomSunmoonResponse extends
 		AerisCustomResponse<CustomSunmoonModel> {

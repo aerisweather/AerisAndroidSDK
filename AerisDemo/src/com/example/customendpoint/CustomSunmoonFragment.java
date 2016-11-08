@@ -13,12 +13,12 @@ import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.R;
 import com.example.fragment.RefreshInterface;
-import com.hamweather.aeris.communication.AerisCustomCommunicationTask;
-import com.hamweather.aeris.communication.AerisProgressListener;
-import com.hamweather.aeris.communication.AerisRequest;
-import com.hamweather.aeris.communication.CustomCallback;
-import com.hamweather.aeris.communication.Endpoint;
-import com.hamweather.aeris.communication.parameter.ParameterBuilder;
+import com.aerisweather.aeris.communication.AerisCustomCommunicationTask;
+import com.aerisweather.aeris.communication.AerisProgressListener;
+import com.aerisweather.aeris.communication.AerisRequest;
+import com.aerisweather.aeris.communication.CustomCallback;
+import com.aerisweather.aeris.communication.Endpoint;
+import com.aerisweather.aeris.communication.parameter.ParameterBuilder;
 
 public class CustomSunmoonFragment extends Fragment implements
 		RefreshInterface, CustomCallback, AerisProgressListener {

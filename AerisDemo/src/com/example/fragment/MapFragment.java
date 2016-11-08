@@ -30,32 +30,33 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.hamweather.aeris.communication.AerisCallback;
-import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.communication.fields.Fields;
-import com.hamweather.aeris.communication.fields.ObservationFields;
-import com.hamweather.aeris.communication.loaders.ObservationsTask;
-import com.hamweather.aeris.communication.loaders.ObservationsTaskCallback;
-import com.hamweather.aeris.communication.parameter.ParameterBuilder;
-import com.hamweather.aeris.communication.parameter.PlaceParameter;
-import com.hamweather.aeris.location.LocationHelper;
-import com.hamweather.aeris.maps.AerisMapOptions;
-import com.hamweather.aeris.maps.AerisMapView;
-import com.hamweather.aeris.maps.AerisMapView.AerisMapType;
-import com.hamweather.aeris.maps.MapViewFragment;
-import com.hamweather.aeris.maps.interfaces.OnAerisMapLongClickListener;
-import com.hamweather.aeris.maps.interfaces.OnAerisMarkerInfoWindowClickListener;
-import com.hamweather.aeris.maps.markers.AerisMarker;
-import com.hamweather.aeris.model.AerisError;
-import com.hamweather.aeris.model.AerisResponse;
-import com.hamweather.aeris.model.Observation;
-import com.hamweather.aeris.model.RelativeTo;
-import com.hamweather.aeris.response.EarthquakesResponse;
-import com.hamweather.aeris.response.FiresResponse;
-import com.hamweather.aeris.response.ObservationResponse;
-import com.hamweather.aeris.response.StormCellResponse;
-import com.hamweather.aeris.response.StormReportsResponse;
-import com.hamweather.aeris.tiles.AerisTile;
+import com.aerisweather.aeris.communication.AerisCallback;
+import com.aerisweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.communication.fields.Fields;
+import com.aerisweather.aeris.communication.fields.ObservationFields;
+import com.aerisweather.aeris.communication.loaders.ObservationsTask;
+import com.aerisweather.aeris.communication.loaders.ObservationsTaskCallback;
+import com.aerisweather.aeris.communication.parameter.ParameterBuilder;
+import com.aerisweather.aeris.communication.parameter.PlaceParameter;
+import com.aerisweather.aeris.location.LocationHelper;
+import com.aerisweather.aeris.maps.AerisMapOptions;
+import com.aerisweather.aeris.maps.AerisMapView;
+import com.aerisweather.aeris.maps.AerisMapView.AerisMapType;
+import com.aerisweather.aeris.maps.MapViewFragment;
+import com.aerisweather.aeris.maps.interfaces.OnAerisMapLongClickListener;
+import com.aerisweather.aeris.maps.interfaces.OnAerisMarkerInfoWindowClickListener;
+import com.aerisweather.aeris.maps.markers.AerisMarker;
+import com.aerisweather.aeris.model.AerisError;
+import com.aerisweather.aeris.model.AerisResponse;
+import com.aerisweather.aeris.model.Observation;
+import com.aerisweather.aeris.model.RelativeTo;
+import com.aerisweather.aeris.response.EarthquakesResponse;
+import com.aerisweather.aeris.response.FiresResponse;
+import com.aerisweather.aeris.response.ObservationResponse;
+import com.aerisweather.aeris.response.StormCellResponse;
+import com.aerisweather.aeris.response.StormReportsResponse;
+import com.aerisweather.aeris.response.RecordsResponse;
+import com.aerisweather.aeris.tiles.AerisTile;
 
 public class MapFragment extends MapViewFragment implements
 		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
@@ -163,12 +164,14 @@ public class MapFragment extends MapViewFragment implements
 	private void initMap()
     {
         AerisMapOptions mapOptions = AerisMapOptions.getPreference(this.mapView.getContext());
-        if ((mapOptions.getTile() == null) || mapOptions.getTile() == AerisTile.NONE)
+        if (mapOptions != null)
         {
-            mapView.addLayer(AerisTile.RADAR);
-            mapOptions.withTile(AerisTile.RADAR);
-            mapOptions.setPreference(this.mapView.getContext());
-
+            if ((mapOptions.getTile() == null) || mapOptions.getTile() == AerisTile.NONE)
+            {
+                mapView.addLayer(AerisTile.RADAR);
+                mapOptions.withTile(AerisTile.RADAR);
+                mapOptions.setPreference(this.mapView.getContext());
+            }
         }
 
 		MyPlacesDb db = new MyPlacesDb(getActivity());
@@ -189,7 +192,8 @@ public class MapFragment extends MapViewFragment implements
             options.position(new LatLng(place.latitude, place.longitude));
 		}
 
-        map.addMarker(options);
+        if (map != null)
+            map.addMarker(options);
 
 		mapView.setOnAerisMapLongClickListener(this);
 
@@ -253,7 +257,7 @@ public class MapFragment extends MapViewFragment implements
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.hamweather.aeris.maps.AerisMapView.OnAerisMapLongClickListener#
+	 * @see com.aerisweather.aeris.maps.AerisMapView.OnAerisMapLongClickListener#
 	 * onMapLongClick(double, double)
 	 */
 	@Override
@@ -281,9 +285,8 @@ public class MapFragment extends MapViewFragment implements
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * com.hamweather.aeris.communication.AerisCallback#onResult(com.hamweather
-	 * .aeris.communication.EndpointType,
-	 * com.hamweather.aeris.model.AerisResponse)
+	 * com.aerisweather.aeris.communication.AerisCallback#onResult(com.aerisweather.aeris.communication.EndpointType,
+	 * com.aerisweather.aeris.model.AerisResponse)
 	 */
 	@Override
 	public void onResult(EndpointType type, AerisResponse response) {
@@ -336,8 +339,14 @@ public class MapFragment extends MapViewFragment implements
 		// do something with the response data.
 		Toast.makeText(getActivity(), "Wildfire pressed!", Toast.LENGTH_SHORT)
 				.show();
-
 	}
+
+    @Override
+    public void recordsWindowPressed(RecordsResponse response, AerisMarker marker) {
+        // do something with the response data.
+        Toast.makeText(getActivity(), "Daily Record pressed!", Toast.LENGTH_SHORT)
+                .show();
+    }
 
 	@Override
 	public void onObservationsFailed(AerisError arg0) {

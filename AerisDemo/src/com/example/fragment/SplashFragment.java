@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.example.demoaerisproject.DrawerActivity;
 import com.example.demoaerisproject.R;
-import com.hamweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.communication.EndpointType;
 
 public class SplashFragment extends AerisFragment {
 

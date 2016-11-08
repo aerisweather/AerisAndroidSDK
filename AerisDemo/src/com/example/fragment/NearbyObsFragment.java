@@ -11,10 +11,10 @@ import android.widget.ListView;
 
 import com.example.demoaerisproject.R;
 import com.example.listview.ObservationAdapter;
-import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.model.AerisDataJSON;
-import com.hamweather.aeris.model.AerisResponse;
-import com.hamweather.aeris.response.ObservationResponse;
+import com.aerisweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.model.AerisDataJSON;
+import com.aerisweather.aeris.model.AerisResponse;
+import com.aerisweather.aeris.response.ObservationResponse;
 
 public class NearbyObsFragment extends AerisFragment {
 

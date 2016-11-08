@@ -4,7 +4,7 @@ import java.util.List;
 
 import android.app.Activity;
 
-import com.hamweather.aeris.response.ObservationResponse;
+import com.aerisweather.aeris.response.ObservationResponse;
 
 public class ObservationAdapter extends ListAdapter<ObservationResponse> {
 

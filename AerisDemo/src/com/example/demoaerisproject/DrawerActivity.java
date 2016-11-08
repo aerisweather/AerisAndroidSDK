@@ -46,9 +46,9 @@ import com.example.fragment.RefreshInterface;
 import com.example.fragment.WeekendFragment;
 import com.example.menudrawer.NavDrawerItem;
 import com.example.menudrawer.NavDrawerListAdapter;
-import com.hamweather.aeris.logging.Logger;
-import com.hamweather.aeris.model.Place;
-import com.hamweather.aeris.util.WeatherUtil;
+import com.aerisweather.aeris.logging.Logger;
+import com.aerisweather.aeris.model.Place;
+import com.aerisweather.aeris.util.WeatherUtil;
 
 public class DrawerActivity extends Activity implements OnItemClickListener,
 		OnClickListener, LoaderCallbacks<Cursor>, MyPlacesObserver {

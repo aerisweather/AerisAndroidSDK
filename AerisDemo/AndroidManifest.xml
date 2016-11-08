@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.demoaerisproject"
-    android:versionCode="102"
-    android:versionName="1.2.0" >
+    package="com.example.demoaerisproject" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -34,7 +32,7 @@
         </meta-data>
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyClMgcKCs0cy_WNQx421Lgrx4wsef-0d5M" />
+            android:value="AIzaSyA4JzDUXIcfBKrnE49o_qNuDzf1dRHBsys" />
 
         <service
             android:name="com.example.service.NotificationService"
@@ -59,7 +57,7 @@
         </activity>
         
         
-        <activity android:name="com.hamweather.aeris.maps.MapOptionsActivity" 
+        <activity android:name="com.aerisweather.aeris.maps.MapOptionsActivity"
             android:label="@string/map_options_activity_name"/>
         
         

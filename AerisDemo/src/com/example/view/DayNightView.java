@@ -10,8 +10,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
-import com.hamweather.aeris.model.ForecastPeriod;
-import com.hamweather.aeris.util.FileUtil;
+import com.aerisweather.aeris.model.ForecastPeriod;
+import com.aerisweather.aeris.util.FileUtil;
 
 public class DayNightView extends RelativeLayout {
 

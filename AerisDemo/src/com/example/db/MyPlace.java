@@ -1,6 +1,6 @@
 package com.example.db;
 
-import com.hamweather.aeris.util.WeatherUtil;
+import com.aerisweather.aeris.util.WeatherUtil;
 
 public class MyPlace {
 

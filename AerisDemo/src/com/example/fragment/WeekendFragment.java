@@ -12,10 +12,10 @@ import android.widget.ListView;
 import com.example.demoaerisproject.R;
 import com.example.listview.DayNightPeriod;
 import com.example.listview.WeekendAdapter;
-import com.hamweather.aeris.communication.AerisCallback;
-import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.model.AerisResponse;
-import com.hamweather.aeris.response.ForecastsResponse;
+import com.aerisweather.aeris.communication.AerisCallback;
+import com.aerisweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.model.AerisResponse;
+import com.aerisweather.aeris.response.ForecastsResponse;
 
 public class WeekendFragment extends AerisFragment implements AerisCallback {
 	ListView listView;

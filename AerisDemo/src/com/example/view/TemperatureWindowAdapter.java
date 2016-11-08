@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
 import com.google.android.gms.maps.model.Marker;
-import com.hamweather.aeris.maps.AerisMarkerWindow;
-import com.hamweather.aeris.util.FileUtil;
-import com.hamweather.aeris.util.WeatherUtil;
+import com.aerisweather.aeris.maps.AerisMarkerWindow;
+import com.aerisweather.aeris.util.FileUtil;
+import com.aerisweather.aeris.util.WeatherUtil;
 
 /**
  * Adapter that applies a new layer of tiles over the map.

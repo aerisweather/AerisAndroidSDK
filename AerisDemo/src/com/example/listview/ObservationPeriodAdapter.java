@@ -4,7 +4,7 @@ import java.util.List;
 
 import android.app.Activity;
 
-import com.hamweather.aeris.model.ObservationPeriod;
+import com.aerisweather.aeris.model.ObservationPeriod;
 
 public class ObservationPeriodAdapter extends ListAdapter<ObservationPeriod> {
 

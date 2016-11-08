@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.hamweather.aeris.maps.AerisMapView
+    <com.aerisweather.aeris.maps.AerisMapView
         android:id="@+id/aerisfragment_map"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" >
-    </com.hamweather.aeris.maps.AerisMapView>
+    </com.aerisweather.aeris.maps.AerisMapView>
 
 </LinearLayout>

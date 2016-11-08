@@ -7,12 +7,12 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 
-import com.hamweather.aeris.model.ForecastPeriod;
-import com.hamweather.aeris.model.Observation;
-import com.hamweather.aeris.response.ForecastsResponse;
-import com.hamweather.aeris.response.ObservationResponse;
-import com.hamweather.aeris.util.FileUtil;
-import com.hamweather.aeris.util.WeatherUtil;
+import com.aerisweather.aeris.model.ForecastPeriod;
+import com.aerisweather.aeris.model.Observation;
+import com.aerisweather.aeris.response.ForecastsResponse;
+import com.aerisweather.aeris.response.ObservationResponse;
+import com.aerisweather.aeris.util.FileUtil;
+import com.aerisweather.aeris.util.WeatherUtil;
 
 public class AerisNotification {
 	private static final int WEATHER_NTF = 100;

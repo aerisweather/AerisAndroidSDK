@@ -6,9 +6,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
-import com.hamweather.aeris.response.ObservationResponse;
-import com.hamweather.aeris.util.FileUtil;
-import com.hamweather.aeris.util.WeatherUtil;
+import com.aerisweather.aeris.response.ObservationResponse;
+import com.aerisweather.aeris.util.FileUtil;
+import com.aerisweather.aeris.util.WeatherUtil;
 
 public class ObservationItemHolder implements
 		AdapterHolder<ObservationResponse> {

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="aeris_client_id">YOUR_CLIENT_ID</string>
-    <string name="aeris_client_secret">YOUR_CLIENT_SECRET</string>
+    <string name="aeris_client_id">wgE96YE3scTQLKjnqiMsv</string>
+    <string name="aeris_client_secret">llNCahrEs8FWhBRuDOCJEUqOxzfgBd6B2XmqY6xX</string>
     <string name="app_name">AerisDemo</string>
     <string name="activity_search">Search</string>
     <string name="activity_my_locs">My Locations</string>

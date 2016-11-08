@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.hamweather.aeris.logging.Logger;
+import com.aerisweather.aeris.logging.Logger;
 
 public class ScreenOnReceiver extends BroadcastReceiver {
 

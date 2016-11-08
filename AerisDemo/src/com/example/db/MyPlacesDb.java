@@ -13,7 +13,7 @@ import android.provider.BaseColumns;
 import com.example.demoaerisproject.BaseApplication;
 import com.example.demoaerisproject.R;
 import com.example.preference.PrefManager;
-import com.hamweather.aeris.communication.parameter.PlaceParameter;
+import com.aerisweather.aeris.communication.parameter.PlaceParameter;
 
 public class MyPlacesDb extends SQLiteOpenHelper {
 

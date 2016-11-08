@@ -10,9 +10,9 @@ import android.os.Build;
 import com.example.preference.PrefManager;
 import com.example.service.NotificationService;
 import com.google.android.gms.analytics.Logger;
-import com.hamweather.aeris.communication.AerisEngine;
-import com.hamweather.aeris.logging.LogLevel;
-import com.hamweather.aeris.maps.AerisMapsEngine;
+import com.aerisweather.aeris.communication.AerisEngine;
+import com.aerisweather.aeris.logging.LogLevel;
+import com.aerisweather.aeris.maps.AerisMapsEngine;
 
 import org.json.JSONException;
 

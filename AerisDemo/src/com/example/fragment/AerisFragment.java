@@ -5,13 +5,13 @@ import android.app.Fragment;
 import android.widget.Toast;
 
 import com.example.fragment.HeadlessFragment.HeadlessObserver;
-import com.hamweather.aeris.communication.AerisCallback;
-import com.hamweather.aeris.communication.AerisProgressListener;
-import com.hamweather.aeris.communication.BatchCallback;
-import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.model.AerisBatchResponse;
-import com.hamweather.aeris.model.AerisError;
-import com.hamweather.aeris.model.AerisResponse;
+import com.aerisweather.aeris.communication.AerisCallback;
+import com.aerisweather.aeris.communication.AerisProgressListener;
+import com.aerisweather.aeris.communication.BatchCallback;
+import com.aerisweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.model.AerisBatchResponse;
+import com.aerisweather.aeris.model.AerisError;
+import com.aerisweather.aeris.model.AerisResponse;
 
 public abstract class AerisFragment extends Fragment implements
 		AerisProgressListener, HeadlessObserver, AerisCallback, BatchCallback,

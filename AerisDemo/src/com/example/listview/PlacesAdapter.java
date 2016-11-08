@@ -5,7 +5,7 @@ import java.util.List;
 import android.app.Activity;
 
 import com.example.demoaerisproject.R;
-import com.hamweather.aeris.response.PlacesResponse;
+import com.aerisweather.aeris.response.PlacesResponse;
 
 public class PlacesAdapter extends ListAdapter<PlacesResponse> {
 

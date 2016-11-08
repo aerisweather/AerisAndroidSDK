@@ -10,10 +10,10 @@ import android.widget.ListView;
 
 import com.example.demoaerisproject.R;
 import com.example.listview.ForecastAdapter;
-import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.model.AerisResponse;
-import com.hamweather.aeris.model.ForecastPeriod;
-import com.hamweather.aeris.response.ForecastsResponse;
+import com.aerisweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.model.AerisResponse;
+import com.aerisweather.aeris.model.ForecastPeriod;
+import com.aerisweather.aeris.response.ForecastsResponse;
 
 public class ExtForecastFragment extends AerisFragment {
 

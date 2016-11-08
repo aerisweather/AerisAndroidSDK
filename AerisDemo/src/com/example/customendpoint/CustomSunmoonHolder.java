@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
 import com.example.listview.AdapterHolder;
-import com.hamweather.aeris.util.WeatherUtil;
+import com.aerisweather.aeris.util.WeatherUtil;
 
 public class CustomSunmoonHolder implements AdapterHolder<CustomSunmoonModel> {
 	private TextView titleView;

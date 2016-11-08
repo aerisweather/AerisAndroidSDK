@@ -10,11 +10,11 @@ import android.widget.ListView;
 
 import com.example.demoaerisproject.R;
 import com.example.listview.ObservationPeriodAdapter;
-import com.hamweather.aeris.communication.AerisCallback;
-import com.hamweather.aeris.communication.EndpointType;
-import com.hamweather.aeris.model.AerisResponse;
-import com.hamweather.aeris.model.ObservationPeriod;
-import com.hamweather.aeris.response.ObRecentResponse;
+import com.aerisweather.aeris.communication.AerisCallback;
+import com.aerisweather.aeris.communication.EndpointType;
+import com.aerisweather.aeris.model.AerisResponse;
+import com.aerisweather.aeris.model.ObservationPeriod;
+import com.aerisweather.aeris.response.ObRecentResponse;
 
 public class RecentObsFragment extends AerisFragment implements AerisCallback {
 	ListView listView;

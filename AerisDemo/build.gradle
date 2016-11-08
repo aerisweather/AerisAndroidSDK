@@ -1,9 +1,10 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1002" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'com.android.tools.build:gradle:2.2.2'
     }
 }
 
@@ -12,7 +13,20 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-
+    defaultConfig {
+        applicationId "com.example.demoaerisproject"
+        versionCode 5
+        versionName "1.5.0"
+        multiDexEnabled true
+    }
+    signingConfigs {
+        config {
+            keyAlias 'demoprojkey'
+            keyPassword 'password'
+            storeFile file('C:/Users/sshie/AndroidStudioProjects/AerisAndroidSDK/AerisDemo/demoprojkeystore.jks')
+            storePassword 'password'
+        }
+    }
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -36,15 +50,24 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
-    dexOptions{
+    dexOptions {
         preDexLibraries = false
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            debuggable = true
+        }
     }
 }
 repositories {
     mavenCentral()
     jcenter()
+    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1002" }
 }
 dependencies {
-    compile 'com.google.android.gms:play-services:8.4.0'
-    compile 'com.hamweather:aeris-maps-library:1.2@aar'
+    compile 'com.google.android.gms:play-services:9.6.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.aerisweather:aeris-maps-lib:2.0.0@aar'
+    compile 'com.aerisweather:aeris-core-lib:2.0.0@aar'
 }

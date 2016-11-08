@@ -6,9 +6,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.demoaerisproject.R;
-import com.hamweather.aeris.model.ObservationPeriod;
-import com.hamweather.aeris.util.FileUtil;
-import com.hamweather.aeris.util.WeatherUtil;
+import com.aerisweather.aeris.model.ObservationPeriod;
+import com.aerisweather.aeris.util.FileUtil;
+import com.aerisweather.aeris.util.WeatherUtil;
 
 public class RecentObsHolder implements AdapterHolder<ObservationPeriod> {
 
