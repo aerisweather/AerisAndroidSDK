@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="aeris_client_id">wgE96YE3scTQLKjnqiMsv</string>
-    <string name="aeris_client_secret">llNCahrEs8FWhBRuDOCJEUqOxzfgBd6B2XmqY6xX</string>
+    <string name="aerisapi_client_id">wgE96YE3scTQLKjnqiMsv</string>
+    <string name="aerisapi_client_secret">llNCahrEs8FWhBRuDOCJEUqOxzfgBd6B2XmqY6xX</string>
     <string name="app_name">AerisDemo</string>
     <string name="activity_search">Search</string>
     <string name="activity_my_locs">My Locations</string>
     <string name="action_settings">Settings</string>
-     <string name="action_refresh">Refresh</string>
+    <string name="action_refresh">Refresh</string>
     <!-- Preference strings -->
     <string name="pref_cat_location">category_location</string>
     <string name="pref_cat_location_title">Location</string>
@@ -20,6 +20,6 @@
     <string name="pref_cat_ntf_title">Notification</string>
     <string name="pref_ntf_enabled">pref_ntf_enabled</string>
     <string name="pref_ntf_enabled_sum">Puts a persistent notification in the status bar so weather can always be seen.</string>
-	<string name="pref_ntf_enabled_title">Enabled Notification</string>
+    <string name="pref_ntf_enabled_title">Enabled Notification</string>
     <string name="permissions_verbiage">The Location and External Storage permissions are required to get weather data and perform mapping functions. Please restart the app and allow these permissions.</string>
 </resources>

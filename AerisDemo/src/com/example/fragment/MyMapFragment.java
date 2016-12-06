@@ -7,10 +7,12 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.StringRes;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,12 +22,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.aerisweather.aeris.maps.MapOptionsActivity;
+import com.aerisweather.aeris.maps.MapOptionsActivityBuilder;
+import com.aerisweather.aeris.tiles.AerisPointData;
+import com.aerisweather.aeris.tiles.AerisPolygonData;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
+import com.example.demoaerisproject.DrawerActivity;
+import com.example.demoaerisproject.MapOptionsLocalActivity;
 import com.example.demoaerisproject.R;
 import com.example.view.TemperatureInfoData;
 import com.example.view.TemperatureWindowAdapter;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -41,8 +52,6 @@ import com.aerisweather.aeris.communication.parameter.PlaceParameter;
 import com.aerisweather.aeris.location.LocationHelper;
 import com.aerisweather.aeris.maps.AerisMapOptions;
 import com.aerisweather.aeris.maps.AerisMapView;
-import com.aerisweather.aeris.maps.AerisMapView.AerisMapType;
-import com.aerisweather.aeris.maps.MapViewFragment;
 import com.aerisweather.aeris.maps.interfaces.OnAerisMapLongClickListener;
 import com.aerisweather.aeris.maps.interfaces.OnAerisMarkerInfoWindowClickListener;
 import com.aerisweather.aeris.maps.markers.AerisMarker;
@@ -58,17 +67,36 @@ import com.aerisweather.aeris.response.StormReportsResponse;
 import com.aerisweather.aeris.response.RecordsResponse;
 import com.aerisweather.aeris.tiles.AerisTile;
 
-public class MapFragment extends MapViewFragment implements
+public class MyMapFragment extends Fragment implements
 		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
-		OnAerisMarkerInfoWindowClickListener, RefreshInterface
+		OnAerisMarkerInfoWindowClickListener, RefreshInterface, OnMapReadyCallback
 {
-	private LocationHelper locHelper;
-	private Marker marker;
-	private TemperatureWindowAdapter infoAdapter;
+    private OnFragmentInteractionListener mListener;
+	private LocationHelper m_locHelper;
+	private Marker m_marker;
+	private TemperatureWindowAdapter m_infoAdapter;
     private static final int REQUEST_PERMISSIONS = 0;
     LayoutInflater m_inflater;
     ViewGroup m_container;
     Bundle m_savedInstanceState;
+	GoogleMap m_googleMap;
+	protected AerisMapView m_mapView;
+    private AerisMapOptions m_mapOptions = null;
+
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
+    }
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -78,32 +106,20 @@ public class MapFragment extends MapViewFragment implements
         m_savedInstanceState = savedInstanceState;
 
         View view = inflater.inflate(R.layout.fragment_interactive_maps, container, false);
-
-        mapView = (AerisMapView) view.findViewById(R.id.aerisfragment_map);
-        mapView.init(savedInstanceState, AerisMapType.GOOGLE);
-
-        setHasOptionsMenu(true);
+		m_mapView = (AerisMapView) view.findViewById(R.id.mapView);
+		m_mapView.onCreate(savedInstanceState);
+		m_mapView.getMapAsync(this);
 
 		return view;
 	}
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState)
-    {
-        super.onActivityCreated(savedInstanceState);
-
-        //check for permissions
-        if ((ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) ||
-                (ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED))
-        {
-            requestMultiplePermissions(m_inflater, m_container, savedInstanceState);
-        }
-        else
-        {
-            initMap();
-            refreshPressed();
-        }
-    }
+	@Override
+	public void onMapReady(GoogleMap googleMap)
+	{
+        m_googleMap = googleMap;
+        m_mapView.init(googleMap);
+        initMap();
+	}
 
     private void requestMultiplePermissions(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -131,7 +147,7 @@ public class MapFragment extends MapViewFragment implements
         else
         {
             // We already have permission, so handle as normal
-            initMap();
+            //initMap();
         }
     }
 
@@ -147,7 +163,7 @@ public class MapFragment extends MapViewFragment implements
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 {
-                    initMap();
+                    //initMap();
                 }
                 else
                 {
@@ -163,48 +179,61 @@ public class MapFragment extends MapViewFragment implements
 	 */
 	private void initMap()
     {
-        AerisMapOptions mapOptions = AerisMapOptions.getPreference(this.mapView.getContext());
-        if (mapOptions != null)
-        {
-            if ((mapOptions.getTile() == null) || mapOptions.getTile() == AerisTile.NONE)
-            {
-                mapView.addLayer(AerisTile.RADAR);
-                mapOptions.withTile(AerisTile.RADAR);
-                mapOptions.setPreference(this.mapView.getContext());
-            }
-        }
+        setHasOptionsMenu(true);
+
+        //AerisMapOptions mapOptions = AerisMapOptions.getPreference(this.m_mapView.getContext());
+        //AerisMapOptions mapOptions = ((DrawerActivity) getActivity()).getMapOptions();
+        //get the map options from local store (if there is one)
+        m_mapOptions = AerisMapOptions.getPreference(getActivity());
+
+		if (m_mapOptions == null)
+		{
+            m_mapOptions = AerisMapOptions.getPreference(getActivity(), true); //gets options with defaults
+            m_mapOptions.withPointData(AerisPointData.NONE);
+            m_mapOptions.withPolygon(AerisPolygonData.NONE);
+            m_mapOptions.withTile(AerisTile.RADAR);
+
+            m_mapOptions.setPreference(getActivity());
+		}
+
+        m_mapView.displayMapWithOptions(m_mapOptions);
 
 		MyPlacesDb db = new MyPlacesDb(getActivity());
 		MyPlace place = db.getMyPlace();
-        GoogleMap map = mapView.getMap();
-        MarkerOptions options = new MarkerOptions();
+
+        MarkerOptions markerOptions = new MarkerOptions();
 
 		if (place == null)
         {
-			locHelper = new LocationHelper(getActivity());
-			Location myLocation = locHelper.getCurrentLocation();
-			mapView.moveToLocation(myLocation, 9);
-            options.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
+            m_locHelper = new LocationHelper(getActivity());
+			Location myLocation = m_locHelper.getCurrentLocation();
+            m_mapView.moveToLocation(myLocation, 9);
+
+			if (markerOptions != null)
+				markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
 		}
         else
         {
-			mapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
-            options.position(new LatLng(place.latitude, place.longitude));
+            m_mapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
+
+			if (markerOptions != null)
+				markerOptions.position(new LatLng(place.latitude, place.longitude));
 		}
 
-        if (map != null)
-            map.addMarker(options);
+		if ((m_googleMap != null) && (markerOptions != null))
+			m_googleMap.addMarker(markerOptions);
 
-		mapView.setOnAerisMapLongClickListener(this);
+        m_mapView.setOnAerisMapLongClickListener(this);
 
-		// mapView.hideAnimationButton();
 		// setup the custom info window adapter to use
-		infoAdapter = new TemperatureWindowAdapter(getActivity());
-		mapView.addWindowInfoAdapter(infoAdapter);
+        m_infoAdapter = new TemperatureWindowAdapter(getActivity());
+        m_mapView.addWindowInfoAdapter(m_infoAdapter);
 
 		// setup doing something when a user presses an info window
 		// from the Aeris Point Data.
-		mapView.setOnAerisWindowClickListener(this);
+        m_mapView.setOnAerisWindowClickListener(this);
+
+		db.close();
 	}
 
 	/*
@@ -218,17 +247,19 @@ public class MapFragment extends MapViewFragment implements
 		if (itemId == R.id.menu_weather_layers) {
 			// call to launch using permissions obtained through API
 			// these permissions are obtained at start of AerisEngine
-			mapView.startAerisMapOptionsActivity(getActivity());
+            //m_mapView.startAerisMapOptionsActivity(getActivity());
 
 			/*
 			 * Alternatively you could only show the map points options like
 			 * this using the MapOptionsActivityBuilder(). See the classes
 			 * javadoc for more detail and examples of it.
 			 */
-			// MapOptionsActivityBuilder builder = new
-			// MapOptionsActivityBuilder();
-			// builder.withAllPoints();
-			// mapView.startAerisMapOptionsActivity(getActivity(), builder);
+			//MapOptionsActivityBuilder builder = new
+			//MapOptionsActivityBuilder();
+			//builder.withAllPoints();
+			//m_mapView.startAerisMapOptionsActivity(getActivity(), builder);
+
+            getActivity().startActivity(new Intent(getActivity(), MapOptionsLocalActivity.class));
 
 			return false;
 		} else {
@@ -240,6 +271,35 @@ public class MapFragment extends MapViewFragment implements
 	public void onResume() {
 		super.onResume();
 
+        if (m_mapView != null)
+        {
+
+            if (m_mapOptions != null)
+            {
+                m_mapOptions = AerisMapOptions.getPreference(getActivity());
+                m_mapView.displayMapWithOptions(m_mapOptions);
+            }
+
+            m_mapView.onResume();
+        }
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		m_mapView.onPause();
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		m_mapView.onDestroy();
+	}
+
+	@Override
+	public void onLowMemory() {
+		super.onLowMemory();
+		m_mapView.onLowMemory();
 	}
 
 	/*
@@ -296,16 +356,16 @@ public class MapFragment extends MapViewFragment implements
 						response.getFirstResponse());
 				Observation ob = obResponse.getObservation();
 				RelativeTo relativeTo = obResponse.getRelativeTo();
-				if (marker != null) {
-					marker.remove();
+				if (m_marker != null) {
+                    m_marker.remove();
 				}
 				TemperatureInfoData data = new TemperatureInfoData(ob.icon,
 						String.valueOf(ob.tempF));
-				marker = infoAdapter.addGoogleMarker(mapView.getMap(),
+                m_marker = m_infoAdapter.addGoogleMarker(m_mapView.getMap(),
 						relativeTo.lat, relativeTo.lon, BitmapDescriptorFactory
 								.fromResource(R.drawable.map_indicator_blank),
 						data);
-				marker.showInfoWindow();
+                m_marker.showInfoWindow();
 			}
 		}
 	}
@@ -361,15 +421,15 @@ public class MapFragment extends MapViewFragment implements
 		ObservationResponse obResponse = responses.get(0);
 		Observation ob = obResponse.getObservation();
 		RelativeTo relativeTo = obResponse.getRelativeTo();
-		if (marker != null) {
-			marker.remove();
+		if (m_marker != null) {
+            m_marker.remove();
 		}
 		TemperatureInfoData data = new TemperatureInfoData(ob.icon,
 				String.valueOf(ob.tempF));
-		marker = infoAdapter.addGoogleMarker(mapView.getMap(), relativeTo.lat,
+        m_marker = m_infoAdapter.addGoogleMarker(m_mapView.getMap(), relativeTo.lat,
 				relativeTo.lon, BitmapDescriptorFactory
 						.fromResource(R.drawable.map_indicator_blank), data);
-		marker.showInfoWindow();
+        m_marker.showInfoWindow();
 	}
 
 	@Override
@@ -380,13 +440,15 @@ public class MapFragment extends MapViewFragment implements
 
         if (place != null)
         {
-			mapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
+            m_mapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
 		}
         else
         {
-			locHelper = new LocationHelper(getActivity());
-			Location myLocation = locHelper.getCurrentLocation();
-			mapView.moveToLocation(myLocation, 9);
+            m_locHelper = new LocationHelper(getActivity());
+			Location myLocation = m_locHelper.getCurrentLocation();
+            m_mapView.moveToLocation(myLocation, 9);
 		}
+
+		db.close();
 	}
 }

@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
 
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
     <com.aerisweather.aeris.maps.AerisMapView
-        android:id="@+id/aerisfragment_map"
+        android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </com.aerisweather.aeris.maps.AerisMapView>
-
-</LinearLayout>
+        android:layout_height="match_parent" />
+</FrameLayout>

@@ -1,7 +1,7 @@
 package com.example.fragment;
 
 import android.app.Activity;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
 import com.example.fragment.HeadlessFragment.HeadlessObserver;

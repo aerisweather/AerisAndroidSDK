@@ -5,8 +5,10 @@ import java.util.List;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
+import android.net.Uri;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Intent;
 import android.content.Loader;
@@ -29,6 +31,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aerisweather.aeris.maps.AerisMapOptions;
 import com.example.customendpoint.CustomSunmoonFragment;
 import com.example.db.MyLocLoader;
 import com.example.db.MyPlace;
@@ -37,7 +40,7 @@ import com.example.db.MyPlacesSubject;
 import com.example.db.MyPlacesSubject.MyPlacesObserver;
 import com.example.fragment.ExtForecastFragment;
 import com.example.fragment.HeadlessFragment;
-import com.example.fragment.MapFragment;
+import com.example.fragment.MyMapFragment;
 import com.example.fragment.NearbyObsFragment;
 import com.example.fragment.ObservationFragment;
 import com.example.fragment.OverviewFragment;
@@ -49,9 +52,14 @@ import com.example.menudrawer.NavDrawerListAdapter;
 import com.aerisweather.aeris.logging.Logger;
 import com.aerisweather.aeris.model.Place;
 import com.aerisweather.aeris.util.WeatherUtil;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 
-public class DrawerActivity extends Activity implements OnItemClickListener,
-		OnClickListener, LoaderCallbacks<Cursor>, MyPlacesObserver {
+public class DrawerActivity extends FragmentActivity implements OnItemClickListener,
+		OnClickListener, LoaderCallbacks<Cursor>, MyPlacesObserver, MyMapFragment.OnFragmentInteractionListener
+{
 	private static final int MY_LOC_LOADER = 0;
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -73,8 +81,10 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 	private NavDrawerListAdapter adapter;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
+
 		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.menu_drawer);
@@ -132,7 +142,6 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 			// on first time display view for first nav item
 			displayView(HeadlessFragment.getFragment(this).getCurrentFragment());
 		}
-
 	}
 
 	@Override
@@ -211,7 +220,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
-		// Pass any configuration change to the drawer toggls
+		// Pass any configuration change to the drawer toggle
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 
@@ -242,7 +251,7 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 			fragment = new WeekendFragment();
 			break;
 		case 6:
-			fragment = new MapFragment();
+			fragment  = new MyMapFragment();
 			break;
 		case 7:
 			fragment = new CustomSunmoonFragment();
@@ -253,20 +262,20 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
 
 		if (fragment != null)
         {
-			FragmentManager fragmentManager = getFragmentManager();
+			FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
 			currentFragment = fragment;
+
 			// update selected item and title, then close the drawer
 			mDrawerList.setItemChecked(position, true);
 			mDrawerList.setSelection(position);
 			HeadlessFragment.getFragment(this).setCurrentFragment(position);
 			mDrawerLayout.closeDrawer(mDrawer);
 			setTitle(navMenuTitles[position]);
-
 		}
         else
         {
-			Toast.makeText(this, "This feature has not been implented yet.", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "This feature has not been implemented yet.", Toast.LENGTH_SHORT).show();
 			// error in creating fragment
 			Log.e("MainActivity", "Error creating fragment");
 		}
@@ -347,7 +356,12 @@ public class DrawerActivity extends Activity implements OnItemClickListener,
     {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        Fragment frag = getFragmentManager().findFragmentById(currentFragment.getId());
+        Fragment frag = getSupportFragmentManager().findFragmentById(currentFragment.getId());
         frag.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
+
+	@Override
+	public void onFragmentInteraction(Uri uri) {
+
+	}
 }

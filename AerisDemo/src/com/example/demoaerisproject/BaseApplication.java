@@ -26,7 +26,7 @@ public class BaseApplication extends Application {
 		super.onCreate();
 
 		// setting up secret key and client id for oauth to aeris
-		AerisEngine.initWithKeys(this.getString(R.string.aeris_client_id), this.getString(R.string.aeris_client_secret), this);
+		AerisEngine.initWithKeys(this.getString(R.string.aerisapi_client_id), this.getString(R.string.aerisapi_client_secret), this);
 
 		// Setting up default options from res values in maps sdk.
 		enableNotificationService(this, PrefManager.getBoolPreference(this, getString(R.string.pref_ntf_enabled)));

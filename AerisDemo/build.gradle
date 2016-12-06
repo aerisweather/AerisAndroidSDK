@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1002" }
+        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1013" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
@@ -18,14 +18,6 @@ android {
         versionCode 5
         versionName "1.5.0"
         multiDexEnabled true
-    }
-    signingConfigs {
-        config {
-            keyAlias 'demoprojkey'
-            keyPassword 'password'
-            storeFile file('C:/Users/sshie/AndroidStudioProjects/AerisAndroidSDK/AerisDemo/demoprojkeystore.jks')
-            storePassword 'password'
-        }
     }
     sourceSets {
         main {
@@ -53,20 +45,16 @@ android {
     dexOptions {
         preDexLibraries = false
     }
-    buildTypes {
-        release {
-            signingConfig signingConfigs.config
-            debuggable = true
-        }
-    }
 }
 repositories {
     mavenCentral()
     jcenter()
-    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1002" }
+    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1013" }
 }
 dependencies {
-    compile 'com.google.android.gms:play-services:9.6.1'
+    compile('com.google.android.gms:play-services:9.8.0'){
+        exclude group: 'com.google.firebase', module: 'firebase-common'
+    }
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.aerisweather:aeris-maps-lib:2.0.0@aar'
     compile 'com.aerisweather:aeris-core-lib:2.0.0@aar'

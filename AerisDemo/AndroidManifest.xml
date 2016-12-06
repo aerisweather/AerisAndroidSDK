@@ -1,75 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.demoaerisproject" >
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <!-- Needed for google player services newest version -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" >
-    </uses-feature>
+          package="com.example.demoaerisproject">
 
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="23" />
+        android:targetSdkVersion="23"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.example.demoaerisproject.permission.MAPS_RECEIVE"/>
+
+    <!-- Needed for google player services newest version -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true">
+    </uses-feature>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/aerislogo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" >
-        </meta-data>
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyA4JzDUXIcfBKrnE49o_qNuDzf1dRHBsys" />
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCpMY-M1jeunm1nDF4PB3_WFaNZCNMo5mw"/>
 
         <service
             android:name="com.example.service.NotificationService"
-            android:enabled="true"
-          />
-
-         <service
+            android:enabled="true"/>
+        <service
             android:name="com.example.service.ScreenOnService"
-            android:enabled="true"
-             />
-        
-        <activity
-            android:name="com.example.demoaerisproject.MyLocsActivity"
-            android:label="@string/activity_my_locs" />
-        <activity
-            android:name="com.example.demoaerisproject.LocationSearchActivity"
-            android:label="@string/activity_search" />
-        
-        <activity
-            android:name="com.example.demoaerisproject.SettingsActivity"
-            android:label="@string/app_name" >
-        </activity>
-        
-        
-        <activity android:name="com.aerisweather.aeris.maps.MapOptionsActivity"
-            android:label="@string/map_options_activity_name"/>
-        
-        
-        <activity
-            android:name="com.example.demoaerisproject.DrawerActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleInstance" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:enabled="true"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        <activity
+            android:name=".MyLocsActivity"
+            android:label="@string/activity_my_locs"/>
+        <activity
+            android:name=".LocationSearchActivity"
+            android:label="@string/activity_search"/>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".DrawerActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.demoaerisproject.MapOptionsLocalActivity">
         </activity>
     </application>
 
