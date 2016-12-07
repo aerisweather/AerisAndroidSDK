@@ -8,8 +8,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 
-import com.aerisweather.aeris.maps.MapOptionsActivity;
-import com.example.fragment.MyMapFragment;
 import com.google.android.gms.maps.GoogleMap;
 import com.aerisweather.aeris.maps.AerisMapOptions;
 import com.aerisweather.aeris.maps.MapOptionsActivityBuilder;
