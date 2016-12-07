@@ -87,7 +87,6 @@ public class MyMapFragment extends Fragment implements
         View view = inflater.inflate(R.layout.fragment_interactive_maps, container, false);
 		m_mapView = (AerisMapView) view.findViewById(R.id.mapView);
 		m_mapView.onCreate(savedInstanceState);
-		m_mapView.getMapAsync(this);
 
 		return view;
 	}
@@ -99,6 +98,23 @@ public class MyMapFragment extends Fragment implements
         m_mapView.init(googleMap);
         initMap();
 	}
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState)
+    {
+        super.onActivityCreated(savedInstanceState);
+
+        //check for permissions
+        if ((ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) ||
+                        (ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED))
+        {
+            requestMultiplePermissions(m_inflater, m_container, savedInstanceState);
+        }
+        else
+        {
+            m_mapView.getMapAsync(this);
+        }
+    }
 
     private void requestMultiplePermissions(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -126,7 +142,7 @@ public class MyMapFragment extends Fragment implements
         else
         {
             // We already have permission, so handle as normal
-            //initMap();
+            m_mapView.getMapAsync(this);
         }
     }
 
@@ -142,7 +158,7 @@ public class MyMapFragment extends Fragment implements
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 {
-                    //initMap();
+                    m_mapView.getMapAsync(this);
                 }
                 else
                 {

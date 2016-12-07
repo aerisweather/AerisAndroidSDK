@@ -20,9 +20,7 @@ import com.aerisweather.aeris.tiles.AerisTile;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by sshie on 12/6/2016.
- */
+
 public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCheckedChangeListener
 {
     AerisMapOptions m_options = null;
@@ -65,14 +63,17 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
         initViews();
 
         final ImageButton button = (ImageButton) findViewById(R.id.btnSave);
-        if (button != null) {
-            button.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    try {
+        if (button != null)
+        {
+            button.setOnClickListener(new View.OnClickListener()
+            {
+                public void onClick(View v)
+                {
+                    try
+                    {
                         onClick_btnSave();
-                    } catch (Exception e) {
-                        String s = e.getMessage();
                     }
+                    catch (Exception e) { }
                 }
             });
         }
@@ -91,19 +92,29 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
         if (m_options != null)
             m_animSeekerBar.setProgress((int) m_options.getAnimationSpeed());
 
-        if (m_options != null) {
+        if (m_options != null)
+        {
             setupChecksOnList(m_tiles, m_tileGroup, m_options.getTile());
             setupChecksOnList(m_polygonData, m_polygonGroup, m_options.getPolygon());
             setupChecksOnList(m_pointData, m_pointDataGroup, m_options.getPointData());
         }
 
-        if (m_options != null) {
-            if (m_options.getMapType() == GoogleMap.MAP_TYPE_NORMAL) {
+        if (m_options != null)
+        {
+            if (m_options.getMapType() == GoogleMap.MAP_TYPE_NORMAL)
+            {
                 setCheckedAtIndex(0, m_mapOptionsGroup);
-            } else if (m_options.getMapType() == GoogleMap.MAP_TYPE_SATELLITE) {
+            }
+            else if (m_options.getMapType() == GoogleMap.MAP_TYPE_SATELLITE)
+            {
                 setCheckedAtIndex(1, m_mapOptionsGroup);
-            } else if (m_options.getMapType() == GoogleMap.MAP_TYPE_HYBRID) {
-                setCheckedAtIndex(2, m_mapOptionsGroup);
+            }
+            else
+            {
+                if (m_options.getMapType() == GoogleMap.MAP_TYPE_HYBRID)
+                {
+                    setCheckedAtIndex(2, m_mapOptionsGroup);
+                }
             }
         }
     }
@@ -182,11 +193,9 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
     private void addRadioButtons()
     {
         MapOptionsActivityBuilder builder = new MapOptionsActivityBuilder();
-        //builder.withPoints(AerisPointData.STORM_CELLS);
-        //builder.withTiles(true, false, true, true);
         AerisPermissions permissions = builder.build();
 
-        m_tiles = new ArrayList<String>();
+        m_tiles = new ArrayList<>();
         m_tiles.add(AerisTile.NONE.getName());
         m_tiles.add(AerisTile.SAT_GLOBAL_INFRARED.getName());
         m_tiles.add(AerisTile.RADAR.getName());
@@ -217,23 +226,6 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
                 final float scale = getResources().getDisplayMetrics().density;
                 int pixels = (int) (getResources().getInteger(R.integer.min_click_height) * scale + 0.5f);
                 button.setText(overlay);
-
-                /*
-                if (!LocationUtilities.isInOfUS(getApplicationContext()))
-                {
-                    if (overlay
-                            .equals(AerisTile.RADALERTS.getName()) || overlay
-                            .equals(AerisTile.SAT_INFRARED.getName()) || overlay
-                            .equals(AerisTile.SAT_VISIBLE.getName())) {
-                        button.setText(getString(R.string.overlay_us_only_formay, overlay));
-                    } else if (overlay.equals(AerisTile.RADAR.getName()) || overlay
-                            .equals(AerisTile.ADVISORIES.getName()) || overlay
-                            .equals(AerisPointData.STORM_CELLS.getName()) ||
-                            overlay.equals(AerisTile.RADSAT.getName())) {
-                        button.setText(getString(R.string.overlay_us_only_format2, overlay));
-                    }
-                }
-                */
                 radioGroup.addView(button, RadioGroup.LayoutParams.MATCH_PARENT, pixels);
             }
         }
@@ -251,14 +243,7 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
 
         for (int i = 0; i < codes.length; i++)
         {
-            //if (codes[i] == AerisPolygonData.WARNINGS && permissions.advisories.allow)
-            //{
             stringCode.add(codes[i].getName());
-            //}
-            //else if (codes[i] == AerisPolygonData.NONE)
-            //{
-            //    stringCode.add(codes[i].getName());
-            //}
         }
 
         return stringCode;
@@ -311,12 +296,12 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
     private void onClick_btnSave()
     {
         int animSpeed = m_animSeekerBar.getProgress();
-        int opacity = m_opacitySeekerBar.getProgress();
         m_options.withAnimationSpeed(animSpeed);
+
+        int opacity = m_opacitySeekerBar.getProgress();
         m_options.withOpacity(opacity);
 
         m_options.setPreference(getBaseContext());
         this.finish();
     }
-
 }
