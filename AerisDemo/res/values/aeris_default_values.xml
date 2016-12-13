@@ -11,7 +11,7 @@
     <item name="aerismaps_tile_default_opacity" format="float" type="dimen">.8</item>
     <!-- Time to wait between the end frame of the animation before starting the animiaton over. This is added to normal frame time per animation. -->
     <integer name="aerismaps_animation_end_frame_additional_time">500</integer>
-    <!-- Time to wait for camera to settle before performing new point data queries automitically by aeris. -->
+    <!-- Time to wait for camera to settle before performing new point data queries automatically by aeris. -->
     <integer name="aerismaps_camera_change_millis">1500</integer>
     <!-- Total number of animation tiles to load -->
     <integer name="aerismaps_animation_tiles_to_load">10</integer>
@@ -19,12 +19,16 @@
     <!-- Storm Cell customization options *************************************** -->
     <!--
      True to display the forecast line for each storm cell on the map. If false, all forecast lines will not be shown
-     for all specific markers
+     for all specific markers
+
+
     -->
     <bool name="aerismaps_show_forecast_line">true</bool>
     <!--
      True to display the forecast wide cone for each storm cell on the map. If false, all forecast cones will not be shown
-     for all specific markers
+     for all specific markers
+
+
     -->
     <bool name="aerismaps_show_forecast_cone">true</bool>
     <!-- True to display the storm cell annotation on marker click -->

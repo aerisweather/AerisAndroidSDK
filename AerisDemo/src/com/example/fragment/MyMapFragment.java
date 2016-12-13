@@ -17,8 +17,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.aerisweather.aeris.communication.Action;
+import com.aerisweather.aeris.communication.Aeris;
+import com.aerisweather.aeris.communication.AerisCommunicationTask;
+import com.aerisweather.aeris.communication.AerisRequest;
+import com.aerisweather.aeris.communication.Endpoint;
+import com.aerisweather.aeris.communication.parameter.FromParameter;
+import com.aerisweather.aeris.communication.parameter.Parameter;
+import com.aerisweather.aeris.tiles.AerisPointHelper;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
@@ -186,12 +195,14 @@ public class MyMapFragment extends Fragment implements
             m_mapOptions.withPolygon(AerisPolygonData.NONE);
             m_mapOptions.withTile(AerisTile.RADAR);
 
-			//save the map options
+            //save the map options
             m_mapOptions.setPreference(getActivity());
 		}
 
 		//display the amp with the options we specified
         m_mapView.displayMapWithOptions(m_mapOptions);
+        m_mapView.addLayer(m_mapOptions.getPolygon());
+        m_mapView.addLayer(m_mapOptions.getPointData());
 
 		//get a new marker option object
 		MarkerOptions markerOptions = new MarkerOptions();
@@ -266,6 +277,8 @@ public class MyMapFragment extends Fragment implements
             {
                 m_mapOptions = AerisMapOptions.getPreference(getActivity());
                 m_mapView.displayMapWithOptions(m_mapOptions);
+                m_mapView.addLayer(m_mapOptions.getPointData());
+                m_mapView.addLayer(m_mapOptions.getPolygon());
             }
 
 			//tell the map to redraw itself
