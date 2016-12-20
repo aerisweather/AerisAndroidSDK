@@ -205,6 +205,9 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
         m_tiles.add(AerisTile.RADALERTS.getName());
         m_tiles.add(AerisTile.SAT_INFRARED.getName());
         m_tiles.add(AerisTile.SAT_VISIBLE.getName());
+        m_tiles.add(AerisTile.LIGHTNING_STRIKE_DENSITY.getName()),
+        m_tiles.add(AerisTile.ONE_HOUR_PRECIP.getName()),
+        m_tiles.add(AerisTile.ROAD_CONDITIONS.getName());
 
         this.setupList(m_tiles, R.id.optMapOptionsTiles, m_tileGroup);
 

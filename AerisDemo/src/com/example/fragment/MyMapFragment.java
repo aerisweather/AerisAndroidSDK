@@ -17,17 +17,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.aerisweather.aeris.communication.Action;
-import com.aerisweather.aeris.communication.Aeris;
-import com.aerisweather.aeris.communication.AerisCommunicationTask;
-import com.aerisweather.aeris.communication.AerisRequest;
-import com.aerisweather.aeris.communication.Endpoint;
-import com.aerisweather.aeris.communication.parameter.FromParameter;
-import com.aerisweather.aeris.communication.parameter.Parameter;
-import com.aerisweather.aeris.tiles.AerisPointHelper;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
