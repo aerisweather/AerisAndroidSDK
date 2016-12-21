@@ -48,16 +48,16 @@ In the resulting dialog, enter the SHA-1 fingerprint, then a semicolon, then The
 The Google API Console responds by displaying Key for Android apps (with certificates) followed by a forty-character API key.
 
 In your Android project, update the meta tag in the Demo Project’s Manifest:
-
+```java
 <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="your_api_key" />
-
+```
 Note: Your SHA1 can be obtained in Android Studio by running the **"signingReport"** task under the **"Gradle projects"** section.
 
 ### Permissions
 The following permissions are required in order to use the Aeris Android SDK in the application. Please add these to your AndroidManifest.xml:
-
+```java
 <manifest>
   <!-- Internet is required to make calls to the Aeris API -->
   <uses-permission android:name="android.permission.INTERNET" />
@@ -69,31 +69,31 @@ The following permissions are required in order to use the Aeris Android SDK in 
   <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>
-
+```
 ### Gradle Configuration
 The Aeris Core and Aeris Maps libraries are available through Maven Central. To add these dependencies to your project add these lines to your build.gradle file. 
 
-** Aeris Core: **
-
+**Aeris Core:**
+```java
 repositories {
     mavenCentral()
 }
 dependencies {
     compile 'com.hamweather:aeris-android-lib:#.#.#@aar'
 }
- 
+``` 
 
-** Aeris Maps: **
+**Aeris Maps:**
 
 (Note: you do not need to to add Aeris Core seperately if you are using Aeris Maps - the core lib is referenced in the maps lib)
-
+```java
 repositories {
     mavenCentral()
 }
 dependencies {
     compile 'com.hamweather:aeris-maps-library:#.#.#@aar'
 }
- 
+``` 
 
 [Aeris API Docs](http://www.aerisweather.com/support/docs/api/).<br/>
 [Aeris API Signup](http://www.aerisweather.com/signup/).<br/>
