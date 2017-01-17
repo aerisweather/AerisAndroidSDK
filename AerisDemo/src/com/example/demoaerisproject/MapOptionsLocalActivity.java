@@ -195,6 +195,14 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
         MapOptionsActivityBuilder builder = new MapOptionsActivityBuilder();
         AerisPermissions permissions = builder.build();
 
+        /*
+
+        get all the available layers for this user
+
+        run through the layers and check them against the permissions and show the ones that are available for this uer
+
+        for each available layer, create an options view with the available modifiers
+         */
         m_tiles = new ArrayList<>();
         m_tiles.add(AerisTile.NONE.getName());
         m_tiles.add(AerisTile.SAT_GLOBAL_INFRARED.getName());
@@ -205,9 +213,8 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
         m_tiles.add(AerisTile.RADALERTS.getName());
         m_tiles.add(AerisTile.SAT_INFRARED.getName());
         m_tiles.add(AerisTile.SAT_VISIBLE.getName());
-        m_tiles.add(AerisTile.LIGHTNING_STRIKE_DENSITY.getName()),
-        m_tiles.add(AerisTile.ONE_HOUR_PRECIP.getName()),
-        m_tiles.add(AerisTile.ROAD_CONDITIONS.getName());
+        m_tiles.add(AerisTile.LIGHTNING_STRIKE_DENSITY.getName());
+        m_tiles.add(AerisTile.ONE_HOUR_PRECIP.getName());
 
         this.setupList(m_tiles, R.id.optMapOptionsTiles, m_tileGroup);
 

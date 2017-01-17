@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1026" }
+        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1047" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
@@ -11,13 +11,22 @@ buildscript {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
     defaultConfig {
+        minSdkVersion 19
         applicationId "com.example.demoaerisproject"
         versionCode 5
-        versionName "1.5.0"
-        multiDexEnabled true
+        versionName "2.0.0"
+        //multiDexEnabled true
+        signingConfigs {
+            config {
+                keyAlias 'demoprojkey'
+                keyPassword 'password'
+                storeFile file('C:/Projects/AndroidStudioProjects/AerisAndroidSDK/AerisDemo/demoprojkeystore.jks')
+                storePassword 'password'
+                }
+            }
     }
     sourceSets {
         main {
@@ -45,17 +54,26 @@ android {
     dexOptions {
         preDexLibraries = false
     }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            debuggable = true
+            }
+        }
 }
 repositories {
     mavenCentral()
     jcenter()
-    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1026" }
+    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1047" }
 }
 dependencies {
-    compile('com.google.android.gms:play-services:9.8.0'){
-        exclude group: 'com.google.firebase', module: 'firebase-common'
+    testCompile 'junit:junit:4.12'
+    compile ('com.aerisweather:aeris-maps-lib:2.0.0@aar') {
+        transitive true
     }
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.aerisweather:aeris-maps-lib:2.0.0@aar'
-    compile 'com.aerisweather:aeris-core-lib:2.0.0@aar'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.google.android.gms:play-services-maps:10.0.1'
+    compile 'com.android.support:appcompat-v7:25.1.0'
 }

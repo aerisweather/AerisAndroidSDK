@@ -204,15 +204,19 @@ public class MyMapFragment extends Fragment implements
 
 		if (place == null)
         {
+			LatLng mpls = new LatLng(44.986656, -93.258133);
+
 			//we didn't find a stored location, so get the current location
             m_locHelper = new LocationHelper(getActivity());
 			Location myLocation = m_locHelper.getCurrentLocation();
 
 			//move the map to the location
-            m_mapView.moveToLocation(myLocation, 9);
+            //m_mapView.moveToLocation(myLocation, 9);
+			m_mapView.moveToLocation(mpls, 9);
 
 			//set the marker location
-			markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
+			//markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
+			markerOptions.position(mpls);
 		}
         else
         {
