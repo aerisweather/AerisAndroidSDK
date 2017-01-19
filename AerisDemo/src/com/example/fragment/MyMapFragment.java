@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
+import com.example.demoaerisproject.AerisMapOptionsLocal;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
 import com.example.demoaerisproject.R;
 import com.example.view.TemperatureInfoData;
@@ -75,7 +76,7 @@ public class MyMapFragment extends Fragment implements
     Bundle m_savedInstanceState;
 	GoogleMap m_googleMap;
 	protected AerisMapView m_mapView;
-    private AerisMapOptions m_mapOptions = null;
+    private AerisMapOptionsLocal m_mapOptions = null;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -176,22 +177,30 @@ public class MyMapFragment extends Fragment implements
     {
         setHasOptionsMenu(true);
 
-        m_mapOptions = AerisMapOptions.getPreference(getActivity());
+        m_mapOptions = AerisMapOptionsLocal.getPreference(getActivity());
 
 		if (m_mapOptions == null)
 		{
 			//gets map options with default settings
-            m_mapOptions = AerisMapOptions.getPreference(getActivity(), true);
+            m_mapOptions = AerisMapOptionsLocal.getPreference(getActivity(), true);
             m_mapOptions.withPointData(AerisPointData.NONE);
             m_mapOptions.withPolygon(AerisPolygonData.NONE);
-            m_mapOptions.withTile(AerisTile.RADAR);
+            //m_mapOptions.withTile(AerisTile.RADAR);
 
             //save the map options
             m_mapOptions.setPreference(getActivity());
 		}
 
-		//display the amp with the options we specified
-        m_mapView.displayMapWithOptions(m_mapOptions);
+		//display the map with the options we specified
+        //m_mapView.displayMapWithOptions(m_mapOptions); //this is tiles
+
+		//add the AMP layers
+		for (int iLayer = 0; iLayer > m_mapOptions.getAmpLayers().size(), iLayer++)
+		{
+			m_mapView.addLayer(m_mapOptions.getAmpLayer(iLayer));
+		}
+
+		m_mapView.addLayer(m_mapOptions.getTile());
         m_mapView.addLayer(m_mapOptions.getPolygon());
         m_mapView.addLayer(m_mapOptions.getPointData());
 
@@ -204,7 +213,12 @@ public class MyMapFragment extends Fragment implements
 
 		if (place == null)
         {
-			//LatLng mpls = new LatLng(44.986656, -93.258133);
+            //TODO Make sure this is set for prod
+            /*
+			LatLng mpls = new LatLng(44.986656, -93.258133);
+            m_mapView.moveToLocation(mpls, 9);
+            markerOptions.position(mpls);
+            */
 
 			//we didn't find a stored location, so get the current location
             m_locHelper = new LocationHelper(getActivity());
@@ -212,11 +226,10 @@ public class MyMapFragment extends Fragment implements
 
 			//move the map to the location
             m_mapView.moveToLocation(myLocation, 9);
-			//m_mapView.moveToLocation(mpls, 9);
 
 			//set the marker location
 			markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
-			//markerOptions.position(mpls);
+
 		}
         else
         {

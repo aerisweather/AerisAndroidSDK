@@ -1,13 +1,26 @@
 package com.example.demoaerisproject;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.view.ContextThemeWrapper;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
+import com.aerisweather.aeris.communication.AerisPermissionsRequest;
+import com.aerisweather.aeris.maps.MapOptionsActivity;
+import com.aerisweather.aeris.model.AerisPermissionsBuilder;
+import com.aerisweather.aeris.model.AerisPermissionsResponse;
+import com.aerisweather.aeris.model.MapsPermission;
+import com.aerisweather.aeris.tiles.AMPResponse;
+import com.aerisweather.aeris.util.NetworkUtils;
 import com.google.android.gms.maps.GoogleMap;
 import com.aerisweather.aeris.maps.AerisMapOptions;
 import com.aerisweather.aeris.maps.MapOptionsActivityBuilder;
@@ -17,16 +30,22 @@ import com.aerisweather.aeris.tiles.AerisPointData;
 import com.aerisweather.aeris.tiles.AerisPolygonData;
 import com.aerisweather.aeris.tiles.AerisTile;
 
+import org.json.JSONObject;
+
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 
 public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCheckedChangeListener
 {
-    AerisMapOptions m_options = null;
+    AerisMapOptionsLocal m_options = null;
+    List<AMPResponse> m_amplayerNames;
     private List<String> m_tiles;
     private List<String> m_polygonData;
     private List<String> m_pointData;
+    LinearLayout m_ampLayerGroup;
     RadioGroup m_tileGroup;
     RadioGroup m_polygonGroup;
     RadioGroup m_pointDataGroup;
@@ -42,6 +61,7 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
     {
         setContentView(R.layout.activity_map_options_local);
 
+        m_ampLayerGroup = (LinearLayout) findViewById(R.id.llMapOptionsAmpLayers);
         m_tileGroup = (RadioGroup) findViewById(R.id.optMapOptionsTiles);
         m_polygonGroup = (RadioGroup) findViewById(R.id.optMapOptionsPolygon);
         m_pointDataGroup = (RadioGroup) findViewById(R.id.optMapOptionsPointData);
@@ -57,11 +77,22 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
         m_animSeekerBar = (SeekBar) findViewById(R.id.mapoptions_sb_animation);
 
 
-        m_options = AerisMapOptions.getPreference(getBaseContext());
+        m_options = AerisMapOptionsLocal.getPreference(getBaseContext());
 
+        //start the task to get the AMP layers
+        try
+        {
+            new GetLayersTask().execute().get();
+        }
+        catch (Exception ex)
+        {
+            setupList(m_tiles, com.aerisweather.aeris.maps.R.id.mapoptions_rg_overlays, m_tileGroup);
+        }
+
+        /* moved to postExecute
         addRadioButtons();
         initViews();
-
+        */
         final ImageButton button = (ImageButton) findViewById(R.id.btnSave);
         if (button != null)
         {
@@ -80,7 +111,30 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
 
         super.onCreate(savedInstanceState);
     }
+    
+    private void addRadioButtons()
+    {
+        MapOptionsActivityBuilder builder = new MapOptionsActivityBuilder();
+        AerisPermissions permissions = builder.build();
 
+        m_tiles = new ArrayList<>();
+
+        //add the standard tiles from enum
+        m_tiles.add(AerisTile.NONE.getName());
+        m_tiles.add(AerisTile.RADAR.getName());
+        m_tiles.add(AerisTile.ADVISORIES.getName());
+        m_tiles.add(AerisTile.SAT_INFRARED.getName());
+        setupList(m_tiles, R.id.optMapOptionsTiles, m_tileGroup);
+
+        //point data
+        m_pointData = getPointList(permissions);
+        setupList(m_pointData, R.id.optMapOptionsPointData, m_pointDataGroup);
+
+        //polygon data
+        m_polygonData = getPolyList(permissions);
+        setupList(m_polygonData, R.id.optMapOptionsPolygon, m_polygonGroup);
+
+    }
 
     private void initViews()
     {
@@ -174,56 +228,81 @@ public class MapOptionsLocalActivity extends Activity implements RadioGroup.OnCh
                 m_options.withMapType(GoogleMap.MAP_TYPE_SATELLITE);
             }
             else if (buttonText.equals(getString(R.string.map_options_hybrid)))
-            {
-                m_options.withMapType(GoogleMap.MAP_TYPE_HYBRID);
-            }
+                {
+                    m_options.withMapType(GoogleMap.MAP_TYPE_HYBRID);
+                }
         }
         else if (group.getId() == R.id.optMapOptionsPointData)
-        {
-            m_options.withPointData(AerisPointData.getPointDataFromName(m_pointData.get(index)));
-        }
-        else if (group.getId() == R.id.optMapOptionsPolygon)
-        {
-            m_options.withPolygon(AerisPolygonData.getPolygonDataFromName(m_polygonData.get(index)));
-        }
+            {
+                m_options.withPointData(AerisPointData.getPointDataFromName(m_pointData.get(index)));
+            }
+            else if (group.getId() == R.id.optMapOptionsPolygon)
+                {
+                    m_options.withPolygon(AerisPolygonData.getPolygonDataFromName(m_polygonData.get(index)));
+                }
 
     }
 
-
-    private void addRadioButtons()
+    private class GetLayersTask extends AsyncTask<Void, Void, Void>
     {
-        MapOptionsActivityBuilder builder = new MapOptionsActivityBuilder();
-        AerisPermissions permissions = builder.build();
+        @Override
+        protected Void doInBackground(Void... voids)
+        {
+            AerisPermissionsRequest request = new AerisPermissionsRequest(getString(R.string.aeris_client_id),
+                    getString(R.string.aeris_client_secret), "com.example.demoaerisproject");
+            JSONObject object = NetworkUtils.getJSONZipped(request, false);
+            AerisPermissionsResponse permissionsResponse = AerisPermissionsResponse.fromJSON(object);
+            AerisPermissions permissions = permissionsResponse.getPermissions();
 
-        /*
+            //get the AMP layers
+            m_amplayerNames = AMPResponse.getAvailableLayers();
+            List<String> stringCode = new ArrayList<>();
 
-        get all the available layers for this user
+            //see which AMP layers we have permission to access
+            MapsPermission mapPermissions = permissions.maps;
+            for (int iLayer = 0; iLayer < m_amplayerNames.size(); iLayer++)
+            {
+                if (mapPermissions.layers.hasLayerAccess(m_amplayerNames.get(iLayer).id))
+                    stringCode.add(m_amplayerNames.get(iLayer).id);
+            }
 
-        run through the layers and check them against the permissions and show the ones that are available for this uer
+            return null;
+        }
 
-        for each available layer, create an options view with the available modifiers
-         */
-        m_tiles = new ArrayList<>();
-        m_tiles.add(AerisTile.NONE.getName());
-        m_tiles.add(AerisTile.SAT_GLOBAL_INFRARED.getName());
-        m_tiles.add(AerisTile.RADAR.getName());
-        m_tiles.add(AerisTile.ADVISORIES.getName());
-        m_tiles.add(AerisTile.ADVISORIES_SV.getName());
-        m_tiles.add(AerisTile.RADSAT.getName());
-        m_tiles.add(AerisTile.RADALERTS.getName());
-        m_tiles.add(AerisTile.SAT_INFRARED.getName());
-        m_tiles.add(AerisTile.SAT_VISIBLE.getName());
-        m_tiles.add(AerisTile.LIGHTNING_STRIKE_DENSITY.getName());
-        m_tiles.add(AerisTile.ONE_HOUR_PRECIP.getName());
+        @Override
+        protected void onPostExecute(Void aVoid)
+        {
+            super.onPostExecute(aVoid);
 
-        this.setupList(m_tiles, R.id.optMapOptionsTiles, m_tileGroup);
+            addAmpLayerCheckboxes();
+            addRadioButtons();
+            initViews();
+        }
+    }
 
-        m_pointData = getPointList(permissions);
-        setupList(m_pointData, R.id.optMapOptionsPointData, m_pointDataGroup);
+    private void addAmpLayerCheckboxes()
+    {
+        try
+        {
+            //for each layer, add a checkbox to the linear layout
+            for (int iLayer = 0; iLayer < m_amplayerNames.size(); iLayer++)
+            {
+                CheckBox checkBox = new CheckBox(new ContextThemeWrapper(this, R.style.WhiteCheck));
+                checkBox.setText(m_amplayerNames.get(iLayer).name);
+                checkBox.setTextColor(Color.WHITE);
 
-        m_polygonData = getPolyList(permissions);
-        setupList(m_polygonData, R.id.optMapOptionsPolygon, m_polygonGroup);
+                m_ampLayerGroup.addView(checkBox, RadioGroup.LayoutParams.MATCH_PARENT);
+            }
+        }
+        catch (Exception ex)
+        {
+            m_ampLayerGroup.removeAllViews();
 
+            //add a message to the options informing the user that there are no amp layers available
+            TextView txtMsg = new TextView(getBaseContext());
+            txtMsg.setText("No AMP Layers Available");
+            m_ampLayerGroup.addView(txtMsg);
+        }
     }
 
     private void setupList(List<String> list, int id, RadioGroup radioGroup)
