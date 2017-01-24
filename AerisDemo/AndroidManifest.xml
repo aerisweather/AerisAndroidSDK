@@ -52,12 +52,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!--
-        <activity android:name="com.aerisweather.aeris.maps.MapOptionsActivity">
+        <activity
+            android:name="com.example.demoaerisproject.MapOptionsLocalActivity">
         </activity>
-        -->
-        <activity android:name="com.example.demoaerisproject.MapOptionsLocalActivity">
-        </activity>
+
     </application>
 
 </manifest>

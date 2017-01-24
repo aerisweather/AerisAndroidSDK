@@ -19,9 +19,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.aerisweather.aeris.maps.MapOptionsActivity;
+import com.aerisweather.aeris.tiles.AerisAMP;
+import com.aerisweather.aeris.tiles.AerisAmpLayer;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
-import com.example.demoaerisproject.AerisMapOptionsLocal;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
 import com.example.demoaerisproject.R;
 import com.example.view.TemperatureInfoData;
@@ -58,7 +60,6 @@ import com.aerisweather.aeris.response.ObservationResponse;
 import com.aerisweather.aeris.response.StormCellResponse;
 import com.aerisweather.aeris.response.StormReportsResponse;
 import com.aerisweather.aeris.response.RecordsResponse;
-import com.aerisweather.aeris.tiles.AerisTile;
 import com.aerisweather.aeris.tiles.AerisPointData;
 import com.aerisweather.aeris.tiles.AerisPolygonData;
 
@@ -76,7 +77,7 @@ public class MyMapFragment extends Fragment implements
     Bundle m_savedInstanceState;
 	GoogleMap m_googleMap;
 	protected AerisMapView m_mapView;
-    private AerisMapOptionsLocal m_mapOptions = null;
+    private AerisMapOptions m_mapOptions = null;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -175,17 +176,28 @@ public class MyMapFragment extends Fragment implements
 	 */
 	private void initMap()
     {
+        //create an instance of the AerisAMP class
+		AerisAMP aerisAMP = new AerisAMP(getString(R.string.aerisapi_client_id), getString(R.string.aerisapi_client_secret));
+
         setHasOptionsMenu(true);
 
-        m_mapOptions = AerisMapOptionsLocal.getPreference(getActivity());
+        //instantiate the AerisMapOptions class
+        m_mapOptions = AerisMapOptions.getPreference(getActivity());
+
+        //set the mapOptions AerisAMP pointer
+        m_mapOptions.setAerisAMP(aerisAMP);
 
 		if (m_mapOptions == null)
 		{
 			//gets map options with default settings
-            m_mapOptions = AerisMapOptionsLocal.getPreference(getActivity(), true);
-            m_mapOptions.withPointData(AerisPointData.NONE);
+            m_mapOptions = AerisMapOptions.getPreference(getActivity(), true);
+            //m_mapOptions.withPointData(AerisPointData.NONE);
+			m_mapOptions.setPointData(AerisPointData.NONE);
             m_mapOptions.withPolygon(AerisPolygonData.NONE);
             //m_mapOptions.withTile(AerisTile.RADAR);
+
+			//set the AmpLayer defaults
+			m_mapOptions.setDefaultAmpLayers();
 
             //save the map options
             m_mapOptions.setPreference(getActivity());
@@ -195,12 +207,9 @@ public class MyMapFragment extends Fragment implements
         //m_mapView.displayMapWithOptions(m_mapOptions); //this is tiles
 
 		//add the AMP layers
-		for (int iLayer = 0; iLayer > m_mapOptions.getAmpLayers().size(), iLayer++)
-		{
-			m_mapView.addLayer(m_mapOptions.getAmpLayer(iLayer));
-		}
+		m_mapView.addLayer(aerisAMP);
 
-		m_mapView.addLayer(m_mapOptions.getTile());
+		//m_mapView.addLayer(m_mapOptions.getTile());
         m_mapView.addLayer(m_mapOptions.getPolygon());
         m_mapView.addLayer(m_mapOptions.getPointData());
 
