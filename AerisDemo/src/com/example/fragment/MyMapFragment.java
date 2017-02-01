@@ -19,12 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.aerisweather.aeris.maps.MapOptionsActivity;
-import com.aerisweather.aeris.model.AerisPermissions;
-import com.aerisweather.aeris.tiles.AerisAMP;
-import com.aerisweather.aeris.tiles.AerisAmpGetLayersTask;
-import com.aerisweather.aeris.tiles.AerisAmpLayer;
-import com.aerisweather.aeris.tiles.AerisAmpOnGetLayersTaskCompleted;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
@@ -57,6 +51,7 @@ import com.aerisweather.aeris.model.AerisError;
 import com.aerisweather.aeris.model.AerisResponse;
 import com.aerisweather.aeris.model.Observation;
 import com.aerisweather.aeris.model.RelativeTo;
+import com.aerisweather.aeris.model.AerisPermissions;
 import com.aerisweather.aeris.response.EarthquakesResponse;
 import com.aerisweather.aeris.response.FiresResponse;
 import com.aerisweather.aeris.response.ObservationResponse;
@@ -65,6 +60,10 @@ import com.aerisweather.aeris.response.StormReportsResponse;
 import com.aerisweather.aeris.response.RecordsResponse;
 import com.aerisweather.aeris.tiles.AerisPointData;
 import com.aerisweather.aeris.tiles.AerisPolygonData;
+import com.aerisweather.aeris.tiles.AerisAMP;
+import com.aerisweather.aeris.tiles.AerisAmpGetLayersTask;
+import com.aerisweather.aeris.tiles.AerisAmpLayer;
+import com.aerisweather.aeris.tiles.AerisAmpOnGetLayersTaskCompleted;
 
 
 public class MyMapFragment extends Fragment implements
@@ -223,8 +222,7 @@ public class MyMapFragment extends Fragment implements
 		m_mapOptions.setAerisAMP(m_aerisAmp);
 
 		//if (m_mapOptions == null)
-        boolean getPref = m_mapOptions.getMapPreferences(getActivity());
-		if (!getPref);
+		if (!m_mapOptions.getMapPreferences(getActivity()))
 		{
 			//set default layers/data
 			m_mapOptions.setDefaultAmpLayers();
