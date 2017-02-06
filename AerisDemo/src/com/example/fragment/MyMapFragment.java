@@ -60,7 +60,7 @@ import com.aerisweather.aeris.response.StormReportsResponse;
 import com.aerisweather.aeris.response.RecordsResponse;
 import com.aerisweather.aeris.tiles.AerisPointData;
 import com.aerisweather.aeris.tiles.AerisPolygonData;
-import com.aerisweather.aeris.tiles.AerisAMP;
+import com.aerisweather.aeris.tiles.AerisAmp;
 import com.aerisweather.aeris.tiles.AerisAmpGetLayersTask;
 import com.aerisweather.aeris.tiles.AerisAmpLayer;
 import com.aerisweather.aeris.tiles.AerisAmpOnGetLayersTaskCompleted;
@@ -80,7 +80,7 @@ public class MyMapFragment extends Fragment implements
 	GoogleMap m_googleMap;
 	protected AerisMapView m_mapView;
     private AerisMapOptions m_mapOptions = null;
-	private AerisAMP m_aerisAmp;
+	private AerisAmp m_aerisAmp;
 	private boolean m_isMapReady = false;
 	private boolean m_isAmpReady = false;
 
@@ -96,7 +96,7 @@ public class MyMapFragment extends Fragment implements
 		m_mapView.onCreate(savedInstanceState);
 
 		//create an instance of the AerisAMP class
-		m_aerisAmp = new AerisAMP(getString(R.string.aerisapi_client_id), getString(R.string.aerisapi_client_secret));
+		m_aerisAmp = new AerisAmp(getString(R.string.aerisapi_client_id), getString(R.string.aerisapi_client_secret));
 
 		//start the task to get the AMP layers
 		try	{
