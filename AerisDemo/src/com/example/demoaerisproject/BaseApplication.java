@@ -5,16 +5,12 @@ import android.app.Application;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 
 import com.example.preference.PrefManager;
 import com.example.service.NotificationService;
-import com.google.android.gms.analytics.Logger;
-import com.aerisweather.aeris.communication.AerisEngine;
-import com.aerisweather.aeris.logging.LogLevel;
-import com.aerisweather.aeris.maps.AerisMapsEngine;
 
-import org.json.JSONException;
+import com.aerisweather.aeris.communication.AerisEngine;
+import com.aerisweather.aeris.maps.AerisMapsEngine;
 
 public class BaseApplication extends Application {
 

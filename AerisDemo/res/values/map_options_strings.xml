@@ -3,6 +3,7 @@
 
     <!-- Map options -->
     <string name="map_options_overlays">Overlays</string>
+    <string name="map_options_amp_layers">AMP Layers</string>
     <string name="map_options_point_data">Point Data</string>
     <string name="map_options_googleoptions">MAP TYPE</string>
     <string name="map_options_opacity">Opacity</string>

@@ -56,4 +56,7 @@
         <item name="android:background">@drawable/card_shape</item>
     </style>
 
+    <style name="WhiteCheck">
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
 </resources>
