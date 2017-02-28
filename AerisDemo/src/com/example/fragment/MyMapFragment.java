@@ -244,12 +244,12 @@ public class MyMapFragment extends Fragment implements
             m_mapOptions.saveMapPreferences(getActivity());
 		}
 
-		//display the map with the options we specified
         //m_mapView.displayMapWithOptions(m_mapOptions); //this is tiles
 
-		//add the AMP layers
-		m_mapView.addLayer(m_mapOptions.getAerisAMP());
+		m_mapView.getMap().setMapType(m_mapOptions.getMapType());
+
 		//m_mapView.addLayer(m_mapOptions.getTile());
+		m_mapView.addLayer(m_mapOptions.getAerisAMP());
         m_mapView.addLayer(m_mapOptions.getPolygon());
         m_mapView.addLayer(m_mapOptions.getPointData());
 
@@ -334,6 +334,8 @@ public class MyMapFragment extends Fragment implements
             if (m_mapOptions != null)
             {
                 m_mapOptions.getMapPreferences(getActivity());
+
+				m_mapView.getMap().setMapType(m_mapOptions.getMapType());
                 //m_mapView.displayMapWithOptions(m_mapOptions); //this was setting the old tile layer
                 m_mapView.addLayer(m_mapOptions.getAerisAMP());
                 m_mapView.addLayer(m_mapOptions.getPointData());
