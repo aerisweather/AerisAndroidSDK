@@ -56,17 +56,18 @@ android {
 buildscript {
     repositories {
         mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1144" }
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1250" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:2.3.0'
     }
 }
 
 repositories {
     mavenCentral()
     jcenter()
-    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1144" }
+    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1250" }
 }
 dependencies {
     testCompile 'junit:junit:4.12'

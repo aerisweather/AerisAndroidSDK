@@ -17,8 +17,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.aerisweather.aeris.maps.AerisMapContainerView;
+import com.aerisweather.aeris.maps.AnimationControlView;
+import com.aerisweather.aeris.maps.AnimationController;
+import com.aerisweather.aeris.tiles.AerisTile;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
@@ -68,7 +75,7 @@ import com.aerisweather.aeris.tiles.AerisAmpOnGetLayersTaskCompleted;
 
 public class MyMapFragment extends Fragment implements
 		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
-		OnAerisMarkerInfoWindowClickListener, RefreshInterface, OnMapReadyCallback
+		OnAerisMarkerInfoWindowClickListener, RefreshInterface, OnMapReadyCallback//, View.OnClickListener
 {
 	private LocationHelper m_locHelper;
 	private Marker m_marker;
@@ -78,7 +85,7 @@ public class MyMapFragment extends Fragment implements
     ViewGroup m_container;
     Bundle m_savedInstanceState;
 	GoogleMap m_googleMap;
-	protected AerisMapView m_mapView;
+	protected AerisMapView m_aerisMapView;
     private AerisMapOptions m_mapOptions = null;
 	private AerisAmp m_aerisAmp;
 	private boolean m_isMapReady = false;
@@ -92,18 +99,21 @@ public class MyMapFragment extends Fragment implements
         m_savedInstanceState = savedInstanceState;
 
         View view = inflater.inflate(R.layout.fragment_interactive_maps, container, false);
-		m_mapView = (AerisMapView) view.findViewById(R.id.mapView);
-		m_mapView.onCreate(savedInstanceState);
+		AerisMapContainerView mapContainer = (AerisMapContainerView) view.findViewById(R.id.mapView);
+		m_aerisMapView = (AerisMapView) mapContainer.getAerisMapView();
+		m_aerisMapView.onCreate(savedInstanceState);
 
 		//create an instance of the AerisAMP class
 		m_aerisAmp = new AerisAmp(getString(R.string.aerisapi_client_id), getString(R.string.aerisapi_client_secret));
 
 		//start the task to get the AMP layers
-		try	{
+		try
+		{
 			//get all the possible layers, then get permissions from the API and generate a list of permissible layers
 			new AerisAmpGetLayersTask(new GetLayersTaskCallback(), m_aerisAmp).execute().get();
 		}
-		catch (Exception ex) {
+		catch (Exception ex)
+		{
 			String s = ex.getMessage();
 			//if the task fails, keep going without AMP layers
 		}
@@ -116,22 +126,25 @@ public class MyMapFragment extends Fragment implements
 	{
 		m_isMapReady = true;
 		m_googleMap = googleMap;
-		m_mapView.init(googleMap);
+		m_aerisMapView.init(googleMap);
 
-		if (m_isAmpReady) {
+		if (m_isAmpReady)
+		{
 			initMap();
 		}
 	}
 
-    public class GetLayersTaskCallback implements AerisAmpOnGetLayersTaskCompleted {
-        public GetLayersTaskCallback() {
-        }
+	public class GetLayersTaskCallback implements AerisAmpOnGetLayersTaskCompleted
+	{
+        public GetLayersTaskCallback() { }
 
         public void onAerisAmpGetLayersTaskCompleted(ArrayList<AerisAmpLayer> permissibleLayers,
-                                                     AerisPermissions permissions) {
+													 AerisPermissions permissions)
+		{
             m_isAmpReady = true;
 
-            if (m_isMapReady) {
+            if (m_isMapReady)
+            {
                 initMap();
             }
         }
@@ -143,14 +156,16 @@ public class MyMapFragment extends Fragment implements
         super.onActivityCreated(savedInstanceState);
 
         //check for permissions
-        if ((ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) ||
-                        (ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED))
+        if ((ContextCompat.checkSelfPermission(getActivity(),
+				Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) ||
+                        (ContextCompat.checkSelfPermission(getActivity(),
+								Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED))
         {
             requestMultiplePermissions(m_inflater, m_container, savedInstanceState);
         }
         else
         {
-            m_mapView.getMapAsync(this);
+			m_aerisMapView.getMapAsync(this);
         }
     }
 
@@ -180,7 +195,7 @@ public class MyMapFragment extends Fragment implements
         else
         {
             // We already have permission, so handle as normal
-            m_mapView.getMapAsync(this);
+			m_aerisMapView.getMapAsync(this);
         }
     }
 
@@ -196,7 +211,7 @@ public class MyMapFragment extends Fragment implements
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 {
-                    m_mapView.getMapAsync(this);
+					m_aerisMapView.getMapAsync(this);
                 }
                 else
                 {
@@ -212,6 +227,8 @@ public class MyMapFragment extends Fragment implements
 	 */
 	private void initMap()
     {
+		m_aerisMapView.setUseMapOptions(true);
+
 		setHasOptionsMenu(true);
 
 		//create a new MapOptions obj
@@ -229,29 +246,17 @@ public class MyMapFragment extends Fragment implements
 			m_mapOptions.setPointData(AerisPointData.NONE);
 			m_mapOptions.setPolygonData(AerisPolygonData.NONE);
 
-			/*
-            m_mapOptions = AerisMapOptions.getPreference(getActivity(), true);
-            //m_mapOptions.withPointData(AerisPointData.NONE);
-			m_mapOptions.setPointData(AerisPointData.NONE);
-            //m_mapOptions.withPolygon(AerisPolygonData.NONE);
-			m_mapOptions.setPolygonData(AerisPolygonData.NONE);
-            //m_mapOptions.withTile(AerisTile.RADAR);
-
-			//set the AmpLayer defaults
-			m_mapOptions.setDefaultAmpLayers();
-			*/
             //save the map options
             m_mapOptions.saveMapPreferences(getActivity());
 		}
 
-        //m_mapView.displayMapWithOptions(m_mapOptions); //this is tiles
-
-		m_mapView.getMap().setMapType(m_mapOptions.getMapType());
+		m_aerisMapView.getMap().setMapType(m_mapOptions.getMapType());
 
 		//m_mapView.addLayer(m_mapOptions.getTile());
-		m_mapView.addLayer(m_mapOptions.getAerisAMP());
-        m_mapView.addLayer(m_mapOptions.getPolygon());
-        m_mapView.addLayer(m_mapOptions.getPointData());
+		//m_aerisMapView.addLayer(AerisTile.RADAR);
+		m_aerisMapView.addLayer(m_mapOptions.getAerisAMP());
+		m_aerisMapView.addLayer(m_mapOptions.getPolygon());
+		m_aerisMapView.addLayer(m_mapOptions.getPointData());
 
 		//get a new marker option object
 		MarkerOptions markerOptions = new MarkerOptions();
@@ -263,28 +268,27 @@ public class MyMapFragment extends Fragment implements
 		if (place == null)
         {
             //TODO Make sure this is updated properly when for prod
-
+			/*
 			LatLng mpls = new LatLng(44.986656, -93.258133);
-            m_mapView.moveToLocation(mpls, 9);
+			m_aerisMapView.moveToLocation(mpls, 9);
             markerOptions.position(mpls);
-
+            */
 
 			//we didn't find a stored location, so get the current location
             m_locHelper = new LocationHelper(getActivity());
 			Location myLocation = m_locHelper.getCurrentLocation();
 
 			//move the map to the location
-            m_mapView.moveToLocation(myLocation, 9);
+			m_aerisMapView.moveToLocation(myLocation, 9);
 
 			//set the marker location
-			//markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
-
-            markerOptions.position(mpls);
+			markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
+            //markerOptions.position(mpls);
 		}
         else
         {
 			//we found a stored location so move the map to it
-            m_mapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
+			m_aerisMapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
 
 			//set the marker location
 			markerOptions.position(new LatLng(place.latitude, place.longitude));
@@ -295,14 +299,14 @@ public class MyMapFragment extends Fragment implements
 			m_googleMap.addMarker(markerOptions);
 
 		//do something when a user makes a long click
-        m_mapView.setOnAerisMapLongClickListener(this);
+		m_aerisMapView.setOnAerisMapLongClickListener(this);
 
 		// setup the custom info window adapter to use
         m_infoAdapter = new TemperatureWindowAdapter(getActivity());
-        m_mapView.addWindowInfoAdapter(m_infoAdapter);
+		m_aerisMapView.addWindowInfoAdapter(m_infoAdapter);
 
 		//do something when a user presses an info window from the Aeris Point Data.
-        m_mapView.setOnAerisWindowClickListener(this);
+		m_aerisMapView.setOnAerisWindowClickListener(this);
 
 		db.close();
 	}
@@ -329,21 +333,22 @@ public class MyMapFragment extends Fragment implements
 		super.onResume();
 
 		//we are resuming the map view, so check for updated options
-        if (m_mapView != null)
+        if (m_aerisMapView != null)
         {
             if (m_mapOptions != null)
             {
                 m_mapOptions.getMapPreferences(getActivity());
 
-				m_mapView.getMap().setMapType(m_mapOptions.getMapType());
+				m_aerisMapView.getMap().setMapType(m_mapOptions.getMapType());
                 //m_mapView.displayMapWithOptions(m_mapOptions); //this was setting the old tile layer
-                m_mapView.addLayer(m_mapOptions.getAerisAMP());
-                m_mapView.addLayer(m_mapOptions.getPointData());
-                m_mapView.addLayer(m_mapOptions.getPolygon());
+				m_aerisMapView.addLayer(AerisTile.RADAR);
+				m_aerisMapView.addLayer(m_mapOptions.getAerisAMP());
+				m_aerisMapView.addLayer(m_mapOptions.getPointData());
+				m_aerisMapView.addLayer(m_mapOptions.getPolygon());
             }
 
 			//tell the map to redraw itself
-            m_mapView.onResume();
+			m_aerisMapView.onResume();
         }
 	}
 
@@ -351,21 +356,21 @@ public class MyMapFragment extends Fragment implements
 	public void onPause()
 	{
 		super.onPause();
-		m_mapView.onPause();
+		m_aerisMapView.onPause();
 	}
 
 	@Override
 	public void onDestroy()
 	{
 		super.onDestroy();
-		m_mapView.onDestroy();
+		m_aerisMapView.onDestroy();
 	}
 
 	@Override
 	public void onLowMemory()
 	{
 		super.onLowMemory();
-		m_mapView.onLowMemory();
+		m_aerisMapView.onLowMemory();
 	}
 
 	@Override
@@ -402,7 +407,7 @@ public class MyMapFragment extends Fragment implements
 
 				TemperatureInfoData data = new TemperatureInfoData(ob.icon,	String.valueOf(ob.tempF));
                 m_marker = m_infoAdapter.addGoogleMarker(
-						m_mapView.getMap(),
+						m_aerisMapView.getMap(),
 						relativeTo.lat,
 						relativeTo.lon,
 						BitmapDescriptorFactory.fromResource(R.drawable.map_indicator_blank),
@@ -468,7 +473,7 @@ public class MyMapFragment extends Fragment implements
 
 		TemperatureInfoData data = new TemperatureInfoData(ob.icon,	String.valueOf(ob.tempF));
         m_marker = m_infoAdapter.addGoogleMarker(
-				m_mapView.getMap(),
+				m_aerisMapView.getMap(),
 				relativeTo.lat,
 				relativeTo.lon,
 				BitmapDescriptorFactory.fromResource(R.drawable.map_indicator_blank),
@@ -484,13 +489,13 @@ public class MyMapFragment extends Fragment implements
 
         if (place != null)
         {
-            m_mapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
+			m_aerisMapView.moveToLocation(new LatLng(place.latitude, place.longitude),	9);
 		}
         else
         {
             m_locHelper = new LocationHelper(getActivity());
 			Location myLocation = m_locHelper.getCurrentLocation();
-            m_mapView.moveToLocation(myLocation, 9);
+			m_aerisMapView.moveToLocation(myLocation, 9);
 		}
 
 		db.close();
