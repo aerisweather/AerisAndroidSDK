@@ -57,7 +57,7 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1250" }
+        //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1256" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
@@ -67,11 +67,11 @@ buildscript {
 repositories {
     mavenCentral()
     jcenter()
-    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1250" }
+    //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1256" }
 }
 dependencies {
     testCompile 'junit:junit:4.12'
-    compile ('com.aerisweather:aeris-maps-lib:2.0.0@aar') {
+    compile ('com.aerisweather:aeris-maps-lib:2.0.0_Beta3@aar') {
         transitive true
     }
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

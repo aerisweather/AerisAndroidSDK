@@ -17,15 +17,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.aerisweather.aeris.maps.AerisMapContainerView;
-import com.aerisweather.aeris.maps.AnimationControlView;
-import com.aerisweather.aeris.maps.AnimationController;
-import com.aerisweather.aeris.tiles.AerisTile;
+import com.aerisweather.aeris.maps.MapOptionsActivity;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
@@ -75,7 +70,7 @@ import com.aerisweather.aeris.tiles.AerisAmpOnGetLayersTaskCompleted;
 
 public class MyMapFragment extends Fragment implements
 		OnAerisMapLongClickListener, AerisCallback, ObservationsTaskCallback,
-		OnAerisMarkerInfoWindowClickListener, RefreshInterface, OnMapReadyCallback//, View.OnClickListener
+		OnAerisMarkerInfoWindowClickListener, RefreshInterface, OnMapReadyCallback
 {
 	private LocationHelper m_locHelper;
 	private Marker m_marker;
@@ -251,9 +246,7 @@ public class MyMapFragment extends Fragment implements
 		}
 
 		m_aerisMapView.getMap().setMapType(m_mapOptions.getMapType());
-
-		//m_mapView.addLayer(m_mapOptions.getTile());
-		//m_aerisMapView.addLayer(AerisTile.RADAR);
+		
 		m_aerisMapView.addLayer(m_mapOptions.getAerisAMP());
 		m_aerisMapView.addLayer(m_mapOptions.getPolygon());
 		m_aerisMapView.addLayer(m_mapOptions.getPointData());
@@ -267,13 +260,6 @@ public class MyMapFragment extends Fragment implements
 
 		if (place == null)
         {
-            //TODO Make sure this is updated properly when for prod
-			/*
-			LatLng mpls = new LatLng(44.986656, -93.258133);
-			m_aerisMapView.moveToLocation(mpls, 9);
-            markerOptions.position(mpls);
-            */
-
 			//we didn't find a stored location, so get the current location
             m_locHelper = new LocationHelper(getActivity());
 			Location myLocation = m_locHelper.getCurrentLocation();
@@ -283,7 +269,6 @@ public class MyMapFragment extends Fragment implements
 
 			//set the marker location
 			markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
-            //markerOptions.position(mpls);
 		}
         else
         {
@@ -340,8 +325,7 @@ public class MyMapFragment extends Fragment implements
                 m_mapOptions.getMapPreferences(getActivity());
 
 				m_aerisMapView.getMap().setMapType(m_mapOptions.getMapType());
-                //m_mapView.displayMapWithOptions(m_mapOptions); //this was setting the old tile layer
-				m_aerisMapView.addLayer(AerisTile.RADAR);
+                
 				m_aerisMapView.addLayer(m_mapOptions.getAerisAMP());
 				m_aerisMapView.addLayer(m_mapOptions.getPointData());
 				m_aerisMapView.addLayer(m_mapOptions.getPolygon());
