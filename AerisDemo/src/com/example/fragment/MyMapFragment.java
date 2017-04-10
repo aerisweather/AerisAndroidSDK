@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.aerisweather.aeris.maps.AerisMapContainerView;
 import com.aerisweather.aeris.maps.MapOptionsActivity;
+import com.aerisweather.aeris.response.ConvectiveOutlookResponse;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
@@ -246,6 +247,7 @@ public class MyMapFragment extends Fragment implements
 		}
 
 		m_aerisMapView.getMap().setMapType(m_mapOptions.getMapType());
+		//m_mapOptions.setPolygonData(AerisPolygonData.CONVECTIVE_OUTLOOK);
 		
 		m_aerisMapView.addLayer(m_mapOptions.getAerisAMP());
 		m_aerisMapView.addLayer(m_mapOptions.getPolygon());
@@ -401,7 +403,7 @@ public class MyMapFragment extends Fragment implements
 		}
 	}
 
-	@Override
+    @Override
 	public void earthquakeWindowPressed(EarthquakesResponse response, AerisMarker marker)
 	{
 		// do something with the response data.

@@ -1,6 +1,7 @@
 package com.example.demoaerisproject;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -17,4 +18,6 @@ public class MapOptionsLocalActivity extends MapOptionsActivity implements Radio
 
         super.onCreate(savedInstanceState);
     }
+
+
 }
