@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.aerisweather.aeris.response.ConvectiveOutlookResponse;
 import com.example.demoaerisproject.R;
 import com.example.listview.ForecastAdapter;
 import com.aerisweather.aeris.communication.EndpointType;

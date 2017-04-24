@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.aerisweather.aeris.response.ConvectiveOutlookResponse;
 import com.example.demoaerisproject.DrawerActivity;
 import com.example.demoaerisproject.R;
 import com.aerisweather.aeris.communication.EndpointType;

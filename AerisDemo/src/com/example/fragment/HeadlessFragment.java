@@ -10,7 +10,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 
-import com.aerisweather.aeris.response.ConvectiveOutlookResponse;
 import com.example.db.MyPlacesDb;
 import com.aerisweather.aeris.communication.Action;
 import com.aerisweather.aeris.communication.AerisCallback;

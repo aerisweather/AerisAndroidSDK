@@ -20,8 +20,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.aerisweather.aeris.maps.AerisMapContainerView;
-import com.aerisweather.aeris.maps.MapOptionsActivity;
-import com.aerisweather.aeris.response.ConvectiveOutlookResponse;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
@@ -61,7 +59,7 @@ import com.aerisweather.aeris.response.ObservationResponse;
 import com.aerisweather.aeris.response.StormCellResponse;
 import com.aerisweather.aeris.response.StormReportsResponse;
 import com.aerisweather.aeris.response.RecordsResponse;
-import com.aerisweather.aeris.tiles.AerisPointData;
+import com.aerisweather.aeris.tiles.AerisPointData;;
 import com.aerisweather.aeris.tiles.AerisPolygonData;
 import com.aerisweather.aeris.tiles.AerisAmp;
 import com.aerisweather.aeris.tiles.AerisAmpGetLayersTask;
@@ -96,7 +94,7 @@ public class MyMapFragment extends Fragment implements
 
         View view = inflater.inflate(R.layout.fragment_interactive_maps, container, false);
 		AerisMapContainerView mapContainer = (AerisMapContainerView) view.findViewById(R.id.mapView);
-		m_aerisMapView = (AerisMapView) mapContainer.getAerisMapView();
+		m_aerisMapView = mapContainer.getAerisMapView();
 		m_aerisMapView.onCreate(savedInstanceState);
 
 		//create an instance of the AerisAMP class
@@ -211,7 +209,8 @@ public class MyMapFragment extends Fragment implements
                 }
                 else
                 {
-                    Toast.makeText(getActivity(), R.string.permissions_verbiage, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), R.string.permissions_verbiage,
+							Toast.LENGTH_LONG).show();
                 }
                 return;
             }
@@ -234,7 +233,6 @@ public class MyMapFragment extends Fragment implements
 		//set the mapOptions class's AerisAMP obj
 		m_mapOptions.setAerisAMP(m_aerisAmp);
 
-		//if (m_mapOptions == null)
 		if (!m_mapOptions.getMapPreferences(getActivity()))
 		{
 			//set default layers/data
@@ -247,11 +245,31 @@ public class MyMapFragment extends Fragment implements
 		}
 
 		m_aerisMapView.getMap().setMapType(m_mapOptions.getMapType());
-		//m_mapOptions.setPolygonData(AerisPolygonData.CONVECTIVE_OUTLOOK);
-		
-		m_aerisMapView.addLayer(m_mapOptions.getAerisAMP());
-		m_aerisMapView.addLayer(m_mapOptions.getPolygon());
+
+		/**
+		 * SAMPLE: DAY TWO CONVECTIVE
+		 */
+		/*
+		AerisPolygonData aerisPolygonData = m_mapOptions.getPolygon();
+		aerisPolygonData.setConvectiveOutlookParameters(new ParameterBuilder().
+				withFilter(Filter.DAY_TWO.getCode() + "," + Filter.GEO_POLY.getCode()).
+				withCustomParameter("from", "today"));
+        m_aerisMapView.addLayer(aerisPolygonData);
+        */
+
+        //amp
+		AerisAmp aerisAmp = m_mapOptions.getAerisAMP();
+		if (aerisAmp.getActiveMapLayers().size() < 1)
+		{
+			aerisAmp.setDefaultLayers();
+		}
+		m_aerisMapView.addLayer(aerisAmp);
+
+        //point data
 		m_aerisMapView.addLayer(m_mapOptions.getPointData());
+
+		//polygons
+		m_aerisMapView.addLayer(m_mapOptions.getPolygonData());
 
 		//get a new marker option object
 		MarkerOptions markerOptions = new MarkerOptions();
@@ -330,7 +348,7 @@ public class MyMapFragment extends Fragment implements
                 
 				m_aerisMapView.addLayer(m_mapOptions.getAerisAMP());
 				m_aerisMapView.addLayer(m_mapOptions.getPointData());
-				m_aerisMapView.addLayer(m_mapOptions.getPolygon());
+				m_aerisMapView.addLayer(m_mapOptions.getPolygonData());
             }
 
 			//tell the map to redraw itself

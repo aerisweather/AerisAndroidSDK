@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="aerisapi_client_id">wgE96YE3scTQLKjnqiMsv</string>
-    <string name="aerisapi_client_secret">llNCahrEs8FWhBRuDOCJEUqOxzfgBd6B2XmqY6xX</string>
+    <string name="aerisapi_client_id"></string>
+    <string name="aerisapi_client_secret"></string>
     <string name="app_name">AerisDemo</string>
     <string name="activity_search">Search</string>
     <string name="activity_my_locs">My Locations</string>

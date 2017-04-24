@@ -17,10 +17,11 @@
         android:name=".BaseApplication"
         android:icon="@drawable/aerislogo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
+        <!--android:allowBackup="false" >--> <!-- USED FOR DEBUGGING, ALLOWS PREF DEL ON UNINSTALL -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCpMY-M1jeunm1nDF4PB3_WFaNZCNMo5mw"/>
+            android:value=""/>
 
         <service
             android:name="com.example.service.NotificationService"

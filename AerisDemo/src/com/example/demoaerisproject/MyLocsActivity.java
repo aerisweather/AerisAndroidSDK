@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.LayoutParams;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.TextView;
 
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
@@ -72,6 +73,7 @@ public class MyLocsActivity extends Activity implements OnLongClickListener,
 			}
 		}
 
+		setMessageTextView();
 	}
 
 	private void setCheckedAtIndex(int index, RadioGroup group) {
@@ -110,6 +112,21 @@ public class MyLocsActivity extends Activity implements OnLongClickListener,
 			db.deletePlace(place);
 			db.close();
 			addRadioButtons();
+			setMessageTextView();
+		}
+	}
+
+	private void setMessageTextView()
+	{
+		TextView txtMessage	 = (TextView) findViewById(R.id.txtMessage);
+
+		if (locationGroup.getChildCount() > 0)
+		{
+			txtMessage.setText("Long Press to Remove a Location");
+		}
+		else
+		{
+			txtMessage.setText("No Locations Saved");
 		}
 	}
 }

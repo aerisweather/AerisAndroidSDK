@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.aerisweather.aeris.response.ConvectiveOutlookResponse;
 import com.example.demoaerisproject.R;
 import com.example.listview.DayNightPeriod;
 import com.example.listview.WeekendAdapter;

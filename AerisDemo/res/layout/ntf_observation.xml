@@ -23,7 +23,6 @@
         android:textStyle="bold"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:singleLine="false"
         android:text="Mostly Cloudy with a slight chance of snow"
         android:textColor="#ffffff"
         android:textSize="14sp" />
