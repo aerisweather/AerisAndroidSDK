@@ -21,7 +21,7 @@
         <!--android:allowBackup="false" >--> <!-- USED FOR DEBUGGING, ALLOWS PREF DEL ON UNINSTALL -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value=""/>
+            android:value="@string/google_maps_key"/>
 
         <service
             android:name="com.example.service.NotificationService"
