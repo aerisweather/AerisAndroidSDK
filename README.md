@@ -32,7 +32,7 @@ The SDK includes a demo app to help get you started. To allow the demo project t
 
 For more details please visit the following links:
 
-##Reference Links
+## Reference Links
 [Aeris API Docs](http://www.aerisweather.com/support/docs/api/)<br/>
 [Aeris API Signup](http://www.aerisweather.com/signup/)<br/>
 [Aeris Mapping Platform (AMP) ](https://www.aerisweather.com/develop/#maps)<br/>
