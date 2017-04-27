@@ -5,7 +5,7 @@ The Aeris Android SDK allows a developer to quickly and easily add weather conte
 
 ## Getting Started 
 
-View the latest installation and implementation details at AerisWeather under the [Aeris Android SDK toolkit documentation] (http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/).
+View the latest installation and implementation details in the [Aeris Android SDK docs](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/).
 
 ### Aeris API Configuration for the AerisDemo App
 Before you can begin using the Aeris Android SDK in your project, you will need to download the latest version of the SDK and ensure that you have the required Aeris API keys for your application.
