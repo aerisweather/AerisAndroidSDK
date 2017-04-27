@@ -36,9 +36,11 @@ For more details please visit the following links:
 [Aeris API Docs](http://www.aerisweather.com/support/docs/api/)<br/>
 [Aeris API Signup](http://www.aerisweather.com/signup/)<br/>
 [Aeris Mapping Platform (AMP) ](https://www.aerisweather.com/develop/#maps)<br/>
+
 [Aeris Android SDK](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/)<br/>
 [Aeris Android Core Library Javadocs](http://www.aerisweather.com/docs/android/Aeris/index.html)<br/>
-[Aeris Android Maps](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/weather-maps/)<br/>
-[Aeris Demo app](https://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/aeris-android-demo-app/)
 
+[Aeris Android Maps](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/weather-maps/)<br/>
 [Aeris Android Maps Library Javadocs](http://www.aerisweather.com/docs/android/AerisMap/index.html).<br/>
+
+[Aeris Demo app](https://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/aeris-android-demo-app/)
