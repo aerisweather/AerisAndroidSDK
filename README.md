@@ -14,7 +14,7 @@ To begin using the Aeris Android SDK in your project, [download the latest versi
 To use the Aeris API, you will need to have valid access keys. Access keys are obtained by registering your application/namespace. To register your application, log in to Aeris Weather with your account and look for "APPS". 
 Don't have an Aeris account? You can get one for free [here](https://www.aerisweather.com/signup/pricing/).
 
-###Determine which components of the Aeris Android SDK you need for your project:
+### Determine Which Library You Need
 
 #### Aeris Core library
 This is the base library for accessing the AerisWeather API. If you are planning to use the Aeris API for data without a map component, this is all you need.
@@ -23,7 +23,7 @@ This is the base library for accessing the AerisWeather API. If you are planning
 This library provides access to AerisWeather mapping features such as radar, satellite, warnings, etc. 
 The map library includes a dependency to the Aeris Core library, so you won't need to download the Core library separately. If you are planning to use Aeris to create weather maps for your Android project, this is the library for you.
 
-###Configure Gradle
+### Configure Gradle
 The Aeris Core and Aeris Maps libraries are available through the Central Repository. For details on adding these dependencies to your project [check out the Installation page here](https://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/installation/).  
 
 ### Aeris Demo App
