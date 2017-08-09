@@ -1,6 +1,7 @@
 package com.example.demoaerisproject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.annotation.TargetApi;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aerisweather.aeris.communication.AerisCustomCommunicationTask;
+import com.aerisweather.aeris.communication.AerisRequest;
+import com.aerisweather.aeris.communication.CustomCallback;
+import com.aerisweather.aeris.communication.Endpoint;
+import com.aerisweather.aeris.communication.loaders.ObservationsTask;
+import com.aerisweather.aeris.communication.loaders.ObservationsTaskCallback;
+import com.aerisweather.aeris.communication.loaders.SunmoonTask;
+import com.aerisweather.aeris.communication.loaders.SunmoonTaskCallback;
+import com.aerisweather.aeris.communication.parameter.ParameterBuilder;
+import com.aerisweather.aeris.communication.parameter.PlaceParameter;
+import com.aerisweather.aeris.model.AerisError;
+import com.aerisweather.aeris.response.SunmoonResponse;
 import com.example.customendpoint.CustomSunmoonFragment;
 import com.example.db.MyLocLoader;
 import com.example.db.MyPlace;
@@ -218,8 +231,7 @@ public class DrawerActivity extends FragmentActivity
 	 * onPostCreate() and onConfigurationChanged()...
 	 */
 	@Override
-	protected void onPostCreate(Bundle savedInstanceState)
-    {
+	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 		// Sync the toggle state after onRestoreInstanceState has occurred.
 		mDrawerToggle.syncState();

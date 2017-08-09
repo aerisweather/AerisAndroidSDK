@@ -19,7 +19,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.aerisweather.aeris.communication.AerisProgressListener;
+import com.aerisweather.aeris.communication.loaders.SunmoonTask;
+import com.aerisweather.aeris.communication.loaders.SunmoonTaskCallback;
 import com.aerisweather.aeris.maps.AerisMapContainerView;
+import com.aerisweather.aeris.response.SunmoonResponse;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
