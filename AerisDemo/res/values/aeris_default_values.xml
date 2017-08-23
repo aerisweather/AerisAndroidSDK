@@ -46,17 +46,17 @@
     <bool name="aerismaps_rotating_show_cone">true</bool>
     <bool name="aerismaps_rotating_show_line">true</bool>
 
-    <color name="aerismaps_rotating_cone_line_color">#5AFF0000</color>
-    <color name="aerismaps_rotating_cone_fill_color">#46FF0000</color>
-    <color name="aerismaps_rotating_line_color">#AAFF0000</color>
+    <color name="aerismaps_rotating_cone_line_color">#5AFF6A00</color>
+    <color name="aerismaps_rotating_cone_fill_color">#46FF6A00</color>
+    <color name="aerismaps_rotating_line_color">#AAFF6A00</color>
 
     <!-- Tornadic storm cell type -->
     <bool name="aerismaps_tornadic_show_cone">true</bool>
     <bool name="aerismaps_tornadic_show_line">true</bool>
 
-    <color name="aerismaps_tornadic_cone_line_color">#FFFF0000</color>
-    <color name="aerismaps_tornadic_cone_fill_color">#FFFF0000</color>
-    <color name="aerismaps_tornadic_line_color">#AA000000</color>
+    <color name="aerismaps_tornadic_cone_line_color">#5AFF0000</color>
+    <color name="aerismaps_tornadic_cone_fill_color">#46FF0000</color>
+    <color name="aerismaps_tornadic_line_color">#AAFF0000</color>
 
     <!-- General storm cell type -->
     <bool name="aerismaps_general_show_cone">true</bool>
