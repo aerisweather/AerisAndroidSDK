@@ -250,6 +250,26 @@ public class MyMapFragment extends Fragment implements
 
 		m_aerisMapView.getMap().setMapType(m_mapOptions.getMapType());
 
+        //amp layer(s)
+		AerisAmp aerisAmp = m_mapOptions.getAerisAMP();
+		/**
+		 * CUSTOM / UNDOCUMENTED LAYER
+		 */
+		/*
+		AerisAmpLayer customAmpLayer = new AerisAmpLayer("pressure-msl-nam", "pressure-msl-nam", 80);
+		aerisAmp.setLayer(customAmpLayer);
+		*/
+
+		if (aerisAmp.getActiveMapLayers().size() < 1)
+		{
+			aerisAmp.setDefaultLayers();
+		}
+		m_aerisMapView.addLayer(aerisAmp);
+
+        //point data layer(s)
+		m_aerisMapView.addLayer(m_mapOptions.getPointData());
+
+		//polygon layer(s)
 		/**
 		 * SAMPLE: DAY TWO CONVECTIVE
 		 */
@@ -260,19 +280,6 @@ public class MyMapFragment extends Fragment implements
 				withCustomParameter("from", "today"));
         m_aerisMapView.addLayer(aerisPolygonData);
         */
-
-        //amp
-		AerisAmp aerisAmp = m_mapOptions.getAerisAMP();
-		if (aerisAmp.getActiveMapLayers().size() < 1)
-		{
-			aerisAmp.setDefaultLayers();
-		}
-		m_aerisMapView.addLayer(aerisAmp);
-
-        //point data
-		m_aerisMapView.addLayer(m_mapOptions.getPointData());
-
-		//polygons
 		m_aerisMapView.addLayer(m_mapOptions.getPolygonData());
 
 		//get a new marker option object
