@@ -59,15 +59,13 @@ Note: Your SHA1 can be obtained in Android Studio by running the **"signingRepor
 The following permissions are required in order to use the Aeris Android SDK in the application. Please add these to your AndroidManifest.xml:
 ```java
 <manifest>
-  <!-- Internet is required to make calls to the Aeris API -->
-  <uses-permission android:name="android.permission.INTERNET" />
-  <!-- Aeris Library uses the network state to determine if network is availabe to make calls  -->
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <!-- Google maps requries this now with tiles -->
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <!-- (Optional If you want location services to be used as well) -->
-  <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 </manifest>
 ```
 ### Gradle Configuration
@@ -91,11 +89,16 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compile 'com.hamweather:aeris-maps-library:#.#.#@aar'
+    compile ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {
+        transitive true
+    }
+    compile 'com.google.android.gms:play-services-maps:#.#.#'
+    compile 'com.android.support:appcompat-v7:#.#.#'
 }
 ``` 
 
 ##Reference Links
+
 [Aeris API Docs](http://www.aerisweather.com/support/docs/api/).<br/>
 [Aeris API Signup](http://www.aerisweather.com/signup/).<br/>
 [Aeris Android SDK](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/).<br/>
