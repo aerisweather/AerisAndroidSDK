@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
+import com.aerisweather.aeris.tiles.AerisConstants;
 import com.example.preference.PrefManager;
 import com.example.service.NotificationService;
 
@@ -33,7 +34,7 @@ public class BaseApplication extends Application {
 		 * a required parameter.Can also be done through the xml values in the
 		 * aeris_default_values.xml
 		 */
-		AerisMapsEngine.getInstance(this).getDefaultPointParameters().setLightningParameters("dt:-1", 500, null, "-4hours");
+		AerisMapsEngine.getInstance(this).getDefaultPointParameters().setLightningParameters("dt:-1", 500, null, null);
     }
 
 	public static void enableNotificationService(Context context, boolean enable) {
