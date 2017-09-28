@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         applicationId "com.example.demoaerisproject"
-        versionCode 5
-        versionName "2.1.0"
+        versionCode 6
+        versionName "2.1.1"
         //multiDexEnabled true
         signingConfigs {
             config {
@@ -48,7 +48,7 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.config
-            debuggable = false
+            debuggable = true
             }
         }
 }
@@ -57,21 +57,21 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1434" }
+        //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1460" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.3'
     }
 }
 
 repositories {
     mavenCentral()
     jcenter()
-    //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1434" }
+    //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1460" }
 }
 dependencies {
     testCompile 'junit:junit:4.12'
-    compile ('com.aerisweather:aeris-maps-lib:2.1.0@aar') {
+    compile ('com.aerisweather:aeris-maps-lib:2.1.1@aar') {
         transitive true
     }
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
