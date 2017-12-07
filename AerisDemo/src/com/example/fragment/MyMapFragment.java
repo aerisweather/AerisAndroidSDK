@@ -284,18 +284,20 @@ public class MyMapFragment extends Fragment implements
 		//get a stored location if there is one
 		MyPlacesDb db = new MyPlacesDb(getActivity());
 		MyPlace place = db.getMyPlace();
+		Location myLocation = null;
 
 		if (place == null)
         {
 			//we didn't find a stored location, so get the current location
             m_locHelper = new LocationHelper(getActivity());
-			Location myLocation = m_locHelper.getCurrentLocation();
+			myLocation = m_locHelper.getCurrentLocation();
 
 			//move the map to the location
 			m_aerisMapView.moveToLocation(myLocation, 9);
 
 			//set the marker location
-			markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
+			if (myLocation != null)
+				markerOptions.position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
 		}
         else
         {
@@ -307,7 +309,7 @@ public class MyMapFragment extends Fragment implements
 		}
 
 		//add the marker with specified options
-		if (m_googleMap != null)
+		if ((m_googleMap != null) && (myLocation != null))
 			m_googleMap.addMarker(markerOptions);
 
 		//do something when a user makes a long click
