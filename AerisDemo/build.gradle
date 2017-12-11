@@ -8,7 +8,7 @@ android {
         minSdkVersion 19
         applicationId "com.example.demoaerisproject"
         versionCode 6
-        versionName "2.1.1"
+        versionName "2.2.0"
         //multiDexEnabled true
         signingConfigs {
             config {
@@ -57,7 +57,7 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1467" }
+        //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1467" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -67,7 +67,7 @@ buildscript {
 repositories {
     mavenCentral()
     jcenter()
-    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1467" }
+    //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1467" }
 }
 dependencies {
     testCompile 'junit:junit:4.12'
