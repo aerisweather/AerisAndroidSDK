@@ -2,13 +2,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         minSdkVersion 19
         applicationId "com.example.demoaerisproject"
-        versionCode 6
-        versionName "2.2.0"
+        versionCode 7
+        targetSdkVersion 26
+        versionName "2.3.0"
         //multiDexEnabled true
         signingConfigs {
             config {
@@ -57,26 +58,28 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1467" }
+        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1472" }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 
 repositories {
     mavenCentral()
     jcenter()
-    //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1467" }
+    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1472" }
+    google()
 }
 dependencies {
-    testCompile 'junit:junit:4.12'
-    compile ('com.aerisweather:aeris-maps-lib:2.2.0@aar') {
+    testImplementation 'junit:junit:4.12'
+    implementation ('com.aerisweather:aeris-maps-lib:2.3.0@aar') {
         transitive true
     }
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.google.android.gms:play-services-maps:11.0.4'
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.google.android.gms:play-services-maps:11.6.2'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
 }
