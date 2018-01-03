@@ -58,7 +58,7 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1472" }
+        //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1473" }
         google()
     }
     dependencies {
@@ -69,7 +69,7 @@ buildscript {
 repositories {
     mavenCentral()
     jcenter()
-    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1472" }
+    //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1473" }
     google()
 }
 dependencies {
