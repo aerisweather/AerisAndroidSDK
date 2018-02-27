@@ -77,7 +77,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compile 'com.hamweather:aeris-android-lib:#.#.#@aar'
+    compile 'com.aerisweather:aeris-android-lib:#.#.#@aar'
 }
 ``` 
 
