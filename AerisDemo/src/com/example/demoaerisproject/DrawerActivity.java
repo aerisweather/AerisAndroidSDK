@@ -1,7 +1,6 @@
 package com.example.demoaerisproject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.annotation.TargetApi;
 import android.support.v4.app.Fragment;
@@ -29,18 +28,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.aerisweather.aeris.communication.AerisCustomCommunicationTask;
-import com.aerisweather.aeris.communication.AerisRequest;
-import com.aerisweather.aeris.communication.CustomCallback;
-import com.aerisweather.aeris.communication.Endpoint;
-import com.aerisweather.aeris.communication.loaders.ObservationsTask;
-import com.aerisweather.aeris.communication.loaders.ObservationsTaskCallback;
-import com.aerisweather.aeris.communication.loaders.SunmoonTask;
-import com.aerisweather.aeris.communication.loaders.SunmoonTaskCallback;
-import com.aerisweather.aeris.communication.parameter.ParameterBuilder;
-import com.aerisweather.aeris.communication.parameter.PlaceParameter;
-import com.aerisweather.aeris.model.AerisError;
-import com.aerisweather.aeris.response.SunmoonResponse;
 import com.example.customendpoint.CustomSunmoonFragment;
 import com.example.db.MyLocLoader;
 import com.example.db.MyPlace;
@@ -53,7 +40,6 @@ import com.example.fragment.MyMapFragment;
 import com.example.fragment.NearbyObsFragment;
 import com.example.fragment.ObservationFragment;
 import com.example.fragment.OverviewFragment;
-import com.example.fragment.RecentObsFragment;
 import com.example.fragment.RefreshInterface;
 import com.example.fragment.WeekendFragment;
 import com.example.menudrawer.NavDrawerItem;
@@ -266,30 +252,25 @@ public class DrawerActivity extends FragmentActivity
             }
             case 2:
             {
-                fragment = new RecentObsFragment();
+                fragment = new NearbyObsFragment();
                 break;
             }
             case 3:
             {
-                fragment = new NearbyObsFragment();
+                fragment = new OverviewFragment();
                 break;
             }
             case 4:
             {
-                fragment = new OverviewFragment();
+                fragment = new WeekendFragment();
                 break;
             }
             case 5:
             {
-                fragment = new WeekendFragment();
-                break;
-            }
-            case 6:
-            {
                 fragment = new MyMapFragment();
                 break;
             }
-            case 7:
+            case 6:
             {
                 fragment = new CustomSunmoonFragment();
                 break;

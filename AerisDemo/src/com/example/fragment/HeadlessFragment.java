@@ -45,7 +45,6 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	protected static final String WEEKEND = "weekend_forecasts";
 	protected static final String EXT_FORECAST = "extended_forecasts";
 	protected static final String NEARBY_OBS = "nearby_observations";
-	protected static final String RECENT_OBS = "recent_observations";
 	protected static final String OVERVIEW = "weather_overview";
 
 	private int currentFragment = 0;
@@ -133,18 +132,6 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 						ObservationFields.ICON,
 						ObservationFields.WEATHER_SHORT, Fields.PLACE,
 						ObservationFields.DATETIME), new LimitParameter(10));
-		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
-				this, request);
-		if (listener != null) {
-			task.withProgress(listener);
-		}
-		task.execute();
-	}
-
-	public void performRecentsObs(AerisProgressListener listener) {
-		AerisRequest request = new AerisRequest(new Endpoint(
-				EndpointType.OBSERVATIONS_RECENT), Action.CLOSEST,
-				getPlaceParameter(), new PLimitParameter(10));
 		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
 				this, request);
 		if (listener != null) {
@@ -246,17 +233,23 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	}
 
 	@Override
-	public void onResult(EndpointType endpoint, AerisResponse response) {
-		if (response.isSuccessfulWithResponses()) {
-			if (endpoint == EndpointType.FORECASTS) {
-				if ("daynight".equals(response.getFirstResponse().interval)) {
+	public void onResult(EndpointType endpoint, AerisResponse response)
+	{
+		if (response.isSuccessfulWithResponses())
+		{
+			if (endpoint == EndpointType.FORECASTS)
+			{
+				if ("daynight".equals(response.getFirstResponse().interval))
+				{
 					storeResponse(WEEKEND, response);
-				} else if ("day".equals(response.getFirstResponse().interval)) {
+				}
+				else if ("day".equals(response.getFirstResponse().interval))
+				{
 					storeResponse(EXT_FORECAST, response);
 				}
-			} else if (endpoint == EndpointType.OBSERVATIONS_RECENT) {
-				storeResponse(RECENT_OBS, response);
-			} else if (endpoint == EndpointType.OBSERVATIONS) {
+			}
+			else if (endpoint == EndpointType.OBSERVATIONS)
+			{
 				storeResponse(NEARBY_OBS, response);
 			}
 			notifyObservers();

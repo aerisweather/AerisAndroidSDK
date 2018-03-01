@@ -8,7 +8,6 @@
     <string-array name="nav_drawer_items">
         <item>Detailed Weather</item>
         <item>Extended Forecast</item>
-        <item>Recent Observations</item>
         <item>Nearby Observations</item>
         <item>Weather Overview</item>
         <item>Weekend Forecast</item>
