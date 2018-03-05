@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
@@ -23,20 +24,28 @@
         <service
             android:name="com.example.service.NotificationService"
             android:enabled="true"/>
+
         <service
             android:name="com.example.service.ScreenOnService"
             android:enabled="true"/>
 
+        <service android:name="com.example.service.NotificationJobService"
+                 android:permission="android.permission.BIND_JOB_SERVICE"
+            />
+
         <activity
             android:name=".MyLocsActivity"
             android:label="@string/activity_my_locs"/>
+
         <activity
             android:name=".LocationSearchActivity"
             android:label="@string/activity_search"/>
+
         <activity
             android:name=".SettingsActivity"
             android:label="@string/app_name">
         </activity>
+
         <activity
             android:name=".DrawerActivity"
             android:label="@string/app_name"
@@ -47,6 +56,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".MapOptionsLocalActivity"></activity>
 
     </application>

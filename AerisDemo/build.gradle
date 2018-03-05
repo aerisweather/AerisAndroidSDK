@@ -9,7 +9,7 @@ android {
         applicationId "com.example.demoaerisproject"
         versionCode 7
         targetSdkVersion 26
-        versionName "2.3.0"
+        versionName "2.4.0"
         //multiDexEnabled true
         signingConfigs {
             config {
@@ -58,7 +58,7 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1473" }
+        //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1494" }
         google()
     }
     dependencies {
@@ -69,17 +69,17 @@ buildscript {
 repositories {
     mavenCentral()
     jcenter()
-    //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1473" }
+    //maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1494" }
     google()
 }
 dependencies {
     testImplementation 'junit:junit:4.12'
-    implementation ('com.aerisweather:aeris-maps-lib:2.3.0@aar') {
+    implementation ('com.aerisweather:aeris-maps-lib:2.4.0@aar') {
         transitive true
     }
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.google.android.gms:play-services-maps:11.6.2'
+    implementation 'com.google.android.gms:play-services-maps:11.8.0'
     implementation 'com.android.support:appcompat-v7:26.1.0'
 }
