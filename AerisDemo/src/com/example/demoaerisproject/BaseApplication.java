@@ -66,7 +66,7 @@ public class BaseApplication extends Application
 
 	public static void enableNotificationService(Context context, boolean enable)
 	{
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 		{
 			Logger.d(TAG, "enableNotificationService() - using JobScheduler");
 			ComponentName notificationComponent = new ComponentName(context, NotificationJobService.class);
@@ -85,14 +85,7 @@ public class BaseApplication extends Application
 			AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 			PendingIntent pendingIntent;
 
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-			{
-				pendingIntent = PendingIntent.getForegroundService(context, PRIMARY_FOREGROUND_NOTIF_SERVICE_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-			}
-			else
-			{
-				pendingIntent = PendingIntent.getService(context, PRIMARY_FOREGROUND_NOTIF_SERVICE_ID, intent, 0);
-			}
+			pendingIntent = PendingIntent.getService(context, PRIMARY_FOREGROUND_NOTIF_SERVICE_ID, intent, 0);
 
 			if (enable)
 			{

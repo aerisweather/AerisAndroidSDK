@@ -1,13 +1,11 @@
 package com.example.service;
 
-import android.app.Notification;
 import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.os.Build;
 import android.os.StrictMode;
 import android.os.SystemClock;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
 
 import com.aerisweather.aeris.communication.Action;
 import com.aerisweather.aeris.communication.AerisRequest;
@@ -30,9 +28,6 @@ import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.AerisNotification;
 import com.example.preference.PrefManager;
 
-import static com.example.demoaerisproject.BaseApplication.PRIMARY_FOREGROUND_NOTIF_SERVICE_ID;
-import static com.example.demoaerisproject.BaseApplication.PRIMARY_NOTIF_CHANNEL;
-
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class NotificationJobService extends JobService
@@ -51,17 +46,6 @@ public class NotificationJobService extends JobService
 		Logger.d(TAG, "onCreate()");
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
-
-		if (Build.VERSION.SDK_INT >= 26)
-		{
-			Notification notification = new NotificationCompat.Builder(this, PRIMARY_NOTIF_CHANNEL)
-					.setSmallIcon(com.aerisweather.R.drawable.clear)
-					.setPriority(NotificationCompat.PRIORITY_MIN)
-					.build();
-
-			startForeground(PRIMARY_FOREGROUND_NOTIF_SERVICE_ID, notification);
-			Logger.d(TAG, "onCreate() - foreground service started");
-		}
 	}
 
 	/**
