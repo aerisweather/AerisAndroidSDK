@@ -2,14 +2,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
     defaultConfig {
         minSdkVersion 19
         applicationId "com.example.demoaerisproject"
-        versionCode 8
-        targetSdkVersion 26
-        versionName "2.4.1"
+        versionCode 9
+        targetSdkVersion 27
+        versionName "2.5.0"
         //multiDexEnabled true
         signingConfigs {
             config {
@@ -32,7 +32,7 @@ android {
         }
 
         // Move the tests to tests/java, tests/res, etc...
-        instrumentTest.setRoot('tests')
+        androidTest.setRoot('tests')
 
         // Move the build types to build-types/<type>
         // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
@@ -59,10 +59,10 @@ buildscript {
         mavenCentral()
         google()
         jcenter()
-//        maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1505" }
+//        maven { url maven_staging_url }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.4'
     }
 }
 
@@ -70,16 +70,16 @@ repositories {
     mavenCentral()
     google()
     jcenter()
-//    maven { url "https://oss.sonatype.org/content/repositories/comaerisweather-1505" }
+//    maven { url maven_staging_url }
 }
 dependencies {
     testImplementation 'junit:junit:4.12'
-    implementation ('com.aerisweather:aeris-maps-lib:2.4.1@aar') {
+    implementation ('com.aerisweather:aeris-maps-lib:2.5.0@aar') {
         transitive true
     }
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.google.android.gms:play-services-maps:11.8.0'
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
 }
