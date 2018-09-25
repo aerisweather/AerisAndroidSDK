@@ -46,6 +46,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	protected static final String EXT_FORECAST = "extended_forecasts";
 	protected static final String NEARBY_OBS = "nearby_observations";
 	protected static final String OVERVIEW = "weather_overview";
+	protected static final String AIR_QUALITY = "air_quality";
 
 	private int currentFragment = 0;
 	private static final long TEN_MINUTES = 1000 * 60 * 10;
@@ -53,15 +54,16 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	private Map<String, Long> timeMap = new HashMap<String, Long>();
 	private static List<HeadlessObserver> observers = new ArrayList<HeadlessObserver>();
 
-	public static HeadlessFragment getFragment(Activity activity) {
+	public static HeadlessFragment getFragment(Activity activity)
+	{
 		// create headless fragment
 		FragmentManager fragmentManager = activity.getFragmentManager();
-		HeadlessFragment fragment = (HeadlessFragment) fragmentManager
-				.findFragmentByTag("Headless");
-		if (fragment == null) {
+		HeadlessFragment fragment = (HeadlessFragment) fragmentManager.findFragmentByTag("Headless");
+
+		if (fragment == null)
+		{
 			fragment = new HeadlessFragment();
-			fragmentManager.beginTransaction().add(fragment, "Headless")
-					.commit();
+			fragmentManager.beginTransaction().add(fragment, "Headless").commit();
 		}
 		return fragment;
 	}
@@ -74,57 +76,70 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 		observers.remove(observer);
 	}
 
-	public void storeResponse(String key, Object object) {
+	public void storeResponse(String key, Object object)
+	{
 		map.put(key, object);
 		timeMap.put(key, System.currentTimeMillis());
 	}
 
-	public Object getResponse(String key) {
-		if (timeMap.get(key) == null) {
+	public Object getResponse(String key)
+	{
+		if (timeMap.get(key) == null)
+		{
 			return null;
-		} else {
-			if (System.currentTimeMillis() - timeMap.get(key) > TEN_MINUTES) {
+		}
+		else
+		{
+			if (System.currentTimeMillis() - timeMap.get(key) > TEN_MINUTES)
+			{
 				return null;
-			} else {
+			}
+			else
+			{
 				return map.get(key);
 			}
 		}
-
 	}
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 
-		// The heart and mind of headless fragment is below line. It will keep
-		// the fragment alive during configuration change when activities and
-		// //subsequent fragments are "put to death" and recreated
+		// The heart and mind of headless fragment is below line. It will keep the fragment alive during configuration
+		// change when activities and subsequent fragments are "put to death" and recreated
 		setRetainInstance(true);
 	}
 
-	public void performWeatherOverview(AerisProgressListener listener) {
+	public void performWeatherOverview(AerisProgressListener listener)
+	{
 		BatchBuilder builder = new BatchBuilder();
 		builder.addGlobalParameter(this.getPlaceParameter());
 		builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
 				Action.CLOSEST).addParameters(FieldsParameter.initWith("ob")));
+
 		builder.addEndpoint(new Endpoint(EndpointType.PLACES, Action.CLOSEST)
 				.addParameters(FieldsParameter.initWith("place")));
+
 		builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
 				.addParameters(FieldsParameter.initWith(
 						ForecastsFields.WEATHER_PRIMARY,
 						ForecastsFields.MAX_TEMP_F, ForecastsFields.ICON,
 						ForecastsFields.DATETIME_ISO,
 						ForecastsFields.MIN_TEMP_F)));
+
 		AerisRequest request = builder.build();
 		BatchCommunicationTask task = new BatchCommunicationTask(getActivity(),
 				this, request);
+
 		if (listener != null)
 			task.withProgress(listener);
+
 		task.execute();
 	}
 
-	public void performNearbyObs(AerisProgressListener listener) {
-
+	public void performNearbyObs(AerisProgressListener listener)
+	{
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.OBSERVATIONS), Action.CLOSEST,
 				getPlaceParameter(), FieldsParameter.initWith(
@@ -132,15 +147,18 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 						ObservationFields.ICON,
 						ObservationFields.WEATHER_SHORT, Fields.PLACE,
 						ObservationFields.DATETIME), new LimitParameter(10));
-		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
-				this, request);
-		if (listener != null) {
+
+		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),	this, request);
+
+		if (listener != null)
+		{
 			task.withProgress(listener);
 		}
 		task.execute();
 	}
 
-	public void performExtForecast(AerisProgressListener listener) {
+	public void performExtForecast(AerisProgressListener listener)
+	{
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.FORECASTS), Action.CLOSEST, getPlaceParameter(),
 				FieldsParameter.initWith(Fields.INTERVAL,
@@ -149,83 +167,123 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 						ForecastsFields.DATETIME_ISO,
 						ForecastsFields.MIN_TEMP_F), new FilterParameter("7"),
 				new LimitParameter(10));
-		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
-				this, request);
-		if (listener != null) {
+
+		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),	this, request);
+
+		if (listener != null)
+		{
 			task.withProgress(listener);
 		}
 		task.execute();
 	}
 
-	public void performWeekendForecast(AerisProgressListener listener) {
+	public void performWeekendForecast(AerisProgressListener listener)
+	{
 		AerisRequest request = new AerisRequest(new Endpoint(
 				EndpointType.FORECASTS), Action.CLOSEST, getPlaceParameter(),
 				new FilterParameter("daynight"), new FromParameter("friday"),
 				new ToParameter("+3days"));
-		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),
-				this, request);
+
+		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),	this, request);
 		task.withProgress(listener);
 		task.execute();
 	}
 
-	public void performDetailedObservation(AerisProgressListener listener) {
+	public void performDetailedObservation(AerisProgressListener listener)
+	{
 		BatchBuilder builder = new BatchBuilder();
 		builder.addGlobalParameter(getPlaceParameter());
+
 		builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
 				Action.CLOSEST).addParameters(FieldsParameter.initWith("ob")));
+
 		builder.addEndpoint(new Endpoint(EndpointType.PLACES, Action.CLOSEST)
 				.addParameters(FieldsParameter.initWith("place")));
+
 		builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
 				.addParameters(new FilterParameter("daynight"),
 						new PLimitParameter(2)));
+
 		builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
 				.addParameters(new FilterParameter("3hr"), new PLimitParameter(
 						8), FieldsParameter.initWith(ForecastsFields.TEMP_F,
 						ForecastsFields.TEMP_C, ForecastsFields.ICON,
 						ForecastsFields.DATETIME_ISO, Fields.INTERVAL)));
+
 		AerisRequest request = builder.build();
-		BatchCommunicationTask task = new BatchCommunicationTask(getActivity(),
-				this, request);
-		if (listener != null) {
+		BatchCommunicationTask task = new BatchCommunicationTask(getActivity(),	this, request);
+
+		if (listener != null)
+		{
 			task.withProgress(listener);
 		}
 		task.execute();
 	}
 
-	public void performCall(AerisRequest request, AerisCallback callback,
-			BatchCallback batchCallback, AerisProgressListener listener) {
-		if (callback != null) {
-			AerisCommunicationTask task = new AerisCommunicationTask(
-					getActivity(), callback, request);
+	public void performAirQuality(AerisProgressListener listener)
+	{
+		AerisRequest request = new AerisRequest(new Endpoint(
+				EndpointType.AIR_QUALITY),
+				Action.CLOSEST,
+				getPlaceParameter(),
+				new LimitParameter(10));
 
-			if (listener != null) {
+		AerisCommunicationTask task = new AerisCommunicationTask(getActivity(),	this, request);
+
+		if (listener != null)
+		{
+			task.withProgress(listener);
+		}
+
+		task.execute();
+	}
+
+	public void performCall(AerisRequest request, AerisCallback callback,
+							BatchCallback batchCallback, AerisProgressListener listener)
+	{
+		if (callback != null)
+		{
+			AerisCommunicationTask task = new AerisCommunicationTask(getActivity(), callback, request);
+
+			if (listener != null)
+			{
 				task.withProgress(listener);
 			}
-			task.execute();
-		} else if (batchCallback != null) {
-			BatchCommunicationTask task = new BatchCommunicationTask(
-					getActivity(), batchCallback, request);
 
-			if (listener != null) {
+			task.execute();
+
+		}
+		else if (batchCallback != null)
+		{
+			BatchCommunicationTask task = new BatchCommunicationTask(getActivity(), batchCallback, request);
+
+			if (listener != null)
+			{
 				task.withProgress(listener);
 			}
 			task.execute();
 		}
-
 	}
 
-	private void notifyObservers() {
-		for (HeadlessObserver observer : observers) {
+	private void notifyObservers()
+	{
+		for (HeadlessObserver observer : observers)
+		{
 			observer.notifyDataChanged();
 		}
 	}
 
 	@Override
-	public void onBatchResponse(AerisBatchResponse response) {
-		if (response.isSuccessful() && response.getError() == null) {
-			if (response.responses.size() == 3) {
+	public void onBatchResponse(AerisBatchResponse response)
+	{
+		if (response.isSuccessful() && response.getError() == null)
+		{
+			if (response.responses.size() == 3)
+			{
 				storeResponse(OVERVIEW, response);
-			} else if (response.responses.size() == 4) {
+			}
+			else if (response.responses.size() == 4)
+			{
 				storeResponse(DETAILED_OBSERVATION, response);
 			}
 		}
@@ -252,6 +310,10 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 			{
 				storeResponse(NEARBY_OBS, response);
 			}
+			else if (endpoint == EndpointType.AIR_QUALITY)
+			{
+				storeResponse(AIR_QUALITY, response);
+			}
 			notifyObservers();
 		}
 	}
@@ -264,19 +326,22 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 		this.currentFragment = currentFragment;
 	}
 
-	public void clearStored() {
+	public void clearStored()
+	{
 		map.clear();
 		timeMap.clear();
 	}
 
-	private PlaceParameter getPlaceParameter() {
+	private PlaceParameter getPlaceParameter()
+	{
 		MyPlacesDb db = new MyPlacesDb(getActivity());
 		PlaceParameter place = db.getMyPlaceParameter();
 		db.close();
-		if (place == null) {
+
+		if (place == null)
+		{
 			place = new PlaceParameter(getActivity());
 		}
 		return place;
 	}
-
 }

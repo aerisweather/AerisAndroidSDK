@@ -255,6 +255,15 @@ public class MyMapFragment extends Fragment implements
 		AerisAmpLayer customAmpLayer = new AerisAmpLayer("pressure-msl-nam", "pressure-msl-nam", 80);
 		aerisAmp.setLayer(customAmpLayer);
 		*/
+		/**
+		 * SETTING LAYER MODIFIERS
+		 */
+		/*
+        AerisAmpLayer statesAmpLayer = aerisAmp.getLayerFromId("states");
+        AerisAmpLayer.Modifier stateModifier = statesAmpLayer.getLayerModifier("States Outlines");
+        stateModifier.setModifierOption("outlines", true);
+		aerisAmp.setLayer(statesAmpLayer);
+		*/
 
 		if (aerisAmp.getActiveMapLayers().size() < 1)
 		{
@@ -264,6 +273,11 @@ public class MyMapFragment extends Fragment implements
 
         //point data layer(s)
 		m_aerisMapView.addLayer(m_mapOptions.getPointData());
+
+		/**
+		 * SAMPLE: TROPICAL CYCLONES POINT DATA
+		 */
+//		m_aerisMapView.addLayer(AerisPointData.TROPICAL_CYCLONES);
 
 		//polygon layer(s)
 		/**
@@ -276,7 +290,14 @@ public class MyMapFragment extends Fragment implements
 				withCustomParameter("from", "today"));
         m_aerisMapView.addLayer(aerisPolygonData);
         */
-		m_aerisMapView.addLayer(m_mapOptions.getPolygonData());
+
+		/**
+		 * SAMPLE: TROPICAL CYCLONES ERROR CONES
+		 */
+		AerisPolygonData aerisPolygonData = AerisPolygonData.TROPICAL_CYCLONE_ERROR_CONES;
+		m_aerisMapView.addLayer(aerisPolygonData);
+
+//		m_aerisMapView.addLayer(m_mapOptions.getPolygonData());
 
 		//get a new marker option object
 		MarkerOptions markerOptions = new MarkerOptions();
@@ -354,7 +375,7 @@ public class MyMapFragment extends Fragment implements
                 m_mapOptions.getMapPreferences(getActivity());
 
 				m_aerisMapView.getMap().setMapType(m_mapOptions.getMapType());
-                
+
 				m_aerisMapView.addLayer(m_mapOptions.getAerisAMP());
 				m_aerisMapView.addLayer(m_mapOptions.getPointData());
 				m_aerisMapView.addLayer(m_mapOptions.getPolygonData());

@@ -13,6 +13,8 @@
         <item>Weekend Forecast</item>
         <item>Interactive Maps</item>
         <item>Sun/Moon</item>
+        <item>Air Quality</item>
+
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->

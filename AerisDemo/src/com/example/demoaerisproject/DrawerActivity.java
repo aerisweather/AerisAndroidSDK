@@ -34,6 +34,7 @@ import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb.PlacesColumns;
 import com.example.db.MyPlacesSubject;
 import com.example.db.MyPlacesSubject.MyPlacesObserver;
+import com.example.fragment.AirQualityFragment;
 import com.example.fragment.ExtForecastFragment;
 import com.example.fragment.HeadlessFragment;
 import com.example.fragment.MyMapFragment;
@@ -275,6 +276,11 @@ public class DrawerActivity extends FragmentActivity
                 fragment = new CustomSunmoonFragment();
                 break;
             }
+			case 7:
+			{
+				fragment = new AirQualityFragment();
+				break;
+			}
 		default:
 			break;
 		}
