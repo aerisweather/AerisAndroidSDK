@@ -59,7 +59,7 @@ buildscript {
         mavenCentral()
         google()
         jcenter()
-        maven { url maven_staging_url }
+//        maven { url maven_staging_url }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
@@ -70,7 +70,7 @@ repositories {
     mavenCentral()
     google()
     jcenter()
-    maven { url maven_staging_url }
+//    maven { url maven_staging_url }
 }
 dependencies {
     testImplementation 'junit:junit:4.12'
