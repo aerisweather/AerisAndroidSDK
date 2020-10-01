@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.aerisweather.aeris.maps.AerisMapContainerView;
+import com.aerisweather.aeris.tiles.AerisConstants;
 import com.example.db.MyPlace;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.MapOptionsLocalActivity;
@@ -91,6 +92,8 @@ public class MyMapFragment extends Fragment implements
         m_inflater = inflater;
         m_container = container;
         m_savedInstanceState = savedInstanceState;
+
+
 
         View view = inflater.inflate(R.layout.fragment_interactive_maps, container, false);
 		AerisMapContainerView mapContainer = (AerisMapContainerView) view.findViewById(R.id.mapView);
@@ -229,6 +232,13 @@ public class MyMapFragment extends Fragment implements
 		//create a new MapOptions obj
 		m_mapOptions = new AerisMapOptions();
 		m_aerisAmp.getPermissibleLayers(false);
+		/*
+		Example of overriding the default domain for AMP
+		i.e. using a custom CDN
+
+		AerisConstants.getInstance().setBaseTileSecureUrl("https://maps.yourdomain.com/");
+		 */
+
 
 		//set the mapOptions class's AerisAMP obj
 		m_mapOptions.setAerisAMP(m_aerisAmp);
@@ -265,11 +275,24 @@ public class MyMapFragment extends Fragment implements
 		aerisAmp.setLayer(statesAmpLayer);
 		*/
 
+		/**
+		 * EXAMPLE: Adding 6-10day outlook with custom legend
+		 */
+		/*
+		AerisAmpLayer outlookAmpLayer = new AerisAmpLayer("temperatures-outlook-6-10d-cpc","temperatures-outlook-6-10d-cpc",100);
+		outlookAmpLayer.setCustomLayerLegend(R.drawable.legend_temp_outlook);
+		aerisAmp.setLayer(outlookAmpLayer);
+		*/
+
+
+
 		if (aerisAmp.getActiveMapLayers().size() < 1)
 		{
 			aerisAmp.setDefaultLayers();
 		}
 		m_aerisMapView.addLayer(aerisAmp);
+
+
 
         //point data layer(s)
 		m_aerisMapView.addLayer(m_mapOptions.getPointData());
@@ -294,10 +317,11 @@ public class MyMapFragment extends Fragment implements
 		/**
 		 * SAMPLE: TROPICAL CYCLONES ERROR CONES
 		 */
+		/*
 		AerisPolygonData aerisPolygonData = AerisPolygonData.TROPICAL_CYCLONE_ERROR_CONES;
 		m_aerisMapView.addLayer(aerisPolygonData);
+		 */
 
-//		m_aerisMapView.addLayer(m_mapOptions.getPolygonData());
 
 		//get a new marker option object
 		MarkerOptions markerOptions = new MarkerOptions();

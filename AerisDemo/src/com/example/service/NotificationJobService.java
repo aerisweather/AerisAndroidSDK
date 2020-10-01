@@ -5,7 +5,7 @@ import android.app.job.JobService;
 import android.os.Build;
 import android.os.StrictMode;
 import android.os.SystemClock;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 
 import com.aerisweather.aeris.communication.Action;
 import com.aerisweather.aeris.communication.AerisRequest;
