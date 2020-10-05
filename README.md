@@ -5,7 +5,7 @@ The Aeris Android SDK allows a developer to quickly and easily add weather conte
 
 ## Getting Started 
 
-View the latest installation and implementation details at AerisWeather under the [Aeris Android SDK toolkit documentation] (http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/).
+View the latest installation and implementation details at AerisWeather under the [Aeris Android SDK toolkit documentation](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/).
 
 ### Aeris API Configuration for the AerisDemo App
 Before you can begin using the Aeris Android SDK in your project, you will need to download the latest version of the SDK and ensure that you have the required Aeris API keys for your application.
@@ -48,44 +48,40 @@ In the resulting dialog, enter the SHA-1 fingerprint, then a semicolon, then The
 The Google API Console responds by displaying Key for Android apps (with certificates) followed by a forty-character API key.
 
 In your Android project, update the meta tag in the Demo Project’s Manifest:
-```java
-<meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="your_api_key" />
-```
+<pre><code class="java">&lt;meta-data
+            android:name=&quot;com.google.android.maps.v2.API_KEY&quot;
+            android:value=&quot;your_api_key&quot; /&gt;
+</code></pre>
 Note: Your SHA1 can be obtained in Android Studio by running the **"signingReport"** task under the **"Gradle projects"** section.
 
 ### Permissions
 The following permissions are required in order to use the Aeris Android SDK in the application. Please add these to your AndroidManifest.xml:
-```java
-<manifest>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-</manifest>
-```
+<pre><code class="java">&lt;manifest&gt;
+    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_COURSE_LOCATION&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot;/&gt;
+&lt;/manifest&gt;
+</code></pre>
 ### Gradle Configuration
 The Aeris Core and Aeris Maps libraries are available through Maven Central. To add these dependencies to your project add these lines to your build.gradle file. 
 
 **Aeris Core:**
-```java
-repositories {
+<pre><code class="java">repositories {
     mavenCentral()
 }
 dependencies {
     compile 'com.aerisweather:aeris-core-lib:#.#.#@aar'
 }
-``` 
+</code></pre>
 
 **Aeris Maps:**
 
 (Note: you do not need to to add Aeris Core seperately if you are using Aeris Maps - the core lib is referenced in the maps lib)
-```java
-repositories {
+<pre><code class="java">repositories {
     mavenCentral()
 }
 dependencies {
@@ -95,7 +91,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:#.#.#'
     compile 'com.android.support:appcompat-v7:#.#.#'
 }
-``` 
+</code></pre>
 
 ##Reference Links
 
