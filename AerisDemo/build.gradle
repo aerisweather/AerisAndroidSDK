@@ -7,7 +7,7 @@ android {
     defaultConfig {
         minSdkVersion 19
         applicationId "com.example.demoaerisproject"
-        versionCode 11
+        versionCode 12
         targetSdkVersion 30
         versionName "2.6.1"
         //multiDexEnabled true
@@ -56,25 +56,26 @@ android {
 
 buildscript {
     repositories {
-//        mavenCentral()
+        mavenCentral()
         google()
         jcenter()
-        maven { url maven_staging_url }
+        //maven { url maven_staging_url }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
     }
 }
 
+
 repositories {
     mavenCentral()
     google()
     jcenter()
-    maven { url maven_staging_url }
+    //maven { url maven_staging_url }
 }
 dependencies {
     testImplementation 'junit:junit:4.12'
-    implementation ('com.aerisweather:aeris-maps-lib:2.6.1-rc2@aar') {
+    implementation ('com.aerisweather:aeris-maps-lib:2.6.1@aar') {
         transitive true
     }
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {

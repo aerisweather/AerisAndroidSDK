@@ -258,6 +258,7 @@ public class MyMapFragment extends Fragment implements
 
         //amp layer(s)
 		AerisAmp aerisAmp = m_mapOptions.getAerisAMP();
+
 		/**
 		 * CUSTOM / UNDOCUMENTED LAYER
 		 */
@@ -283,7 +284,6 @@ public class MyMapFragment extends Fragment implements
 		outlookAmpLayer.setCustomLayerLegend(R.drawable.legend_temp_outlook);
 		aerisAmp.setLayer(outlookAmpLayer);
 		*/
-
 
 
 		if (aerisAmp.getActiveMapLayers().size() < 1)
