@@ -262,10 +262,10 @@ public class MyMapFragment extends Fragment implements
 		/**
 		 * CUSTOM / UNDOCUMENTED LAYER
 		 */
-		/*
-		AerisAmpLayer customAmpLayer = new AerisAmpLayer("pressure-msl-nam", "pressure-msl-nam", 80);
-		aerisAmp.setLayer(customAmpLayer);
-		*/
+
+//		AerisAmpLayer customAmpLayer = new AerisAmpLayer("pressure-msl-nam", "pressure-msl-nam", 80);
+//		aerisAmp.setLayer(customAmpLayer);
+
 		/**
 		 * SETTING LAYER MODIFIERS
 		 */

@@ -34,6 +34,7 @@ import com.aerisweather.aeris.communication.parameter.ToParameter;
 import com.aerisweather.aeris.model.AerisBatchResponse;
 import com.aerisweather.aeris.model.AerisResponse;
 
+
 public class HeadlessFragment extends Fragment implements AerisCallback,
 		BatchCallback {
 
@@ -50,9 +51,9 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 
 	private int currentFragment = 0;
 	private static final long TEN_MINUTES = 1000 * 60 * 10;
-	private Map<String, Object> map = new HashMap<String, Object>();
-	private Map<String, Long> timeMap = new HashMap<String, Long>();
-	private static List<HeadlessObserver> observers = new ArrayList<HeadlessObserver>();
+	private final Map<String, Object> map = new HashMap<>();
+	private final Map<String, Long> timeMap = new HashMap<>();
+	private static final List<HeadlessObserver> observers = new ArrayList<>();
 
 	public static HeadlessFragment getFragment(Activity activity)
 	{
@@ -115,8 +116,8 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	{
 		BatchBuilder builder = new BatchBuilder();
 		builder.addGlobalParameter(this.getPlaceParameter());
-		builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
-				Action.CLOSEST).addParameters(FieldsParameter.initWith("ob")));
+		builder.addEndpoint(new Endpoint(EndpointType.CONDITIONS)
+				.addParameters(FieldsParameter.initWith("periods")));
 
 		builder.addEndpoint(new Endpoint(EndpointType.PLACES, Action.CLOSEST)
 				.addParameters(FieldsParameter.initWith("place")));
@@ -194,8 +195,8 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 		BatchBuilder builder = new BatchBuilder();
 		builder.addGlobalParameter(getPlaceParameter());
 
-		builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
-				Action.CLOSEST).addParameters(FieldsParameter.initWith("ob")));
+		builder.addEndpoint(new Endpoint(EndpointType.CONDITIONS)
+				.addParameters(FieldsParameter.initWith("periods")));
 
 		builder.addEndpoint(new Endpoint(EndpointType.PLACES, Action.CLOSEST)
 				.addParameters(FieldsParameter.initWith("place")));
@@ -223,7 +224,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 	public void performAirQuality(AerisProgressListener listener)
 	{
 		AerisRequest request = new AerisRequest(new Endpoint(
-				EndpointType.AIR_QUALITY),
+				EndpointType.AIRQUALITY),
 				Action.CLOSEST,
 				getPlaceParameter(),
 				new LimitParameter(10));
@@ -310,7 +311,7 @@ public class HeadlessFragment extends Fragment implements AerisCallback,
 			{
 				storeResponse(NEARBY_OBS, response);
 			}
-			else if (endpoint == EndpointType.AIR_QUALITY)
+			else if (endpoint == EndpointType.AIRQUALITY)
 			{
 				storeResponse(AIR_QUALITY, response);
 			}
