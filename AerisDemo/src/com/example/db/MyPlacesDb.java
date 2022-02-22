@@ -3,6 +3,7 @@ package com.example.db;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -138,6 +139,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 		return cursor;
 	}
 
+	@SuppressLint("Range")
 	public PlaceParameter getMyPlaceParameter() {
 		Cursor cursor = getMyPlaceCursor();
 		if (cursor != null && cursor.moveToFirst()) {
@@ -160,7 +162,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 		}
 		return null;
 	}
-
+	@SuppressLint("Range")
 	public MyPlace getMyPlace() {
 		Cursor cursor = getMyPlaceCursor();
 		if (cursor != null && cursor.moveToFirst()) {
@@ -180,7 +182,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 		}
 		return null;
 	}
-
+	@SuppressLint("Range")
 	public List<MyPlace> getPlaces() {
 		SQLiteDatabase sqldb = getWritableDatabase();
 		Cursor cursor = sqldb.query(MyPlaceTable.TABLE, null, null, null, null,

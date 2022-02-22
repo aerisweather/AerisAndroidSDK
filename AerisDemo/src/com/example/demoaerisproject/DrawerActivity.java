@@ -2,6 +2,7 @@ package com.example.demoaerisproject;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -337,6 +338,7 @@ public class DrawerActivity extends FragmentActivity
 		}
 	}
 
+	@SuppressLint("Range")
 	@Override
 	public void onLoadFinished(Loader<Cursor> loader, Cursor cursor)
     {

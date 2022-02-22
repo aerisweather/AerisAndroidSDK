@@ -2,13 +2,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
     defaultConfig {
         minSdkVersion 19
         applicationId "com.example.demoaerisproject"
-        versionCode 12
-        targetSdkVersion 31
-        versionName "2.6.1"
+        versionCode 13
+        targetSdkVersion 32
+        versionName "2.7.0"
         //multiDexEnabled true
         signingConfigs {
             config {
@@ -68,7 +68,7 @@ repositories {
     maven { url maven_staging_url }
 }
 dependencies {
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     implementation ('com.aerisweather:aeris-maps-lib:2.7.0@aar') {
         transitive true
     }
