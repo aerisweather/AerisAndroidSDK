@@ -62,8 +62,6 @@ The following permissions are required in order to use the Aeris Android SDK in 
     &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
     &lt;uses-permission android:name=&quot;android.permission.ACCESS_COURSE_LOCATION&quot;/&gt;
     &lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;/&gt;
-    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
-    &lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot;/&gt;
 &lt;/manifest&gt;
 </code></pre>
 ### Gradle Configuration
@@ -74,7 +72,7 @@ The Aeris Core and Aeris Maps libraries are available through Maven Central. To 
     mavenCentral()
 }
 dependencies {
-    compile 'com.aerisweather:aeris-core-lib:#.#.#@aar'
+    implementation 'com.aerisweather:aeris-core-lib:#.#.#@aar'
 }
 </code></pre>
 
@@ -85,11 +83,10 @@ dependencies {
     mavenCentral()
 }
 dependencies {
-    compile ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {
+    implementation ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {
         transitive true
     }
-    compile 'com.google.android.gms:play-services-maps:#.#.#'
-    compile 'com.android.support:appcompat-v7:#.#.#'
+    implementation 'com.google.android.gms:play-services-maps:#.#.#'
 }
 </code></pre>
 
