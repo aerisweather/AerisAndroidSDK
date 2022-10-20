@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.example.demoaerisproject.app-mergeDebugResources-74:/layout/ntf_observation.xml",
+        "source": "com.example.demoaerisproject.app-main-77:/layout/ntf_observation.xml"
+    },
+    {
+        "merged": "com.example.demoaerisproject.app-mergeDebugResources-74:/layout/activity_map_options_local.xml",
+        "source": "com.example.demoaerisproject.app-main-77:/layout/activity_map_options_local.xml"
+    },
+    {
+        "merged": "com.example.demoaerisproject.app-mergeDebugResources-74:/layout/dialog_aeris_windowadapter.xml",
+        "source": "com.example.demoaerisproject.app-main-77:/layout/dialog_aeris_windowadapter.xml"
+    }
+]

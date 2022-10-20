@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="background">#252525</color>
+    <color name="black">#FF000000</color>
+    <color name="colorAccent">@color/purple_700</color>
+    <color name="colorPrimary">#151D2D</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="counter_text_bg">#000000</color>
+    <color name="counter_text_color">#AAAAAA</color>
+    <color name="dark_blue">#002849</color>
+    <color name="light_blue">#4085be</color>
+    <color name="light_gray">#3f3f3f</color>
+    <color name="lighter_gray">#5f5f5f</color>
+    <color name="list_background">#ffffff</color>
+    <color name="list_background_pressed">#22000077</color>
+    <color name="list_divider">#70000000</color>
+    <color name="list_item_title">#ffffff</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="spacer">#808080</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="action_layers">Layers</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity_my_locs">My Locations</string>
+    <string name="activity_search">Search</string>
+    <string name="aerisapi_client_id">X3Ji38TIMKwXp7LUE1LA1</string>
+    <string name="aerisapi_client_secret">c4xMFW96213tuCedOzkLMU8VpdZZaVOxLZ9wRR9F</string>
+    <string name="air_quality">Air Quality</string>
+    <string name="alert_dlg_cancel">Cancel</string>
+    <string name="alert_dlg_confirm_desc">Would you like to add this as your location?</string>
+    <string name="alert_dlg_confirm_title">Please Confirm</string>
+    <string name="alert_dlg_yes">Yes</string>
+    <string name="app_name">AerisSdkDemo</string>
+    <string name="calm">Calm</string>
+    <string name="city_state_country">%s, %s, %s</string>
+    <string name="close">Close</string>
+    <string name="cm_plus">%s cm</string>
+    <string name="currently">Currently</string>
+    <string name="detailed_weather">Detailed Weather</string>
+    <string name="dew_point">Dew Point</string>
+    <string name="dominant_pollutant">Dominant Pollutant: %s</string>
+    <string name="error">Error</string>
+    <string name="error_no_data">Error: No data</string>
+    <string name="error_unknown">Error: Unknown</string>
+    <string name="extended_forecast">Extended Forecast</string>
+    <string name="feels_like">Feels like %s</string>
+    <string name="humidity">Humidity</string>
+    <string name="in_plus">%s in</string>
+    <string name="interactive_maps">Interactive Maps</string>
+    <string name="kph">%s %d kph</string>
+    <string name="kph_plus">%s %d-%d kph</string>
+    <string name="locate_me">Locate Me</string>
+    <string name="menu">Menu</string>
+    <string name="method_calculation">Method of Calculation: %s</string>
+    <string name="milli_bar_plus">%s mb</string>
+    <string name="mm_plus">%s mm</string>
+    <string name="moon_phase">Moon Phase</string>
+    <string name="mph">%s %d mph</string>
+    <string name="mph_plus">%s %d-%d mph</string>
+    <string name="na">N/A</string>
+    <string name="nearby_observations">Nearby Observations</string>
+    <string name="no_locations_saved">No Locations Saved</string>
+    <string name="null_value">---</string>
+    <string name="open">Open</string>
+    <string name="permissions_verbiage">The Location and External Storage permissions are required to get weather data and perform mapping functions. Please restart the app and allow these permissions.</string>
+    <string name="ppb">PPB: </string>
+    <string name="ppp">%s %s %s</string>
+    <string name="precip">Precip</string>
+    <string name="pref_cat_location">category_location</string>
+    <string name="pref_cat_location_title">Location</string>
+    <string name="pref_cat_ntf">category_ntf</string>
+    <string name="pref_cat_ntf_title">Notification</string>
+    <string name="pref_my_location">pref_my_location</string>
+    <string name="pref_my_location_sum">Use a set location for all weather info</string>
+    <string name="pref_my_location_title">Use set Location</string>
+    <string name="pref_ntf_enabled">pref_ntf_enabled</string>
+    <string name="pref_ntf_enabled_sum">Puts a persistent notification in the status bar so weather can always be seen.</string>
+    <string name="pref_ntf_enabled_title">Enabled Notification</string>
+    <string name="pref_setlocation">pref_setlocation</string>
+    <string name="pref_setlocation_sum">Click to set the location you want you want to use</string>
+    <string name="pref_setlocation_title">Set Location</string>
+    <string name="pressure">Pressure</string>
+    <string name="radio_title_imperial">Imperial (Fahrenheit)</string>
+    <string name="radio_title_metric">Metric (Celsius)</string>
+    <string name="request_failed">Failed: %s</string>
+    <string name="snow">Snow</string>
+    <string name="sun_moon">Sun/Moon</string>
+    <string name="temp_celsius">%sC</string>
+    <string name="temp_fahrenheit">%sF</string>
+    <string name="ten_micron">10µm</string>
+    <string name="ten_micron_in_inch">3.93e-4 in</string>
+    <string name="text_input">Input</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="tonight">Tonight</string>
+    <string name="total_dalight_format"> %d hours,%d minutes</string>
+    <string name="total_daylight">Total Dalight</string>
+    <string name="truncate">%s...</string>
+    <string name="two_half_micron">2.5µm</string>
+    <string name="two_half_micron_in_inch">9.842e-5 in</string>
+    <string name="ugm3">UGM3: </string>
+    <string name="unit_measure_title">Unit of Measure</string>
+    <string name="weather_overview">Weather Overview</string>
+    <string name="weekend_forecast">Weekend Forecast</string>
+    <string name="winds">Winds</string>
+    <string name="zero_cm">0.00 cm</string>
+    <string name="zero_in">0.00 in</string>
+    <string name="zero_value">0.0</string>
+    <style name="ActionBar.Solid.Aeris_aa" parent="@android:style/Widget.Holo.ActionBar.Solid">
+        <item name="android:background">#151D2D</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_aeris_aa</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_aeris_aa</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Aeris_aa</item>
+    </style>
+    <style name="ActionBar.Transparent.Aeris_aa" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">#151D2D</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Aeris_aa</item>
+    </style>
+    <style name="ActionBarTabStyle.Aeris_aa" parent="@android:style/Widget.Holo.ActionBar.TabView">
+        <item name="android:background">#151D2D</item>
+    </style>
+    <style name="ActionButton.CloseMode.Aeris_aa" parent="@android:style/Widget.Holo.ActionButton.CloseMode">
+        <item name="android:background">#151D2D</item>
+    </style>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        
+    </style>
+    <style name="AppTheme" parent="@style/Theme.Aeris_aa">
+        
+    </style>
+    <style name="BigSpacer" parent="@style/Spacer">
+        <item name="android:layout_height">2dp</item>
+    </style>
+    <style name="DropDownListView.Aeris_aa" parent="@android:style/Widget.Holo.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_aeris_aa</item>
+    </style>
+    <style name="DropDownNav.Aeris_aa" parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:background">#151D2D</item>
+        <item name="android:popupBackground">#151D2D</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_aeris_aa</item>
+    </style>
+    <style name="FrameStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:background">@drawable/card_shape</item>
+    </style>
+    <style name="PopupMenu.Aeris_aa" parent="@android:style/Widget.Holo.ListPopupWindow">
+        <item name="android:popupBackground">#151D2D</item>
+    </style>
+    <style name="ProgressBar.Aeris_aa" parent="@android:style/Widget.Holo.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_aeris_aa</item>
+    </style>
+    <style name="Spacer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/spacer</item>
+    </style>
+    <style name="Theme.AerisSdkDemo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+    <style name="Theme.Aeris_aa" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_aeris_aa</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Aeris_aa</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Aeris_aa</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Aeris_aa</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Aeris_aa</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Aeris_aa</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_aeris_aa</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_aeris_aa</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Aeris_aa</item>
+        
+        
+    </style>
+    <style name="Theme.Aeris_aa.Widget" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Aeris_aa</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Aeris_aa</item>
+    </style>
+    <style name="TwoPartTextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="WhiteCheck">
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+</resources>

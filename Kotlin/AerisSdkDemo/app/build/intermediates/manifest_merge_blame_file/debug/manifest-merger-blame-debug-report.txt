@@ -1,0 +1,307 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.demoaerisproject"
+4    android:versionCode="1"
+5    android:versionName="3.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+8-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:6:5-67
+11-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:7:5-79
+12-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:8:5-76
+13-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:8:22-73
+14    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />
+14-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:9:5-81
+14-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:9:22-78
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:10:5-79
+15-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:10:22-76
+16    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+16-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:11:5-81
+16-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:11:22-78
+17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+17-->[com.aerisweather:aeris-maps-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/61571fb49db2b85eb2077450150f300b/transformed/aeris-maps-lib-2.7.0/AndroidManifest.xml:9:5-81
+17-->[com.aerisweather:aeris-maps-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/61571fb49db2b85eb2077450150f300b/transformed/aeris-maps-lib-2.7.0/AndroidManifest.xml:9:22-78
+18
+19    <uses-feature
+19-->[com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:9:5-11:35
+20        android:glEsVersion="0x00020000"
+20-->[com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:10:9-41
+21        android:required="true" />
+21-->[com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:11:9-32
+22
+23    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+23-->[com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:15:5-81
+23-->[com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:15:22-78
+24    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+24-->[com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:16:5-98
+24-->[com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:16:22-95
+25    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+26
+27    <queries>
+27-->[com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:30:5-34:15
+28
+29        <!-- Needs to be explicitly declared on Android R+ -->
+30        <package android:name="com.google.android.apps.maps" />
+30-->[com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:33:9-64
+30-->[com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:33:18-61
+31    </queries>
+32
+33    <uses-permission android:name="android.permission.REORDER_TASKS" />
+33-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:24:5-72
+33-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:24:22-69
+34
+35    <application
+35-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:13:5-67:19
+36        android:name="com.example.demoaerisproject.BaseApplication"
+36-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:14:9-40
+37        android:allowBackup="true"
+37-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:15:9-35
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.8.0] /Users/chiyeung/.gradle/caches/transforms-3/33b09f35b2129cfa1cb6de6d9d79845c/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+39        android:dataExtractionRules="@xml/data_extraction_rules"
+39-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:16:9-65
+40        android:debuggable="true"
+41        android:extractNativeLibs="false"
+42        android:fullBackupContent="@xml/backup_rules"
+42-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:17:9-54
+43        android:icon="@mipmap/ic_launcher"
+43-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:18:9-43
+44        android:label="@string/app_name"
+44-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:19:9-41
+45        android:roundIcon="@mipmap/ic_launcher_round"
+45-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:20:9-54
+46        android:supportsRtl="true"
+46-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:21:9-35
+47        android:testOnly="true"
+48        android:theme="@style/Theme.AerisSdkDemo" >
+48-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:22:9-50
+49        <activity
+49-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:24:9-26:40
+50            android:name="com.example.demoaerisproject.view.map.MyMapActivity"
+50-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:25:13-79
+51            android:exported="false" />
+51-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:26:13-37
+52
+53        <uses-library
+53-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:28:9-30:40
+54            android:name="org.apache.http.legacy"
+54-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:29:13-50
+55            android:required="false" />
+55-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:30:13-37
+56
+57        <meta-data
+57-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:32:9-34:71
+58            android:name="com.google.android.geo.API_KEY"
+58-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:33:13-58
+59            android:value="AIzaSyBEJlVUVI4riFmd0D7Dd0Oh47GaERV-zcs" />
+59-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:34:13-68
+60
+61        <service
+61-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:36:9-38:38
+62            android:name="com.example.demoaerisproject.service.NotificationService"
+62-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:37:13-84
+63            android:enabled="true" />
+63-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:38:13-35
+64        <service
+64-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:39:9-41:38
+65            android:name="com.example.demoaerisproject.service.ScreenOnService"
+65-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:40:13-80
+66            android:enabled="true" />
+66-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:41:13-35
+67        <service
+67-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:42:9-44:72
+68            android:name="com.example.demoaerisproject.service.NotificationJobService"
+68-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:43:13-87
+69            android:permission="android.permission.BIND_JOB_SERVICE" />
+69-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:44:13-69
+70
+71        <activity
+71-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:46:9-48:40
+72            android:name="com.example.demoaerisproject.view.map.MapOptionsLocalActivity"
+72-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:47:13-89
+73            android:exported="false" />
+73-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:48:13-37
+74        <activity
+74-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:49:9-51:40
+75            android:name="com.example.demoaerisproject.view.settings.SettingsActivity"
+75-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:50:13-87
+76            android:exported="false" />
+76-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:51:13-37
+77        <activity
+77-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:52:9-54:40
+78            android:name="com.example.demoaerisproject.view.locations.LocationSearchActivity"
+78-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:53:13-94
+79            android:exported="false" />
+79-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:54:13-37
+80        <activity
+80-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:55:9-57:40
+81            android:name="com.example.demoaerisproject.view.locations.MyLocsActivity"
+81-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:56:13-86
+82            android:exported="false" />
+82-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:57:13-37
+83        <activity
+83-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:58:9-66:20
+84            android:name="com.example.demoaerisproject.view.weather.MainActivity"
+84-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:59:13-82
+85            android:exported="true" >
+85-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:60:13-36
+86            <intent-filter>
+86-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:61:13-65:29
+87                <action android:name="android.intent.action.MAIN" />
+87-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:17-69
+87-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:25-66
+88
+89                <category android:name="android.intent.category.LAUNCHER" />
+89-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:64:17-77
+89-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:64:27-74
+90            </intent-filter>
+91        </activity>
+92        <activity
+92-->[androidx.compose.ui:ui-tooling:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/cd07e1dda2009ebf05b55308279253a1/transformed/ui-tooling-1.2.0/AndroidManifest.xml:24:9-26:39
+93            android:name="androidx.compose.ui.tooling.PreviewActivity"
+93-->[androidx.compose.ui:ui-tooling:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/cd07e1dda2009ebf05b55308279253a1/transformed/ui-tooling-1.2.0/AndroidManifest.xml:25:13-71
+94            android:exported="true" />
+94-->[androidx.compose.ui:ui-tooling:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/cd07e1dda2009ebf05b55308279253a1/transformed/ui-tooling-1.2.0/AndroidManifest.xml:26:13-36
+95        <activity
+95-->[androidx.compose.ui:ui-test-manifest:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/40afb34db59ddad97bd81882f06c9944/transformed/ui-test-manifest-1.2.0/AndroidManifest.xml:24:9-26:39
+96            android:name="androidx.activity.ComponentActivity"
+96-->[androidx.compose.ui:ui-test-manifest:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/40afb34db59ddad97bd81882f06c9944/transformed/ui-test-manifest-1.2.0/AndroidManifest.xml:25:13-63
+97            android:exported="true" />
+97-->[androidx.compose.ui:ui-test-manifest:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/40afb34db59ddad97bd81882f06c9944/transformed/ui-test-manifest-1.2.0/AndroidManifest.xml:26:13-36
+98        <activity
+98-->[com.google.android.gms:play-services-base:18.0.1] /Users/chiyeung/.gradle/caches/transforms-3/22ec3836f2669f172c06be8fc5479b20/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+99            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+99-->[com.google.android.gms:play-services-base:18.0.1] /Users/chiyeung/.gradle/caches/transforms-3/22ec3836f2669f172c06be8fc5479b20/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+100            android:exported="false"
+100-->[com.google.android.gms:play-services-base:18.0.1] /Users/chiyeung/.gradle/caches/transforms-3/22ec3836f2669f172c06be8fc5479b20/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+101            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+101-->[com.google.android.gms:play-services-base:18.0.1] /Users/chiyeung/.gradle/caches/transforms-3/22ec3836f2669f172c06be8fc5479b20/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+102
+103        <meta-data
+103-->[com.google.android.gms:play-services-basement:18.1.0] /Users/chiyeung/.gradle/caches/transforms-3/9461642be29f71a018482042f68d3bda/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+104            android:name="com.google.android.gms.version"
+104-->[com.google.android.gms:play-services-basement:18.1.0] /Users/chiyeung/.gradle/caches/transforms-3/9461642be29f71a018482042f68d3bda/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+105            android:value="@integer/google_play_services_version" />
+105-->[com.google.android.gms:play-services-basement:18.1.0] /Users/chiyeung/.gradle/caches/transforms-3/9461642be29f71a018482042f68d3bda/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+106
+107        <service
+107-->[androidx.room:room-runtime:2.4.3] /Users/chiyeung/.gradle/caches/transforms-3/d8acc1871cdc2ef27b539b4e80e4c76b/transformed/room-runtime-2.4.3/AndroidManifest.xml:25:9-28:40
+108            android:name="androidx.room.MultiInstanceInvalidationService"
+108-->[androidx.room:room-runtime:2.4.3] /Users/chiyeung/.gradle/caches/transforms-3/d8acc1871cdc2ef27b539b4e80e4c76b/transformed/room-runtime-2.4.3/AndroidManifest.xml:26:13-74
+109            android:directBootAware="true"
+109-->[androidx.room:room-runtime:2.4.3] /Users/chiyeung/.gradle/caches/transforms-3/d8acc1871cdc2ef27b539b4e80e4c76b/transformed/room-runtime-2.4.3/AndroidManifest.xml:27:13-43
+110            android:exported="false" />
+110-->[androidx.room:room-runtime:2.4.3] /Users/chiyeung/.gradle/caches/transforms-3/d8acc1871cdc2ef27b539b4e80e4c76b/transformed/room-runtime-2.4.3/AndroidManifest.xml:28:13-37
+111
+112        <provider
+112-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:25:9-33:20
+113            android:name="androidx.startup.InitializationProvider"
+113-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:26:13-67
+114            android:authorities="com.example.demoaerisproject.androidx-startup"
+114-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:27:13-68
+115            android:exported="false" >
+115-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:28:13-37
+116            <meta-data
+116-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:30:13-32:52
+117                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+117-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:31:17-85
+118                android:value="androidx.startup" />
+118-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:32:17-49
+119            <meta-data
+119-->[androidx.emoji2:emoji2:1.0.0] /Users/chiyeung/.gradle/caches/transforms-3/02387ebeef9b9c864f6d5d5982b90023/transformed/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+120                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+120-->[androidx.emoji2:emoji2:1.0.0] /Users/chiyeung/.gradle/caches/transforms-3/02387ebeef9b9c864f6d5d5982b90023/transformed/emoji2-1.0.0/AndroidManifest.xml:32:17-75
+121                android:value="androidx.startup" />
+121-->[androidx.emoji2:emoji2:1.0.0] /Users/chiyeung/.gradle/caches/transforms-3/02387ebeef9b9c864f6d5d5982b90023/transformed/emoji2-1.0.0/AndroidManifest.xml:33:17-49
+122            <meta-data
+122-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/chiyeung/.gradle/caches/transforms-3/48a860b69cc39a9a151a0a4196a2635a/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+123                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+123-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/chiyeung/.gradle/caches/transforms-3/48a860b69cc39a9a151a0a4196a2635a/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+124                android:value="androidx.startup" />
+124-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/chiyeung/.gradle/caches/transforms-3/48a860b69cc39a9a151a0a4196a2635a/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+125        </provider>
+126
+127        <receiver
+127-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:35:9-47:20
+128            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+128-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:36:13-76
+129            android:directBootAware="false"
+129-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:37:13-44
+130            android:enabled="true"
+130-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:38:13-35
+131            android:exported="true"
+131-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:39:13-36
+132            android:permission="android.permission.DUMP" >
+132-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:40:13-57
+133            <intent-filter>
+133-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:41:13-43:29
+134                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+134-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:42:17-91
+134-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:42:25-88
+135            </intent-filter>
+136            <intent-filter>
+136-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:44:13-46:29
+137                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+137-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:45:17-85
+137-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/c50b639a6c015a14925e1a07bca62205/transformed/profileinstaller-1.2.0/AndroidManifest.xml:45:25-82
+138            </intent-filter>
+139        </receiver>
+140
+141        <activity
+141-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:27:9-34:20
+142            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+142-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:28:13-99
+143            android:exported="true"
+143-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:29:13-36
+144            android:theme="@android:style/Theme" >
+144-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:30:13-49
+145            <intent-filter>
+145-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:31:13-33:29
+146                <action android:name="android.intent.action.MAIN" />
+146-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:17-69
+146-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:25-66
+147            </intent-filter>
+148        </activity>
+149        <activity
+149-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:35:9-42:20
+150            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+150-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:36:13-95
+151            android:exported="true"
+151-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:37:13-36
+152            android:theme="@android:style/Theme" >
+152-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:38:13-49
+153            <intent-filter>
+153-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:31:13-33:29
+154                <action android:name="android.intent.action.MAIN" />
+154-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:17-69
+154-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:25-66
+155            </intent-filter>
+156        </activity>
+157        <activity
+157-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:43:9-50:20
+158            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+158-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:44:13-103
+159            android:exported="true"
+159-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:45:13-36
+160            android:theme="@android:style/Theme.Dialog" >
+160-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:46:13-56
+161            <intent-filter>
+161-->[androidx.test:core:1.4.0] /Users/chiyeung/.gradle/caches/transforms-3/99f67b498876cb0aa3eacc06495df982/transformed/core-1.4.0/AndroidManifest.xml:31:13-33:29
+162                <action android:name="android.intent.action.MAIN" />
+162-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:17-69
+162-->/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:25-66
+163            </intent-filter>
+164        </activity>
+165    </application>
+166
+167</manifest>

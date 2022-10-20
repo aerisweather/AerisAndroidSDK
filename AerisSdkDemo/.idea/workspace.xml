@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4b560f37-b5b9-448b-80a3-8621fc662119" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/AerisDemo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/LICENSE.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/demoprojkeystore.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/ic_launcher-web.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/lint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ab_bottom_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ab_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ab_stacked_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ab_texture_tile_aeris_aa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ab_transparent_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/aerislogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/btn_cab_done_default_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/btn_cab_done_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/btn_cab_done_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/cab_background_bottom_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/cab_background_top_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ic_action_action_settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ic_action_layers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ic_action_navigation_refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ic_navigation_drawer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/ic_stat_action_about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/list_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/list_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/menu_dropdown_panel_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/progress_bg_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/progress_primary_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/progress_secondary_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/spinner_ab_default_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/spinner_ab_disabled_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/spinner_ab_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/spinner_ab_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/tab_selected_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/tab_selected_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/tab_selected_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/tab_unselected_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/tab_unselected_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-hdpi/tab_unselected_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ab_bottom_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ab_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ab_stacked_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ab_texture_tile_aeris_aa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ab_transparent_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/aerislogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/btn_cab_done_default_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/btn_cab_done_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/btn_cab_done_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/cab_background_bottom_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/cab_background_top_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ic_action_action_settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ic_action_layers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ic_action_navigation_refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ic_navigation_drawer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/ic_stat_action_about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/list_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/list_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/menu_dropdown_panel_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/progress_bg_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/progress_primary_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/progress_secondary_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/spinner_ab_default_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/spinner_ab_disabled_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/spinner_ab_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/spinner_ab_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/tab_selected_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/tab_selected_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/tab_selected_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/tab_unselected_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/tab_unselected_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-mdpi/tab_unselected_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ab_bottom_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ab_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ab_stacked_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ab_texture_tile_aeris_aa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ab_transparent_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/aerislogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/btn_cab_done_default_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/btn_cab_done_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/btn_cab_done_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/cab_background_bottom_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/cab_background_top_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ic_action_action_settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ic_action_layers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ic_action_navigation_refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ic_navigation_drawer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/ic_stat_action_about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/list_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/list_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/menu_dropdown_panel_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/progress_bg_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/progress_primary_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/progress_secondary_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/spinner_ab_default_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/spinner_ab_disabled_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/spinner_ab_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/spinner_ab_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/tab_selected_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/tab_selected_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/tab_selected_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/tab_unselected_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/tab_unselected_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xhdpi/tab_unselected_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ab_bottom_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ab_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ab_stacked_solid_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ab_texture_tile_aeris_aa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ab_transparent_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/aerislogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/btn_cab_done_default_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/btn_cab_done_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/btn_cab_done_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/cab_background_bottom_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/cab_background_top_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ic_action_action_settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ic_action_layers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ic_action_navigation_refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ic_navigation_drawer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/ic_stat_action_about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/list_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/list_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/menu_dropdown_panel_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/progress_bg_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/progress_primary_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/progress_secondary_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/spinner_ab_default_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/spinner_ab_disabled_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/spinner_ab_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/spinner_ab_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/tab_selected_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/tab_selected_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/tab_selected_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/tab_unselected_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/tab_unselected_focused_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable-xxhdpi/tab_unselected_pressed_aeris_aa.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/ab_background_textured_aeris_aa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/advisory_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/aerisweather_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/blizzard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/blizzardn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/blowingsnow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/blowingsnown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/btn_cab_done_aeris_aa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/card_shape.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/clear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/clearn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/clearw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/clearwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/cloudy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/cloudyn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/cloudyw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/cloudywn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/cold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/coldn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/counter_bg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/custom_sunmoon_pbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/drizzle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/drizzlen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/dust.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/dustn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/fair.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/fairn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/fdrizzle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/fdrizzlen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/flurries.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/flurriesn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/flurriesw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/flurrieswn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/fog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/fogn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/freezingrain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/freezingrainn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/hazy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/hazyn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/home_feature_aerisapi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/hot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/legend_temp_outlook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/list_item_bg_normal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/list_item_bg_pressed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/list_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/map_indicator_blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudyn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudyr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudyrn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudyrw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudyrwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudys.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudysf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudysfn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudysfw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudysfwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudysn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudysw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudyswn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudyt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudytn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudytw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudytwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudyw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/mcloudywn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudyn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudyr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudyrn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudyrw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudyrwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudys.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudysf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudysfn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudysfw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudysfwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudysn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudysw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudyswn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudyt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudytn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudytw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudytwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudyw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/pcloudywn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/plcoudyrwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/progress_horizontal_aeris_aa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/rain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/rainandsnow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/rainandsnown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/rainn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/raintosnow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/raintosnown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/rainw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/save.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/selectable_background_aeris_aa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/showers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/showersn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/showersw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/showerswn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/sleet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/sleetn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/sleetsnow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/sleetsnown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/smoke.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/smoken.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/snow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/snown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/snowshowers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/snowshowersn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/snowtorain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/snowtorainn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/snoww.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/snowwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/spinner_background_ab_aeris_aa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/sunny.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/sunnyn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/sunnyw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/tab_indicator_ab_aeris_aa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/tstorm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/tstormn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/tstorms.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/tstormsn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/tstormsw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/tstormswn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/weather_icon_bg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/wind.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/wintrymix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/drawable/wintrymixn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/activity_location_search.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/activity_my_location.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/aeris_radio_button.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/dialog_aeris_windowadapter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/drawer_list_item.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/fragment_extforecast.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/fragment_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/fragment_interactive_maps.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/fragment_observation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/fragment_overview.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/fragment_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/fragment_sunmoon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/listview_extended_forecast.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/listview_nearby_obs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/listview_pollutant.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/listview_recent_observations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/listview_weekend.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/menu_drawer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/ntf_observation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/splash.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/view_airquality.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/view_forecast_today_tnt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/view_ob_table.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/view_observation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/view_small_forecast.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/view_sunmoon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/layout/view_twopart.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/menu/main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/menu/menu_maps_fragment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/menu/menu_search.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values-sw600dp/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values-sw720dp-land/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values-v11/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values-v14/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/aeris_default_values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/integer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/map_options_strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/nav_menu_strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/values/styles_aeris_aa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/res/xml/prefs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/customendpoint/CustomEndpointAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/customendpoint/CustomMoonModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/customendpoint/CustomSunModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/customendpoint/CustomSunmoonFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/customendpoint/CustomSunmoonHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/customendpoint/CustomSunmoonModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/customendpoint/CustomSunmoonResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/db/MyLocLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/db/MyPlace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/db/MyPlacesDb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/db/MyPlacesSubject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/db/SimpleCursorLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/demoaerisproject/AerisDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/demoaerisproject/AerisNotification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/demoaerisproject/BaseApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/demoaerisproject/DrawerActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/demoaerisproject/LocationSearchActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/demoaerisproject/MapOptionsLocalActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/demoaerisproject/MyLocsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/demoaerisproject/SettingsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/edithelp/EditTextEnterListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/edithelp/EnterPressedDelegate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/AerisFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/AerisPrefFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/AirQualityFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/ExtForecastFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/HeadlessFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/MyMapFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/NearbyObsFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/ObservationFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/OverviewFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/RefreshInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/SplashFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/fragment/WeekendFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/AdapterHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/AirQualityAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/AirQualityItemHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/DayNightPeriod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/ForecastAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/ForecastItemHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/IndexMonitorAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/ListAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/ObservationAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/ObservationItemHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/PlacesAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/PlacesItemHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/WeekendAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/listview/WeekendItemHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/menudrawer/HomeFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/menudrawer/NavDrawerItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/menudrawer/NavDrawerListAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/preference/PrefManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/service/NotificationJobService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/service/NotificationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/service/ScreenOnReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/service/ScreenOnService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/util/FormatUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/view/DayNightView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/view/PollutantView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/view/SmallForecastView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/view/TemperatureInfoData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/view/TemperatureWindowAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AerisDemo/src/com/example/view/TwoPartView.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[27081JEGR14803]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2GP1Dbfk2cGjgtCH9OsOnJ2ZvlA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="AerisSdkDemo.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b560f37-b5b9-448b-80a3-8621fc662119" name="Changes" comment="" />
+      <created>1666275287372</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666275287372</updated>
+    </task>
+    <servers />
+  </component>
+</project>

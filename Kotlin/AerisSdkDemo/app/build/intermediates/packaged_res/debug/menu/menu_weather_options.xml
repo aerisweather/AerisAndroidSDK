@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_detailed_weather"
+        android:title="@string/detailed_weather"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_extended_forecast"
+        android:title="@string/extended_forecast"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_nearby_observations"
+        android:title="@string/nearby_observations"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_weather_overview"
+        android:title="@string/weather_overview"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_weekend_forecast"
+        android:title="@string/weekend_forecast"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_interactive_maps"
+        android:title="@string/interactive_maps"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_sun_moon"
+        android:title="@string/sun_moon"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_air_quality"
+        android:title="@string/air_quality"
+        app:showAsAction="always" />
+</menu>
