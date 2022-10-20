@@ -7,7 +7,7 @@ The AerisWeather Android SDK allows a developer to quickly and easily add weathe
 
 View the latest installation and implementation details at AerisWeather under the [AerisWeather Android SDK toolkit documentation](http://www.aerisweather.com/support/docs/toolkits/aeris-android-sdk/getting-started/).
 
-### AerisWeather API Configuration for the AerisDemo App
+### AerisWeather API Configuration for the AerisWeather Demo Applications
 Before you can begin using the AerisWeather Android SDK in your project, you will need to download the latest version of the SDK and ensure that you have the required AerisWeather API keys for your application.
 
 Step 1: Get the files.  Download the latest version of the AerisWeather Android SDK. 
@@ -27,16 +27,16 @@ This library provides access to AerisWeather mapping features such as radar, sat
 The map library includes a dependency to the AerisWeather Core library, so you won't need to download the Core library separately. If you are planning to use AerisWeather to create weather maps for your Android project, this is the library for you.
 Step 4: Include the AerisWeather Android SDK files in your project's gradle.build file(s).
 
-## AerisWeather Demo App
+## AerisWeather Demo Applications
 The SDK includes a demo app to help get you started. To allow the demo project to access data using the AerisWeather API, you will need to configure the AerisWeather Demo project to use your unique credentials. Just sign up for a free developer account and register yourself and your application with AerisWeather, to get your unique client Id and secret.
 
-### Sign up for the AerisWeather API service. Developer accounts are Free.
+### Sign up for the AerisWeather API service. Developer accounts are Free
 Log in to your account to register your application for an API access key. Each application requires its own unique access key. Check out the API docs for more info.*
 
 Add the client_id and the secret_key to the res/values/strings.xml of the Demo application. Specifically, the aeris_client_id and aeris_client_secret values.
 * The DemoApp namespace/package name can be found around line 3 of the manifest.xml file and will look similiar too: **com.example.demoaerisproject**<br/><br/>
 
-### Google Maps Configuration for the AerisWeather Demo Applications.
+### Google Maps Configuration for the AerisWeather Demo Applications
 The AerisWeather Maps library project currently supports only Google maps. To use the Google Maps API, you'll need to register for a an API key in the Google Maps API Console. Visit the Google Maps Android API page and click the "GET A KEY"  button for detailed instructions on getting your Google Maps key. 
 
 Once you have your Google Maps API account set up:
