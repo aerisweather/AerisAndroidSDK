@@ -72,7 +72,8 @@ The Aeris Core and Aeris Maps libraries are available through Maven Central. To 
     mavenCentral()
 }
 dependencies {
-    implementation 'com.aerisweather:aeris-core-lib:#.#.#@aar'
+    implementation 'com.aerisweather:aeris-core-lib:#.#.#@aar'         // kotlin 
+    compile 'com.aerisweather:aeris-core-lib:#.#.#@aar'                // java
 }
 </code></pre>
 
@@ -83,10 +84,13 @@ dependencies {
     mavenCentral()
 }
 dependencies {
-    implementation ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {
+    implementation ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {     // kotlin
+    compile ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {            // java
         transitive true
     }
-    implementation 'com.google.android.gms:play-services-maps:#.#.#'
+    implementation 'com.google.android.gms:play-services-maps:#.#.#'   // kotlin
+    compile 'com.google.android.gms:play-services-maps:#.#.#'          // java
+    compile 'androidx.appcompat:appcompat:1.4.1'
 }
 </code></pre>
 
