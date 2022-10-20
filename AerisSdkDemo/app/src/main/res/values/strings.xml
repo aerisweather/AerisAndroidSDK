@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">AerisSdkDemo</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="null_value">---</string>
+    <string name="zero_value">0.0</string>
+    <string name="truncate">%s...</string>
+
+    <!-- navigation drawer -->
+    <string name="detailed_weather">Detailed Weather</string>
+    <string name="extended_forecast">Extended Forecast</string>
+    <string name="nearby_observations">Nearby Observations</string>
+    <string name="weather_overview">Weather Overview</string>
+    <string name="weekend_forecast">Weekend Forecast</string>
+    <string name="interactive_maps">Interactive Maps</string>
+    <string name="sun_moon">Sun/Moon</string>
+    <string name="air_quality">Air Quality</string>
+
+    <string name="aerisapi_client_id">@string/client_id</string>
+    <string name="aerisapi_client_secret">@string/client_secret</string>
+    <string name="activity_search">Search</string>
+    <string name="activity_my_locs">My Locations</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_layers">Layers</string>
+
+    <!-- Preference strings -->
+    <string name="pref_cat_location">category_location</string>
+    <string name="pref_cat_location_title">Location</string>
+    <string name="pref_my_location">pref_my_location</string>
+    <string name="pref_my_location_title">Use set Location</string>
+    <string name="pref_my_location_sum">Use a set location for all weather info</string>
+    <string name="pref_setlocation">pref_setlocation</string>
+    <string name="pref_setlocation_title">Set Location</string>
+    <string name="pref_setlocation_sum">Click to set the location you want you want to use</string>
+    <string name="pref_cat_ntf">category_ntf</string>
+    <string name="pref_cat_ntf_title">Notification</string>
+    <string name="pref_ntf_enabled">pref_ntf_enabled</string>
+    <string name="pref_ntf_enabled_sum">Puts a persistent notification in the status bar so weather can always be seen.</string>
+    <string name="pref_ntf_enabled_title">Enabled Notification</string>
+    <string name="permissions_verbiage">The Location and External Storage permissions are required to get weather data and perform mapping functions. Please restart the app and allow these permissions.</string>
+
+    <!-- Common -->
+    <string name="error">Error</string>
+    <string name="error_unknown">Error: Unknown</string>
+    <string name="error_no_data">Error: No data</string>
+
+    <!-- Observation -->
+    <string name="today">Today</string>
+    <string name="tonight">Tonight</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="winds">Winds</string>
+    <string name="pressure">Pressure</string>
+    <string name="dew_point">Dew Point</string>
+    <string name="humidity">Humidity</string>
+    <string name="na">N/A</string>
+    <string name="feels_like">Feels like %s</string>
+    <string name="mph">%s %d mph</string>
+    <string name="kph">%s %d kph</string>
+    <string name="ppp">%s %s %s</string>
+
+    <!-- Location menu -->
+    <string name="locate_me">Locate Me</string>
+    <string name="menu">Menu</string>
+
+    <!-- Air Quaity -->
+    <string name="city_state_country">%s, %s, %s</string>
+    <string name="method_calculation">Method of Calculation: %s</string>
+    <string name="dominant_pollutant">Dominant Pollutant: %s</string>
+    <string name="ppb">PPB: </string>
+    <string name="ugm3">UGM3: </string>
+    <string name="ten_micron">10µm</string>
+    <string name="two_half_micron">2.5µm</string>
+    <string name="ten_micron_in_inch">3.93e-4 in</string>
+    <string name="two_half_micron_in_inch">9.842e-5 in</string>
+
+    <!-- Location -->
+    <string name="alert_dlg_confirm_desc">Would you like to add this as your location?</string>
+    <string name="alert_dlg_confirm_title">Please Confirm</string>
+    <string name="alert_dlg_yes">Yes</string>
+    <string name="alert_dlg_cancel">Cancel</string>
+    <string name="no_locations_saved">No Locations Saved</string>
+    <string name="text_input">Input</string>
+
+    <!-- weekend forecast -->
+    <string name="calm">Calm</string>
+    <string name="mph_plus">%s %d-%d mph</string>
+    <string name="kph_plus">%s %d-%d kph</string>
+    <string name="precip">Precip</string>
+    <string name="snow">Snow</string>
+    <string name="zero_in">0.00 in</string>
+    <string name="zero_cm">0.00 cm</string>
+    <string name="in_plus">%s in</string>
+    <string name="milli_bar_plus">%s mb</string>
+    <string name="cm_plus">%s cm</string>
+    <string name="mm_plus">%s mm</string>
+
+    <!-- Overview -->
+    <string name="currently">Currently</string>
+
+    <!-- SunMoon -->
+    <string name="total_daylight">Total Dalight</string>
+    <string name="total_dalight_format"> %d hours,%d minutes</string>
+    <string name="moon_phase">Moon Phase</string>
+    <string name="request_failed">Failed: %s</string>
+
+    <!-- Settings -->
+    <string name="unit_measure_title">Unit of Measure</string>
+    <string name="radio_title_imperial">Imperial (Fahrenheit)</string>
+    <string name="radio_title_metric">Metric (Celsius)</string>
+
+    <!-- NearbyObsFragment -->
+    <string name="temp_fahrenheit">%sF</string>
+    <string name="temp_celsius">%sC</string>
+
+</resources>
