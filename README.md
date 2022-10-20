@@ -68,31 +68,33 @@ The following permissions are required in order to use the Aeris Android SDK in 
 The Aeris Core and Aeris Maps libraries are available through Maven Central. To add these dependencies to your project add these lines to your build.gradle file. 
 
 **Aeris Core:**
-<pre><code class="java">repositories {
+```diff
+repositories {
     mavenCentral()
 }
 dependencies {
-    implementation 'com.aerisweather:aeris-core-lib:#.#.#@aar'         // kotlin 
-    compile 'com.aerisweather:aeris-core-lib:#.#.#@aar'                // java
++   implementation 'com.aerisweather:aeris-core-lib:#.#.#@aar'         // kotlin 
+-   compile 'com.aerisweather:aeris-core-lib:#.#.#@aar'                // java
 }
-</code></pre>
+```    
 
 **Aeris Maps:**
 
 (Note: you do not need to to add Aeris Core seperately if you are using Aeris Maps - the core lib is referenced in the maps lib)
-<pre><code class="java">repositories {
+```diff
+repositories {
     mavenCentral()
 }
 dependencies {
-    implementation ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {     // kotlin
-    compile ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {            // java
++   implementation ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {     // kotlin
+-   compile ('com.aerisweather:aeris-maps-lib:#.#.#@aar') {            // java
         transitive true
     }
-    implementation 'com.google.android.gms:play-services-maps:#.#.#'   // kotlin
-    compile 'com.google.android.gms:play-services-maps:#.#.#'          // java
-    compile 'androidx.appcompat:appcompat:1.4.1'
++   implementation 'com.google.android.gms:play-services-maps:#.#.#'   // kotlin
+-   compile 'com.google.android.gms:play-services-maps:#.#.#'          // java
+-   compile 'androidx.appcompat:appcompat:1.4.1'
 }
-</code></pre>
+```
 
 ##Reference Links
 
