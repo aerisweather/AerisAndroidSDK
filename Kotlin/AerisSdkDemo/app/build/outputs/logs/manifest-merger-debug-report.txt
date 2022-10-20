@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
 MERGED from [androidx.databinding:databinding-adapters:7.2.2] /Users/chiyeung/.gradle/caches/transforms-3/99641604f62e14a993de54db40ead3c8/transformed/databinding-adapters-7.2.2/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-ktx:7.2.2] /Users/chiyeung/.gradle/caches/transforms-3/5bb94aca463794836d1c05a86a632bb8/transformed/databinding-ktx-7.2.2/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:7.2.2] /Users/chiyeung/.gradle/caches/transforms-3/23be378582e5d2ee7944aef602007e17/transformed/databinding-runtime-7.2.2/AndroidManifest.xml:17:1-24:12
@@ -113,63 +113,63 @@ MERGED from [androidx.compose.ui:ui-util:1.2.0] /Users/chiyeung/.gradle/caches/t
 MERGED from [io.github.aakira:napier-android-debug:1.4.1] /Users/chiyeung/.gradle/caches/transforms-3/6244864c1180fa0d094a3c449a3e5514/transformed/napier-debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/chiyeung/.gradle/caches/transforms-3/26c0b37ff2a94838919d2e209473a2a4/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.dagger:dagger-lint-aar:2.44] /Users/chiyeung/.gradle/caches/transforms-3/6745d885ee0af07ad5758374823d4163/transformed/dagger-lint-aar-2.44/AndroidManifest.xml:16:1-19:12
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
 	package
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:4:5-43
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:4:5-43
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:6:5-67
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:6:5-67
 MERGED from [com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:13:5-67
 MERGED from [com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:13:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:6:22-64
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:7:5-79
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:7:5-79
 MERGED from [com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:14:5-79
 MERGED from [com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:14:5-79
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:23:5-79
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:7:22-76
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:8:5-76
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:8:5-76
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:8:22-73
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:8:22-73
 uses-permission#android.permission.ACCESS_COURSE_LOCATION
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:9:5-81
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:9:22-78
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:10:5-79
 MERGED from [com.aerisweather:aeris-maps-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/61571fb49db2b85eb2077450150f300b/transformed/aeris-maps-lib-2.7.0/AndroidManifest.xml:10:5-79
 MERGED from [com.aerisweather:aeris-maps-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/61571fb49db2b85eb2077450150f300b/transformed/aeris-maps-lib-2.7.0/AndroidManifest.xml:10:5-79
 MERGED from [com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:20:5-79
 MERGED from [com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:20:5-79
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:10:22-76
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:11:5-81
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:11:22-78
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:11:22-78
 application
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:13:5-67:19
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:15:5-69:19
 MERGED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/cd07e1dda2009ebf05b55308279253a1/transformed/ui-tooling-1.2.0/AndroidManifest.xml:23:5-27:19
 MERGED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/cd07e1dda2009ebf05b55308279253a1/transformed/ui-tooling-1.2.0/AndroidManifest.xml:23:5-27:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/40afb34db59ddad97bd81882f06c9944/transformed/ui-test-manifest-1.2.0/AndroidManifest.xml:23:5-27:19
@@ -209,107 +209,107 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/chiyeung/.gradle/cac
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /Users/chiyeung/.gradle/caches/transforms-3/33b09f35b2129cfa1cb6de6d9d79845c/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:21:9-35
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:23:9-35
 	android:label
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:19:9-41
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:21:9-41
 	android:fullBackupContent
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:17:9-54
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:19:9-54
 	android:roundIcon
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:20:9-54
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:22:9-54
 	tools:targetApi
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:23:9-29
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:25:9-29
 	android:icon
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:18:9-43
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:20:9-43
 	android:allowBackup
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:22:9-50
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:24:9-50
 	android:dataExtractionRules
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:16:9-65
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:18:9-65
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:14:9-40
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:16:9-40
 activity#com.example.demoaerisproject.view.map.MyMapActivity
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:24:9-26:40
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:26:9-28:40
 	android:exported
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:26:13-37
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:25:13-79
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:27:13-79
 uses-library#org.apache.http.legacy
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:28:9-30:40
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:30:9-32:40
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:39:9-41:40
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:39:9-41:40
 	android:required
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:30:13-37
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:29:13-50
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:31:13-50
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:32:9-34:71
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:34:9-36:71
 	android:value
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:34:13-68
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:36:13-68
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:33:13-58
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:35:13-58
 service#com.example.demoaerisproject.service.NotificationService
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:36:9-38:38
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:38:9-40:38
 	android:enabled
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:38:13-35
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:40:13-35
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:37:13-84
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:39:13-84
 service#com.example.demoaerisproject.service.ScreenOnService
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:39:9-41:38
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:41:9-43:38
 	android:enabled
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:41:13-35
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:43:13-35
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:40:13-80
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:42:13-80
 service#com.example.demoaerisproject.service.NotificationJobService
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:42:9-44:72
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:44:9-46:72
 	android:permission
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:44:13-69
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:46:13-69
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:43:13-87
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:45:13-87
 activity#com.example.demoaerisproject.view.map.MapOptionsLocalActivity
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:46:9-48:40
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:48:9-50:40
 	android:exported
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:48:13-37
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:50:13-37
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:47:13-89
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:49:13-89
 activity#com.example.demoaerisproject.view.settings.SettingsActivity
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:49:9-51:40
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:51:9-53:40
 	android:exported
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:51:13-37
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:53:13-37
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:50:13-87
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:52:13-87
 activity#com.example.demoaerisproject.view.locations.LocationSearchActivity
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:52:9-54:40
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:54:9-56:40
 	android:exported
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:54:13-37
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:56:13-37
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:53:13-94
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:55:13-94
 activity#com.example.demoaerisproject.view.locations.MyLocsActivity
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:55:9-57:40
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:57:9-59:40
 	android:exported
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:57:13-37
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:59:13-37
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:56:13-86
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:58:13-86
 activity#com.example.demoaerisproject.view.weather.MainActivity
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:58:9-66:20
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:60:9-68:20
 	android:exported
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:60:13-36
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:13-36
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:59:13-82
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:61:13-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:61:13-65:29
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:63:13-67:29
 action#android.intent.action.MAIN
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:17-69
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:64:17-69
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:62:25-66
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:64:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:64:17-77
+ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:66:17-77
 	android:name
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:64:27-74
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:66:27-74
 uses-sdk
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
 MERGED from [androidx.databinding:databinding-adapters:7.2.2] /Users/chiyeung/.gradle/caches/transforms-3/99641604f62e14a993de54db40ead3c8/transformed/databinding-adapters-7.2.2/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.databinding:databinding-adapters:7.2.2] /Users/chiyeung/.gradle/caches/transforms-3/99641604f62e14a993de54db40ead3c8/transformed/databinding-adapters-7.2.2/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.databinding:databinding-ktx:7.2.2] /Users/chiyeung/.gradle/caches/transforms-3/5bb94aca463794836d1c05a86a632bb8/transformed/databinding-ktx-7.2.2/AndroidManifest.xml:20:5-22:41
@@ -528,16 +528,16 @@ MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/chiyeung/
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/chiyeung/.gradle/caches/transforms-3/26c0b37ff2a94838919d2e209473a2a4/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.dagger:dagger-lint-aar:2.44] /Users/chiyeung/.gradle/caches/transforms-3/6745d885ee0af07ad5758374823d4163/transformed/dagger-lint-aar-2.44/AndroidManifest.xml:18:3-42
 MERGED from [com.google.dagger:dagger-lint-aar:2.44] /Users/chiyeung/.gradle/caches/transforms-3/6745d885ee0af07ad5758374823d4163/transformed/dagger-lint-aar-2.44/AndroidManifest.xml:18:3-42
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml
 activity#androidx.compose.ui.tooling.PreviewActivity
 ADDED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/chiyeung/.gradle/caches/transforms-3/cd07e1dda2009ebf05b55308279253a1/transformed/ui-tooling-1.2.0/AndroidManifest.xml:24:9-26:39
 	android:exported
@@ -573,7 +573,7 @@ ADDED from [com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/cache
 	android:name
 		ADDED from [com.aerisweather:aeris-core-lib:2.7.0] /Users/chiyeung/.gradle/caches/transforms-3/a29798494f363842976616001fdcf8d7/transformed/aeris-core-lib-2.7.0/AndroidManifest.xml:16:22-95
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-69:12 reason: com.aerisweather requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/AndroidManifest.xml:2:1-71:12 reason: com.aerisweather requested WRITE_EXTERNAL_STORAGE
 queries
 ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/chiyeung/.gradle/caches/transforms-3/00b9a645cfafe5dacc0aef56d7a638c7/transformed/play-services-maps-18.0.2/AndroidManifest.xml:30:5-34:15
 package#com.google.android.apps.maps

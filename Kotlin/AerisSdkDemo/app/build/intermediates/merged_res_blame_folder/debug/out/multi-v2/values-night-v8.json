@@ -4,24 +4,7 @@
             "outputFile": "com.example.demoaerisproject.app-mergeDebugResources-73:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/chiyeung/.gradle/caches/transforms-3/6986e86eb92006bcee781253896a2109/transformed/appcompat-1.4.1/res/values-night-v8/values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,687",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,771"
-                    },
-                    "to": {
-                        "startLines": "15,16,17,18,19,20,21,38",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "703,773,857,941,1037,1139,1241,3197",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "768,852,936,1032,1134,1236,1330,3281"
-                    }
-                },
-                {
-                    "source": "/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/AerisSdkDemo/app/src/main/res/values-night/themes.xml",
+                    "source": "/Users/chiyeung/Documents/dev/android/github/AerisAndroidSDK/Kotlin/AerisSdkDemo/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -37,6 +20,23 @@
                         "endLines": "14",
                         "endColumns": "12",
                         "endOffsets": "698"
+                    }
+                },
+                {
+                    "source": "/Users/chiyeung/.gradle/caches/transforms-3/6986e86eb92006bcee781253896a2109/transformed/appcompat-1.4.1/res/values-night-v8/values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "15,16,17,18,19,20,21,38",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "703,773,857,941,1037,1139,1241,3197",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "768,852,936,1032,1134,1236,1330,3281"
                     }
                 },
                 {
