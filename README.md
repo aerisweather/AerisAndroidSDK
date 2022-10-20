@@ -36,7 +36,7 @@ Log in to your account to register your application for an API access key. Each 
 Add the client_id and the secret_key to the res/values/strings.xml of the Demo application. Specifically, the aeris_client_id and aeris_client_secret values.
 * The DemoApp namespace/package name can be found around line 3 of the manifest.xml file and will look similiar too: **com.example.demoaerisproject**<br/><br/>
 
-### Google Maps Configuration for the AerisDemo App
+### Google Maps Configuration for the AerisWeather Demo Applications.
 The AerisWeather Maps library project currently supports only Google maps. To use the Google Maps API, you'll need to register for a an API key in the Google Maps API Console. Visit the Google Maps Android API page and click the "GET A KEY"  button for detailed instructions on getting your Google Maps key. 
 
 Once you have your Google Maps API account set up:
