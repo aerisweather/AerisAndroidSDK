@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/tvForeInterval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Today"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvForeWeatherShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ivForeWeatherIcon"
+        android:layout_alignRight="@+id/tvForeTemperature"
+        android:maxLines="1"
+        android:text="--"
+        android:gravity="right"
+        android:textSize="12sp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/tvForeTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvForeWeatherShort"
+        android:layout_toLeftOf="@+id/ivForeWeatherIcon"
+        android:text="--"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/viewSpacer"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ivForeWeatherIcon"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/spacer" />
+
+    <TextView
+        android:id="@+id/tvForeWinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/viewSpacer"
+        android:layout_below="@+id/viewSpacer"
+        android:paddingTop="5dp"
+        android:text="Winds"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/tvForeWindsVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvForeWinds"
+        android:layout_alignBottom="@+id/tvForeWinds"
+        android:layout_alignRight="@+id/viewSpacer"
+        android:text="--"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvForePrecip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvForeWinds"
+        android:layout_below="@+id/tvForeWinds"
+        android:text="Precip"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/tvForePrecipVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvForePrecip"
+        android:layout_alignBottom="@+id/tvForePrecip"
+        android:layout_alignRight="@+id/tvForeWindsVal"
+        android:text="0.00 in"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ivForeWeatherIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvForeInterval"
+        android:scaleType="fitXY"
+        />
+
+</RelativeLayout>

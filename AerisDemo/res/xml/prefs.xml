@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="@string/pref_cat_ntf"
+        android:title="@string/pref_cat_ntf_title" >
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_ntf_enabled"
+            android:summary="@string/pref_ntf_enabled_sum"
+            android:title="@string/pref_ntf_enabled_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

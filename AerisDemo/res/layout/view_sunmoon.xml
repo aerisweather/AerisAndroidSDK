@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:layout_margin="5dp" >
+
+    <ImageView
+        android:id="@+id/ivSunmoonNightIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+       
+        android:src="@drawable/sunnyn" />
+
+    <ImageView
+        android:id="@+id/ivSunmoonDayIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/ivSunmoonNightIcon"
+       
+        android:src="@drawable/sunny" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvSunmoonTotalDaylightVal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            
+            android:gravity="center|left"
+            android:paddingLeft="2dp"
+            android:textSize="12sp"
+            android:textColor="#fff"
+        	android:textStyle="bold"
+            android:text="Moon Phase" />
+
+        <TextView
+            android:id="@+id/tvSunmoonMoonphase"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingRight="2dp"
+            android:gravity="right|center"
+            android:text="--"
+            android:textColor="#fff"
+            android:textSize="12sp" />
+    </LinearLayout>
+ <ProgressBar
+        android:id="@+id/pbSunmoonTotalDaylight"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/tvSunmoonTotalDaylight"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvSunmoonTotalDaylight"
+        android:progressDrawable="@drawable/custom_sunmoon_pbar" />
+    <TextView
+        android:id="@+id/tvSunmoonTotalDaylightVal"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:layout_alignLeft="@+id/tvSunmoonTotalDaylight"
+        android:layout_below="@+id/tvSunmoonTotalDaylight"
+        android:text="--"
+        android:textColor="#fff" />
+
+   
+
+    <TextView
+        android:id="@+id/tvSunmoonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ivSunmoonDayIcon"
+        android:layout_centerHorizontal="true"
+        android:text="Today"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSunmoonNightTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ivSunmoonNightIcon"
+        android:layout_toLeftOf="@+id/ivSunmoonNightIcon"
+        android:text="--"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSunmoonTotalDaylight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ivSunmoonDayIcon"
+        android:text="Total Daylight"
+        android:textColor="#fff"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSunmoonDayTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ivSunmoonDayIcon"
+        android:layout_toRightOf="@+id/ivSunmoonDayIcon"
+        android:text="--"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+</RelativeLayout>
