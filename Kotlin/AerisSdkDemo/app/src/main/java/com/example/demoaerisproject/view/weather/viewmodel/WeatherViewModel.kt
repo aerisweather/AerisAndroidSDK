@@ -22,7 +22,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 open class WeatherViewModel @Inject constructor(
-    @ApplicationContext val context: Context,
+    @ApplicationContext open val context: Context,
     weatherRepository: WeatherRepository,
     private val myPlaceRepository: MyPlaceRepository,
     private val prefStoreRepository: PrefStoreRepository
@@ -55,44 +55,44 @@ open class WeatherViewModel @Inject constructor(
         weatherRepository.requestByMapLatLong(lat, longitude)
     }
 
-    fun requestOverview() {
+    open fun requestOverview() {
         _event.value = ObservationEvent.InProgress
         weatherRepository.requestOverview(placeParam)
     }
 
-    fun requestWeekendForecast() {
+    open fun requestWeekendForecast() {
         _event.value = ObservationEvent.InProgress
         weatherRepository.requestWeekendForecast(placeParam)
     }
 
-    fun requestAirQuality() {
+    open fun requestAirQuality() {
         _event.value = ObservationEvent.InProgress
         weatherRepository.requestAirQuality(placeParam)
     }
 
-    fun requestExtForecast() {
+    open fun requestExtForecast() {
         _event.value = ObservationEvent.InProgress
         weatherRepository.requestExtForecast(placeParam)
     }
 
-    fun requestNearbyObservation() {
+    open fun requestNearbyObservation() {
         _event.value = ObservationEvent.InProgress
         weatherRepository.requestNearbyObservation(placeParam)
     }
 
-    fun requestDetailedObservation() {
+    open fun requestDetailedObservation() {
         _event.value = ObservationEvent.InProgress
         weatherRepository.requestDetailedObservation(placeParam)
     }
 
-    fun requestSunMoon() {
+    open fun requestSunMoon() {
         _event.value = ObservationEvent.InProgress
         weatherRepository.requestSunMoon(myPlace)
     }
 
     val execLocationHelper: () -> Unit = {
         context.let {
-            val loc = LocationHelper(it).lastLocs
+            LocationHelper(it).lastLocs
             LocationHelper(it).currentLocation?.let {
                 val address = Geocoder(context, Locale.getDefault()).getFromLocation(
                     it.latitude,

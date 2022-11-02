@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextRange
@@ -33,11 +34,11 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.Observer
 import com.aerisweather.aeris.response.PlacesResponse
+import com.example.demoaerisproject.R
+import com.example.demoaerisproject.data.room.MyPlace
 import com.example.demoaerisproject.view.BaseActivity
 import com.example.demoaerisproject.view.ComposeSnackbar
 import com.example.demoaerisproject.view.ComposeSpinner
-import com.example.demoaerisproject.R
-import com.example.demoaerisproject.data.room.MyPlace
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -53,6 +54,7 @@ class LocationSearchActivity : BaseActivity() {
                 Modifier
                     .fillMaxSize()
                     .background(Color.Black)
+                    .testTag("init_black_box")
             )
         }
         actionBarTitle = resources.getString(R.string.activity_search)
@@ -111,7 +113,7 @@ class LocationSearchActivity : BaseActivity() {
                         schedule(
                             object : TimerTask() {
                                 override fun run() {
-                                   viewModel.search(it)
+                                    viewModel.search(it)
                                     cancel()
                                 }
                             },
@@ -141,7 +143,9 @@ class LocationSearchActivity : BaseActivity() {
                         focusedBorderColor = Color.Gray,
                         unfocusedBorderColor = Color.Gray
                     ),
-                    modifier = Modifier.focusRequester(focusRequester)
+                    modifier = Modifier
+                        .testTag("search_text")
+                        .focusRequester(focusRequester)
                 )
                 LaunchedEffect(Unit) {
                     focusRequester.requestFocus()

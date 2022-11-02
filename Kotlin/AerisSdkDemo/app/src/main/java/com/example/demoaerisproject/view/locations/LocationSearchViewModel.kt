@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LocationSearchViewModel @Inject constructor(
+open class LocationSearchViewModel @Inject constructor(
     private val locationRepository: LocationRepository,
     private val myPlaceRepository: MyPlaceRepository
 ) : ViewModel() {

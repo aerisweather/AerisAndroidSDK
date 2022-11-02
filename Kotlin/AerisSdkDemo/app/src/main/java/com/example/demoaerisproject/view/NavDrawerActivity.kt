@@ -119,6 +119,10 @@ open class NavDrawerActivity : ComponentActivity() {
                 )
             },
             backgroundColor = colorResource(id = R.color.colorPrimaryDark),
+            /*
+             * TODO Drawer - drag issue : upgrade Compose v1.20 when possible
+             *  https://issuetracker.google.com/issues/202569585
+             */
             drawerGesturesEnabled = false
         ) { padding ->
             Box(modifier = Modifier.padding(padding)) {
@@ -229,13 +233,13 @@ fun DrawerItem(item: NavDrawerItem, selected: Boolean, onItemClick: (NavDrawerIt
 
 sealed class NavDrawerItem(var route: String, var title: String) {
     object Search : NavDrawerItem("Search", "Search")
-    object MyLoc : NavDrawerItem("My Location", "My Location")
-    object Detailed : NavDrawerItem("Detailed Weather", "Detailed Weather")
-    object ExtendedForecast : NavDrawerItem("Extended Forecast", "Extended Forecast")
-    object NearbyObservation : NavDrawerItem("Nearby Observation", "Nearby Observation")
-    object Overview : NavDrawerItem("Overview Weather", "Overview Weather")
-    object WeekendForecast : NavDrawerItem("Weekend Forecast", "Weekend Forecast")
-    object InteractiveMap : NavDrawerItem("Interactive Map", "Interactive Map")
-    object SunMoon : NavDrawerItem("Sun Moon", "Sun Moon")
-    object AirQuality : NavDrawerItem("Air Quality", "Air Quality")
+    object MyLoc : NavDrawerItem("My Location", "My location")
+    object Detailed : NavDrawerItem("Detailed Weather", "Detailed weather")
+    object ExtendedForecast : NavDrawerItem("Extended Forecast", "Extended forecast")
+    object NearbyObservation : NavDrawerItem("Nearby Observation", "Nearby observation")
+    object Overview : NavDrawerItem("Overview Weather", "Overview weather")
+    object WeekendForecast : NavDrawerItem("Weekend Forecast", "Weekend forecast")
+    object InteractiveMap : NavDrawerItem("Interactive Map", "Interactive map")
+    object SunMoon : NavDrawerItem("Sun Moon", "Sun moon")
+    object AirQuality : NavDrawerItem("Air Quality", "Air quality")
 }

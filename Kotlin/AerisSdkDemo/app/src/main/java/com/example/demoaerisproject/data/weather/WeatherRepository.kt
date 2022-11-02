@@ -20,11 +20,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
-class WeatherRepository @Inject constructor(
-    @ApplicationContext val context: Context
+open class WeatherRepository @Inject constructor(
+    @ApplicationContext open val context: Context
 ) : BatchCallback, AerisCallback, CustomCallback, ObservationsTaskCallback {
 
-    private val _batchEvent =
+    val _batchEvent =
         MutableStateFlow<AerisBatchResponseEvent>(
             AerisBatchResponseEvent.Success(null)
         )
@@ -248,7 +248,7 @@ class WeatherRepository @Inject constructor(
         }
     }
 
-    fun requestDetailedObservation(placeParam: PlaceParameter) {
+    open fun requestDetailedObservation(placeParam: PlaceParameter) {
         BatchBuilder().let {
             it.addGlobalParameter(placeParam)
             it.addEndpoint(

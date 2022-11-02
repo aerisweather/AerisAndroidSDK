@@ -16,9 +16,9 @@ android {
         minSdk 26
         targetSdk 32
         versionCode 1
-        versionName "2.7.0.2"
+        versionName "2.7.0.3"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.example.demoaerisproject.HiltTestRunner"
     }
 
     buildTypes {
@@ -44,6 +44,14 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
+}
+
+/*
+ * TODO 10/21/22 HILT/Compose Issue: Remove later date when update
+ * https://github.com/google/dagger/issues/3356
+ */
+configurations.all {
+    resolutionStrategy.force("junit:junit:4.13.2")
 }
 
 dependencies {

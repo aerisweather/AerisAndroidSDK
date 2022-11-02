@@ -22,6 +22,7 @@ import com.aerisweather.aeris.model.ForecastPeriod
 import com.aerisweather.aeris.response.ForecastsResponse
 import com.aerisweather.aeris.util.FileUtil
 import com.example.demoaerisproject.util.FormatUtil
+import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -33,7 +33,7 @@ class SettingsActivity : BaseActivity() {
     private val isMetric = mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        actionBarTitle = resources.getString(R.string.activity_search)
+        actionBarTitle = resources.getString(R.string.action_settings)
         super.onCreate(savedInstanceState)
     }
 
