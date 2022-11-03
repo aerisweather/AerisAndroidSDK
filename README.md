@@ -95,8 +95,22 @@ dependencies {
 -   compile 'androidx.appcompat:appcompat:1.4.1'
 }
 ```
+### Usage
 
-##Reference Links
+Your phone location is used for the weather query by default.  Specify other location(s) under Search for alternates.
+<img height="400" src="https://user-images.githubusercontent.com/116283403/199757704-e326efd1-e49b-43c7-a2d9-27b85df1a3ed.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199757758-ab874c6d-d8b4-44e6-b91f-00566ad7912e.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199757793-78e78d8e-c54b-460d-b367-570f169ec83d.png"/>
+
+Enable notification or use metrics under settings panel.
+<img height="400" src="https://user-images.githubusercontent.com/116283403/199758858-dc810488-8f5c-48d4-9bd7-844dcaca0a98.png"/>
+
+To customize interactive map, specify layers (under menu).
+<img height="400" src="https://user-images.githubusercontent.com/116283403/199759416-eefd2a3e-c46b-4e3c-88da-2f060c0d0c91.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199759442-9b45c7a5-1502-4dfd-85f1-270377a81e26.png"/>
+
+### Android Studio Chipmunk|2021.2.1 Patch2 or later
+Android Gradle Plugin Version 7.2.2
+Gradle Version 7.5.1. 
+
+## Reference Links
 
 [AerisWeather API Docs](http://www.aerisweather.com/support/docs/api/).<br/>
 [AerisWeather API Signup](http://www.aerisweather.com/signup/).<br/>
