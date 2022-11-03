@@ -97,7 +97,7 @@ dependencies {
 ```
 ### Usage
 
-Your phone location is used for the weather query by default.  Specify other location(s) under Search for alternates.
+Specify other location (under Search) for alternates from your Android system default. \
 <img height="400" src="https://user-images.githubusercontent.com/116283403/199757704-e326efd1-e49b-43c7-a2d9-27b85df1a3ed.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199757758-ab874c6d-d8b4-44e6-b91f-00566ad7912e.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199757793-78e78d8e-c54b-460d-b367-570f169ec83d.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199760288-e617f3a6-520e-41a6-8c6a-879956d11640.png"/>
 
 Enable notification or use metrics under settings panel. \
