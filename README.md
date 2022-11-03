@@ -103,7 +103,7 @@ Specify other location (under Search) for alternates from your Android system de
 Enable notification or use metrics under settings panel. \
 <img height="400" src="https://user-images.githubusercontent.com/116283403/199758858-dc810488-8f5c-48d4-9bd7-844dcaca0a98.png"/>
 
-To customize interactive map, specify layers (under menu). \
+Specify layers (under menu) to customize interactive map. \
 <img height="400" src="https://user-images.githubusercontent.com/116283403/199759416-eefd2a3e-c46b-4e3c-88da-2f060c0d0c91.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199759442-9b45c7a5-1502-4dfd-85f1-270377a81e26.png"/>
 
 ### Android Studio 
