@@ -106,9 +106,10 @@ Enable notification or use metrics under settings panel. \
 To customize interactive map, specify layers (under menu). \
 <img height="400" src="https://user-images.githubusercontent.com/116283403/199759416-eefd2a3e-c46b-4e3c-88da-2f060c0d0c91.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199759442-9b45c7a5-1502-4dfd-85f1-270377a81e26.png"/>
 
-### Android Studio Chipmunk|2021.2.1 Patch2 or later
-Android Gradle Plugin Version 7.2.2
-Gradle Version 7.5.1. 
+### Android Studio 
+Version: [Chipmunk|2021.2.1 Patch2 or later](https://androidstudio.googleblog.com/2022/08/android-studio-chipmunk-202121-patch-2.html) \
+Android Gradle Plugin Version 7.2.2 \
+Gradle Version 7.5.1.
 
 ## Reference Links
 
