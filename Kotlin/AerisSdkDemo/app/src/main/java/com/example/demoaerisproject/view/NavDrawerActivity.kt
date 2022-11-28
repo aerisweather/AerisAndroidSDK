@@ -22,8 +22,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -134,6 +137,7 @@ open class NavDrawerActivity : ComponentActivity() {
                 )
             }
         }
+        ComposeSecretDialog()
     }
 
     @Composable
@@ -228,6 +232,46 @@ fun DrawerItem(item: NavDrawerItem, selected: Boolean, onItemClick: (NavDrawerIt
             fontSize = 18.sp,
             color = Color.White
         )
+    }
+}
+
+@Composable
+fun ComposeSecretDialog() {
+    /*
+     * Display annoying dialog if aeris-id and aeris-secret not implemented
+     */
+
+    val id = stringResource(id = R.string.aerisapi_client_id)
+    val secret = stringResource(id = R.string.aerisapi_client_secret)
+    val map_key = stringResource(id = R.string.google_maps_key)
+    if (id.lowercase().contains("your") ||
+        secret.lowercase().contains("your") ||
+        map_key.lowercase().contains("your")
+    ) {
+        Dialog(onDismissRequest = { /*TODO*/ }) {
+            Card() {
+                Column() {
+                    Row(modifier = Modifier.padding(10.dp, 10.dp, 10.dp, 10.dp)) {
+                        Icon(
+                            painterResource(
+                                R.drawable.ic_warning
+                            ),
+                            "animate",
+                            modifier = Modifier.size(35.dp)
+                        )
+
+                        Text(
+                            text = stringResource(id = R.string.permission),
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(5.dp, 5.dp, 5.dp, 5.dp)
+                        )
+                    }
+                    Row(modifier = Modifier.padding(10.dp, 10.dp, 10.dp, 10.dp)) {
+                        Text(text = stringResource(id = R.string.permission_desc))
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -16,8 +16,11 @@
     <string name="sun_moon">Sun/Moon</string>
     <string name="air_quality">Air Quality</string>
 
-    <string name="aerisapi_client_id">@string/client_id</string>
-    <string name="aerisapi_client_secret">@string/client_secret</string>
+    <!-- Permission -->
+    <string name="google_maps_key">Your-google-map-key</string>
+    <string name="aerisapi_client_id">Your-aeris-id</string>
+    <string name="aerisapi_client_secret">Your-aeris-secret</string>
+
     <string name="activity_search">Search</string>
     <string name="activity_my_locs">My Locations</string>
     <string name="action_settings">Settings</string>
@@ -112,5 +115,9 @@
     <!-- NearbyObsFragment -->
     <string name="temp_fahrenheit">%sF</string>
     <string name="temp_celsius">%sC</string>
+
+    <!-- permission -->
+    <string name="permission">Permission</string>
+    <string name="permission_desc">Please insert AerisWeather id, secret and GoogleMap key</string>
 
 </resources>
