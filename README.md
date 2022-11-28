@@ -22,10 +22,10 @@ Step 3: Determine which components of the AerisWeather Android SDK you need for 
 ### AerisWeather Core library
 This is the base library for accessing the AerisWeather API. If you are planning to use the AerisWeather API for data without a map component, this is all you need.
 
-### AerisWeather Map library
+### AerisWeather Map Library
 This library provides access to AerisWeather mapping features such as radar, satellite, warnings, etc. 
-The map library includes a dependency to the AerisWeather Core library, so you won't need to download the Core library separately. If you are planning to use AerisWeather to create weather maps for your Android project, this is the library for you.
-Step 4: Include the AerisWeather Android SDK files in your project's gradle.build file(s).
+The map library includes a dependency on the AerisWeather Core library, so you won't need to download the Core library separately. If you are planning to use AerisWeather to create weather maps for your Android project, this is the library for you.
+Step 4: Include the AerisWeather Android SDK files in your project's Gradle.build file(s).
 
 ## AerisWeather Demo Applications
 The SDK includes a demo app to help get you started. To allow the demo project to access data using the AerisWeather API, you will need to configure the AerisWeather Demo project to use your unique credentials. Just sign up for a free developer account and register yourself and your application with AerisWeather, to get your unique client Id and secret.
@@ -34,18 +34,18 @@ The SDK includes a demo app to help get you started. To allow the demo project t
 Log in to your account to register your application for an API access key. Each application requires its own unique access key. Check out the API docs for more info.*
 
 Add the client_id and the secret_key to the res/values/strings.xml of the Demo application. Specifically, the aeris_client_id and aeris_client_secret values.
-* The DemoApp namespace/package name can be found around line 3 of the manifest.xml file and will look similiar too: **com.example.demoaerisproject**<br/><br/>
+* The DemoApp namespace/package name can be found around line 3 of the manifest.xml file and will look similar to: **com.example.demoaerisproject**<br/><br/>
 
 ### Google Maps Configuration for the AerisWeather Demo Applications
-The AerisWeather Maps library project currently supports only Google maps. To use the Google Maps API, you'll need to register for a an API key in the Google Maps API Console. Visit the Google Maps Android API page and click the "GET A KEY"  button for detailed instructions on getting your Google Maps key. 
+The AerisWeather Maps library project currently supports only Google maps. To use the Google Maps API, you'll need to register for an API key in the Google Maps API Console. Visit the Google Maps Android API page and click the "GET A KEY"  button for detailed instructions on getting your Google Maps key. 
 
 Once you have your Google Maps API account set up:
 
-In the Services page, verify that the “Google Maps Android API v2” is enabled.
+On the Services page, verify that the “Google Maps Android API v2” is enabled.
 In the left navigation bar, click API Access.
-In the resulting page, click Create New Android Key.
+On the resulting page, click Create New Android Key.
 In the resulting dialog, enter the SHA-1 fingerprint, then a semicolon, then The Demo project’s package name. For example: FE:6D:DC:73:D5:22:C1:43:67:71:9F:65:93:AE:A6:66:6D:44:5A:75;com.example.demoaerisproject
-The Google API Console responds by displaying Key for Android apps (with certificates) followed by a forty-character API key.
+The Google API Console responds by displaying a Key for Android apps (with certificates) followed by a forty-character API key.
 
 In your Android project, update the meta tag in the Demo Project’s Manifest:
 <pre><code class="java">&lt;meta-data
@@ -80,7 +80,7 @@ dependencies {
 
 **AerisWeather Maps:**
 
-(Note: you do not need to to add AerisWeather Core seperately if you are using AerisWeather Maps - the core lib is referenced in the maps lib)
+(Note: you do not need to add AerisWeather Core seperately if you are using AerisWeather Maps - the core lib is referenced in the maps lib)
 ```diff
 repositories {
     mavenCentral()
@@ -97,13 +97,13 @@ dependencies {
 ```
 ### Usage
 
-Specify other location (under Search) for alternates from your Android system default. \
+Specify other locations (under Search) for alternates from your Android system default. \
 <img height="400" src="https://user-images.githubusercontent.com/116283403/199757704-e326efd1-e49b-43c7-a2d9-27b85df1a3ed.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199757758-ab874c6d-d8b4-44e6-b91f-00566ad7912e.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199757793-78e78d8e-c54b-460d-b367-570f169ec83d.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199760288-e617f3a6-520e-41a6-8c6a-879956d11640.png"/>
 
-Enable notification or use metrics under settings panel. \
+Enable notification or use metrics under the settings panel. \
 <img height="400" src="https://user-images.githubusercontent.com/116283403/199758858-dc810488-8f5c-48d4-9bd7-844dcaca0a98.png"/>
 
-Specify layers (under menu) to customize interactive map. \
+Specify layers (under the menu) to customize the interactive map. \
 <img height="400" src="https://user-images.githubusercontent.com/116283403/199759416-eefd2a3e-c46b-4e3c-88da-2f060c0d0c91.png"/>  <img height="400" src="https://user-images.githubusercontent.com/116283403/199759442-9b45c7a5-1502-4dfd-85f1-270377a81e26.png"/>
 
 ### Android Studio 
