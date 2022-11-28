@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
@@ -238,9 +239,8 @@ fun DrawerItem(item: NavDrawerItem, selected: Boolean, onItemClick: (NavDrawerIt
 @Composable
 fun ComposeSecretDialog() {
     /*
-     * Display annoying dialog if aeris-id and aeris-secret not implemented
+     * Display dialog instead of ugly error message from failed access.
      */
-
     val id = stringResource(id = R.string.aerisapi_client_id)
     val secret = stringResource(id = R.string.aerisapi_client_secret)
     val map_key = stringResource(id = R.string.google_maps_key)
@@ -248,6 +248,7 @@ fun ComposeSecretDialog() {
         secret.lowercase().contains("your") ||
         map_key.lowercase().contains("your")
     ) {
+        Log.d("NavDrawerActivity", stringResource(id = R.string.permission_desc))
         Dialog(onDismissRequest = { /*TODO*/ }) {
             Card() {
                 Column() {
