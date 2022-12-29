@@ -25,10 +25,10 @@ open class WeatherRepository @Inject constructor(
 ) : BatchCallback, AerisCallback, CustomCallback, ObservationsTaskCallback {
 
     val _batchEvent =
-        MutableStateFlow<AerisBatchResponseEvent>(
-            AerisBatchResponseEvent.Success(null)
+        MutableStateFlow<ApiResponseEvent>(
+            ApiResponseEvent.Success(null)
         )
-    val batchEvent: StateFlow<AerisBatchResponseEvent> = _batchEvent
+    val batchEvent: StateFlow<ApiResponseEvent> = _batchEvent
     private val NUMBER_OF_DAYS = 7
 
     fun requestAirQuality(placeParam: PlaceParameter) {
@@ -115,11 +115,11 @@ open class WeatherRepository @Inject constructor(
     override fun onObservationsLoaded(responses: MutableList<ObservationResponse>?) {
         responses?.let {
             it[0].let {
-                _batchEvent.value = AerisBatchResponseEvent.Map(it)
+                _batchEvent.value = ApiResponseEvent.Map(it)
                 return
             }
         }
-        _batchEvent.value = AerisBatchResponseEvent.Error("no map value returned")
+        _batchEvent.value = ApiResponseEvent.Error("no map value returned")
     }
 
     /*
@@ -127,7 +127,7 @@ open class WeatherRepository @Inject constructor(
      */
     override fun onObservationsFailed(error: AerisError?) {
         _batchEvent.value =
-            AerisBatchResponseEvent.Error("Failed to load observation at that point")
+            ApiResponseEvent.Error("Failed to load observation at that point")
     }
 
     fun requestOverview(placeParam: PlaceParameter) {
@@ -229,9 +229,9 @@ open class WeatherRepository @Inject constructor(
     override fun onResult(custom: String?, response: String?) {
         kotlin.runCatching {
             val list = Gson().fromJson(response, SunMoonResponse::class.java)
-            _batchEvent.value = AerisBatchResponseEvent.SunMoon(list)
+            _batchEvent.value = ApiResponseEvent.SunMoon(list)
         }.onFailure {
-            _batchEvent.value = AerisBatchResponseEvent.Error("sunMoon:$it")
+            _batchEvent.value = ApiResponseEvent.Error("sunMoon:$it")
         }
     }
 
@@ -242,9 +242,9 @@ open class WeatherRepository @Inject constructor(
         _batchEvent.value = if (response?.isSuccessful == true) {
             val batch = AerisBatchResponse()
             batch.responses = mutableListOf(response)
-            AerisBatchResponseEvent.Success(batch)
+            ApiResponseEvent.Success(batch)
         } else {
-            AerisBatchResponseEvent.Error("air 1uality: failed")
+            ApiResponseEvent.Error("air 1uality: failed")
         }
     }
 
@@ -290,16 +290,16 @@ open class WeatherRepository @Inject constructor(
      */
     override fun onBatchResponse(response: AerisBatchResponse?) {
         _batchEvent.value = if (response?.isSuccessful == true) {
-            AerisBatchResponseEvent.Success(response)
+            ApiResponseEvent.Success(response)
         } else {
-            AerisBatchResponseEvent.Error("batch response failed")
+            ApiResponseEvent.Error("batch response failed")
         }
     }
 }
 
-sealed class AerisBatchResponseEvent {
-    class Success(val response: AerisBatchResponse?) : AerisBatchResponseEvent()
-    class SunMoon(val response: SunMoonResponse?) : AerisBatchResponseEvent()
-    class Map(val response: ObservationResponse?) : AerisBatchResponseEvent()
-    class Error(val msg: String) : AerisBatchResponseEvent()
+sealed class ApiResponseEvent {
+    class Success(val response: AerisBatchResponse?) : ApiResponseEvent()
+    class SunMoon(val response: SunMoonResponse?) : ApiResponseEvent()
+    class Map(val response: ObservationResponse?) : ApiResponseEvent()
+    class Error(val msg: String) : ApiResponseEvent()
 }

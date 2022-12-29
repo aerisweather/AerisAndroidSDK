@@ -44,7 +44,7 @@ import com.example.demoaerisproject.view.NavDrawerItem
 import com.example.demoaerisproject.view.settings.SettingsActivity
 import com.example.demoaerisproject.view.weather.MainActivity
 import com.example.demoaerisproject.view.weather.viewmodel.MyPlaceEvent
-import com.example.demoaerisproject.view.weather.viewmodel.ObservationEvent
+import com.example.demoaerisproject.view.weather.viewmodel.BaseWeatherEvent
 import com.example.demoaerisproject.view.weather.viewmodel.UnitEvent
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -97,7 +97,7 @@ class MyMapActivity : NavDrawerActivity(),
         viewModel.let {
             it.unitEvent.observe(this, ::onUnitEvent)
             it.locationEvent.observe(this, ::onLocationEvent)
-            it.event.observe(this, ::onObservationEvent)
+            it.event.observe(this, ::onBaseWeatherEvent)
             if (myPlace == null) {
                 it.requestMyPlace()
             }
@@ -120,7 +120,7 @@ class MyMapActivity : NavDrawerActivity(),
     @Composable
     override fun Navigation(
         navController: NavHostController,
-        observationEvent: ObservationEvent?,
+        BaseWeatherEvent: BaseWeatherEvent?,
         unitEvent: UnitEvent?,
         savedInstanceState: Bundle?
     ) {
@@ -438,13 +438,13 @@ class MyMapActivity : NavDrawerActivity(),
         }
     }
 
-    private fun onObservationEvent(event: ObservationEvent) {
+    private fun onBaseWeatherEvent(event: BaseWeatherEvent) {
         when (event) {
-            is ObservationEvent.Map -> loadObservation(event)
-            is ObservationEvent.InProgress -> {
+            is BaseWeatherEvent.Map -> loadObservation(event)
+            is BaseWeatherEvent.InProgress -> {
                 /* map already has a spinner */
             }
-            is ObservationEvent.Error -> {
+            is BaseWeatherEvent.Error -> {
                 setContent {
                     ComposeSnackbar(event.msg)
                 }
@@ -455,7 +455,7 @@ class MyMapActivity : NavDrawerActivity(),
         }
     }
 
-    private fun loadObservation(event: ObservationEvent.Map) {
+    private fun loadObservation(event: BaseWeatherEvent.Map) {
         val obResponse = event.response
         val ob = obResponse?.observation
         val relativeTo = obResponse?.relativeTo

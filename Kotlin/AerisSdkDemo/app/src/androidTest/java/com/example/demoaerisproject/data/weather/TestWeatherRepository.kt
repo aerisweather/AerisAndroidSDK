@@ -16,6 +16,6 @@ class TestWeatherRepository @Inject constructor(
 
     override fun requestDetailedObservation(placeParam: PlaceParameter) {
         val response = AerisBatchResponse()
-        _batchEvent.value = AerisBatchResponseEvent.Success(response)
+        _batchEvent.value = ApiResponseEvent.Success(response)
     }
 }

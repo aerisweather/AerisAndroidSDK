@@ -9,7 +9,7 @@ import com.aerisweather.aeris.response.ForecastsResponse
 import com.aerisweather.aeris.response.ObservationResponse
 import com.example.demoaerisproject.data.preferenceStore.PrefStoreRepository
 import com.example.demoaerisproject.data.room.MyPlaceRepository
-import com.example.demoaerisproject.data.weather.AerisBatchResponseEvent
+import com.example.demoaerisproject.data.weather.ApiResponseEvent
 import com.example.demoaerisproject.data.weather.WeatherRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -52,7 +52,7 @@ class NotificationBuilder(
             CoroutineScope(Dispatchers.IO).launch {
                 weatherRepository.batchEvent.collect {
                     when (it) {
-                        is AerisBatchResponseEvent.Success ->
+                        is ApiResponseEvent.Success ->
                             send(it.response)
 
                         else -> {

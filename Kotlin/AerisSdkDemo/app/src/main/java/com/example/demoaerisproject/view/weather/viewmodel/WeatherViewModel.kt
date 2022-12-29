@@ -51,42 +51,42 @@ open class WeatherViewModel @Inject constructor(
     }
 
     fun requestByMapLatLong(lat: Double, longitude: Double) {
-        _event.value = ObservationEvent.InProgress
+        _event.value = BaseWeatherEvent.InProgress
         weatherRepository.requestByMapLatLong(lat, longitude)
     }
 
     open fun requestOverview() {
-        _event.value = ObservationEvent.InProgress
+        _event.value = BaseWeatherEvent.InProgress
         weatherRepository.requestOverview(placeParam)
     }
 
     open fun requestWeekendForecast() {
-        _event.value = ObservationEvent.InProgress
+        _event.value = BaseWeatherEvent.InProgress
         weatherRepository.requestWeekendForecast(placeParam)
     }
 
     open fun requestAirQuality() {
-        _event.value = ObservationEvent.InProgress
+        _event.value = BaseWeatherEvent.InProgress
         weatherRepository.requestAirQuality(placeParam)
     }
 
     open fun requestExtForecast() {
-        _event.value = ObservationEvent.InProgress
+        _event.value = BaseWeatherEvent.InProgress
         weatherRepository.requestExtForecast(placeParam)
     }
 
     open fun requestNearbyObservation() {
-        _event.value = ObservationEvent.InProgress
+        _event.value = BaseWeatherEvent.InProgress
         weatherRepository.requestNearbyObservation(placeParam)
     }
 
     open fun requestDetailedObservation() {
-        _event.value = ObservationEvent.InProgress
+        _event.value = BaseWeatherEvent.InProgress
         weatherRepository.requestDetailedObservation(placeParam)
     }
 
     open fun requestSunMoon() {
-        _event.value = ObservationEvent.InProgress
+        _event.value = BaseWeatherEvent.InProgress
         weatherRepository.requestSunMoon(myPlace)
     }
 
@@ -148,7 +148,7 @@ open class WeatherViewModel @Inject constructor(
                 }
             }
         }.onFailure {
-            _event.value = ObservationEvent.Error(it.toString())
+            _event.value = BaseWeatherEvent.Error(it.toString())
             Log.e("WeatherViewModel.initDBListener", it.toString())
         }
     }

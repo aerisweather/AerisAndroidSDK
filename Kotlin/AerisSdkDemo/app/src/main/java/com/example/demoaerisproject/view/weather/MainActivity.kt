@@ -27,7 +27,7 @@ import com.example.demoaerisproject.view.NavDrawerActivity
 import com.example.demoaerisproject.view.NavDrawerItem
 import com.example.demoaerisproject.view.map.MyMapActivity
 import com.example.demoaerisproject.view.settings.SettingsActivity
-import com.example.demoaerisproject.view.weather.viewmodel.ObservationEvent
+import com.example.demoaerisproject.view.weather.viewmodel.BaseWeatherEvent
 import com.example.demoaerisproject.view.weather.viewmodel.UnitEvent
 import com.google.android.gms.maps.OnMapReadyCallback
 import dagger.hilt.android.AndroidEntryPoint
@@ -69,8 +69,8 @@ class MainActivity : NavDrawerActivity() {
             }
 
             val combine =
-                combine(it.event.asFlow(), it.unitEvent.asFlow()) { observationEvent, unitEvent ->
-                    Pair(observationEvent, unitEvent)
+                combine(it.event.asFlow(), it.unitEvent.asFlow()) { BaseWeatherEvent, unitEvent ->
+                    Pair(BaseWeatherEvent, unitEvent)
                 }
 
             CoroutineScope(Dispatchers.Main).launch {
@@ -86,7 +86,7 @@ class MainActivity : NavDrawerActivity() {
     @Composable
     override fun Navigation(
         navController: NavHostController,
-        observationEvent: ObservationEvent?,
+        BaseWeatherEvent: BaseWeatherEvent?,
         unitEvent: UnitEvent?,
         savedInstanceState: Bundle?
     ) {
@@ -94,29 +94,29 @@ class MainActivity : NavDrawerActivity() {
         NavHost(navController, startDestination = viewModel.route) {
             composable(NavDrawerItem.Detailed.route) {
                 val screen = DetailedScreen(LocalContext.current, isMetric)
-                HandleWeatherEvent(screen, observationEvent)
+                HandleWeatherEvent(screen, BaseWeatherEvent)
             }
             composable(NavDrawerItem.ExtendedForecast.route) {
                 val screen =
                     ExtendedForecastScreen(LocalContext.current, isMetric)
-                HandleWeatherEvent(screen, observationEvent)
+                HandleWeatherEvent(screen, BaseWeatherEvent)
             }
 
             composable(NavDrawerItem.NearbyObservation.route) {
                 val screen =
                     NearbyObservationScreen(LocalContext.current, isMetric)
-                HandleWeatherEvent(screen, observationEvent)
+                HandleWeatherEvent(screen, BaseWeatherEvent)
             }
 
             composable(NavDrawerItem.Overview.route) {
                 val screen = OverviewScreen(LocalContext.current, isMetric)
-                HandleWeatherEvent(screen, observationEvent)
+                HandleWeatherEvent(screen, BaseWeatherEvent)
             }
 
             composable(NavDrawerItem.WeekendForecast.route) {
                 val screen =
                     WeekendForecastScreen(LocalContext.current, isMetric)
-                HandleWeatherEvent(screen, observationEvent)
+                HandleWeatherEvent(screen, BaseWeatherEvent)
             }
 
             composable(NavDrawerItem.InteractiveMap.route) {
@@ -124,15 +124,15 @@ class MainActivity : NavDrawerActivity() {
             }
 
             composable(NavDrawerItem.SunMoon.route) {
-                if(observationEvent !is ObservationEvent.Success) {
+                if(BaseWeatherEvent !is BaseWeatherEvent.Success) {
                     val screen = SunMoonScreen(LocalContext.current, isMetric)
-                    HandleWeatherEvent(screen, observationEvent)
+                    HandleWeatherEvent(screen, BaseWeatherEvent)
                 }
             }
 
             composable(NavDrawerItem.AirQuality.route) {
                 val screen = AirQualityScreen(LocalContext.current, isMetric)
-                HandleWeatherEvent(screen, observationEvent)
+                HandleWeatherEvent(screen, BaseWeatherEvent)
             }
         }
     }
@@ -213,9 +213,9 @@ class MainActivity : NavDrawerActivity() {
     }
 
     @Composable
-    fun HandleWeatherEvent(screen: IScreen, event: ObservationEvent?) {
+    fun HandleWeatherEvent(screen: IScreen, event: BaseWeatherEvent?) {
         when (event) {
-            is ObservationEvent.SunMoon -> {
+            is BaseWeatherEvent.SunMoon -> {
                 val list = event.response?.response
                 if (list?.isNotEmpty() == true) {
                     screen.Render(list = list)
@@ -223,7 +223,7 @@ class MainActivity : NavDrawerActivity() {
                     ComposeSnackbar(stringResource(id = R.string.error_no_data))
                 }
             }
-            is ObservationEvent.Success -> {
+            is BaseWeatherEvent.Success -> {
                 val list = event.response?.responses
                 if (list?.isNotEmpty() == true) {
                     screen.Render(list = list)
@@ -231,10 +231,10 @@ class MainActivity : NavDrawerActivity() {
                     ComposeSnackbar(stringResource(id = R.string.error_no_data))
                 }
             }
-            is ObservationEvent.InProgress -> {
+            is BaseWeatherEvent.InProgress -> {
                 ComposeSpinner()
             }
-            is ObservationEvent.Error -> {
+            is BaseWeatherEvent.Error -> {
                 ComposeSnackbar(event.msg)
             }
             else -> {

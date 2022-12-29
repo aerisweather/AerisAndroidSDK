@@ -37,7 +37,7 @@ import com.aerisweather.aeris.maps.AerisMapView
 import com.example.demoaerisproject.R
 import com.example.demoaerisproject.view.locations.LocationSearchActivity
 import com.example.demoaerisproject.view.locations.MyLocsActivity
-import com.example.demoaerisproject.view.weather.viewmodel.ObservationEvent
+import com.example.demoaerisproject.view.weather.viewmodel.BaseWeatherEvent
 import com.example.demoaerisproject.view.weather.viewmodel.UnitEvent
 import com.example.demoaerisproject.view.weather.viewmodel.WeatherViewModel
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -96,7 +96,7 @@ open class NavDrawerActivity : ComponentActivity() {
     @Composable
     fun MainScreen(
         navigateTo: (route: String?) -> Unit,
-        observationEvent: ObservationEvent? = null,
+        BaseWeatherEvent: BaseWeatherEvent? = null,
         unitEvent: UnitEvent? = null,
         savedInstanceState: Bundle? = null
     ) {
@@ -132,7 +132,7 @@ open class NavDrawerActivity : ComponentActivity() {
             Box(modifier = Modifier.padding(padding)) {
                 Navigation(
                     navController = navController,
-                    observationEvent,
+                    BaseWeatherEvent,
                     unitEvent,
                     savedInstanceState
                 )
@@ -144,7 +144,7 @@ open class NavDrawerActivity : ComponentActivity() {
     @Composable
     open fun Navigation(
         navController: NavHostController,
-        observationEvent: ObservationEvent? = null,
+        BaseWeatherEvent: BaseWeatherEvent? = null,
         unitEvent: UnitEvent? = null,
         savedInstanceState: Bundle?
     ) {
