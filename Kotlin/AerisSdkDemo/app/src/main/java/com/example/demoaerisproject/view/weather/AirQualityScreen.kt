@@ -221,8 +221,9 @@ class AirQualityScreen(val context: Context, val isMetrics: Boolean?) : IScreen 
                 contentAlignment = Alignment.CenterEnd
             ) {
                 Text(
-                    text = WeatherUtil.capitalize(pollutant.category)
-                        ?: stringResource(R.string.null_value),
+                    text = WeatherUtil.capitalize(
+                        pollutant.category ?: stringResource(R.string.null_value)
+                    ),
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
                     fontSize = 12.sp,
