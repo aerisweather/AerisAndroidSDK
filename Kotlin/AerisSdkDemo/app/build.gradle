@@ -16,7 +16,7 @@ android {
         minSdk 26
         targetSdk 32
         versionCode 1
-        versionName "2.7.0.5"
+        versionName "2.7.1"
 
         testInstrumentationRunner "com.example.demoaerisproject.HiltTestRunner"
     }
