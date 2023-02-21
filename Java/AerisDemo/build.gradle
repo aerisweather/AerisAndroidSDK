@@ -69,7 +69,7 @@ repositories {
 }
 dependencies {
     testImplementation 'junit:junit:4.13.2'
-    implementation ('com.aerisweather:aeris-maps-lib:2.7.0@aar') {
+    implementation ('com.aerisweather:aeris-maps-lib:2.7.1@aar') {
         transitive true
     }
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
