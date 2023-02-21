@@ -8,7 +8,7 @@ android {
         applicationId "com.example.demoaerisproject"
         versionCode 13
         targetSdkVersion 32
-        versionName "2.7.0"
+        versionName "2.7.0.5"
         //multiDexEnabled true
         signingConfigs {
             config {
