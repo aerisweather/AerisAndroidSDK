@@ -2,12 +2,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 26
         applicationId "com.example.demoaerisproject"
         versionCode 13
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionName "2.7.1"
         //multiDexEnabled true
         signingConfigs {
