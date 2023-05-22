@@ -7,10 +7,7 @@ import com.aerisweather.aeris.maps.MapOptionsActivity;
 public class MapOptionsLocalActivity extends MapOptionsActivity implements RadioGroup.OnCheckedChangeListener
 {
     protected void onCreate(Bundle savedInstanceState) {
-        this.setContentView(com.aerisweather.aeris.maps.R.layout.activity_map_options);
-
+        this.setContentView(R.layout.activity_map_options);
         super.onCreate(savedInstanceState);
     }
-
-
 }

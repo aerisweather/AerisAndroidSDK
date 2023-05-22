@@ -5,6 +5,8 @@ import android.app.job.JobService;
 import android.os.Build;
 import android.os.StrictMode;
 import android.os.SystemClock;
+import android.util.Log;
+
 import androidx.annotation.RequiresApi;
 
 import com.aerisweather.aeris.communication.Action;
@@ -26,13 +28,13 @@ import com.aerisweather.aeris.response.ForecastsResponse;
 import com.aerisweather.aeris.response.ObservationResponse;
 import com.example.db.MyPlacesDb;
 import com.example.demoaerisproject.AerisNotification;
+import com.example.demoaerisproject.R;
 import com.example.preference.PrefManager;
 
 
-@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class NotificationJobService extends JobService
 {
-	private static final String TAG = NotificationJobService.class.getSimpleName();
+	private static final String TAG = "NotificationJobService";// NotificationJobService.class.getSimpleName();
 
 	public NotificationJobService()
 	{
@@ -43,7 +45,7 @@ public class NotificationJobService extends JobService
 	public void onCreate()
 	{
 		super.onCreate();
-		Logger.d(TAG, "onCreate()");
+		Log.d(TAG, "onCreate()");
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 	}
@@ -56,60 +58,56 @@ public class NotificationJobService extends JobService
 	@Override
 	public boolean onStartJob(JobParameters jobParameters)
 	{
-		Logger.d(TAG, "onStartJob()");
-		try
-		{
-			BatchBuilder builder = new BatchBuilder();
+		Log.d(TAG, "onStartJob() starting...");
+		Boolean isEnabled = PrefManager.getBoolPreference(this, getString(R.string.pref_ntf_enabled));
+		if (isEnabled) {
+			try {
+				BatchBuilder builder = new BatchBuilder();
 
-			MyPlacesDb db = new MyPlacesDb(this);
-			PlaceParameter place = db.getMyPlaceParameter();
-			db.close();
+				MyPlacesDb db = new MyPlacesDb(this);
+				PlaceParameter place = db.getMyPlaceParameter();
+				db.close();
 
-			if (place == null)
-			{
-				place = new PlaceParameter(this);
+				if (place == null) {
+					place = new PlaceParameter(this);
+				}
+
+				builder.addGlobalParameter(place);
+
+				builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
+						Action.CLOSEST).addParameters(FieldsParameter.initWith(
+						ObservationFields.ICON, ObservationFields.TEMP_F,
+						ObservationFields.WEATHER, ObservationFields.TEMP_C,
+						ObservationFields.WEATHER_SHORT)));
+
+				builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
+						.addParameters(
+								FieldsParameter.initWith(Fields.INTERVAL,
+										ForecastsFields.IS_DAY, ForecastsFields.MAX_TEMP_F,
+										ForecastsFields.MIN_TEMP_F, ForecastsFields.MIN_TEMP_C,
+										ForecastsFields.MAX_TEMP_C), new FilterParameter(
+										"daynight"), new PLimitParameter(2)));
+
+				AerisRequest request = builder.build();
+				request.withDebugOutput(true);
+				BatchCommunicationTask task = new BatchCommunicationTask(this, request);
+				AerisBatchResponse retval = task.executeSyncTask();
+
+				if (retval.responses != null && retval.responses.size() == 2) {
+					ObservationResponse obResponse = new ObservationResponse(retval.responses.get(0).getFirstResponse());
+					ForecastsResponse fResponse = new ForecastsResponse(retval.responses.get(1).getFirstResponse());
+					AerisNotification.setCustomNotification(this, obResponse, fResponse);
+					PrefManager.setLongPreference(this, PrefManager.NTF_TIMESTAMP_KEY, SystemClock.elapsedRealtime());
+				} else {
+					Log.d(TAG, "retval.response is null or size != 2 ");
+				}
+			} catch (Exception ex) {
+				Log.d(TAG, "onStartJob() - exception: " + ex.getMessage());
+				return true;
+			} finally {
+				jobFinished(jobParameters, true);
 			}
-
-			builder.addGlobalParameter(place);
-
-			builder.addEndpoint(new Endpoint(EndpointType.OBSERVATIONS,
-					Action.CLOSEST).addParameters(FieldsParameter.initWith(
-					ObservationFields.ICON, ObservationFields.TEMP_F,
-					ObservationFields.WEATHER, ObservationFields.TEMP_C,
-					ObservationFields.WEATHER_SHORT)));
-
-			builder.addEndpoint(new Endpoint(EndpointType.FORECASTS, Action.CLOSEST)
-					.addParameters(
-							FieldsParameter.initWith(Fields.INTERVAL,
-									ForecastsFields.IS_DAY, ForecastsFields.MAX_TEMP_F,
-									ForecastsFields.MIN_TEMP_F, ForecastsFields.MIN_TEMP_C,
-									ForecastsFields.MAX_TEMP_C), new FilterParameter(
-									"daynight"), new PLimitParameter(2)));
-
-			AerisRequest request = builder.build();
-			request.withDebugOutput(true);
-			BatchCommunicationTask task = new BatchCommunicationTask(this, request);
-
-			AerisBatchResponse retval = task.executeSyncTask();
-			if (retval.responses != null && retval.responses.size() == 2)
-			{
-				ObservationResponse obResponse = new ObservationResponse(retval.responses.get(0).getFirstResponse());
-				ForecastsResponse fResponse = new ForecastsResponse(retval.responses.get(1).getFirstResponse());
-				AerisNotification.setCustomNotification(this, obResponse, fResponse);
-				PrefManager.setLongPreference(this, PrefManager.NTF_TIMESTAMP_KEY,	SystemClock.elapsedRealtime());
-			}
 		}
-		catch(Exception ex)
-		{
-			Logger.d(TAG, "onStartJob() - exception: " + ex.getMessage());
-			return true;
-		}
-		finally
-		{
-			jobFinished(jobParameters, true);
-			Logger.d(TAG, "onStartJob() - jobFinished");
-		}
-
 		return true;
 	}
 

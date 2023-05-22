@@ -112,9 +112,7 @@ public class MyPlacesDb extends SQLiteOpenHelper {
 			sqldb.update(MyPlaceTable.TABLE, changeArgs, PlacesColumns.NAME
 					+ "!=? OR " + PlacesColumns.COUNTRY + "!=?", new String[] {
 					name, country });
-			BaseApplication.enableNotificationService(context, PrefManager
-.getBoolPreference(context,
-							context.getString(R.string.pref_ntf_enabled)));
+			BaseApplication.enableNotificationService(context);
 			MyPlacesSubject.getInstance().notifyObservers(null);
 		}
 		return id;
