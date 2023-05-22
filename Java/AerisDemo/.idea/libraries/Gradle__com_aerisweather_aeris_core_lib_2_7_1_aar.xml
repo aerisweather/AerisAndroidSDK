@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.aerisweather:aeris-core-lib:2.7.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/d98c901f8e5d986c6cda21c3cd9381f0/transformed/jetified-aeris-core-lib-2.7.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d98c901f8e5d986c6cda21c3cd9381f0/transformed/jetified-aeris-core-lib-2.7.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d98c901f8e5d986c6cda21c3cd9381f0/transformed/jetified-aeris-core-lib-2.7.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

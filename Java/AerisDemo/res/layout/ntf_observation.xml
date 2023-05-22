@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
+    android:layout_height="48dp"
     android:background="@color/background"
     android:orientation="horizontal" >
 
@@ -25,9 +25,7 @@
         android:paddingRight="5dp"
         android:text="Mostly Cloudy with a slight chance of snow"
         android:textColor="#ffffff"
-        android:textSize="14sp" />
-
-
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/tvNtfTemp"
@@ -36,17 +34,15 @@
         android:gravity="center"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:text="23"
+        android:text="22"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="26sp"
         android:textStyle="bold" />
-
-
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="top"
         android:orientation="vertical" >
 
         <TextView
@@ -55,9 +51,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingRight="5dp"
-            android:text="23"
+            android:text="10"
             android:textColor="#ff3300"
-            android:textSize="22sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -66,9 +62,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingRight="5dp"
-            android:text="16"
+            android:text="10"
             android:textColor="@color/light_blue"
-            android:textSize="22sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
 
