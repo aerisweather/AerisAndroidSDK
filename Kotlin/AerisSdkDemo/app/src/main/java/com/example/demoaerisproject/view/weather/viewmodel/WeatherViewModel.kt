@@ -99,15 +99,17 @@ open class WeatherViewModel @Inject constructor(
                     it.longitude,
                     1
                 )
-                _locationEvent.value =
-                    MyPlaceEvent.Current(
-                        MyPlace(
-                            address[0].locality,
-                            address[0].adminArea,
-                            address[0].countryName.uppercase().replace("UNITED STATES", "US"),
-                            true, it.latitude, it.longitude
+                address?.apply {
+                    _locationEvent.value =
+                        MyPlaceEvent.Current(
+                            MyPlace(
+                                this[0].locality,
+                                this[0].adminArea,
+                                this[0].countryName.uppercase().replace("UNITED STATES", "US"),
+                                true, it.latitude, it.longitude
+                            )
                         )
-                    )
+                }
             }
         }
     }
