@@ -43,7 +43,7 @@ public class AerisPrefFragment extends PreferenceFragment implements
 				getString(R.string.pref_ntf_enabled))) {
 			boolean bool = (Boolean) newValue;
 			PrefManager.setPreference(getActivity(), preference.getKey(), bool);
-			BaseApplication.enableNotificationService(getActivity(), bool);
+			BaseApplication.enableNotificationService(getActivity());
 			return true;
 		}
 		return false;
