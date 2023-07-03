@@ -11,13 +11,13 @@
         android:baselineAligned="false"
         android:orientation="horizontal" >
 
-        <com.example.view.TwoPartView
+        <com.xweather.sdkdemo.java.view.TwoPartView
             android:id="@+id/viewWinds"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.example.view.TwoPartView
+        <com.xweather.sdkdemo.java.view.TwoPartView
             android:id="@+id/viewHumidity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -32,13 +32,13 @@
         android:baselineAligned="false"
         android:orientation="horizontal" >
 
-        <com.example.view.TwoPartView
+        <com.xweather.sdkdemo.java.view.TwoPartView
             android:id="@+id/viewDewPoint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.example.view.TwoPartView
+        <com.xweather.sdkdemo.java.view.TwoPartView
             android:id="@+id/viewPressure"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

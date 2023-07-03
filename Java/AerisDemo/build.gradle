@@ -1,23 +1,22 @@
-
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 33
     defaultConfig {
         minSdkVersion 26
-        applicationId "com.example.demoaerisproject"
+        applicationId "com.xweather.sdkdemo.java.demoaerisproject"
         versionCode 13
         targetSdkVersion 33
-        versionName "2.7.1"
+        versionName "2.8.1"
         //multiDexEnabled true
         signingConfigs {
-            config {
-                keyAlias 'demoprojkey'
-                keyPassword 'password'
-                storeFile file('/Users/Lee/AndroidStudioProjects/AerisAndroidSDK/AerisDemo/demoprojkeystore.jks')
-                storePassword 'password'
-                }
+            release {
+                storeFile file("myreleasekey.keystore")
+                storePassword "Vaisala"
+                keyAlias "MyReleaseKey"
+                keyPassword "Vaisala"
             }
+        }
     }
     sourceSets {
         main {
@@ -44,10 +43,23 @@ android {
     }
     buildTypes {
         release {
-            signingConfig signingConfigs.config
-            debuggable = true
-            }
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            initWith release
+            signingConfig signingConfigs.release
         }
+
+        verify {
+            applicationIdSuffix ".verify"
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
 }
 
 buildscript {
@@ -57,10 +69,9 @@ buildscript {
         maven { url maven_staging_url }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath 'com.android.tools.build:gradle:7.4.1'
     }
 }
-
 
 repositories {
     mavenCentral()
@@ -68,14 +79,19 @@ repositories {
     maven { url maven_staging_url }
 }
 dependencies {
-    testImplementation 'junit:junit:4.13.2'
-    implementation ('com.aerisweather:aeris-maps-lib:2.7.1@aar') {
+    /* Aeris */
+    releaseImplementation('com.aerisweather:aeris-maps-lib:2.7.1@aar') {
         transitive true
     }
+    releaseImplementation('com.aerisweather:aeris-core-lib:2.7.1@aar') {
+        transitive true
+    }
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-location:21.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    /* ends Aeris */
 
-    implementation ('com.aerisweather:aeris-core-lib:2.7.1@aar') {
-        transitive true
-    }
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

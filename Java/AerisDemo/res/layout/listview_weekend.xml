@@ -35,14 +35,14 @@
         android:baselineAligned="false"
         android:orientation="horizontal" >
 
-        <com.example.view.DayNightView
+        <com.xweather.sdkdemo.java.view.DayNightView
             android:id="@+id/viewToday"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:layout_weight="1" />
 
-        <com.example.view.DayNightView
+        <com.xweather.sdkdemo.java.view.DayNightView
             android:id="@+id/viewTonight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

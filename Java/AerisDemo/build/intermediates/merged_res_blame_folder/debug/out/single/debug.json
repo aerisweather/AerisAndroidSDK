@@ -1,0 +1,1182 @@
+[
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snowshowerswn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snowshowerswn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_btn_cab_done_default_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/btn_cab_done_default_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ic_action_layers.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ic_action_layers.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_sleetsnown.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/sleetsnown.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_spinner_ab_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/spinner_ab_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_progress_bg_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/progress_bg_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ic_action_layers.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ic_action_layers.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_fragment_interactive_maps.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/fragment_interactive_maps.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_blowingsnown.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/blowingsnown.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudyrw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudyrw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_cab_background_top_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/cab_background_top_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_cab_background_top_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/cab_background_top_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ic_navigation_drawer.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ic_navigation_drawer.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_tab_selected_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/tab_selected_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_tab_unselected_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/tab_unselected_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_list_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/list_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_advisory_icon.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/advisory_icon.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_dustn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/dustn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudysw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudysw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudysf.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudysf.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_btn_cab_done_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/btn_cab_done_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ab_stacked_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ab_stacked_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudywn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudywn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ic_action_navigation_refresh.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ic_action_navigation_refresh.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudysfwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudysfwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_spinner_ab_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/spinner_ab_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_progress_bg_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/progress_bg_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_na.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/na.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_btn_cab_done_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/btn_cab_done_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudy.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudy.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_view_ob_table.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/view_ob_table.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_sleet.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/sleet.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ab_texture_tile_aeris_aa.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ab_texture_tile_aeris_aa.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ic_action_layers.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ic_action_layers.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_tstormn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/tstormn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_tab_selected_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/tab_selected_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_map_indicator_blank.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/map_indicator_blank.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_weather_icon_bg.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/weather_icon_bg.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_listview_recent_observations.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/listview_recent_observations.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ab_texture_tile_aeris_aa.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ab_texture_tile_aeris_aa.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_showersw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/showersw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_list_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/list_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudysfn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudysfn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_sunnywn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/sunnywn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ab_bottom_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ab_bottom_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudysfn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudysfn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_activity_my_location.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/activity_my_location.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_tab_selected_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/tab_selected_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_progress_secondary_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/progress_secondary_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_fragment_home.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_flurriesw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/flurriesw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_tab_unselected_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/tab_unselected_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_tab_unselected_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/tab_unselected_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_fragment_observation.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/fragment_observation.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_legend_temp_outlook.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/legend_temp_outlook.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_spinner_ab_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/spinner_ab_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ab_stacked_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ab_stacked_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_smoken.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/smoken.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_selectable_background_aeris_aa.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/selectable_background_aeris_aa.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudy.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudy.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_btn_cab_done_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/btn_cab_done_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_view_observation.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/view_observation.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_dust.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/dust.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_coldn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/coldn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudywn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudywn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ab_bottom_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ab_bottom_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_listview_weekend.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/listview_weekend.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_card_shape.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/card_shape.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_progress_primary_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/progress_primary_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_drizzlef.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/drizzlef.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_wintrymixn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/wintrymixn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_blizzard.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/blizzard.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ab_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ab_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudys.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudys.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snowwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snowwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_menu_dropdown_panel_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/menu_dropdown_panel_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_cloudyw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/cloudyw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ab_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ab_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ic_action_action_settings.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ic_action_action_settings.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ab_transparent_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ab_transparent_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ab_transparent_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ab_transparent_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_clear.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/clear.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_listview_nearby_obs.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/listview_nearby_obs.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudytw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudytw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_tab_unselected_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/tab_unselected_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_drawer_list_item.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/drawer_list_item.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudyswn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudyswn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_windn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/windn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_menu_dropdown_panel_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/menu_dropdown_panel_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_tstormsw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/tstormsw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_tab_unselected_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/tab_unselected_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_fragment_sunmoon.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/fragment_sunmoon.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_tstorm.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/tstorm.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_tstormswn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/tstormswn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_spinner_ab_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/spinner_ab_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_tab_indicator_ab_aeris_aa.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/tab_indicator_ab_aeris_aa.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ab_bottom_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ab_bottom_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudyn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudyn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_hazy.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/hazy.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_tab_selected_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/tab_selected_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_ntf_observation.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/ntf_observation.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_list_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/list_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_spinner_ab_disabled_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/spinner_ab_disabled_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_tab_unselected_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/tab_unselected_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_list_item_bg_pressed.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/list_item_bg_pressed.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ic_navigation_drawer.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ic_navigation_drawer.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_rainandsnow.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/rainandsnow.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudyt.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudyt.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_custom_sunmoon_pbar.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/custom_sunmoon_pbar.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ic_action_action_settings.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ic_action_action_settings.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_menu_dropdown_panel_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/menu_dropdown_panel_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snowshowersw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snowshowersw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_progress_primary_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/progress_primary_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snown.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snown.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudytw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudytw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_fairn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/fairn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_fragment_extforecast.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/fragment_extforecast.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_tab_selected_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/tab_selected_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ic_stat_action_about.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ic_stat_action_about.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_tab_unselected_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/tab_unselected_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_hot.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/hot.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_progress_secondary_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/progress_secondary_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ic_navigation_drawer.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ic_navigation_drawer.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudyrw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudyrw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_listview_extended_forecast.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/listview_extended_forecast.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_flurries.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/flurries.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudyn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudyn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_cloudywn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/cloudywn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_tab_selected_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/tab_selected_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ic_action_action_settings.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ic_action_action_settings.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_sunny.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/sunny.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ab_texture_tile_aeris_aa.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ab_texture_tile_aeris_aa.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_btn_cab_done_default_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/btn_cab_done_default_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_btn_cab_done_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/btn_cab_done_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudyt.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudyt.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudyw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudyw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_btn_cab_done_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/btn_cab_done_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_tab_unselected_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/tab_unselected_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_spinner_ab_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/spinner_ab_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_list_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/list_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_btn_cab_done_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/btn_cab_done_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_view_twopart.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/view_twopart.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_clearn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/clearn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ic_action_layers.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ic_action_layers.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_progress_secondary_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/progress_secondary_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_spinner_ab_disabled_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/spinner_ab_disabled_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_spinner_ab_default_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/spinner_ab_default_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_rainandsnown.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/rainandsnown.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_spinner_ab_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/spinner_ab_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ab_stacked_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ab_stacked_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudyr.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudyr.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_tstormsn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/tstormsn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_tab_unselected_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/tab_unselected_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudyrn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudyrn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_progress_primary_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/progress_primary_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudyrwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudyrwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudys.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudys.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_spinner_ab_disabled_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/spinner_ab_disabled_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_rainw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/rainw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_tstorms.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/tstorms.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_clearwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/clearwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_sunnyn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/sunnyn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/menu_main.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/menu/main.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ab_stacked_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ab_stacked_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_view_sunmoon.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/view_sunmoon.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_menu_drawer.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/menu_drawer.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_progress_bg_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/progress_bg_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_raintosnow.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/raintosnow.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudysn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudysn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_cab_background_top_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/cab_background_top_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_progress_secondary_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/progress_secondary_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ab_bottom_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ab_bottom_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_cab_background_bottom_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/cab_background_bottom_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_fair.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/fair.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudyswn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudyswn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudytwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudytwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_showers.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/showers.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_btn_cab_done_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/btn_cab_done_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudytn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudytn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_spinner_ab_default_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/spinner_ab_default_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ab_transparent_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ab_transparent_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_view_airquality.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/view_airquality.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_aerislogo.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/aerislogo.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_blizzardn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/blizzardn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_tab_selected_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/tab_selected_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snow.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snow.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_sleetn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/sleetn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_flurriesn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/flurriesn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ic_action_navigation_refresh.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ic_action_navigation_refresh.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_wintrymix.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/wintrymix.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ab_transparent_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ab_transparent_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudysfw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudysfw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ic_action_navigation_refresh.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ic_action_navigation_refresh.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ic_stat_action_about.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ic_stat_action_about.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_cab_background_bottom_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/cab_background_bottom_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_spinner_ab_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/spinner_ab_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudysfwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudysfwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudyrn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudyrn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_btn_cab_done_default_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/btn_cab_done_default_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_tab_selected_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/tab_selected_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_tab_selected_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/tab_selected_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudysfw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudysfw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_aerislogo.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/aerislogo.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_view_small_forecast.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/view_small_forecast.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudysn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudysn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_sleetsnow.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/sleetsnow.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_list_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/list_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_counter_bg.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/counter_bg.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_fdrizzlen.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/fdrizzlen.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_cloudy.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/cloudy.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_rain.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/rain.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_drizzle.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/drizzle.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ic_stat_action_about.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ic_stat_action_about.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_cab_background_bottom_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/cab_background_bottom_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_aerislogo.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/aerislogo.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_fragment_overview.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/fragment_overview.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudytn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudytn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_spinner_background_ab_aeris_aa.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/spinner_background_ab_aeris_aa.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_showerswn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/showerswn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_freezingrain.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/freezingrain.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_fog.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/fog.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_list_selector.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/list_selector.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_freezingrainn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/freezingrainn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_tab_unselected_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/tab_unselected_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_ic_stat_action_about.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/ic_stat_action_about.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snowtorainn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snowtorainn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_aerisweather_logo.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/aerisweather_logo.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snowshowers.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snowshowers.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/menu_menu_search.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/menu/menu_search.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudytwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudytwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ic_action_action_settings.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ic_action_action_settings.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_tab_unselected_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/tab_unselected_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_listview_pollutant.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/listview_pollutant.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudyrwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudyrwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_list_item_bg_normal.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/list_item_bg_normal.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_showersn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/showersn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_fragment_settings.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_pcloudyr.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/pcloudyr.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_fogn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/fogn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_tab_selected_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/tab_selected_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_blowingsnow.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/blowingsnow.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_splash.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/splash.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snowshowersn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snowshowersn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_plcoudyrwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/plcoudyrwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_activity_location_search.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/activity_location_search.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_aeris_radio_button.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/aeris_radio_button.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_view_forecast_today_tnt.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/view_forecast_today_tnt.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_progress_primary_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/progress_primary_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_hazyn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/hazyn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_spinner_ab_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/spinner_ab_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_cab_background_top_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/cab_background_top_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_progress_bg_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/progress_bg_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_aerislogo.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/aerislogo.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_menu_dropdown_panel_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/menu_dropdown_panel_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_list_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/list_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_ab_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/ab_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ic_action_navigation_refresh.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ic_action_navigation_refresh.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_flurrieswn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/flurrieswn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ab_solid_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ab_solid_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_btn_cab_done_default_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/btn_cab_done_default_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_wind.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/wind.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_clearw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/clearw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_btn_cab_done_aeris_aa.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/btn_cab_done_aeris_aa.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudyw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudyw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_cab_background_bottom_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/cab_background_bottom_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_ab_texture_tile_aeris_aa.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/ab_texture_tile_aeris_aa.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/xml_prefs.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/xml/prefs.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_list_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/list_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_cold.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/cold.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_raintosnown.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/raintosnown.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_sunnyw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/sunnyw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_progress_horizontal_aeris_aa.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/progress_horizontal_aeris_aa.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_btn_cab_done_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/btn_cab_done_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_spinner_ab_default_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/spinner_ab_default_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/layout_dialog_aeris_windowadapter.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/layout/dialog_aeris_windowadapter.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_rainn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/rainn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snoww.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snoww.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-mdpi_ic_navigation_drawer.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-mdpi/ic_navigation_drawer.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_tab_selected_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/tab_selected_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_snowtorain.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/snowtorain.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/menu_menu_maps_fragment.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/menu/menu_maps_fragment.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-hdpi_spinner_ab_disabled_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-hdpi/spinner_ab_disabled_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_cloudyn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/cloudyn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_tab_selected_focused_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/tab_selected_focused_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_tab_unselected_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/tab_unselected_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xxhdpi_spinner_ab_default_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xxhdpi/spinner_ab_default_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudysw.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudysw.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_mcloudysf.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/mcloudysf.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_fdrizzle.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/fdrizzle.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_rainwn.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/rainwn.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_save.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/save.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable-xhdpi_list_pressed_aeris_aa.9.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable-xhdpi/list_pressed_aeris_aa.9.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_ab_background_textured_aeris_aa.xml.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/ab_background_textured_aeris_aa.xml"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_home_feature_aerisapi.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/home_feature_aerisapi.png"
+    },
+    {
+        "merged": "com.xweather.sdkdemo.java.demoaerisproject-merged_res-21:/drawable_smoke.png.flat",
+        "source": "com.xweather.sdkdemo.java.demoaerisproject-AerisDemo-22:/drawable/smoke.png"
+    }
+]

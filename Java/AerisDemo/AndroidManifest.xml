@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.demoaerisproject">
+          package="com.xweather.sdkdemo.java.demoaerisproject">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -23,14 +23,14 @@
             android:value="@string/google_maps_key"/>
 
         <service
-            android:name="com.example.service.NotificationService"
+            android:name="com.xweather.sdkdemo.java.service.NotificationService"
             android:enabled="true"/>
 
         <service
-            android:name="com.example.service.ScreenOnService"
+            android:name="com.xweather.sdkdemo.java.service.ScreenOnService"
             android:enabled="true"/>
 
-        <service android:name="com.example.service.NotificationJobService"
+        <service android:name="com.xweather.sdkdemo.java.service.NotificationJobService"
                  android:permission="android.permission.BIND_JOB_SERVICE"
             />
 
