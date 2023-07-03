@@ -16,16 +16,20 @@
     <string name="sun_moon">Sun/Moon</string>
     <string name="air_quality">Air Quality</string>
 
-    <!-- Permission -->
-    <string name="google_maps_key">Your-google-map-key</string>
-    <string name="aerisapi_client_id">Your-aeris-id</string>
-    <string name="aerisapi_client_secret">Your-aeris-secret</string>
+    <!-- My client id/secret lacks privilege for lightning summary -->
+    <!-- Remove before deployment -->
+    <string name="aerisapi_client_id">Your-aerisweather-client-id</string>
+    <string name="aerisapi_client_secret">Your-aerisweather-client-secret</string>
+    <string name="google_maps_key">Your-google-maps-key</string>
 
     <string name="activity_search">Search</string>
     <string name="activity_my_locs">My Locations</string>
     <string name="action_settings">Settings</string>
     <string name="action_refresh">Refresh</string>
     <string name="action_layers">Layers</string>
+
+    <string name="activity_map_search">Map Search</string>
+
 
     <!-- Preference strings -->
     <string name="pref_cat_location">category_location</string>
@@ -76,6 +80,7 @@
     <string name="two_half_micron">2.5µm</string>
     <string name="ten_micron_in_inch">3.93e-4 in</string>
     <string name="two_half_micron_in_inch">9.842e-5 in</string>
+    <string name="no_data">No Data</string>
 
     <!-- Location -->
     <string name="alert_dlg_confirm_desc">Would you like to add this as your location?</string>
@@ -84,6 +89,19 @@
     <string name="alert_dlg_cancel">Cancel</string>
     <string name="no_locations_saved">No Locations Saved</string>
     <string name="text_input">Input</string>
+
+    <!-- LightningThreats -->
+    <string name="text_lat">Latitude</string>
+    <string name="text_lon">Longitude</string>
+    <string name="text_result">Result</string>
+
+    <!-- LocationSearchActivity -->
+    <string name="text_map">Map</string>
+    <string name="text_menu">Menu</string>
+    <string name="text_back">Back</string>
+
+    <!-- LocationMapActivity -->
+    <string name="title_">Back</string>
 
     <!-- weekend forecast -->
     <string name="calm">Calm</string>
@@ -115,9 +133,69 @@
     <!-- NearbyObsFragment -->
     <string name="temp_fahrenheit">%sF</string>
     <string name="temp_celsius">%sC</string>
+    <string name="invalid_data">Invalid Data</string>
 
-    <!-- permission -->
-    <string name="permission">Permission</string>
-    <string name="permission_desc">Please insert AerisWeather id, secret and GoogleMap key</string>
+    <!-- Lightning -->
+    <string name="text_Success">Success</string>
+    <string name="text_id">id</string>
+    <string name="text_datasource">datasource</string>
+    <string name="text_profile">profile</string>
+    <string name="text_detail">Details</string>
+    <string name="text_stormId">stormId</string>
+    <string name="text_kph">kph</string>
+    <string name="text_mph">mph</string>
+    <string name="text_reliability">reliability</string>
+    <string name="text_periods">Periods</string>
+    <string name="text_km">km</string>
+    <string name="text_mi">mi</string>
+    <string name="text_count">total count</string>
+    <string name="text_from">earliest pulse</string>
+    <string name="text_to">latest pulse</string>
+    <string name="text_pulse">Pulse</string>
+    <string name="text_cg">cloud to ground</string>
+    <string name="text_ic">cloud to cloud</string>
+    <string name="text_peak">all</string>
+    <string name="text_negative">(-) polarity</string>
+    <string name="text_positive">(+) polarity</string>
+    <string name="text_not_avail">--</string>
+    <string name="text_ka">kA</string>
+    <string name="text_sensors">sensors</string>
+    <string name="text_stats">Peaks</string>
+    <string name="text_peak_neg">(-) peak</string>
+    <string name="text_peak_pos">(+) peak</string>
+    <string name="text_min">Min</string>
+    <string name="text_max">Max</string>
+    <string name="text_avg">Avg</string>
+
+    <!-- maritime -->
+    <string name="head_period">Period</string>
+    <string name="unit_m">m</string>
+    <string name="unit_ft">ft</string>
+    <string name="unit_c">C</string>
+    <string name="unit_f">F</string>
+    <string name="unit_kph">kph</string>
+    <string name="unit_mph">mph</string>
+    <string name="unit_kts">kts</string>
+    <string name="unit_mps">mps</string>
+    <string name="text_interval">interval</string>
+    <string name="text_location">location</string>
+    <string name="head_sea_wind">Sea And Wind</string>
+    <string name="text_surf_temp">sea surface temp</string>
+    <string name="text_speed">sea current speed</string>
+    <string name="text_sea_dir">sea current direction</string>
+    <string name="text_wave_height">wave height</string>
+    <string name="text_tides">tides</string>
+    <string name="text_surge">surge</string>
+    <string name="text_wind_wave_period">wind wave period</string>
+    <string name="text_wind_wave">wind wave</string>
+    <string name="head_primary">Primary</string>
+    <string name="text_dir">wave direction</string>
+    <string name="text_wave_period">wave period</string>
+    <string name="text_swell_period">swell period</string>
+    <string name="text_swell_dir">swell direction</string>
+    <string name="text_swell_height">swell height</string>
+    <string name="head_secondary">Secondary</string>
+    <string name="head_tertiary">Tertiary</string>
+    <string name="text_surface">surface:</string>
 
 </resources>

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.demoaerisproject">
+    package="com.xweather.sdkdemo.kotlin">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -22,7 +23,7 @@
         android:theme="@style/Theme.AerisSdkDemo"
         tools:targetApi="31">
         <activity
-            android:name="com.example.demoaerisproject.view.map.MyMapActivity"
+            android:name="com.xweather.sdkdemo.kotlin.view.map.MyMapActivity"
             android:exported="false" />
 
         <uses-library
@@ -31,32 +32,36 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-                    android:value="@string/google_maps_key"/>
-
+            android:value="@string/google_maps_key" />
         <service
-            android:name="com.example.demoaerisproject.service.NotificationService"
+            android:name="com.xweather.sdkdemo.kotlin.service.NotificationService"
             android:enabled="true" />
         <service
-            android:name="com.example.demoaerisproject.service.ScreenOnService"
+            android:name="com.xweather.sdkdemo.kotlin.service.ScreenOnService"
             android:enabled="true" />
         <service
-            android:name="com.example.demoaerisproject.service.NotificationJobService"
+            android:name="com.xweather.sdkdemo.kotlin.service.NotificationJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity
-            android:name="com.example.demoaerisproject.view.map.MapOptionsLocalActivity"
+            android:name="com.xweather.sdkdemo.kotlin.view.map.MapOptionsLocalActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Aeris_aa" />
+
+        <activity
+            android:name="com.xweather.sdkdemo.kotlin.view.settings.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.demoaerisproject.view.settings.SettingsActivity"
+            android:name="com.xweather.sdkdemo.kotlin.view.locations.LocationSearchActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.demoaerisproject.view.locations.LocationSearchActivity"
+            android:name="com.xweather.sdkdemo.kotlin.view.locations.LocationMapActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.demoaerisproject.view.locations.MyLocsActivity"
+            android:name="com.xweather.sdkdemo.kotlin.view.locations.MyLocsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.demoaerisproject.view.weather.MainActivity"
+            android:name="com.xweather.sdkdemo.kotlin.view.weather.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,6 +1,3 @@
-/*
- * TODO switch to Kotlin DSL
- */
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -9,22 +6,51 @@ plugins {
 }
 
 android {
+    namespace 'com.xweather.sdkdemo.kotlin'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.demoaerisproject"
+        applicationId "com.xweather.sdkdemo.kotlin"
         minSdk 26
         targetSdk 33
         versionCode 1
-        versionName "2.7.1"
+        versionName "2.8.1"
 
-        testInstrumentationRunner "com.example.demoaerisproject.HiltTestRunner"
+        testInstrumentationRunner "com.xweather.sdkdemo.kotlin.HiltTestRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../keys/myreleasekey.keystore")
+            storePassword 'Vaisala'
+            keyAlias "MyReleaseKey"
+            keyPassword 'Vaisala'
+        }
+        debug {
+            storeFile file('../keys/debug.keystore')
+            signingConfigs.debug
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            initWith release
+            signingConfig signingConfigs.release
+        }
+        verify {
+            applicationIdSuffix ".verify"
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
         }
     }
     compileOptions {
@@ -34,16 +60,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
     buildFeatures {
         viewBinding true
         dataBinding true
         compose true
     }
-
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
+//    packagingOptions {
+//        resources {
+//            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+//        }
+//    }
 }
 
 /*
@@ -55,18 +84,25 @@ configurations.all {
 }
 
 dependencies {
+
     /* Aeris */
     implementation('com.aerisweather:aeris-maps-lib:2.7.1@aar') {
         transitive true
     }
-
     implementation('com.aerisweather:aeris-core-lib:2.7.1@aar') {
         transitive true
     }
+    /* ends Aeris */
+
+    /* google map */
+    implementation 'com.google.maps.android:maps-compose:2.11.2'
+    implementation 'com.google.maps.android:maps-compose-utils:2.11.2'
+    implementation 'com.google.maps.android:maps-compose-widgets:2.11.2'
 
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.google.android.gms:play-services-location:21.0.0'
-    /* ends Aeris */
+    implementation 'com.google.code.gson:gson:2.8.6'
+    /* ends google map */
 
     /* DataStore */
     implementation 'androidx.datastore:datastore-core:1.0.0-alpha05'

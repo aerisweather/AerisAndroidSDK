@@ -21,16 +21,9 @@
 
     <style name="Theme.Aeris_aa" parent="@android:style/Theme.Holo">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_aeris_aa</item>
-        <item name="android:popupMenuStyle">@style/PopupMenu.Aeris_aa</item>
-        <item name="android:dropDownListViewStyle">@style/DropDownListView.Aeris_aa</item>
         <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Aeris_aa</item>
-        <item name="android:actionDropDownStyle">@style/DropDownNav.Aeris_aa</item>
         <item name="android:actionBarStyle">@style/ActionBar.Solid.Aeris_aa</item>
         <item name="android:actionModeBackground">@drawable/cab_background_top_aeris_aa</item>
-        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_aeris_aa</item>
-        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Aeris_aa</item>
-        
-        
     </style>
 
     <style name="ActionBar.Solid.Aeris_aa" parent="@android:style/Widget.Holo.ActionBar.Solid">
